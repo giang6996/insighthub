@@ -51,6 +51,7 @@ Goal: refactor synchronous document ingestion into async Redis + ARQ + independe
   - `DocumentConflict` / `DocumentNotFound` must not allow stale jobs to overwrite/downgrade a valid document state (e.g., a newer `ready` document).
 - Tests:
   - update tests for intentional async behavior (201 → 202 + polling/worker completion); do not remove correctness tests just to make CI green.
+  - Do not add automatic ARQ application retries unless their document-state semantics are explicitly redesigned and tested; Day 1 baseline uses deduplication/idempotency first.
 
 ## Domain
 - Document lifecycle (`documents.status`):

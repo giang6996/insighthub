@@ -7,6 +7,9 @@ WORKDIR /app
 FROM base AS deps
 COPY requirements.txt .
 RUN pip install --no-cache-dir --require-hashes -r requirements.txt
+# Day 1 async ingestion infra: API needs ARQ client to enqueue jobs.
+# Keep this separate from hashed requirements to minimize churn in the starter lockfile.
+RUN pip install --no-cache-dir arq==0.26.3 redis==5.0.8
 
 FROM base AS runtime
 # Non-root user

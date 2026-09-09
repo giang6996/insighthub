@@ -62,7 +62,7 @@ class HttpTests(unittest.TestCase):
 
         stream = GuardedFile(b"12345")
         with configured(max_upload_bytes=4), self.assertRaises(HTTPException) as raised:
-            upload_document(UploadFile(filename="test.txt", file=stream))
+            asyncio.run(upload_document(UploadFile(filename="test.txt", file=stream)))
         self.assertEqual(raised.exception.status_code, 413)
         self.assertEqual(stream.requested, 5)
         self.assertTrue(stream.closed)

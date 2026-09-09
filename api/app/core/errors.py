@@ -46,3 +46,21 @@ class SchemaMismatch(ServiceError):
     status_code = 503
     code = "schema_mismatch"
     message = "Schema chưa sẵn sàng hoặc dimension không khớp EMBEDDING_DIM."
+
+
+class QueueUnavailable(ServiceError):
+    status_code = 503
+    code = "queue_unavailable"
+    message = "Hàng đợi xử lý chưa sẵn sàng. Vui lòng thử lại sau."
+
+
+class RetryNotAllowed(ServiceError):
+    status_code = 409
+    code = "retry_not_allowed"
+    message = "Chỉ có thể retry khi tài liệu đang ở trạng thái failed."
+
+
+class StagedPayloadMissing(ServiceError):
+    status_code = 409
+    code = "staged_payload_missing"
+    message = "Không tìm thấy payload đã stage để retry tài liệu này."

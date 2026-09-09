@@ -1,22 +1,23 @@
 """Opt in with RUN_DB_TESTS=1 and mount init.sql as TEST_SCHEMA_PATH in Docker.
 
-Each test run owns a random PostgreSQL schema. Only that schema is truncated/dropped.
-No paid providers are called. A missing DB/schema fixture fails an opted-in run.
+Day 1 ingestion is out-of-process (Redis/ARQ + ingestion-worker), so integration tests
+must share the same database schema as the worker container. Isolation is achieved
+by truncating tables and clearing Redis/staging between tests (no RESTART IDENTITY).
 """
 
+import asyncio
 import concurrent.futures
 import os
 from pathlib import Path
 import threading
+import time
 import unittest
 import uuid
 from unittest.mock import patch
 
 from support import configured, real_config
-import psycopg
-from psycopg import sql
-from psycopg_pool import ConnectionPool
 from fastapi.testclient import TestClient
+from redis import Redis
 
 from app.core import db
 from app.core.config import get_settings
@@ -28,9 +29,16 @@ from app.core.errors import (
 )
 from app.core.index import check_schema
 from app.main import app
+from app.core.queue import enqueue_ingestion_job
 from app.services.embeddings import _local_embed
 from app.services.ingestion import process_document
 from app.services.retrieval import retrieve
+from app.core.staging import (
+    content_ref_for_document,
+    resolve_staged_path,
+    sha256_bytes,
+    stage_document_bytes,
+)
 
 
 @unittest.skipUnless(
@@ -40,8 +48,6 @@ from app.services.retrieval import retrieve
 class IntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.dsn = os.environ.get("TEST_DATABASE_URL") or get_settings().database_url
-        cls.schema = "test_insighthub_" + uuid.uuid4().hex
         source = Path(
             os.environ.get(
                 "TEST_SCHEMA_PATH",
@@ -49,40 +55,11 @@ class IntegrationTests(unittest.TestCase):
             )
         )
         cls.schema_sql = source.read_text()
-        cls.old_pool = db._pool
-        with psycopg.connect(cls.dsn, autocommit=True) as conn:
-            # Extension must be installed by the DB bootstrap, never by the test run.
-            if not conn.execute(
-                "SELECT 1 FROM pg_extension WHERE extname = 'vector'"
-            ).fetchone():
-                raise RuntimeError(
-                    "Initialize pgvector using infra/db/init.sql before integration tests"
-                )
-            conn.execute(sql.SQL("CREATE SCHEMA {}").format(sql.Identifier(cls.schema)))
-        cls.addClassCleanup(cls.cleanup_schema)
-        with psycopg.connect(
-            cls.dsn, options=f"-csearch_path={cls.schema},public"
-        ) as conn:
+        # Database schema must be initialized by the Compose postgres bootstrap.
+        # Re-applying the starter init.sql is idempotent (CREATE IF NOT EXISTS) and
+        # provides a clearer failure mode when the DB volume is stale/missing.
+        with db.get_conn() as conn:
             conn.execute(cls.schema_sql)
-        db._pool = ConnectionPool(
-            conninfo=cls.dsn,
-            min_size=2,
-            max_size=10,
-            configure=db._configure,
-            kwargs={"options": f"-csearch_path={cls.schema},public"},
-            open=True,
-        )
-        db._pool.wait(timeout=15)
-
-    @classmethod
-    def cleanup_schema(cls):
-        if db._pool is not cls.old_pool:
-            db._pool.close()
-        db._pool = cls.old_pool
-        with psycopg.connect(cls.dsn, autocommit=True) as conn:
-            conn.execute(
-                sql.SQL("DROP SCHEMA {} CASCADE").format(sql.Identifier(cls.schema))
-            )
 
     def setUp(self):
         self.config = configured()
@@ -90,8 +67,17 @@ class IntegrationTests(unittest.TestCase):
         self.addCleanup(self.config.__exit__, None, None, None)
         with db.get_conn() as conn:
             conn.execute(
-                "TRUNCATE chunks, documents, embedding_index RESTART IDENTITY CASCADE"
+                "TRUNCATE chunks, documents, embedding_index CASCADE"
             )
+        # Async ingestion introduces an external queue + shared staging directory.
+        # Clear both to avoid stale jobs/files referencing reused IDs when tests reset identity.
+        Redis.from_url(get_settings().redis_url).flushdb()
+        staging = Path(get_settings().staging_dir)
+        staging.mkdir(parents=True, exist_ok=True)
+        for path in staging.glob("doc-*.bin"):
+            path.unlink(missing_ok=True)
+        for path in staging.glob(".tmp-doc-*"):
+            path.unlink(missing_ok=True)
         self.client = TestClient(app)
 
     def create_document(self, filename="test.txt"):
@@ -110,6 +96,18 @@ class IntegrationTests(unittest.TestCase):
                 (document_id,),
             ).fetchone()
 
+    def wait_for_terminal_status(self, document_id: int, timeout_seconds: float = 30.0):
+        deadline = time.monotonic() + timeout_seconds
+        last = None
+        while time.monotonic() < deadline:
+            last = self.state(document_id)
+            if last is None:
+                return None
+            if last[0] in {"ready", "failed"}:
+                return last
+            time.sleep(0.25)
+        return last
+
     def test_fixture_upload_retrieve_chat_metrics_delete_end_to_end(self):
         self.assertEqual(self.client.get("/readyz").status_code, 200)
         self.assertEqual(
@@ -118,10 +116,12 @@ class IntegrationTests(unittest.TestCase):
         response = self.client.post(
             "/documents", files={"file": ("rag.txt", b"RAG uses retrieved documents.")}
         )
-        self.assertEqual(response.status_code, 201, response.text)
+        self.assertEqual(response.status_code, 202, response.text)
         document = response.json()
-        self.assertEqual(document["mode"], "fixture")
-        self.assertEqual(document["chunk_count"], 1)
+        state = self.wait_for_terminal_status(document["id"])
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "ready")
+        self.assertGreater(state[1], 0)
         self.assertEqual(self.client.get("/documents").json()[0]["status"], "ready")
         chat = self.client.post(
             "/chat", json={"question": "RAG uses retrieved documents."}
@@ -263,13 +263,19 @@ class IntegrationTests(unittest.TestCase):
         response = self.client.post(
             "/documents", files={"file": ("empty.txt", b" \n ")}
         )
-        self.assertEqual(response.status_code, 422, response.text)
-        document = self.client.get("/documents").json()[0]
-        self.assertEqual(document["status"], "failed")
-        self.assertEqual(document["chunk_count"], 0)
+        self.assertEqual(response.status_code, 202, response.text)
+        document_id = response.json()["id"]
+        state = self.wait_for_terminal_status(document_id)
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "failed")
+        self.assertEqual(state[1], 0)
 
     def test_index_identity_change_rejects_query_upload_and_readiness(self):
-        self.client.post("/documents", files={"file": ("test.txt", b"content")})
+        first = self.client.post("/documents", files={"file": ("test.txt", b"content")})
+        self.assertEqual(first.status_code, 202, first.text)
+        state = self.wait_for_terminal_status(first.json()["id"])
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "ready")
         with (
             configured(embedding_revision="2"),
             patch("app.services.retrieval.embed") as provider,
@@ -288,7 +294,11 @@ class IntegrationTests(unittest.TestCase):
             )
 
     def test_same_dimension_real_provider_cannot_query_fixture_index(self):
-        self.client.post("/documents", files={"file": ("test.txt", b"content")})
+        first = self.client.post("/documents", files={"file": ("test.txt", b"content")})
+        self.assertEqual(first.status_code, 202, first.text)
+        state = self.wait_for_terminal_status(first.json()["id"])
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "ready")
         with real_config(), patch("app.services.retrieval.embed") as provider:
             with self.assertRaises(IndexIdentityConflict):
                 retrieve("question")
@@ -325,10 +335,10 @@ class IntegrationTests(unittest.TestCase):
                 },
             ),
         ):
-            upload = self.client.post(
-                "/documents", files={"file": ("real.txt", b"content")}
-            )
-            self.assertEqual(upload.status_code, 201, upload.text)
+            # Provider mocks are process-local and do not affect the external worker.
+            # Keep this test in-process by invoking process_document directly.
+            document_id = self.create_document(filename="real.txt")
+            self.assertGreater(process_document(document_id, "real.txt", b"content"), 0)
             chat = self.client.post("/chat", json={"question": "question"})
             self.assertEqual(chat.status_code, 200, chat.text)
             self.assertEqual(chat.json()["mode"], "real")
@@ -340,12 +350,187 @@ class IntegrationTests(unittest.TestCase):
             real_config(),
             patch("app.services.embeddings.post_json", side_effect=ProviderError()),
         ):
+            # Provider mocks are process-local and do not affect the external worker.
+            # Keep this test in-process by invoking process_document directly.
+            document_id = self.create_document(filename="real.txt")
+            with self.assertRaises(ProviderError):
+                process_document(document_id, "real.txt", b"content")
+            state = self.state(document_id)
+            self.assertEqual((state[0], state[1], state[3]), ("failed", 0, "provider_error"))
+
+    def test_enqueue_failure_does_not_orphan_pending_and_cleans_staging(self):
+        payload = b"content"
+        with patch("app.routers.documents.enqueue_ingestion_job", side_effect=RuntimeError("redis down")):
             response = self.client.post(
-                "/documents", files={"file": ("real.txt", b"content")}
+                "/documents", files={"file": ("enqueue-fail.txt", payload)}
             )
-        self.assertEqual(response.status_code, 502, response.text)
-        document = self.client.get("/documents").json()[0]
-        self.assertEqual(
-            (document["status"], document["chunk_count"], document["error_code"]),
-            ("failed", 0, "provider_error"),
+        self.assertEqual(response.status_code, 503, response.text)
+        self.assertEqual(response.json()["code"], "queue_unavailable")
+        with db.get_conn() as conn:
+            row = conn.execute(
+                "SELECT id, status, error_code FROM documents WHERE filename = %s "
+                "ORDER BY created_at DESC LIMIT 1",
+                ("enqueue-fail.txt",),
+            ).fetchone()
+        self.assertIsNotNone(row)
+        document_id, status, error_code = row
+        self.assertEqual((status, error_code), ("failed", "queue_unavailable"))
+        content_ref = content_ref_for_document(document_id, sha256=sha256_bytes(payload))
+        path = resolve_staged_path(get_settings().staging_dir, document_id=document_id, content_ref=content_ref)
+        self.assertFalse(path.exists(), "Staged payload should be cleaned up after enqueue failure")
+
+    def _install_reject_chunks_trigger(self):
+        with db.get_conn() as conn:
+            conn.execute(
+                "CREATE FUNCTION reject_chunks() RETURNS trigger LANGUAGE plpgsql AS $$ "
+                "BEGIN RAISE EXCEPTION 'secret'; RETURN NEW; END $$"
+            )
+            conn.execute(
+                "CREATE TRIGGER reject_chunks BEFORE INSERT ON chunks "
+                "FOR EACH ROW EXECUTE FUNCTION reject_chunks()"
+            )
+            conn.commit()
+
+    def _remove_reject_chunks_trigger(self):
+        with db.get_conn() as conn:
+            conn.execute("DROP TRIGGER IF EXISTS reject_chunks ON chunks")
+            conn.execute("DROP FUNCTION IF EXISTS reject_chunks()")
+            conn.commit()
+
+    def test_failed_document_can_be_retried_to_ready(self):
+        self._install_reject_chunks_trigger()
+        try:
+            upload = self.client.post(
+                "/documents", files={"file": ("retry.txt", b"content")}
+            )
+            self.assertEqual(upload.status_code, 202, upload.text)
+            document_id = upload.json()["id"]
+            failed = self.wait_for_terminal_status(document_id)
+            self.assertIsNotNone(failed)
+            self.assertEqual((failed[0], failed[1], failed[3]), ("failed", 0, "internal_error"))
+        finally:
+            self._remove_reject_chunks_trigger()
+
+        retry = self.client.post(f"/documents/{document_id}/retry")
+        self.assertEqual(retry.status_code, 202, retry.text)
+        self.assertEqual(retry.json()["status"], "pending")
+
+        ready = self.wait_for_terminal_status(document_id)
+        self.assertIsNotNone(ready)
+        self.assertEqual(ready[0], "ready")
+        self.assertGreater(ready[1], 0)
+        with db.get_conn() as conn:
+            chunk_rows = conn.execute(
+                "SELECT count(*) FROM chunks WHERE document_id = %s",
+                (document_id,),
+            ).fetchone()[0]
+        self.assertEqual(chunk_rows, ready[1])
+
+    def test_ready_and_pending_documents_cannot_be_retried(self):
+        upload = self.client.post(
+            "/documents", files={"file": ("ready.txt", b"content")}
         )
+        self.assertEqual(upload.status_code, 202, upload.text)
+        ready_id = upload.json()["id"]
+        state = self.wait_for_terminal_status(ready_id)
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "ready")
+        ready_retry = self.client.post(f"/documents/{ready_id}/retry")
+        self.assertEqual(ready_retry.status_code, 409, ready_retry.text)
+        self.assertEqual(ready_retry.json()["code"], "retry_not_allowed")
+
+        pending_id = self.create_document(filename="pending.txt")
+        digest = sha256_bytes(b"content")
+        with db.get_conn() as conn:
+            conn.execute(
+                "UPDATE documents SET status='pending', content_sha256=%s, pipeline_id='p' WHERE id=%s",
+                (digest, pending_id),
+            )
+        stage_document_bytes(
+            get_settings().staging_dir,
+            document_id=pending_id,
+            content=b"content",
+            max_bytes=get_settings().max_upload_bytes,
+        )
+        pending_retry = self.client.post(f"/documents/{pending_id}/retry")
+        self.assertEqual(pending_retry.status_code, 409, pending_retry.text)
+        self.assertEqual(pending_retry.json()["code"], "retry_not_allowed")
+
+    def test_retry_requires_existing_staged_payload(self):
+        self._install_reject_chunks_trigger()
+        try:
+            upload = self.client.post(
+                "/documents", files={"file": ("missing-staged.txt", b"content")}
+            )
+            self.assertEqual(upload.status_code, 202, upload.text)
+            document_id = upload.json()["id"]
+            failed = self.wait_for_terminal_status(document_id)
+            self.assertIsNotNone(failed)
+            self.assertEqual(failed[0], "failed")
+            digest = failed[2]
+        finally:
+            self._remove_reject_chunks_trigger()
+
+        content_ref = content_ref_for_document(document_id, sha256=digest)
+        resolve_staged_path(
+            get_settings().staging_dir,
+            document_id=document_id,
+            content_ref=content_ref,
+        ).unlink(missing_ok=True)
+
+        retry = self.client.post(f"/documents/{document_id}/retry")
+        self.assertEqual(retry.status_code, 409, retry.text)
+        self.assertEqual(retry.json()["code"], "staged_payload_missing")
+        state = self.state(document_id)
+        self.assertEqual(state[0], "failed")
+
+    def test_retry_enqueue_failure_does_not_corrupt_document_state(self):
+        self._install_reject_chunks_trigger()
+        try:
+            upload = self.client.post(
+                "/documents", files={"file": ("enqueue-fail-retry.txt", b"content")}
+            )
+            self.assertEqual(upload.status_code, 202, upload.text)
+            document_id = upload.json()["id"]
+            failed = self.wait_for_terminal_status(document_id)
+            self.assertIsNotNone(failed)
+            self.assertEqual((failed[0], failed[3]), ("failed", "internal_error"))
+        finally:
+            self._remove_reject_chunks_trigger()
+
+        with patch("app.routers.documents.enqueue_ingestion_job", side_effect=RuntimeError("redis down")):
+            retry = self.client.post(f"/documents/{document_id}/retry")
+        self.assertEqual(retry.status_code, 503, retry.text)
+        self.assertEqual(retry.json()["code"], "queue_unavailable")
+        state = self.state(document_id)
+        self.assertEqual((state[0], state[3]), ("failed", "internal_error"))
+
+    def test_reenqueue_ready_document_does_not_duplicate_chunks(self):
+        upload = self.client.post(
+            "/documents", files={"file": ("reenqueue.txt", b"content")}
+        )
+        self.assertEqual(upload.status_code, 202, upload.text)
+        document_id = upload.json()["id"]
+        ready = self.wait_for_terminal_status(document_id)
+        self.assertIsNotNone(ready)
+        self.assertEqual(ready[0], "ready")
+        before_chunk_count = ready[1]
+        digest = ready[2]
+        content_ref = content_ref_for_document(document_id, sha256=digest)
+
+        asyncio.run(
+            enqueue_ingestion_job(
+                document_id,
+                content_ref=content_ref,
+                job_id_override=f"ingest-retry:{document_id}:{digest}:{uuid.uuid4().hex}",
+            )
+        )
+        state = self.wait_for_terminal_status(document_id)
+        self.assertIsNotNone(state)
+        self.assertEqual(state[0], "ready")
+        with db.get_conn() as conn:
+            rows = conn.execute(
+                "SELECT count(*) FROM chunks WHERE document_id = %s",
+                (document_id,),
+            ).fetchone()[0]
+        self.assertEqual(rows, before_chunk_count)

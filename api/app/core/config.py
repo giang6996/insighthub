@@ -26,6 +26,9 @@ class Settings(BaseSettings):
         default="postgresql://insighthub:insighthub@postgres:5432/insighthub",
         repr=False,
     )
+    redis_url: str = Field(default="redis://redis:6379/0", repr=False)
+    ingestion_queue: str = Field(default="ingestion", min_length=1, max_length=128)
+    staging_dir: str = Field(default="/data/staging", min_length=1, max_length=256)
     rag_mode: Literal["fixture", "real"] = "real"
     llm_provider: Literal["gemini", "anthropic", "ollama", "openai", "fixture"] = (
         "gemini"

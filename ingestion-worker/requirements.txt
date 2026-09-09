@@ -1,0 +1,3 @@
+# Worker-only dependencies (API deps are installed from api/requirements.txt).
+arq==0.26.3
+redis==5.0.8

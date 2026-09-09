@@ -878,7 +878,11 @@ def main(argv=None):
             report['status'] = 'PASS'
         else:
             targets = [f'day{i}' for i in range(1, 7)] if args.target == 'day7' else [args.target]
-            with tempfile.TemporaryDirectory(prefix='insighthub-verify-', dir='/tmp') as tmp:
+            
+            # Force use /tmp directory for Linux/MacOS, otherwise use default temp directory (Window)
+            default_tmp = '/tmp' if os.path.exists('/tmp') else None
+            
+            with tempfile.TemporaryDirectory(prefix='insighthub-verify-', dir=default_tmp) as tmp:
                 for target in targets:
                     scratch = Path(tmp) / target
                     scratch.mkdir()

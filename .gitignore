@@ -39,9 +39,9 @@ Thumbs.db
 # --- Logs / scratch ---
 tmp/
 *.tmp
+temp/
 .staging/
 
 # Local evidence and release outputs
-evidence/
 reports/
 *.tsbuildinfo

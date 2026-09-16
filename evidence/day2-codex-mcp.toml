@@ -1,0 +1,41 @@
+[mcp_servers.insighthub_filesystem]
+command = "cmd"
+args = [
+  "/c",
+  "npx",
+  "-y",
+  "@modelcontextprotocol/server-filesystem@2026.8.31",
+  "<INSIGHTHUB_PROJECT_PATH>"
+]
+
+[mcp_servers.insighthub_docker]
+command = "uvx"
+args = ["docker-mcp-server"]
+
+[mcp_servers.insighthub_docker.env]
+DOCKER_MCP_SERVER_READONLY = "1"
+
+[mcp_servers.insighthub_kubernetes]
+command = "npx"
+args = [
+  "-y",
+  "kubernetes-mcp-server",
+  "--read-only",
+  "--disable-multi-cluster"
+]
+
+[mcp_servers.insighthub_kubernetes.env]
+KUBECONFIG = "<PATH_TO_RESTRICTED_KUBECONFIG>"
+
+[mcp_servers.insighthub_prometheus]
+command = "docker"
+args = [
+  "run",
+  "--rm",
+  "-i",
+  "ghcr.io/tjhop/prometheus-mcp-server:v0.18.0",
+  "--prometheus.url",
+  "http://host.docker.internal:9090",
+  "--mcp.tools",
+  "core"
+]

@@ -1,0 +1,63 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: database-init
+  namespace: insighthub
+spec:
+  backoffLimit: 2
+  template:
+    metadata:
+      labels:
+        app: database-init
+    spec:
+      restartPolicy: OnFailure
+      serviceAccountName: db-bootstrap
+      containers:
+        - name: psql
+          image: postgres:16-alpine
+          env:
+            - name: PGHOST
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_HOST
+            - name: PGPORT
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_PORT
+            - name: PGDATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_NAME
+            - name: PGUSER
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_USER
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_PASSWORD
+          command: ["/bin/sh", "-ec"]
+          args:
+            - psql --file=/init/init.sql
+          volumeMounts:
+            - name: schema
+              mountPath: /init
+              readOnly: true
+            - name: rds-secrets
+              mountPath: /mnt/secrets-store
+              readOnly: true
+      volumes:
+        - name: schema
+          configMap:
+            name: insighthub-db-init
+        - name: rds-secrets
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: insighthub-rds

@@ -6,6 +6,7 @@ from functools import lru_cache
 from typing import Literal
 from urllib.parse import urlsplit
 
+from psycopg.conninfo import make_conninfo
 from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -65,9 +66,29 @@ class Settings(BaseSettings):
     retrieval_top_k: int = Field(default=5, ge=1, le=20)
     hnsw_ef_search: int = Field(default=100, ge=20, le=1000)
     max_upload_bytes: int = Field(default=10 * 1024 * 1024, ge=1, le=50 * 1024 * 1024)
+    db_host: str = ""
+    db_port: int | None = Field(default=None, ge=1, le=65535)
+    db_name: str = ""
+    db_user: str = ""
+    db_password: str = Field(default="", repr=False)
 
     @model_validator(mode="after")
     def validate_configuration(self):
+        structured_db = (self.db_host, self.db_port, self.db_name, self.db_user, self.db_password)
+        if "database_url" not in self.model_fields_set and any(value not in ("", None) for value in structured_db):
+            if not all(value not in ("", None) for value in structured_db):
+                raise ValueError("DB_HOST, DB_PORT, DB_NAME, DB_USER, and DB_PASSWORD are required together")
+            object.__setattr__(
+                self,
+                "database_url",
+                make_conninfo(
+                    host=self.db_host,
+                    port=self.db_port,
+                    dbname=self.db_name,
+                    user=self.db_user,
+                    password=self.db_password,
+                ),
+            )
         if self.chunk_overlap >= self.chunk_size:
             raise ValueError("CHUNK_OVERLAP must be smaller than CHUNK_SIZE")
         if self.rag_mode == "fixture":

@@ -1,0 +1,8 @@
+# Pinned chart: aws-load-balancer-controller 1.8.3
+# Controller image/release corresponds to v2.8.3.
+clusterName: REPLACE_WITH_EKS_CLUSTER_NAME
+region: REPLACE_WITH_AWS_REGION
+vpcId: REPLACE_WITH_VPC_ID
+serviceAccount:
+  create: false
+  name: aws-load-balancer-controller

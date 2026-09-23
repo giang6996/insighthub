@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: insighthub-runtime
+  namespace: insighthub
+data:
+  INGESTION_QUEUE: ingestion
+  STAGING_DIR: /data/staging
+  RAG_MODE: fixture
+  LLM_PROVIDER: fixture
+  EMBEDDING_PROVIDER: fixture
+  EMBEDDING_DIM: "1024"
+  EMBEDDING_REVISION: "1"
+  LLM_MAX_TOKENS: "1024"
+  PROVIDER_TIMEOUT_SECONDS: "60"
+  REDIS_URL: rediss://REPLACE_WITH_REDIS_ENDPOINT:6379/0
+  API_INTERNAL_URL: http://api:8000

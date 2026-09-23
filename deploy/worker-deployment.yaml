@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingestion-worker
+  namespace: insighthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ingestion-worker
+  template:
+    metadata:
+      labels:
+        app: ingestion-worker
+    spec:
+      serviceAccountName: ingestion-worker
+      containers:
+        - name: ingestion-worker
+          image: REPLACE_WITH_IMMUTABLE_WORKER_ECR_IMAGE
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: insighthub-runtime
+            - secretRef:
+                name: insighthub-rds-fields
+          volumeMounts:
+            - name: staging
+              mountPath: /data/staging
+            - name: rds-secrets
+              mountPath: /mnt/secrets-store
+              readOnly: true
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 400m
+              memory: 512Mi
+      volumes:
+        - name: staging
+          persistentVolumeClaim:
+            claimName: insighthub-staging
+        - name: rds-secrets
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: insighthub-rds

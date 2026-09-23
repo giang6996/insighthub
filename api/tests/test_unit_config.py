@@ -46,6 +46,25 @@ class ConfigTests(unittest.TestCase):
                 )
         self.assertNotIn("super-secret", str(raised.exception))
 
+    def test_explicit_database_url_keeps_precedence(self):
+        with configured(database_url="postgresql://explicit.example/db", db_host="ignored.example", db_port=5432,
+                         db_name="ignored", db_user="ignored", db_password="ignored") as settings:
+            self.assertEqual(settings.database_url, "postgresql://explicit.example/db")
+
+    def test_structured_database_configuration_uses_native_conninfo_builder(self):
+        with configured(db_host="db.example", db_port=5432, db_name="insighthub",
+                         db_user="insighthub", db_password="p@ss word#with'quotes") as settings:
+            self.assertIn("host=db.example", settings.database_url)
+            self.assertIn("port=5432", settings.database_url)
+            self.assertIn("dbname=insighthub", settings.database_url)
+            self.assertIn("password=", settings.database_url)
+            self.assertNotIn("p@ss word#with'quotes", settings.database_url)
+
+    def test_structured_database_configuration_requires_all_fields(self):
+        with self.assertRaisesRegex(ValidationError, "required together"):
+            Settings(_env_file=None, rag_mode="fixture", llm_provider="fixture", embedding_provider="fixture",
+                     db_host="db.example", db_port=5432, db_name="insighthub", db_user="insighthub")
+
     def test_invalid_numeric_configuration(self):
         for key, value in (
             ("chunk_size", 1),

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: insighthub-staging-efs
+spec:
+  capacity:
+    storage: 10Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: insighthub-efs-static
+  mountOptions:
+    - tls
+  csi:
+    driver: efs.csi.aws.com
+    # Replace both placeholders with Terraform outputs:
+    # efs_file_system_id and efs_access_point_id.
+    volumeHandle: "REPLACE_WITH_EFS_FILE_SYSTEM_ID::REPLACE_WITH_EFS_ACCESS_POINT_ID"

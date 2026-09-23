@@ -1,6 +1,7 @@
 resource "aws_efs_file_system" "staging" {
   creation_token   = "${local.name_prefix}-staging"
   encrypted        = true
+  kms_key_id       = aws_kms_key.data_services.arn
   performance_mode = "generalPurpose"
   throughput_mode  = "bursting"
 

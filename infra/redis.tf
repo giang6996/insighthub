@@ -20,6 +20,8 @@ resource "aws_elasticache_subnet_group" "this" {
 }
 
 resource "aws_elasticache_replication_group" "this" {
+  # checkov:skip=CKV_AWS_31:Day 3 keeps Redis private with EKS-only ingress and TLS; authentication requires runtime secret integration and is deferred, not production guidance.
+  # checkov:skip=CKV2_AWS_50:Single-node Redis is an intentional short-lived demo cost tradeoff; automatic failover is deferred and this is not production guidance.
   replication_group_id = "${var.project_name}-${var.environment}"
   description          = "Single-node TLS Redis queue for ${local.name_prefix}"
 
@@ -34,6 +36,7 @@ resource "aws_elasticache_replication_group" "this" {
 
   transit_encryption_enabled = true
   at_rest_encryption_enabled = true
+  kms_key_id                 = aws_kms_key.data_services.arn
 
   subnet_group_name  = aws_elasticache_subnet_group.this.name
   security_group_ids = [aws_security_group.redis.id]

@@ -50,6 +50,11 @@ resource "aws_db_subnet_group" "this" {
 }
 
 resource "aws_db_instance" "this" {
+  # checkov:skip=CKV_AWS_293:Short-lived Day 3 demo must remain immediately destroyable; deletion protection is deferred and this is not production guidance.
+  # checkov:skip=CKV_AWS_157:Day 3 intentionally uses a single-AZ RDS instance for cost control; Multi-AZ is deferred and this is not production guidance.
+  # checkov:skip=CKV_AWS_118:Enhanced RDS monitoring is deferred to the observability stage for this short-lived Day 3 demo; this is not production guidance.
+  # checkov:skip=CKV_AWS_353:Performance Insights is deferred to the observability stage for this short-lived Day 3 demo; this is not production guidance.
+  # checkov:skip=CKV2_AWS_30:PostgreSQL query logging is deferred to the observability stage for this short-lived Day 3 demo; this is not production guidance.
   identifier = "${local.name_prefix}-postgres"
 
   engine         = "postgres"
@@ -73,6 +78,10 @@ resource "aws_db_instance" "this" {
   backup_retention_period = 1
   deletion_protection     = var.rds_deletion_protection
   skip_final_snapshot     = true
+  copy_tags_to_snapshot   = true
+
+  enabled_cloudwatch_logs_exports     = ["postgresql"]
+  iam_database_authentication_enabled = true
 
   apply_immediately          = true
   auto_minor_version_upgrade = true

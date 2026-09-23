@@ -1,3 +1,35 @@
+resource "aws_kms_key" "data_services" {
+  description             = "Day 3 data services encryption for ${local.name_prefix}"
+  enable_key_rotation     = true
+  deletion_window_in_days = 7
+
+  tags = {
+    Name = "${local.name_prefix}-data-services"
+  }
+}
+
+resource "aws_kms_alias" "data_services" {
+  name          = "alias/${local.name_prefix}-data-services"
+  target_key_id = aws_kms_key.data_services.key_id
+}
+
+resource "aws_kms_key_policy" "data_services" {
+  key_id = aws_kms_key.data_services.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Sid    = "EnableRootAccountPermissions"
+      Effect = "Allow"
+      Principal = {
+        AWS = "arn:${data.aws_partition.current.partition}:iam::${data.aws_caller_identity.current.account_id}:root"
+      }
+      Action   = "kms:*"
+      Resource = "*"
+    }]
+  })
+}
+
 resource "aws_security_group" "rds" {
   name        = "${local.name_prefix}-rds"
   description = "PostgreSQL access from the EKS workload security boundary"

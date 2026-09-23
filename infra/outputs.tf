@@ -68,6 +68,11 @@ output "github_iac_role_arn" {
   value       = aws_iam_role.github_iac.arn
 }
 
+output "github_deploy_role_arn" {
+  description = "GitHub Actions deployment OIDC role ARN."
+  value       = aws_iam_role.github_deploy.arn
+}
+
 output "rds_endpoint" {
   description = "Private RDS endpoint hostname."
   value       = aws_db_instance.this.address

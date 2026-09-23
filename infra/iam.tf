@@ -2,10 +2,6 @@ data "aws_partition" "current" {}
 
 data "aws_caller_identity" "current" {}
 
-data "aws_kms_alias" "ecr" {
-  name = "alias/aws/ecr"
-}
-
 resource "aws_iam_role" "eks_cluster" {
   name = "${local.name_prefix}-eks-cluster"
 
@@ -102,6 +98,82 @@ resource "aws_iam_role" "github_iac" {
   tags = {
     Name = "${local.name_prefix}-github-iac-role"
   }
+}
+
+resource "aws_iam_role" "github_deploy" {
+  name = "${local.name_prefix}-github-deploy"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect    = "Allow"
+      Principal = { Federated = aws_iam_openid_connect_provider.github.arn }
+      Action    = "sts:AssumeRoleWithWebIdentity"
+      Condition = {
+        StringEquals = {
+          "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
+          "token.actions.githubusercontent.com:sub" = "repo:giang6996/insighthub:ref:refs/heads/main"
+        }
+      }
+    }]
+  })
+
+  tags = {
+    Name = "${local.name_prefix}-github-deploy-role"
+  }
+}
+
+resource "aws_iam_role_policy" "github_deploy" {
+  name = "${local.name_prefix}-github-deploy"
+  role = aws_iam_role.github_deploy.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "ecr:GetAuthorizationToken"
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:BatchGetImage",
+          "ecr:CompleteLayerUpload",
+          "ecr:DescribeImages",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:InitiateLayerUpload",
+          "ecr:PutImage",
+          "ecr:UploadLayerPart"
+        ]
+        Resource = [for repository in values(aws_ecr_repository.this) : repository.arn]
+      },
+      {
+        Effect = "Allow"
+        Action = "ssm:SendCommand"
+        Resource = [
+          "arn:${data.aws_partition.current.partition}:ssm:${var.aws_region}::document/AWS-RunShellScript",
+          "arn:${data.aws_partition.current.partition}:ec2:${var.aws_region}:${data.aws_caller_identity.current.account_id}:instance/*"
+        ]
+        Condition = {
+          StringEquals = {
+            "ssm:resourceTag/DeploymentTarget" = "insighthub-day3"
+          }
+        }
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "ssm:DescribeInstanceInformation",
+          "ssm:GetCommandInvocation",
+          "ssm:ListCommandInvocations",
+          "ssm:ListCommands"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
 }
 
 resource "aws_kms_key_policy" "eks_secrets" {

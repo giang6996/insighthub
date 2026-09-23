@@ -46,16 +46,11 @@ resource "aws_iam_role_policy" "insighthub_secrets" {
   })
 }
 
-data "aws_eks_addon_version" "secrets_store_provider" {
-  addon_name         = "aws-secrets-store-csi-driver-provider"
-  kubernetes_version = var.eks_cluster_version
-  most_recent        = var.secrets_store_provider_addon_most_recent
-}
-
 resource "aws_eks_addon" "secrets_store_provider" {
-  cluster_name  = aws_eks_cluster.this.name
-  addon_name    = "aws-secrets-store-csi-driver-provider"
-  addon_version = data.aws_eks_addon_version.secrets_store_provider.version
+  cluster_name = aws_eks_cluster.this.name
+  addon_name   = "aws-secrets-store-csi-driver-provider"
+  # Keep the proven Day 3 build deterministic; upgrades require deliberate review.
+  addon_version = var.secrets_store_provider_addon_version
 
   depends_on = [
     aws_iam_role_policy_attachment.efs_csi,

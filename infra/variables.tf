@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region for the demo deployment."
   type        = string
-  default     = "us-east-1"
+  default     = "ap-southeast-1"
 }
 
 variable "project_name" {
@@ -36,7 +36,7 @@ variable "availability_zone_count" {
 variable "availability_zone_names" {
   description = "Stable Availability Zone names allowlisted for this demo region."
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["ap-southeast-1a", "ap-southeast-1b"]
 
   validation {
     condition     = length(var.availability_zone_names) == 2
@@ -58,11 +58,11 @@ variable "github_repository" {
 variable "efs_csi_addon_version" {
   description = "Pinned EFS CSI add-on version compatible with the configured EKS version."
   type        = string
-  default     = "v2.1.8-eksbuild.1"
+  default     = "v3.4.2-eksbuild.1"
 }
 
-variable "secrets_store_provider_addon_most_recent" {
-  description = "Use the latest AWS-supported Secrets Store CSI provider add-on version."
-  type        = bool
-  default     = true
+variable "secrets_store_provider_addon_version" {
+  description = "Pinned Secrets Store CSI provider add-on version verified for the Day 3 EKS baseline."
+  type        = string
+  default     = "v3.1.3-eksbuild.1"
 }

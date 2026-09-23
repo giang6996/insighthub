@@ -1,0 +1,150 @@
+name: Day 3 application deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Deployment operation
+        required: true
+        type: choice
+        options:
+          - preflight
+          - deploy
+        default: preflight
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: insighthub-day3-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      AWS_REGION: ap-southeast-1
+      AWS_ACCOUNT_ID: '596261186564'
+      ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+      DEPLOY_SHA: ${{ github.sha }}
+      OPERATION: ${{ inputs.operation || 'preflight' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536c552d # v4.3.1
+        with:
+          role-to-assume: arn:aws:iam::596261186564:role/insighthub-day3-github-deploy
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Authenticate to ECR
+        if: env.OPERATION == 'deploy'
+        run: |
+          aws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin "$ECR_REGISTRY"
+
+      - name: Build or reuse immutable release images
+        if: env.OPERATION == 'deploy'
+        shell: bash
+        run: |
+          set -euo pipefail
+          short_sha="${DEPLOY_SHA:0:12}"
+          repos=(insighthub-day3-api insighthub-day3-ingestion-worker insighthub-day3-web)
+          existing=0
+          for repo in "${repos[@]}"; do
+            if aws ecr describe-images --repository-name "$repo" --image-ids imageTag="$short_sha" >/dev/null 2>&1; then
+              existing=$((existing + 1))
+            fi
+          done
+          if [ "$existing" -eq 1 ] || [ "$existing" -eq 2 ]; then
+            echo "partial immutable release exists for $short_sha" >&2
+            exit 1
+          fi
+          if [ "$existing" -eq 0 ]; then
+            docker build --platform linux/amd64 -f api/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-api:$short_sha" api
+            docker build --platform linux/amd64 -f ingestion-worker/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-ingestion-worker:$short_sha" .
+            docker build --platform linux/amd64 -f web/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-web:$short_sha" web
+            docker push "$ECR_REGISTRY/insighthub-day3-api:$short_sha"
+            docker push "$ECR_REGISTRY/insighthub-day3-ingestion-worker:$short_sha"
+            docker push "$ECR_REGISTRY/insighthub-day3-web:$short_sha"
+          fi
+          for repo in "${repos[@]}"; do
+            digest="$(aws ecr describe-images --repository-name "$repo" --image-ids imageTag="$short_sha" --query 'imageDetails[0].imageDigest' --output text)"
+            case "$repo" in
+              insighthub-day3-api) echo "API_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;
+              insighthub-day3-ingestion-worker) echo "WORKER_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;
+              insighthub-day3-web) echo "WEB_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;
+            esac
+            echo "$repo digest=$digest"
+          done
+
+      - name: Deploy through the private runner
+        if: env.OPERATION == 'deploy'
+        id: remote
+        shell: bash
+        run: |
+          set -euo pipefail
+          command_id="$(aws ssm send-command \
+            --document-name AWS-RunShellScript \
+            --targets Key=tag:DeploymentTarget,Values=insighthub-day3 \
+            --parameters "commands=[\"set -euo pipefail\",\"export AWS_REGION=$AWS_REGION\",\"tmp=\\$(mktemp -d /tmp/insighthub-cd.XXXXXX)\",\"git clone --quiet https://github.com/${GITHUB_REPOSITORY}.git \\$tmp/repo\",\"git -C \\$tmp/repo checkout --detach $DEPLOY_SHA\",\"test \\\"\\$(git -C \\$tmp/repo rev-parse HEAD)\\\" = $DEPLOY_SHA\",\"cd \\$tmp/repo && DEPLOY_SHA=$DEPLOY_SHA API_IMAGE=$API_IMAGE WORKER_IMAGE=$WORKER_IMAGE WEB_IMAGE=$WEB_IMAGE bash scripts/deploy_eks.sh\"]" \
+            --timeout-seconds 900 \
+            --query 'Command.CommandId' --output text)"
+          echo "command_id=$command_id" >> "$GITHUB_OUTPUT"
+          for _ in $(seq 1 60); do
+            status="$(aws ssm get-command-invocation --command-id "$command_id" --instance-id "$(aws ec2 describe-instances --filters Name=tag:DeploymentTarget,Values=insighthub-day3 Name=instance-state-name,Values=running --query 'Reservations[0].Instances[0].InstanceId' --output text)" --query 'Status' --output text 2>/dev/null || true)"
+            case "$status" in
+              Success|Failed|TimedOut|Cancelled) break ;;
+            esac
+            sleep 10
+          done
+          instance_id="$(aws ec2 describe-instances --filters Name=tag:DeploymentTarget,Values=insighthub-day3 Name=instance-state-name,Values=running --query 'Reservations[0].Instances[0].InstanceId' --output text)"
+          aws ssm get-command-invocation --command-id "$command_id" --instance-id "$instance_id" --output json | tee /tmp/ssm-result.json
+          test "$(jq -r .Status /tmp/ssm-result.json)" = Success
+
+      - name: GitHub OIDC and private runner preflight
+        if: env.OPERATION == 'preflight'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(aws sts get-caller-identity --query Account --output text)" = "$AWS_ACCOUNT_ID"
+          nodes="$(aws ssm describe-instance-information \
+            --region "$AWS_REGION" \
+            --filters Key=tag:DeploymentTarget,Values=insighthub-day3 \
+            --query 'InstanceInformationList[?PingStatus==`Online`].InstanceId' --output json)"
+          test "$(jq length <<<"$nodes")" -eq 1
+          instance_id="$(jq -r '.[0]' <<<"$nodes")"
+          command_id="$(aws ssm send-command \
+            --region "$AWS_REGION" \
+            --document-name AWS-RunShellScript \
+            --targets Key=tag:DeploymentTarget,Values=insighthub-day3 \
+            --parameters 'commands=["set -euo pipefail","printf INSIGHTHUB_CD_PREFLIGHT_OK\\n","aws sts get-caller-identity --query Account --output text"]' \
+            --timeout-seconds 120 --query Command.CommandId --output text)"
+          for _ in $(seq 1 18); do
+            status="$(aws ssm get-command-invocation --region "$AWS_REGION" --command-id "$command_id" --instance-id "$instance_id" --query Status --output text 2>/dev/null || true)"
+            case "$status" in Success|Failed|TimedOut|Cancelled) break;; esac
+            sleep 5
+          done
+          result="$(aws ssm get-command-invocation --region "$AWS_REGION" --command-id "$command_id" --instance-id "$instance_id" --output json)"
+          jq -r '.StandardOutputContent, .StandardErrorContent' <<<"$result"
+          test "$(jq -r .Status <<<"$result")" = Success
+          grep -q INSIGHTHUB_CD_PREFLIGHT_OK <<<"$(jq -r .StandardOutputContent <<<"$result")"
+          test "$(aws ssm list-command-invocations --region "$AWS_REGION" --command-id "$command_id" --details --query 'length(CommandInvocations)')" -eq 1
+
+      - name: Deployment summary
+        if: always()
+        run: |
+          {
+            echo "### Day 3 deployment"
+            echo "- Source SHA: $DEPLOY_SHA"
+            echo "- Release: ${DEPLOY_SHA:0:12}"
+            echo "- API image: ${API_IMAGE:-unresolved}"
+            echo "- Worker image: ${WORKER_IMAGE:-unresolved}"
+            echo "- Web image: ${WEB_IMAGE:-unresolved}"
+            echo "- SSM command: ${COMMAND_ID:-see deploy step}"
+          } >> "$GITHUB_STEP_SUMMARY"

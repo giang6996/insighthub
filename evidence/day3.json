@@ -2,16 +2,16 @@
   "schema_version": 1,
   "day": 3,
   "mode": "real",
-  "observed_at": "2026-09-23T04:21:10.892856Z",
-  "source_sha256": "5872748d488a6666a3f143b2c205c38c14be3819b46739c371dbc2fa5916af1c",
+  "observed_at": "2026-09-23T07:12:09.882818Z",
+  "source_sha256": "7f9c2c5fccfe99456507b402338c0adeff57dfd15c1a61cd66484e18cba980c2",
   "artifacts": {
     "deployment": {
       "path": "evidence/day3-deployment.zip",
-      "sha256": "2e5f97ed47b65dabd26009557a815ce1b1ee71f7bf13991505c9b5673d27fc52"
+      "sha256": "b3b1714e66e9fb33f279a3263507b4595cc0b738e79da42dddad71551ee55a00"
     },
     "ci_binding": {
       "path": "evidence/day3-ci-binding.json",
-      "sha256": "f33f564a607203ac23a77a631b325619d8dd6034a787e8fff6ed00b1a40beedf"
+      "sha256": "3a20b5f35eaa514797f5fdfdb8c8c371d77b21571a81bf135602272b75bf32fe"
     }
   }
 }

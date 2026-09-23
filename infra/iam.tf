@@ -150,12 +150,14 @@ resource "aws_iam_role_policy" "github_deploy" {
         Resource = [for repository in values(aws_ecr_repository.this) : repository.arn]
       },
       {
-        Effect = "Allow"
-        Action = "ssm:SendCommand"
-        Resource = [
-          "arn:${data.aws_partition.current.partition}:ssm:${var.aws_region}::document/AWS-RunShellScript",
-          "arn:${data.aws_partition.current.partition}:ec2:${var.aws_region}:${data.aws_caller_identity.current.account_id}:instance/*"
-        ]
+        Effect   = "Allow"
+        Action   = "ssm:SendCommand"
+        Resource = "arn:${data.aws_partition.current.partition}:ssm:${var.aws_region}::document/AWS-RunShellScript"
+      },
+      {
+        Effect   = "Allow"
+        Action   = "ssm:SendCommand"
+        Resource = "arn:${data.aws_partition.current.partition}:ec2:${var.aws_region}:${data.aws_caller_identity.current.account_id}:instance/*"
         Condition = {
           StringEquals = {
             "ssm:resourceTag/DeploymentTarget" = "insighthub-day3"

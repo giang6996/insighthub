@@ -18,18 +18,18 @@ spec:
           env:
             - name: PGHOST
               valueFrom:
-                secretKeyRef:
-                  name: insighthub-rds-fields
+                configMapKeyRef:
+                  name: insighthub-runtime
                   key: DB_HOST
             - name: PGPORT
               valueFrom:
-                secretKeyRef:
-                  name: insighthub-rds-fields
+                configMapKeyRef:
+                  name: insighthub-runtime
                   key: DB_PORT
             - name: PGDATABASE
               valueFrom:
-                secretKeyRef:
-                  name: insighthub-rds-fields
+                configMapKeyRef:
+                  name: insighthub-runtime
                   key: DB_NAME
             - name: PGUSER
               valueFrom:

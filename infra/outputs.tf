@@ -78,6 +78,11 @@ output "rds_port" {
   value       = aws_db_instance.this.port
 }
 
+output "rds_database_name" {
+  description = "Initial PostgreSQL database name."
+  value       = aws_db_instance.this.db_name
+}
+
 output "rds_master_secret_arn" {
   description = "AWS-managed RDS master password secret ARN."
   value       = aws_db_instance.this.master_user_secret[0].secret_arn
@@ -122,4 +127,19 @@ output "efs_security_group_id" {
 output "insighthub_secrets_role_arn" {
   description = "IRSA role ARN for API, worker, and DB bootstrap secret access."
   value       = aws_iam_role.insighthub_secrets.arn
+}
+
+output "deployment_runner_instance_id" {
+  description = "Private deployment runner EC2 instance ID."
+  value       = aws_instance.deploy_runner.id
+}
+
+output "deployment_runner_role_arn" {
+  description = "Deployment runner IAM role ARN."
+  value       = aws_iam_role.deploy_runner.arn
+}
+
+output "deployment_runner_security_group_id" {
+  description = "Deployment runner security group ID."
+  value       = aws_security_group.deploy_runner.id
 }

@@ -40,7 +40,7 @@ jobs:
 
       - name: Terraform init
         working-directory: infra
-        run: terraform init -backend=false -input=false
+        run: terraform init -backend=false -input=false -lockfile=readonly
 
       - name: Terraform validate
         working-directory: infra

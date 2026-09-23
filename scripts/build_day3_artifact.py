@@ -35,11 +35,12 @@ def deployment_files() -> list[Path]:
 
 def build_archive(output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_STORED) as archive:
         for path in deployment_files():
             relative = path.relative_to(ROOT).as_posix()
             info = zipfile.ZipInfo(relative, date_time=(2020, 1, 1, 0, 0, 0))
-            info.compress_type = zipfile.ZIP_DEFLATED
+            info.compress_type = zipfile.ZIP_STORED
+            info.create_system = 3
             info.external_attr = 0o100644 << 16
             archive.writestr(info, path.read_bytes())
 

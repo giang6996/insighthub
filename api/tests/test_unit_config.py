@@ -52,18 +52,20 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(settings.database_url, "postgresql://explicit.example/db")
 
     def test_structured_database_configuration_uses_native_conninfo_builder(self):
-        with configured(db_host="db.example", db_port=5432, db_name="insighthub",
-                         db_user="insighthub", db_password="p@ss word#with'quotes") as settings:
-            self.assertIn("host=db.example", settings.database_url)
-            self.assertIn("port=5432", settings.database_url)
-            self.assertIn("dbname=insighthub", settings.database_url)
-            self.assertIn("password=", settings.database_url)
-            self.assertNotIn("p@ss word#with'quotes", settings.database_url)
+        with patch.dict("os.environ", {}, clear=True):
+            with configured(db_host="db.example", db_port=5432, db_name="insighthub",
+                            db_user="insighthub", db_password="p@ss word#with'quotes") as settings:
+                self.assertIn("host=db.example", settings.database_url)
+                self.assertIn("port=5432", settings.database_url)
+                self.assertIn("dbname=insighthub", settings.database_url)
+                self.assertIn("password=", settings.database_url)
+                self.assertNotIn("p@ss word#with'quotes", settings.database_url)
 
     def test_structured_database_configuration_requires_all_fields(self):
-        with self.assertRaisesRegex(ValidationError, "required together"):
-            Settings(_env_file=None, rag_mode="fixture", llm_provider="fixture", embedding_provider="fixture",
-                     db_host="db.example", db_port=5432, db_name="insighthub", db_user="insighthub")
+        with patch.dict("os.environ", {}, clear=True):
+            with self.assertRaisesRegex(ValidationError, "required together"):
+                Settings(_env_file=None, rag_mode="fixture", llm_provider="fixture", embedding_provider="fixture",
+                         db_host="db.example", db_port=5432, db_name="insighthub", db_user="insighthub")
 
     def test_invalid_numeric_configuration(self):
         for key, value in (

@@ -1,7 +1,7 @@
 variable "eks_cluster_version" {
   description = "Kubernetes version for the EKS control plane."
   type        = string
-  default     = "1.30"
+  default     = "1.34"
 }
 
 variable "eks_node_instance_types" {
@@ -47,6 +47,11 @@ resource "aws_eks_cluster" "this" {
   name     = local.name_prefix
   role_arn = aws_iam_role.eks_cluster.arn
   version  = var.eks_cluster_version
+
+  access_config {
+    authentication_mode                         = "API_AND_CONFIG_MAP"
+    bootstrap_cluster_creator_admin_permissions = true
+  }
 
   enabled_cluster_log_types = [
     "api",

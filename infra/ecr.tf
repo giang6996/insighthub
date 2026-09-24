@@ -14,7 +14,7 @@ resource "aws_ecr_repository" "this" {
 
   encryption_configuration {
     encryption_type = "KMS"
-    kms_key         = data.aws_kms_alias.ecr.target_key_arn
+    kms_key         = aws_kms_key.data_services.arn
   }
 
   tags = {

@@ -1,7 +1,7 @@
 variable "rds_engine_version" {
   description = "PostgreSQL version supported by the selected RDS region and pgvector requirement."
   type        = string
-  default     = "16.4"
+  default     = "16.15"
 }
 
 variable "rds_instance_class" {

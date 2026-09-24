@@ -104,7 +104,7 @@ jobs:
           command_id="$(aws ssm send-command \
             --document-name AWS-RunShellScript \
             --targets Key=tag:DeploymentTarget,Values=insighthub-day3 \
-            --parameters "commands=[\"set -euo pipefail\",\"export AWS_REGION=$AWS_REGION\",\"tmp=\\$(mktemp -d /tmp/insighthub-cd.XXXXXX)\",\"git clone --quiet https://github.com/${GITHUB_REPOSITORY}.git \\$tmp/repo\",\"git -C \\$tmp/repo checkout --detach $DEPLOY_SHA\",\"test \\\"\\$(git -C \\$tmp/repo rev-parse HEAD)\\\" = $DEPLOY_SHA\",\"cd \\$tmp/repo && DEPLOY_SHA=$DEPLOY_SHA API_IMAGE=$API_IMAGE WORKER_IMAGE=$WORKER_IMAGE WEB_IMAGE=$WEB_IMAGE bash scripts/deploy_eks.sh\"]" \
+            --parameters "commands=[\"set -euo pipefail\",\"export AWS_REGION=$AWS_REGION\",\"tmp=\$(mktemp -d /tmp/insighthub-cd.XXXXXX)\",\"git clone --quiet https://github.com/${GITHUB_REPOSITORY}.git \$tmp/repo\",\"git -C \$tmp/repo checkout --detach $DEPLOY_SHA\",\"test \\\"\$(git -C \$tmp/repo rev-parse HEAD)\\\" = $DEPLOY_SHA\",\"cd \$tmp/repo && DEPLOY_SHA=$DEPLOY_SHA API_IMAGE=$API_IMAGE WORKER_IMAGE=$WORKER_IMAGE WEB_IMAGE=$WEB_IMAGE bash scripts/deploy_eks.sh\"]" \
             --timeout-seconds 900 \
             --query 'Command.CommandId' --output text)"
           echo "command_id=$command_id" >> "$GITHUB_OUTPUT"

@@ -24,7 +24,18 @@ kubectl rollout status deployment/aws-load-balancer-controller -n kube-system --
 kubectl get ingress web -n insighthub >/dev/null
 
 rendered_dir="$(mktemp -d)"
-trap 'rm -rf "$rendered_dir"' EXIT
+api_pf=""
+web_pf=""
+cleanup() {
+  if [[ -n "${web_pf:-}" ]]; then
+    kill "$web_pf" 2>/dev/null || true
+  fi
+  if [[ -n "${api_pf:-}" ]]; then
+    kill "$api_pf" 2>/dev/null || true
+  fi
+  rm -rf "$rendered_dir"
+}
+trap cleanup EXIT
 sed "s|REPLACE_WITH_IMMUTABLE_API_ECR_IMAGE|$API_IMAGE|" deploy/api-deployment.yaml > "$rendered_dir/api.yaml"
 sed "s|REPLACE_WITH_IMMUTABLE_WORKER_ECR_IMAGE|$WORKER_IMAGE|" deploy/worker-deployment.yaml > "$rendered_dir/worker.yaml"
 sed "s|REPLACE_WITH_IMMUTABLE_WEB_ECR_IMAGE|$WEB_IMAGE|" deploy/web-deployment.yaml > "$rendered_dir/web.yaml"
@@ -47,11 +58,11 @@ rollout_or_report() {
 rollout_or_report api "$rendered_dir/api.yaml"
 api_pf_log="$rendered_dir/api-port-forward.log"
 kubectl -n insighthub port-forward svc/api 18000:8000 >"$api_pf_log" 2>&1 & api_pf=$!
-trap 'kill "$api_pf" 2>/dev/null || true; rm -rf "$rendered_dir"' EXIT
 sleep 3
 healthz="$(curl -fsS http://127.0.0.1:18000/healthz)"
 readyz="$(curl -fsS http://127.0.0.1:18000/readyz)"
 kill "$api_pf" 2>/dev/null || true
+api_pf=""
 grep -q '"status":"ok"' <<<"$healthz"
 grep -q '"status":"ready"' <<<"$readyz"
 grep -q '"db":true' <<<"$readyz"
@@ -59,8 +70,19 @@ grep -q '"db":true' <<<"$readyz"
 rollout_or_report ingestion-worker "$rendered_dir/worker.yaml"
 rollout_or_report web "$rendered_dir/web.yaml"
 
-web_health="$(curl -fsS "http://$(kubectl get ingress web -n insighthub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')/api/health")"
-web_documents="$(curl -fsS "http://$(kubectl get ingress web -n insighthub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')/api/documents")"
+web_pf_log="$rendered_dir/web-port-forward.log"
+kubectl -n insighthub port-forward svc/web 18001:3000 >"$web_pf_log" 2>&1 & web_pf=$!
+sleep 3
+web_root="$(curl -fsS http://127.0.0.1:18001/)"
+web_health="$(curl -fsS http://127.0.0.1:18001/api/health)"
+web_documents="$(curl -fsS http://127.0.0.1:18001/api/documents)"
+kill "$web_pf" 2>/dev/null || true
+web_pf=""
+[[ -n "$web_root" ]]
 grep -q '"status":"ok"' <<<"$web_health"
-curl -fsS "http://$(kubectl get ingress web -n insighthub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')/" >/dev/null
-printf 'DEPLOY_SHA=%s\nHEALTHZ=%s\nREADYZ=%s\nWEB_HEALTH=%s\nWEB_DOCUMENTS=%s\n' "$DEPLOY_SHA" "$healthz" "$readyz" "$web_health" "$web_documents"
+jq -e . <<<"$web_documents" >/dev/null
+
+ingress_host="$(kubectl get ingress web -n insighthub -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')"
+[[ "$ingress_host" =~ ^[a-z0-9][a-z0-9.-]*\.elb\.amazonaws\.com$ ]]
+printf 'DEPLOY_SHA=%s\nHEALTHZ=%s\nREADYZ=%s\nWEB_INTERNAL_HEALTH=%s\nWEB_INTERNAL_DOCUMENTS=%s\nINGRESS_HOST=%s\n' \
+  "$DEPLOY_SHA" "$healthz" "$readyz" "$web_health" "$web_documents" "$ingress_host"

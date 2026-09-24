@@ -117,6 +117,39 @@ jobs:
           done
           aws ssm get-command-invocation --region "$AWS_REGION" --command-id "$command_id" --instance-id "$RUNNER_INSTANCE_ID" --output json | tee /tmp/ssm-result.json
           test "$(jq -r .Status /tmp/ssm-result.json)" = Success
+          stdout="$(jq -r .StandardOutputContent /tmp/ssm-result.json)"
+          ingress_host="$(grep -E '^INGRESS_HOST=[a-z0-9][a-z0-9.-]*\.elb\.amazonaws\.com$' <<<"$stdout" | sed 's/^INGRESS_HOST=//' | sort -u)"
+          test "$(wc -l <<<"$ingress_host")" -eq 1
+          [[ "$ingress_host" =~ ^[a-z0-9][a-z0-9.-]*\.elb\.amazonaws\.com$ ]]
+          echo "INGRESS_HOST=$ingress_host" >> "$GITHUB_ENV"
+          echo "ingress_host=$ingress_host" >> "$GITHUB_OUTPUT"
+
+      - name: Public ALB validation
+        if: env.OPERATION == 'deploy'
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${INGRESS_HOST:?INGRESS_HOST is required}"
+          base="http://$INGRESS_HOST"
+          request_with_retry() {
+            local url="$1"
+            local body=""
+            for _ in $(seq 1 4); do
+              if body="$(curl --fail --silent --show-error --connect-timeout 5 --max-time 10 "$url")"; then
+                printf '%s' "$body"
+                return 0
+              fi
+              sleep 3
+            done
+            return 1
+          }
+          root_body="$(request_with_retry "$base/")"
+          health_body="$(request_with_retry "$base/api/health")"
+          documents_body="$(request_with_retry "$base/api/documents")"
+          test -n "$root_body"
+          grep -q '"status":"ok"' <<<"$health_body"
+          jq -e . <<<"$documents_body" >/dev/null
+          printf 'PUBLIC_ROOT=200\nPUBLIC_HEALTH=%s\nPUBLIC_DOCUMENTS=%s\n' "$health_body" "$documents_body"
 
       - name: GitHub OIDC and private runner preflight
         if: env.OPERATION == 'preflight'
@@ -157,5 +190,8 @@ jobs:
             echo "- API image: ${API_IMAGE:-unresolved}"
             echo "- Worker image: ${WORKER_IMAGE:-unresolved}"
             echo "- Web image: ${WEB_IMAGE:-unresolved}"
+            echo "- Ingress host: ${INGRESS_HOST:-unresolved}"
+            echo "- Private validation: API health/readiness, worker rollout, internal web checks"
+            echo "- Public validation: GitHub-hosted runner ALB checks"
             echo "- SSM command: ${COMMAND_ID:-see deploy step}"
           } >> "$GITHUB_STEP_SUMMARY"

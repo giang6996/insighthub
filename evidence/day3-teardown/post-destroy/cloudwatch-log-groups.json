@@ -1,0 +1,15 @@
+﻿{
+    "logGroups": [
+        {
+            "logGroupName": "/aws/eks/insighthub-day3/cluster",
+            "creationTime": 1790178951221,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:ap-southeast-1:596261186564:log-group:/aws/eks/insighthub-day3/cluster:*",
+            "storedBytes": 58395868,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:ap-southeast-1:596261186564:log-group:/aws/eks/insighthub-day3/cluster",
+            "deletionProtectionEnabled": false,
+            "bearerTokenAuthenticationEnabled": false
+        }
+    ]
+}

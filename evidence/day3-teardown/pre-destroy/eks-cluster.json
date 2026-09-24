@@ -1,0 +1,79 @@
+﻿{
+    "cluster": {
+        "name": "insighthub-day3",
+        "arn": "arn:aws:eks:ap-southeast-1:596261186564:cluster/insighthub-day3",
+        "createdAt": 1790178544.114,
+        "version": "1.34",
+        "endpoint": "https://F628329808E8AFEA8C9DBD6033E23BA7.gr7.ap-southeast-1.eks.amazonaws.com",
+        "roleArn": "arn:aws:iam::596261186564:role/insighthub-day3-eks-cluster",
+        "resourcesVpcConfig": {
+            "subnetIds": [
+                "subnet-016e01bb9c0389a88",
+                "subnet-030c916568d0fb5a2"
+            ],
+            "securityGroupIds": [],
+            "clusterSecurityGroupId": "sg-0c9e05c0abb4cbe48",
+            "vpcId": "vpc-0d234b1f2284fe153",
+            "endpointPublicAccess": false,
+            "endpointPrivateAccess": true,
+            "publicAccessCidrs": []
+        },
+        "kubernetesNetworkConfig": {
+            "serviceIpv4Cidr": "172.20.0.0/16",
+            "ipFamily": "ipv4",
+            "elasticLoadBalancing": {
+                "enabled": false
+            }
+        },
+        "logging": {
+            "clusterLogging": [
+                {
+                    "types": [
+                        "api",
+                        "audit",
+                        "authenticator",
+                        "controllerManager",
+                        "scheduler"
+                    ],
+                    "enabled": true
+                }
+            ]
+        },
+        "identity": {
+            "oidc": {
+                "issuer": "https://oidc.eks.ap-southeast-1.amazonaws.com/id/F628329808E8AFEA8C9DBD6033E23BA7"
+            }
+        },
+        "status": "ACTIVE",
+        "certificateAuthority": {
+            "data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURNakNDQWhxZ0F3SUJBZ0lSQU85c0lGd3JnZjhuR09ISE1tRnREWU13RFFZSktvWklodmNOQVFFTEJRQXcKSnpFUU1BNEdBMVVFQ2hNSFFWZFRJRVZMVXpFVE1CRUdBMVVFQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBNQpNak14TlRRNU1USmFGdzB6TVRBNU1qSXhOVFE1TVRKYU1DY3hFREFPQmdOVkJBb1RCMEZYVXlCRlMxTXhFekFSCkJnTlZCQU1UQ210MVltVnlibVYwWlhNd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUIKQVFDMmdIaFpkcEM3UjErUEx3NUZxUDdpZ2FKd0FNN1NxT1BaS3dqcFIyZDkzR0hLL3NlZXNHc2NtalJzMFlvLwp5N3QwM0lZK3M1b0F2WEQ2Z0w5bDZ4Qk9OTGoybGVLQU1xMHRESGlnN3M0VldHZzRTN29qbGRvQXBlVVY1TjFQClkzeVVKZXUvQkV6MG02bTFVRjk2ejAzSzI4cytWYWVqQjZZMXZRSitLMVlqbElndFQzRFk0a3BUME93ZmdjS3gKSFJ3b1pTdTlTV3VYWis3ZzVzVUdBMGliTDBJcWxWSFREV0tCeFE2NXdlT3Y1Ull6NEFCTmN3QjVienUzVno2ZApFRkVab2ZzbG1LMHUwVzI4YWRFQWtiSnFVWHRQNTFhYnNXWFFaSXFuYWtzeTRabE9xdHEvYVI5MmQwVER4NkUyCmh6UmlINkZycUsyYlR5dG8rMHJFWDJYckFnTUJBQUdqV1RCWE1BNEdBMVVkRHdFQi93UUVBd0lDcERBUEJnTlYKSFJNQkFmOEVCVEFEQVFIL01CMEdBMVVkRGdRV0JCUU1qUU53c0NKOGt6TS9BTFBSMDFVUHA0bktFVEFWQmdOVgpIUkVFRGpBTWdncHJkV0psY201bGRHVnpNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUF1Q0lxb2VXdCszdnF5ClhtU3NuZnhKa2ppZVhtK1JUbTlKT2FtRURaSUlWVHFkTjhLcVVSeWFLWjVEb2J4cmxHNUVHVzd5U0FxOWZycVEKUytDSzd2Skw1aVpBZkEwcFdVUWhTRFpBdGNZUWNPcGIybnVKR0tTMDBSakM1cHFzZ3ArL3BXZ0ZlZGZEeERIZApNN1luYzRmaGJMWmJka0w2aEtFVFhaZTExSDg0TER6cTFraWw2a3c3aEFUQUtjSkpkeUQ1K2RZTGxHcTQraUdCCjg1R1FXMDBPd1J1cFhwTEVkNm1pMDVYaktNb3RxV0hha0VXRkZlSnQyakd2T3R6cHRSczF5eVpPV0RLUHhZNGgKK3IrOW1Zd0oxSkhRTTdhRkI5eDNrcCtZUTVBdTIyMWpvMjNHM1ovU0hvdm1uQTZTTnVaU3pnWUNSVlBVcHpyKwpBSCtJa2tsWgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+        },
+        "platformVersion": "eks.34",
+        "tags": {
+            "Project": "insighthub",
+            "Environment": "day3",
+            "ManagedBy": "terraform",
+            "Name": "insighthub-day3"
+        },
+        "encryptionConfig": [
+            {
+                "resources": [
+                    "secrets"
+                ],
+                "provider": {
+                    "keyArn": "arn:aws:kms:ap-southeast-1:596261186564:key/f42cf14a-039a-4f1e-ac94-c2ae52f6f4c8"
+                }
+            }
+        ],
+        "accessConfig": {
+            "authenticationMode": "API_AND_CONFIG_MAP"
+        },
+        "upgradePolicy": {
+            "supportType": "EXTENDED"
+        },
+        "deletionProtection": false,
+        "controlPlaneScalingConfig": {
+            "tier": "standard"
+        }
+    }
+}

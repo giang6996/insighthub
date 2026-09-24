@@ -1,0 +1,186 @@
+﻿{
+    "aws_load_balancer_controller_role_arn":  {
+                                                  "sensitive":  false,
+                                                  "type":  "string",
+                                                  "value":  "arn:aws:iam::596261186564:role/insighthub-day3-aws-load-balancer-controller"
+                                              },
+    "deployment_runner_instance_id":  {
+                                          "sensitive":  false,
+                                          "type":  "string",
+                                          "value":  "i-0f0a4752d604254ed"
+                                      },
+    "deployment_runner_role_arn":  {
+                                       "sensitive":  false,
+                                       "type":  "string",
+                                       "value":  "arn:aws:iam::596261186564:role/insighthub-day3-deploy-runner"
+                                   },
+    "deployment_runner_security_group_id":  {
+                                                "sensitive":  false,
+                                                "type":  "string",
+                                                "value":  "sg-0740cb83447f304a5"
+                                            },
+    "ecr_repository_urls":  {
+                                "sensitive":  false,
+                                "type":  [
+                                             "object",
+                                             {
+                                                 "api":  "string",
+                                                 "ingestion-worker":  "string",
+                                                 "web":  "string"
+                                             }
+                                         ],
+                                "value":  {
+                                              "api":  "596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api",
+                                              "ingestion-worker":  "596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker",
+                                              "web":  "596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web"
+                                          }
+                            },
+    "efs_access_point_id":  {
+                                "sensitive":  false,
+                                "type":  "string",
+                                "value":  "fsap-0b97f667d4d02d707"
+                            },
+    "efs_file_system_id":  {
+                               "sensitive":  false,
+                               "type":  "string",
+                               "value":  "fs-0bcc1844b7a8a9e05"
+                           },
+    "efs_security_group_id":  {
+                                  "sensitive":  false,
+                                  "type":  "string",
+                                  "value":  "sg-02a528be64151b1d9"
+                              },
+    "eks_cluster_endpoint":  {
+                                 "sensitive":  false,
+                                 "type":  "string",
+                                 "value":  "https://F628329808E8AFEA8C9DBD6033E23BA7.gr7.ap-southeast-1.eks.amazonaws.com"
+                             },
+    "eks_cluster_name":  {
+                             "sensitive":  false,
+                             "type":  "string",
+                             "value":  "insighthub-day3"
+                         },
+    "eks_cluster_role_arn":  {
+                                 "sensitive":  false,
+                                 "type":  "string",
+                                 "value":  "arn:aws:iam::596261186564:role/insighthub-day3-eks-cluster"
+                             },
+    "eks_cluster_security_group_id":  {
+                                          "sensitive":  false,
+                                          "type":  "string",
+                                          "value":  "sg-0c9e05c0abb4cbe48"
+                                      },
+    "eks_node_group_name":  {
+                                "sensitive":  false,
+                                "type":  "string",
+                                "value":  "insighthub-day3-nodes"
+                            },
+    "eks_node_role_arn":  {
+                              "sensitive":  false,
+                              "type":  "string",
+                              "value":  "arn:aws:iam::596261186564:role/insighthub-day3-eks-nodes"
+                          },
+    "github_deploy_role_arn":  {
+                                   "sensitive":  false,
+                                   "type":  "string",
+                                   "value":  "arn:aws:iam::596261186564:role/insighthub-day3-github-deploy"
+                               },
+    "github_iac_role_arn":  {
+                                "sensitive":  false,
+                                "type":  "string",
+                                "value":  "arn:aws:iam::596261186564:role/insighthub-day3-github-iac"
+                            },
+    "insighthub_secrets_role_arn":  {
+                                        "sensitive":  false,
+                                        "type":  "string",
+                                        "value":  "[REDACTED]"
+                                    },
+    "nat_gateway_id":  {
+                           "sensitive":  false,
+                           "type":  "string",
+                           "value":  "nat-06ebb4245e35006b3"
+                       },
+    "private_route_table_id":  {
+                                   "sensitive":  false,
+                                   "type":  "string",
+                                   "value":  "rtb-04edf555e88796d15"
+                               },
+    "private_subnet_ids":  {
+                               "sensitive":  false,
+                               "type":  [
+                                            "tuple",
+                                            [
+                                                "string",
+                                                "string"
+                                            ]
+                                        ],
+                               "value":  [
+                                             "subnet-030c916568d0fb5a2",
+                                             "subnet-016e01bb9c0389a88"
+                                         ]
+                           },
+    "public_route_table_id":  {
+                                  "sensitive":  false,
+                                  "type":  "string",
+                                  "value":  "rtb-050a68ffd42f312d3"
+                              },
+    "public_subnet_ids":  {
+                              "sensitive":  false,
+                              "type":  [
+                                           "tuple",
+                                           [
+                                               "string",
+                                               "string"
+                                           ]
+                                       ],
+                              "value":  [
+                                            "subnet-0acd124e6f812d6bf",
+                                            "subnet-0d8119e01a39fa94d"
+                                        ]
+                          },
+    "rds_database_name":  {
+                              "sensitive":  false,
+                              "type":  "string",
+                              "value":  "insighthub"
+                          },
+    "rds_endpoint":  {
+                         "sensitive":  false,
+                         "type":  "string",
+                         "value":  "insighthub-day3-postgres.ct2e4yysm4vd.ap-southeast-1.rds.amazonaws.com"
+                     },
+    "rds_master_secret_arn":  {
+                                  "sensitive":  true,
+                                  "type":  "string",
+                                  "value":  "[REDACTED]"
+                              },
+    "rds_port":  {
+                     "sensitive":  false,
+                     "type":  "number",
+                     "value":  5432
+                 },
+    "rds_security_group_id":  {
+                                  "sensitive":  false,
+                                  "type":  "string",
+                                  "value":  "sg-0c74f675ce82451f1"
+                              },
+    "redis_port":  {
+                       "sensitive":  false,
+                       "type":  "number",
+                       "value":  6379
+                   },
+    "redis_primary_endpoint":  {
+                                   "sensitive":  false,
+                                   "type":  "string",
+                                   "value":  "master.insighthub-day3.2v2vky.apse1.cache.amazonaws.com"
+                               },
+    "redis_security_group_id":  {
+                                    "sensitive":  false,
+                                    "type":  "string",
+                                    "value":  "sg-0442ad7fcc108ab62"
+                                },
+    "vpc_id":  {
+                   "sensitive":  false,
+                   "type":  "string",
+                   "value":  "vpc-0d234b1f2284fe153"
+               }
+}

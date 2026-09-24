@@ -1,0 +1,413 @@
+﻿{
+    "schema":  "insighthub-day3-teardown-v1",
+    "generated_at":  "2026-09-24T13:12:16.8337821+07:00",
+    "account":  "596261186564",
+    "region":  "ap-southeast-1",
+    "profile":  "personal",
+    "permanent_evidence_commit":  "0fd92791eed38e6cd29e75190426355720c5cee9",
+    "final_implementation_commit":  "120843f337943d6fd8f55a7c3115d76b1bb3d129",
+    "terraform_plan":  "0 added, 0 changed, 71 destroyed",
+    "terraform_apply":  "0 added, 0 changed, 71 destroyed",
+    "final_state_resources":  0,
+    "backend_bucket":  "insighthub-tfstate-596261186564-ap-southeast-1",
+    "backend_prefix":  "insighthub/day3/",
+    "kms_pending_deletion":  [
+                                 {
+                                     "key_id":  "602e16f8-3482-4834-a02e-f374ffeaca1a",
+                                     "deletion_date_utc":  "2026-10-01T05:56:04Z"
+                                 },
+                                 {
+                                     "key_id":  "f42cf14a-039a-4f1e-ac94-c2ae52f6f4c8",
+                                     "deletion_date_utc":  "2026-10-01T06:03:00Z"
+                                 }
+                             ],
+    "secret_scan":  "no actual secret material retained",
+    "self_entry":  "MANIFEST.json is intentionally excluded from its own file list",
+    "files":  [
+                  {
+                      "path":  "post-destroy/alb.json",
+                      "bytes":  444,
+                      "sha256":  "61f8f20654b0cfcda993ad5fb48a1e852aac04de87c8c1bb7b99e54113e0bc83"
+                  },
+                  {
+                      "path":  "post-destroy/alb-target-group.json",
+                      "bytes":  441,
+                      "sha256":  "d9054136a8ab16bcbad17f31760f449ab63c7936e4ec1f8356cee1424a542c54"
+                  },
+                  {
+                      "path":  "post-destroy/asg.json",
+                      "bytes":  7,
+                      "sha256":  "50056c08ce479cc2f54c4d6595a4264bdf32bf84f2995d59ff3bd513897ab414"
+                  },
+                  {
+                      "path":  "post-destroy/backend-head.json",
+                      "bytes":  160,
+                      "sha256":  "e7bb931f204e48353c7d98417b0a630330ea8f6f054e86728ba8fa15b62f3a6a"
+                  },
+                  {
+                      "path":  "post-destroy/backend-state-versions.json",
+                      "bytes":  26763,
+                      "sha256":  "c3288e0e88a8f0f2d5c8d45e38701754df9da6780f73683a6f7a591dad958cff"
+                  },
+                  {
+                      "path":  "post-destroy/backend-versioning.json",
+                      "bytes":  34,
+                      "sha256":  "fa1a99aa8c542f35c5c1b41bcbdb87595b02d61eda2d6c36b18415d415b0b8fc"
+                  },
+                  {
+                      "path":  "post-destroy/cloudwatch-log-groups.json",
+                      "bytes":  612,
+                      "sha256":  "e5836955bd1d91bf9572c8b281ee36fe6287d0878c5337fbc47382d8fbbf1dfc"
+                  },
+                  {
+                      "path":  "post-destroy/ebs-snapshots.json",
+                      "bytes":  30,
+                      "sha256":  "a25b9397d5efe69b12ea317b200dfd1274094ff687c1d7737783e7e6907c61fb"
+                  },
+                  {
+                      "path":  "post-destroy/ebs-volumes.json",
+                      "bytes":  28,
+                      "sha256":  "90066d7da3db76018781ae91aeb1a0e8ca60cd6d88e930f8b7bc9b7457ce5b7b"
+                  },
+                  {
+                      "path":  "post-destroy/ecr-insighthub-day3-api.json",
+                      "bytes":  514,
+                      "sha256":  "59cfb2826bd3c6fe9d10d3303816edf9dd24807f51eb4968c8914006fddcf2d8"
+                  },
+                  {
+                      "path":  "post-destroy/ecr-insighthub-day3-ingestion-worker.json",
+                      "bytes":  527,
+                      "sha256":  "9c0ecaeaaf25b912db7889a9fba9201fff6b569c79c6b57352ca436683e52187"
+                  },
+                  {
+                      "path":  "post-destroy/ecr-insighthub-day3-web.json",
+                      "bytes":  514,
+                      "sha256":  "d445e7c9c9a0dfba78875c485e58caa94ad71f9afcb554f69737db6851e019e8"
+                  },
+                  {
+                      "path":  "post-destroy/efs.json",
+                      "bytes":  454,
+                      "sha256":  "32c7657c52db721cba6faf084c1c3c4acbd6d0922e1d04caada6cae0c8f3b138"
+                  },
+                  {
+                      "path":  "post-destroy/efs-mount-targets.json",
+                      "bytes":  455,
+                      "sha256":  "e318f5cb7d940c0ed894edc6e0c15d39b3e6cb2e2d446ed6c81577e3a2e83709"
+                  },
+                  {
+                      "path":  "post-destroy/eips.json",
+                      "bytes":  30,
+                      "sha256":  "0a70554f19b2e81218bd2a344e10a8247ad13c0b5f9f493f36c770e76ba68411"
+                  },
+                  {
+                      "path":  "post-destroy/eks-cluster.json",
+                      "bytes":  450,
+                      "sha256":  "f01e290ad637e71e8ddbd5ae03fb3ebb45f1109b7be793790acf942f41fe7e50"
+                  },
+                  {
+                      "path":  "post-destroy/eks-nodegroup.json",
+                      "bytes":  447,
+                      "sha256":  "e45a80a4be424693d5ce8e9701eae75d88ece366254337496a7fac5729f7bba9"
+                  },
+                  {
+                      "path":  "post-destroy/iam-instance-profile.json",
+                      "bytes":  460,
+                      "sha256":  "28ebc671fef9d2a1c0225ff7206beea8407ab5950cac23ec48a29225870b5b7e"
+                  },
+                  {
+                      "path":  "post-destroy/iam-roles.json",
+                      "bytes":  7,
+                      "sha256":  "50056c08ce479cc2f54c4d6595a4264bdf32bf84f2995d59ff3bd513897ab414"
+                  },
+                  {
+                      "path":  "post-destroy/kms-aliases.json",
+                      "bytes":  7,
+                      "sha256":  "50056c08ce479cc2f54c4d6595a4264bdf32bf84f2995d59ff3bd513897ab414"
+                  },
+                  {
+                      "path":  "post-destroy/kms-data-services.json",
+                      "bytes":  875,
+                      "sha256":  "f630d1d26b6008c8b2e48bbc3e8106c9ec069bc80265d0637f1f234e633bf9c3"
+                  },
+                  {
+                      "path":  "post-destroy/kms-eks-secrets.json",
+                      "bytes":  879,
+                      "sha256":  "de3bef98f022075569ba2dd0862664bb8efbaca4aa9405e433bcdba69bf7b1a2"
+                  },
+                  {
+                      "path":  "post-destroy/launch-templates.json",
+                      "bytes":  36,
+                      "sha256":  "a55aa6814e292ad8596137ce430f456150e9e19d73b592c33a480d52399406fd"
+                  },
+                  {
+                      "path":  "post-destroy/manual-cleanup.txt",
+                      "bytes":  88,
+                      "sha256":  "881024f04fcb8dca56c47ba36c4c2c3bd3a0ca97dd0e2547816759747821e1ac"
+                  },
+                  {
+                      "path":  "post-destroy/nat-gateways.json",
+                      "bytes":  1482,
+                      "sha256":  "c190d165c2927ba38c250ce27445c596a3d8b27307e14e86162b1ae185fa1c70"
+                  },
+                  {
+                      "path":  "post-destroy/network-interfaces.json",
+                      "bytes":  38,
+                      "sha256":  "e808c39a9779f33223bcac6eb31956747c3d8ae27604f7119f12b386bc559a93"
+                  },
+                  {
+                      "path":  "post-destroy/oidc-providers.json",
+                      "bytes":  46,
+                      "sha256":  "732e14e67f3148a0be048d66a708552430215e9ac5292ab87370dad2b4599987"
+                  },
+                  {
+                      "path":  "post-destroy/rds.json",
+                      "bytes":  450,
+                      "sha256":  "c50da8b3ae8e81e7fec84fe673b26c2e51ce668aebc8b2356386a7aa1e09918d"
+                  },
+                  {
+                      "path":  "post-destroy/rds-automated-backups.json",
+                      "bytes":  510,
+                      "sha256":  "ebdc55dfb2fff6c38a0fd6f17296a7a0085971fba8ec419ee8fe426a2116e3db"
+                  },
+                  {
+                      "path":  "post-destroy/rds-snapshots.json",
+                      "bytes":  32,
+                      "sha256":  "714d2b72e0d77454e2467ffaa76cc1a86bcc7550bab08f1c0fba615bcf01922a"
+                  },
+                  {
+                      "path":  "post-destroy/redis.json",
+                      "bytes":  464,
+                      "sha256":  "ee5f5e27fe2277014d056d9a37e89f9262e74fd205f6a866fd9003802eb81621"
+                  },
+                  {
+                      "path":  "post-destroy/redis-snapshots.json",
+                      "bytes":  30,
+                      "sha256":  "a25b9397d5efe69b12ea317b200dfd1274094ff687c1d7737783e7e6907c61fb"
+                  },
+                  {
+                      "path":  "post-destroy/route-tables.json",
+                      "bytes":  32,
+                      "sha256":  "4e0886ddce43139b56e20ba764afc32111d61a14ee962356ec4b4db1c576ed88"
+                  },
+                  {
+                      "path":  "post-destroy/runner.json",
+                      "bytes":  4518,
+                      "sha256":  "26de03f82caa7650afe7ac92b23b024300f57abbff0d1a10f62e6c7d30420189"
+                  },
+                  {
+                      "path":  "post-destroy/secret-scan.txt",
+                      "bytes":  328,
+                      "sha256":  "d4877ad84376ec58ebb1c3fc610ad35e1d4873eea7f5439de4909635deb761e6"
+                  },
+                  {
+                      "path":  "post-destroy/security-groups.json",
+                      "bytes":  35,
+                      "sha256":  "a31673a8d1f4defbb9956def89a193f6f48835f6f38bb57647344e2922d23cbf"
+                  },
+                  {
+                      "path":  "post-destroy/subnets.json",
+                      "bytes":  28,
+                      "sha256":  "70e2b011f23fab4d576a20dae16c4c9529c22622731b64d0cc42145f7723ffd1"
+                  },
+                  {
+                      "path":  "post-destroy/terraform-state-list.txt",
+                      "bytes":  0,
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "path":  "post-destroy/vpc.json",
+                      "bytes":  449,
+                      "sha256":  "c6694526a38ef3f1be6a8ab051bf773d3a0b2d0e88328058adb6db615a5bb650"
+                  },
+                  {
+                      "path":  "post-destroy/vpc-endpoints.json",
+                      "bytes":  33,
+                      "sha256":  "ef6e5d7fbd849bc009127b56dd1ee6bbc61de87feef3905b0b3f1249d49246c8"
+                  },
+                  {
+                      "path":  "pre-destroy/alb.json",
+                      "bytes":  1361,
+                      "sha256":  "9405fc082684bcab78583540780184480f18b006d5fb61393698724931df0fe1"
+                  },
+                  {
+                      "path":  "pre-destroy/alb-delete-poll.txt",
+                      "bytes":  203,
+                      "sha256":  "cc0c52a5827580dd396b121ffc623c09ea14335a06b0969d3b4ef3b381f3bd94"
+                  },
+                  {
+                      "path":  "pre-destroy/alb-listeners.json",
+                      "bytes":  1259,
+                      "sha256":  "ce685922bd3b44d766d06043bfc6852154a4aeaf818d828d0dc3f2cdd9958cab"
+                  },
+                  {
+                      "path":  "pre-destroy/alb-rules-80.json",
+                      "bytes":  2219,
+                      "sha256":  "c8d58170606b020508222e2bc9823c3f67d87208c7e3c836001c146965c5fd71"
+                  },
+                  {
+                      "path":  "pre-destroy/backend-state-objects.json",
+                      "bytes":  487,
+                      "sha256":  "6772812304d15ac06b6d8f07703672dcac772d99cc5acabe9e24d7a14f5d57c8"
+                  },
+                  {
+                      "path":  "pre-destroy/deploy-runner.json",
+                      "bytes":  7827,
+                      "sha256":  "1dd4d2a5ebeeec3e07dfb48c8c1d30c9e27f2b7e0776c4f8aa722b854dfd4ba9"
+                  },
+                  {
+                      "path":  "pre-destroy/ecr-cleanup.txt",
+                      "bytes":  9446,
+                      "sha256":  "cfe028981b09f5fb1da531bf5ac14c8bc26527f5cbb23a24739af21ee9cbddb8"
+                  },
+                  {
+                      "path":  "pre-destroy/ecr-insighthub-day3-api.json",
+                      "bytes":  761,
+                      "sha256":  "ad33a3c2320c88fafcb1aff0d53631bf1d90a8fe07d66f3036eecfe9894fd5f6"
+                  },
+                  {
+                      "path":  "pre-destroy/ecr-insighthub-day3-ingestion-worker.json",
+                      "bytes":  800,
+                      "sha256":  "230fdf7159936159c0139df806174c55688f392494759e74424912848fb538ea"
+                  },
+                  {
+                      "path":  "pre-destroy/ecr-insighthub-day3-web.json",
+                      "bytes":  761,
+                      "sha256":  "ea17ba85642568773b4dbdc993756965b0eb42029f55c6c4aace3b4f00dc1097"
+                  },
+                  {
+                      "path":  "pre-destroy/efs.json",
+                      "bytes":  1621,
+                      "sha256":  "8b246d7736a775650ee0aee1e117a65f4efed094cf14852bd44811fafb23360a"
+                  },
+                  {
+                      "path":  "pre-destroy/efs-access-points.json",
+                      "bytes":  1413,
+                      "sha256":  "19e687e91f0ee664c7ce252b3cdda52c79eae4e0bf5f875648b0aa096bd97c8a"
+                  },
+                  {
+                      "path":  "pre-destroy/efs-mount-targets.json",
+                      "bytes":  1079,
+                      "sha256":  "24d87517c87b3c3433f041a88edf0e60bd60341ff9f85263cd3f0b7f4005c716"
+                  },
+                  {
+                      "path":  "pre-destroy/eips.json",
+                      "bytes":  2056,
+                      "sha256":  "9c5aa279a7d57313b3cb6d749ae26446480b65ebf9f990dcd4a085c35fcb16ba"
+                  },
+                  {
+                      "path":  "pre-destroy/eks-cluster.json",
+                      "bytes":  4157,
+                      "sha256":  "393e2aaee983e8e058e1f518873b73513f1ad8adc1cdf1faf9deb616af595d3e"
+                  },
+                  {
+                      "path":  "pre-destroy/eks-nodegroup.json",
+                      "bytes":  1518,
+                      "sha256":  "982f497ce7767b2791b8bb21230c56c1786a256927c5ee615b5a57f399859d49"
+                  },
+                  {
+                      "path":  "pre-destroy/k8s-ingress-delete.json",
+                      "bytes":  861,
+                      "sha256":  "535ebd0c92bee6c7cb3b95fe38b33958dec872cf168dd90bd991ca82144d0692"
+                  },
+                  {
+                      "path":  "pre-destroy/k8s-ingress-get.json",
+                      "bytes":  2008,
+                      "sha256":  "01044961346e386e94a5ff0298180d68d205bf4b23bc0c1decb6bf52f6d77edd"
+                  },
+                  {
+                      "path":  "pre-destroy/k8s-namespace-check.json",
+                      "bytes":  1768,
+                      "sha256":  "91b7ff237c4fb6f93ad7fe95deac4c7db95ee07a985c687c87d54106c75d77ea"
+                  },
+                  {
+                      "path":  "pre-destroy/k8s-namespace-delete.json",
+                      "bytes":  1680,
+                      "sha256":  "16782b3b0c6def5a9e9be33afb249052d636b8b60a56124d95a19906a42e86b8"
+                  },
+                  {
+                      "path":  "pre-destroy/nat-gateways.json",
+                      "bytes":  1429,
+                      "sha256":  "e7385c4a28f534d40960072c77fb80722b60abb5fc949bd838843bb922ae190f"
+                  },
+                  {
+                      "path":  "pre-destroy/network-interfaces.json",
+                      "bytes":  40088,
+                      "sha256":  "26139cecb9f313f1277849c8aa60dace4d1dc05ac75aab6ee4cbe51e58d3db6f"
+                  },
+                  {
+                      "path":  "pre-destroy/rds.json",
+                      "bytes":  5333,
+                      "sha256":  "7f3f46a2220b1bbf2b32f9c2502a6f25ada048cdaa6e03ace558dd1b73bb03c7"
+                  },
+                  {
+                      "path":  "pre-destroy/redis.json",
+                      "bytes":  2593,
+                      "sha256":  "48c6ef89b4f9af0aaad2f31eabc634b30772a20e8a164d89c9f9acd3e77e735a"
+                  },
+                  {
+                      "path":  "pre-destroy/route-tables.json",
+                      "bytes":  5051,
+                      "sha256":  "7f5b16cd965dbc4e26ce9d14ddc6202e5a75150bd2898a30262f2c297751fff2"
+                  },
+                  {
+                      "path":  "pre-destroy/security-groups.json",
+                      "bytes":  13938,
+                      "sha256":  "413b5581ef89cde864c4771713990ebe66b47816f911f7c455d6aaecc98481a5"
+                  },
+                  {
+                      "path":  "pre-destroy/sts-identity.json",
+                      "bytes":  133,
+                      "sha256":  "80468bb21b137c63c8b7dfaeecec1e8e33f3bfef5615a140c551c4cd3bb3cffa"
+                  },
+                  {
+                      "path":  "pre-destroy/subnets.json",
+                      "bytes":  7204,
+                      "sha256":  "44c3f3882f0cba7829d4f5d2471a0d0fb56902fe4027bedb15ddc925fd48c44c"
+                  },
+                  {
+                      "path":  "pre-destroy/terraform-outputs.json",
+                      "bytes":  9566,
+                      "sha256":  "f7072ec0cdf07330e3a9c98873c9d914e69dc756551aa735f717b7d121597beb"
+                  },
+                  {
+                      "path":  "pre-destroy/terraform-state-list.txt",
+                      "bytes":  5090,
+                      "sha256":  "cbc9a9a9b41662825839732fc152d53ea426b8f0c8f2a7e6179dda61dd78b8c3"
+                  },
+                  {
+                      "path":  "pre-destroy/vpc.json",
+                      "bytes":  1311,
+                      "sha256":  "c22d1a7e1ab2e6b72e568ae9a7e7f7f30ff8950d5e6ff5af33b712f995f0e07d"
+                  },
+                  {
+                      "path":  "README.md",
+                      "bytes":  2540,
+                      "sha256":  "6db08eb4e22439a34e1e9a47808da3750091b4ddf887aa0a335739d3371f8340"
+                  },
+                  {
+                      "path":  "terraform/backend-init.log",
+                      "bytes":  2090,
+                      "sha256":  "1063ff1eabfb4c0e9b96519bc511bff2584f1c993a680c4b6b6a996b84777250"
+                  },
+                  {
+                      "path":  "terraform/destroy-apply.log",
+                      "bytes":  52342,
+                      "sha256":  "c9bcf82cc808dc750ea27790a8f02d793e6ec686cdb327fe3d8c261c606af0b9"
+                  },
+                  {
+                      "path":  "terraform/destroy-plan.json",
+                      "bytes":  242412,
+                      "sha256":  "e34a3bfc47efc04b837480bfe3a15c47bf3abc623acb38d31c3d0dade2d25553"
+                  },
+                  {
+                      "path":  "terraform/destroy-plan.txt",
+                      "bytes":  358396,
+                      "sha256":  "7533fd11669254a9f297bdb343d0e442272c4c7c198ad7b6db2fe143dd7cefdd"
+                  },
+                  {
+                      "path":  "terraform/destroy-plan-show.txt",
+                      "bytes":  263754,
+                      "sha256":  "4c6b98d02d0b13a6517d980ab3ccaf81edae90a60fb0073fd8408f34f19d920f"
+                  }
+              ]
+}

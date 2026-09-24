@@ -1,0 +1,376 @@
+﻿{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-0442ad7fcc108ab62",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-redis-sg"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-0442ad7fcc108ab62",
+            "OwnerId": "596261186564",
+            "GroupName": "insighthub-day3-redis",
+            "Description": "Redis access from the EKS workload security boundary",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 6379,
+                    "ToPort": 6379,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "TLS Redis from EKS workloads",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0c9e05c0abb4cbe48"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-07026b8397b071b40",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "elbv2.k8s.aws/cluster",
+                    "Value": "insighthub-day3"
+                },
+                {
+                    "Key": "ingress.k8s.aws/resource",
+                    "Value": "ManagedLBSecurityGroup"
+                },
+                {
+                    "Key": "ingress.k8s.aws/stack",
+                    "Value": "insighthub/web"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-07026b8397b071b40",
+            "OwnerId": "596261186564",
+            "GroupName": "k8s-insighth-web-7f598ae7d3",
+            "Description": "[k8s] Managed SecurityGroup for LoadBalancer",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0e856ca93155f6454",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-default-sg"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-0e856ca93155f6454",
+            "OwnerId": "596261186564",
+            "GroupName": "default",
+            "Description": "default VPC security group",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-08ad3888fc5428883",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "elbv2.k8s.aws/resource",
+                    "Value": "backend-sg"
+                },
+                {
+                    "Key": "elbv2.k8s.aws/cluster",
+                    "Value": "insighthub-day3"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-08ad3888fc5428883",
+            "OwnerId": "596261186564",
+            "GroupName": "k8s-traffic-insighthubday3-1a36f8e2c2",
+            "Description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+            "IpPermissions": []
+        },
+        {
+            "GroupId": "sg-0c74f675ce82451f1",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-rds-sg"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-0c74f675ce82451f1",
+            "OwnerId": "596261186564",
+            "GroupName": "insighthub-day3-rds",
+            "Description": "PostgreSQL access from the EKS workload security boundary",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 5432,
+                    "ToPort": 5432,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "PostgreSQL from EKS workloads",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0c9e05c0abb4cbe48"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0c9e05c0abb4cbe48",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allows EFA traffic, which is not matched by CIDR rules.",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0c9e05c0abb4cbe48"
+                        }
+                    ],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "aws:eks:cluster-name",
+                    "Value": "insighthub-day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "eks-cluster-sg-insighthub-day3-1804111481"
+                },
+                {
+                    "Key": "kubernetes.io/cluster/insighthub-day3",
+                    "Value": "owned"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-0c9e05c0abb4cbe48",
+            "OwnerId": "596261186564",
+            "GroupName": "eks-cluster-sg-insighthub-day3-1804111481",
+            "Description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Allows EFA traffic, which is not matched by CIDR rules.",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0c9e05c0abb4cbe48"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 3000,
+                    "ToPort": 3000,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "elbv2.k8s.aws/targetGroupBinding=shared",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-08ad3888fc5428883"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "Private Kubernetes API access from deployment runner",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0740cb83447f304a5"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-02a528be64151b1d9",
+            "IpPermissionsEgress": [],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-efs-sg"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-02a528be64151b1d9",
+            "OwnerId": "596261186564",
+            "GroupName": "insighthub-day3-efs",
+            "Description": "NFS access from the EKS workload security boundary",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 2049,
+                    "ToPort": 2049,
+                    "UserIdGroupPairs": [
+                        {
+                            "Description": "NFS staging storage from EKS workloads",
+                            "UserId": "596261186564",
+                            "GroupId": "sg-0c9e05c0abb4cbe48"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        },
+        {
+            "GroupId": "sg-0740cb83447f304a5",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 443,
+                    "ToPort": 443,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "Description": "HTTPS for AWS APIs, SSM, packages, and GitHub via NAT",
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-deploy-runner-sg"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-1:596261186564:security-group/sg-0740cb83447f304a5",
+            "OwnerId": "596261186564",
+            "GroupName": "insighthub-day3-deploy-runner",
+            "Description": "Private deployment runner with HTTPS-only egress",
+            "IpPermissions": []
+        }
+    ]
+}

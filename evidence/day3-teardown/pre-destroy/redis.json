@@ -1,0 +1,60 @@
+﻿{
+    "ReplicationGroups": [
+        {
+            "ReplicationGroupId": "insighthub-day3",
+            "Description": "Single-node TLS Redis queue for insighthub-day3",
+            "GlobalReplicationGroupInfo": {},
+            "Status": "available",
+            "PendingModifiedValues": {},
+            "MemberClusters": [
+                "insighthub-day3-001"
+            ],
+            "NodeGroups": [
+                {
+                    "NodeGroupId": "0001",
+                    "Status": "available",
+                    "PrimaryEndpoint": {
+                        "Address": "master.insighthub-day3.2v2vky.apse1.cache.amazonaws.com",
+                        "Port": 6379
+                    },
+                    "ReaderEndpoint": {
+                        "Address": "replica.insighthub-day3.2v2vky.apse1.cache.amazonaws.com",
+                        "Port": 6379
+                    },
+                    "NodeGroupMembers": [
+                        {
+                            "CacheClusterId": "insighthub-day3-001",
+                            "CacheNodeId": "0001",
+                            "ReadEndpoint": {
+                                "Address": "insighthub-day3-001.insighthub-day3.2v2vky.apse1.cache.amazonaws.com",
+                                "Port": 6379
+                            },
+                            "PreferredAvailabilityZone": "ap-southeast-1b",
+                            "CurrentRole": "primary"
+                        }
+                    ]
+                }
+            ],
+            "AutomaticFailover": "disabled",
+            "MultiAZ": "disabled",
+            "SnapshotRetentionLimit": 0,
+            "SnapshotWindow": "19:30-20:30",
+            "ClusterEnabled": false,
+            "CacheNodeType": "cache.t3.micro",
+            "AuthTokenEnabled": false,
+            "TransitEncryptionEnabled": true,
+            "AtRestEncryptionEnabled": true,
+            "KmsKeyId": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a",
+            "ARN": "arn:aws:elasticache:ap-southeast-1:596261186564:replicationgroup:insighthub-day3",
+            "LogDeliveryConfigurations": [],
+            "ReplicationGroupCreateTime": "2026-09-23T15:49:03.777Z",
+            "DataTiering": "disabled",
+            "AutoMinorVersionUpgrade": true,
+            "NetworkType": "ipv4",
+            "IpDiscovery": "ipv4",
+            "TransitEncryptionMode": "required",
+            "ClusterMode": "disabled",
+            "Engine": "redis"
+        }
+    ]
+}

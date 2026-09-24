@@ -1,0 +1,58 @@
+﻿{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:listener-rule/app/k8s-insighth-web-b8cc1a786d/6babb8cc418efea1/9f91764ac6a99f0d/f55d723c3bf9e231",
+            "Priority": "1",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/*"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/*"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:targetgroup/k8s-insighth-web-63e6c67994/f54855a48140d947",
+                    "Order": 1,
+                    "ForwardConfig": {
+                        "TargetGroups": [
+                            {
+                                "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:targetgroup/k8s-insighth-web-63e6c67994/f54855a48140d947",
+                                "Weight": 1
+                            }
+                        ],
+                        "TargetGroupStickinessConfig": {
+                            "Enabled": false
+                        }
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Transforms": []
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:listener-rule/app/k8s-insighth-web-b8cc1a786d/6babb8cc418efea1/9f91764ac6a99f0d/ae3a057daf6ad21a",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "fixed-response",
+                    "Order": 1,
+                    "FixedResponseConfig": {
+                        "StatusCode": "404",
+                        "ContentType": "text/plain"
+                    }
+                }
+            ],
+            "IsDefault": true,
+            "Transforms": []
+        }
+    ]
+}

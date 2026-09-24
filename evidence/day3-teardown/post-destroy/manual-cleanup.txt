@@ -1,0 +1,6 @@
+DELETE_LOG_GROUP /aws/eks/insighthub-day3/cluster
+
+VERIFY
+{
+    "logGroups": []
+}

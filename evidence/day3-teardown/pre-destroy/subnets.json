@@ -1,0 +1,196 @@
+﻿{
+    "Subnets": [
+        {
+            "AvailabilityZoneId": "apse1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "596261186564",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "kubernetes.io/role/elb",
+                    "Value": "1"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-public-ap-southeast-1b"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:ap-southeast-1:596261186564:subnet/subnet-0d8119e01a39fa94d",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0d8119e01a39fa94d",
+            "State": "available",
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "CidrBlock": "10.20.16.0/20",
+            "AvailableIpAddressCount": 4090,
+            "AvailabilityZone": "ap-southeast-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "apse1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "596261186564",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-public-ap-southeast-1a"
+                },
+                {
+                    "Key": "kubernetes.io/role/elb",
+                    "Value": "1"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:ap-southeast-1:596261186564:subnet/subnet-0acd124e6f812d6bf",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-0acd124e6f812d6bf",
+            "State": "available",
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "CidrBlock": "10.20.0.0/20",
+            "AvailableIpAddressCount": 4089,
+            "AvailabilityZone": "ap-southeast-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "apse1-az1",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "596261186564",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "kubernetes.io/role/internal-elb",
+                    "Value": "1"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-private-ap-southeast-1b"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:ap-southeast-1:596261186564:subnet/subnet-016e01bb9c0389a88",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-016e01bb9c0389a88",
+            "State": "available",
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "CidrBlock": "10.20.48.0/20",
+            "AvailableIpAddressCount": 4076,
+            "AvailabilityZone": "ap-southeast-1b",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        },
+        {
+            "AvailabilityZoneId": "apse1-az2",
+            "MapCustomerOwnedIpOnLaunch": false,
+            "OwnerId": "596261186564",
+            "AssignIpv6AddressOnCreation": false,
+            "Ipv6CidrBlockAssociationSet": [],
+            "Tags": [
+                {
+                    "Key": "kubernetes.io/role/internal-elb",
+                    "Value": "1"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-private-ap-southeast-1a"
+                }
+            ],
+            "SubnetArn": "arn:aws:ec2:ap-southeast-1:596261186564:subnet/subnet-030c916568d0fb5a2",
+            "EnableDns64": false,
+            "Ipv6Native": false,
+            "PrivateDnsNameOptionsOnLaunch": {
+                "HostnameType": "ip-name",
+                "EnableResourceNameDnsARecord": false,
+                "EnableResourceNameDnsAAAARecord": false
+            },
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "SubnetId": "subnet-030c916568d0fb5a2",
+            "State": "available",
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "CidrBlock": "10.20.32.0/20",
+            "AvailableIpAddressCount": 4075,
+            "AvailabilityZone": "ap-southeast-1a",
+            "DefaultForAz": false,
+            "MapPublicIpOnLaunch": false
+        }
+    ]
+}

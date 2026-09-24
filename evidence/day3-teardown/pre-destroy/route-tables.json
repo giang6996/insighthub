@@ -1,0 +1,145 @@
+﻿{
+    "RouteTables": [
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-06528f7ec4797bb34",
+                    "RouteTableId": "rtb-04edf555e88796d15",
+                    "SubnetId": "subnet-016e01bb9c0389a88",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0bb188d4c90b219f8",
+                    "RouteTableId": "rtb-04edf555e88796d15",
+                    "SubnetId": "subnet-030c916568d0fb5a2",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-04edf555e88796d15",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.20.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "NatGatewayId": "nat-06ebb4245e35006b3",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-private-rt"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "OwnerId": "596261186564"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-0da35c3c6d747bf6e",
+                    "RouteTableId": "rtb-050a68ffd42f312d3",
+                    "SubnetId": "subnet-0acd124e6f812d6bf",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                },
+                {
+                    "Main": false,
+                    "RouteTableAssociationId": "rtbassoc-00431e7899b63cd42",
+                    "RouteTableId": "rtb-050a68ffd42f312d3",
+                    "SubnetId": "subnet-0d8119e01a39fa94d",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-050a68ffd42f312d3",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.20.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                },
+                {
+                    "DestinationCidrBlock": "0.0.0.0/0",
+                    "GatewayId": "igw-033a463eca9bdc556",
+                    "Origin": "CreateRoute",
+                    "State": "active"
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-public-rt"
+                }
+            ],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "OwnerId": "596261186564"
+        },
+        {
+            "Associations": [
+                {
+                    "Main": true,
+                    "RouteTableAssociationId": "rtbassoc-0c3384a0462d3026f",
+                    "RouteTableId": "rtb-094ed3d43b94397d7",
+                    "AssociationState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "PropagatingVgws": [],
+            "RouteTableId": "rtb-094ed3d43b94397d7",
+            "Routes": [
+                {
+                    "DestinationCidrBlock": "10.20.0.0/16",
+                    "GatewayId": "local",
+                    "Origin": "CreateRouteTable",
+                    "State": "active"
+                }
+            ],
+            "Tags": [],
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "OwnerId": "596261186564"
+        }
+    ]
+}

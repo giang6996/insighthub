@@ -1,0 +1,1 @@
+attempt=1 status=GONE detail=System.Management.Automation.RemoteException An error occurred (LoadBalancerNotFound) when calling the DescribeLoadBalancers operation: One or more load balancers not found

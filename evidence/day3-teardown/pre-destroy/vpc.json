@@ -1,0 +1,43 @@
+﻿{
+    "Vpcs": [
+        {
+            "OwnerId": "596261186564",
+            "InstanceTenancy": "default",
+            "CidrBlockAssociationSet": [
+                {
+                    "AssociationId": "vpc-cidr-assoc-0f89f1a383d9bb453",
+                    "CidrBlock": "10.20.0.0/16",
+                    "CidrBlockState": {
+                        "State": "associated"
+                    }
+                }
+            ],
+            "IsDefault": false,
+            "Tags": [
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "BlockPublicAccessStates": {
+                "InternetGatewayBlockMode": "off"
+            },
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "State": "available",
+            "CidrBlock": "10.20.0.0/16",
+            "DhcpOptionsId": "dopt-09f0f98ddc875a005"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "repositories": [
+        {
+            "repositoryArn": "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-api",
+            "registryId": "596261186564",
+            "repositoryName": "insighthub-day3-api",
+            "repositoryUri": "596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api",
+            "createdAt": 1790178538.047,
+            "imageTagMutability": "IMMUTABLE",
+            "imageScanningConfiguration": {
+                "scanOnPush": true
+            },
+            "encryptionConfiguration": {
+                "encryptionType": "KMS",
+                "kmsKey": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a"
+            }
+        }
+    ]
+}

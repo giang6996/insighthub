@@ -1,0 +1,9 @@
+﻿aws.exe : 
+At line:2 char:397
++ ... 52d604254ed'; $save={param($file,$script); & aws @script 2>&1 | Out-F ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+An error occurred (RepositoryNotFoundException) when calling the DescribeRepositories operation: The repository with 
+name 'insighthub-day3-web' does not exist in the registry with id '596261186564'

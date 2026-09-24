@@ -1,0 +1,17 @@
+﻿{
+    "Contents": [
+        {
+            "Key": "insighthub/day3/terraform.tfstate",
+            "LastModified": "2026-09-23T20:56:13.000Z",
+            "ETag": "\"847cbf32a09f683adf3e8ee97cbd2ee7\"",
+            "ChecksumAlgorithm": [
+                "SHA256"
+            ],
+            "ChecksumType": "FULL_OBJECT",
+            "Size": 144942,
+            "StorageClass": "STANDARD"
+        }
+    ],
+    "RequestCharged": null,
+    "Prefix": "insighthub/day3/"
+}

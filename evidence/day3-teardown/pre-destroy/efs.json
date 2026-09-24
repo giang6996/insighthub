@@ -1,0 +1,46 @@
+﻿{
+    "FileSystems": [
+        {
+            "OwnerId": "596261186564",
+            "CreationToken": "insighthub-day3-staging",
+            "FileSystemId": "fs-0bcc1844b7a8a9e05",
+            "FileSystemArn": "arn:aws:elasticfilesystem:ap-southeast-1:596261186564:file-system/fs-0bcc1844b7a8a9e05",
+            "CreationTime": 1790178537.0,
+            "LifeCycleState": "available",
+            "Name": "insighthub-day3-staging",
+            "NumberOfMountTargets": 2,
+            "SizeInBytes": {
+                "Value": 18432,
+                "Timestamp": 1790227512.0,
+                "ValueInIA": 0,
+                "ValueInStandard": 18432,
+                "ValueInArchive": 0
+            },
+            "PerformanceMode": "generalPurpose",
+            "Encrypted": true,
+            "KmsKeyId": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a",
+            "ThroughputMode": "bursting",
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-staging"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "FileSystemProtection": {
+                "ReplicationOverwriteProtection": "ENABLED"
+            }
+        }
+    ]
+}

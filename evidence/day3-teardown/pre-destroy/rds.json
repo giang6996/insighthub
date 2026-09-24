@@ -1,0 +1,130 @@
+﻿{
+    "DBInstances": [
+        {
+            "DBInstanceIdentifier": "insighthub-day3-postgres",
+            "DBInstanceClass": "db.t3.micro",
+            "Engine": "postgres",
+            "DBInstanceStatus": "available",
+            "MasterUsername": "insighthub",
+            "DBName": "insighthub",
+            "Endpoint": {
+                "Address": "insighthub-day3-postgres.ct2e4yysm4vd.ap-southeast-1.rds.amazonaws.com",
+                "Port": 5432,
+                "HostedZoneId": "Z2G0U3KFCY8NZ5"
+            },
+            "AllocatedStorage": 20,
+            "InstanceCreateTime": "2026-09-23T15:52:17.920Z",
+            "PreferredBackupWindow": "16:36-17:06",
+            "BackupRetentionPeriod": 1,
+            "DBSecurityGroups": [],
+            "VpcSecurityGroups": [
+                {
+                    "VpcSecurityGroupId": "sg-0c74f675ce82451f1",
+                    "Status": "active"
+                }
+            ],
+            "DBParameterGroups": [
+                {
+                    "DBParameterGroupName": "default.postgres16",
+                    "ParameterApplyStatus": "in-sync"
+                }
+            ],
+            "AvailabilityZone": "ap-southeast-1a",
+            "DBSubnetGroup": {
+                "DBSubnetGroupName": "insighthub-day3-rds",
+                "DBSubnetGroupDescription": "Managed by Terraform",
+                "VpcId": "vpc-0d234b1f2284fe153",
+                "SubnetGroupStatus": "Complete",
+                "Subnets": [
+                    {
+                        "SubnetIdentifier": "subnet-016e01bb9c0389a88",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-southeast-1b"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    },
+                    {
+                        "SubnetIdentifier": "subnet-030c916568d0fb5a2",
+                        "SubnetAvailabilityZone": {
+                            "Name": "ap-southeast-1a"
+                        },
+                        "SubnetOutpost": {},
+                        "SubnetStatus": "Active"
+                    }
+                ]
+            },
+            "PreferredMaintenanceWindow": "sat:19:54-sat:20:24",
+            "UpgradeRolloutOrder": "second",
+            "PendingModifiedValues": {},
+            "LatestRestorableTime": "2026-09-24T05:24:54Z",
+            "MultiAZ": false,
+            "EngineVersion": "16.15",
+            "AutoMinorVersionUpgrade": true,
+            "ReadReplicaDBInstanceIdentifiers": [],
+            "LicenseModel": "postgresql-license",
+            "Iops": 3000,
+            "StorageThroughput": 125,
+            "OptionGroupMemberships": [
+                {
+                    "OptionGroupName": "default:postgres-16",
+                    "Status": "in-sync"
+                }
+            ],
+            "PubliclyAccessible": false,
+            "StorageType": "gp3",
+            "DbInstancePort": 0,
+            "StorageEncrypted": true,
+            "KmsKeyId": "arn:aws:kms:ap-southeast-1:596261186564:key/d2c5e486-9d69-4816-9a8d-7d57eebe619d",
+            "DbiResourceId": "db-55SV4OI4O7VKPHUHLYL442ZZ7A",
+            "CACertificateIdentifier": "rds-ca-rsa2048-g1",
+            "DomainMemberships": [],
+            "CopyTagsToSnapshot": true,
+            "MonitoringInterval": 0,
+            "DBInstanceArn": "arn:aws:rds:ap-southeast-1:596261186564:db:insighthub-day3-postgres",
+            "IAMDatabaseAuthenticationEnabled": true,
+            "DatabaseInsightsMode": "standard",
+            "PerformanceInsightsEnabled": false,
+            "EnabledCloudwatchLogsExports": [
+                "postgresql"
+            ],
+            "DeletionProtection": false,
+            "AssociatedRoles": [],
+            "MaxAllocatedStorage": 50,
+            "TagList": [
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-postgres"
+                }
+            ],
+            "CustomerOwnedIpEnabled": false,
+            "NetworkType": "IPV4",
+            "ActivityStreamStatus": "stopped",
+            "BackupTarget": "region",
+            "CertificateDetails": {
+                "CAIdentifier": "rds-ca-rsa2048-g1",
+                "ValidTill": "2027-09-23T15:51:05Z"
+            },
+            "MasterUserSecret": {
+                "SecretArn": "arn:aws:secretsmanager:ap-southeast-1:596261186564:secret:rds!db-e6f768ee-65f2-4c88-af78-7108d1e28521-yGPrHl",
+                "SecretStatus": "active",
+                "KmsKeyId": "arn:aws:kms:ap-southeast-1:596261186564:key/cb583e4d-8ad5-40e3-93f1-7d0f507a6a28"
+            },
+            "DedicatedLogVolume": false,
+            "IsStorageConfigUpgradeAvailable": false,
+            "EngineLifecycleSupport": "open-source-rds-extended-support"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+﻿{
+    "CommandId": "999f2078-234d-4289-816c-7f9a0063d2b0",
+    "InstanceId": "i-0f0a4752d604254ed",
+    "Comment": "InsightHub Day3 teardown delete only public web ingress",
+    "DocumentName": "AWS-RunShellScript",
+    "DocumentVersion": "$DEFAULT",
+    "PluginName": "aws:runShellScript",
+    "ResponseCode": 0,
+    "ExecutionStartDateTime": "2026-09-24T05:36:43.042Z",
+    "ExecutionElapsedTime": "PT23.561S",
+    "ExecutionEndDateTime": "2026-09-24T05:37:06.042Z",
+    "Status": "Success",
+    "StatusDetails": "Success",
+    "StandardOutputContent": "ingress.networking.k8s.io \"web\" deleted from insighthub namespace\n",
+    "StandardOutputUrl": "",
+    "StandardErrorContent": "",
+    "StandardErrorUrl": "",
+    "CloudWatchOutputConfig": {
+        "CloudWatchLogGroupName": "",
+        "CloudWatchOutputEnabled": false
+    }
+}

@@ -1,0 +1,22 @@
+﻿{
+    "KeyMetadata": {
+        "AWSAccountId": "596261186564",
+        "KeyId": "602e16f8-3482-4834-a02e-f374ffeaca1a",
+        "Arn": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a",
+        "CreationDate": 1790178528.71,
+        "Enabled": false,
+        "Description": "Day 3 data services encryption for insighthub-day3",
+        "KeyUsage": "ENCRYPT_DECRYPT",
+        "KeyState": "PendingDeletion",
+        "DeletionDate": 1790834163.637,
+        "Origin": "AWS_KMS",
+        "KeyManager": "CUSTOMER",
+        "CustomerMasterKeySpec": "SYMMETRIC_DEFAULT",
+        "KeySpec": "SYMMETRIC_DEFAULT",
+        "EncryptionAlgorithms": [
+            "SYMMETRIC_DEFAULT"
+        ],
+        "MultiRegion": false,
+        "CurrentKeyMaterialId": "e816781e53f97926927294b54c1d1f4866bd04643839148e9907e610783ea7ea"
+    }
+}

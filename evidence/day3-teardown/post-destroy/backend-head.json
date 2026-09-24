@@ -1,0 +1,5 @@
+﻿{
+    "BucketArn": "arn:aws:s3:::insighthub-tfstate-596261186564-ap-southeast-1",
+    "BucketRegion": "ap-southeast-1",
+    "AccessPointAlias": false
+}

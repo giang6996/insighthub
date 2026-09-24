@@ -1,0 +1,35 @@
+﻿{
+    "LoadBalancers": [
+        {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:loadbalancer/app/k8s-insighth-web-b8cc1a786d/6babb8cc418efea1",
+            "DNSName": "k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z1LMS91P8CMLE5",
+            "CreatedTime": "2026-09-23T19:41:08.429Z",
+            "LoadBalancerName": "k8s-insighth-web-b8cc1a786d",
+            "Scheme": "internet-facing",
+            "VpcId": "vpc-0d234b1f2284fe153",
+            "State": {
+                "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+                {
+                    "ZoneName": "ap-southeast-1a",
+                    "SubnetId": "subnet-0acd124e6f812d6bf",
+                    "LoadBalancerAddresses": []
+                },
+                {
+                    "ZoneName": "ap-southeast-1b",
+                    "SubnetId": "subnet-0d8119e01a39fa94d",
+                    "LoadBalancerAddresses": []
+                }
+            ],
+            "SecurityGroups": [
+                "sg-07026b8397b071b40",
+                "sg-08ad3888fc5428883"
+            ],
+            "IpAddressType": "ipv4",
+            "EnablePrefixForIpv6SourceNat": "off"
+        }
+    ]
+}

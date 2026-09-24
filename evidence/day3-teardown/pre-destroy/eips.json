@@ -1,0 +1,57 @@
+﻿{
+    "Addresses": [
+        {
+            "AllocationId": "eipalloc-07ee7678508994f4b",
+            "AssociationId": "eipassoc-0ad53c2e453a6dc56",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-046b5616dde1b3e05",
+            "NetworkInterfaceOwnerId": "596261186564",
+            "PrivateIpAddress": "10.20.8.200",
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "ap-southeast-1",
+            "ServiceManaged": "alb",
+            "PublicIp": "13.213.216.198"
+        },
+        {
+            "AllocationId": "eipalloc-09590aec901901dcb",
+            "AssociationId": "eipassoc-08d1b467cc431dc5b",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-01e846714a93195df",
+            "NetworkInterfaceOwnerId": "596261186564",
+            "PrivateIpAddress": "10.20.23.190",
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "ap-southeast-1",
+            "ServiceManaged": "alb",
+            "PublicIp": "18.142.235.117"
+        },
+        {
+            "AllocationId": "eipalloc-04e6f19502ed87047",
+            "AssociationId": "eipassoc-0e020731b00ec56fc",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-0a3615119320d56fd",
+            "NetworkInterfaceOwnerId": "596261186564",
+            "PrivateIpAddress": "10.20.15.69",
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-nat-eip"
+                }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "ap-southeast-1",
+            "PublicIp": "47.128.1.20"
+        }
+    ]
+}

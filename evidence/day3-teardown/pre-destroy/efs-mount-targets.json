@@ -1,0 +1,28 @@
+﻿{
+    "MountTargets": [
+        {
+            "OwnerId": "596261186564",
+            "MountTargetId": "fsmt-020ec54a1ec529aea",
+            "FileSystemId": "fs-0bcc1844b7a8a9e05",
+            "SubnetId": "subnet-030c916568d0fb5a2",
+            "LifeCycleState": "available",
+            "IpAddress": "10.20.33.208",
+            "NetworkInterfaceId": "eni-082c3a12d2077af34",
+            "AvailabilityZoneId": "apse1-az2",
+            "AvailabilityZoneName": "ap-southeast-1a",
+            "VpcId": "vpc-0d234b1f2284fe153"
+        },
+        {
+            "OwnerId": "596261186564",
+            "MountTargetId": "fsmt-07b99be6ea09a4e14",
+            "FileSystemId": "fs-0bcc1844b7a8a9e05",
+            "SubnetId": "subnet-016e01bb9c0389a88",
+            "LifeCycleState": "available",
+            "IpAddress": "10.20.60.79",
+            "NetworkInterfaceId": "eni-06d4d3e3c7666ea3e",
+            "AvailabilityZoneId": "apse1-az1",
+            "AvailabilityZoneName": "ap-southeast-1b",
+            "VpcId": "vpc-0d234b1f2284fe153"
+        }
+    ]
+}

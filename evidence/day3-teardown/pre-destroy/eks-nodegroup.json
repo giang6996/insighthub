@@ -1,0 +1,48 @@
+﻿{
+    "nodegroup": {
+        "nodegroupName": "insighthub-day3-nodes",
+        "nodegroupArn": "arn:aws:eks:ap-southeast-1:596261186564:nodegroup/insighthub-day3/insighthub-day3-nodes/2ad0677e-74c7-86f0-57cc-a58c05e05cfa",
+        "clusterName": "insighthub-day3",
+        "version": "1.34",
+        "releaseVersion": "1.34.11-20260917",
+        "createdAt": 1790179079.271,
+        "modifiedAt": 1790227703.103,
+        "status": "ACTIVE",
+        "capacityType": "ON_DEMAND",
+        "scalingConfig": {
+            "minSize": 2,
+            "maxSize": 3,
+            "desiredSize": 2
+        },
+        "instanceTypes": [
+            "t3.small"
+        ],
+        "subnets": [
+            "subnet-016e01bb9c0389a88",
+            "subnet-030c916568d0fb5a2"
+        ],
+        "amiType": "AL2023_x86_64_STANDARD",
+        "nodeRole": "arn:aws:iam::596261186564:role/insighthub-day3-eks-nodes",
+        "labels": {},
+        "resources": {
+            "autoScalingGroups": [
+                {
+                    "name": "eks-insighthub-day3-nodes-2ad0677e-74c7-86f0-57cc-a58c05e05cfa"
+                }
+            ]
+        },
+        "diskSize": 20,
+        "health": {
+            "issues": []
+        },
+        "updateConfig": {
+            "maxUnavailable": 1
+        },
+        "tags": {
+            "Project": "insighthub",
+            "Environment": "day3",
+            "ManagedBy": "terraform",
+            "Name": "insighthub-day3-nodes"
+        }
+    }
+}

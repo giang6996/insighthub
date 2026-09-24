@@ -1,0 +1,43 @@
+﻿{
+    "AccessPoints": [
+        {
+            "ClientToken": "ee3a7da3-d242-4cc8-af47-48b84d32022c",
+            "Name": "insighthub-day3-staging-access-point",
+            "Tags": [
+                {
+                    "Key": "Environment",
+                    "Value": "day3"
+                },
+                {
+                    "Key": "ManagedBy",
+                    "Value": "terraform"
+                },
+                {
+                    "Key": "Name",
+                    "Value": "insighthub-day3-staging-access-point"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "insighthub"
+                }
+            ],
+            "AccessPointId": "fsap-0b97f667d4d02d707",
+            "AccessPointArn": "arn:aws:elasticfilesystem:ap-southeast-1:596261186564:access-point/fsap-0b97f667d4d02d707",
+            "FileSystemId": "fs-0bcc1844b7a8a9e05",
+            "PosixUser": {
+                "Uid": 1000,
+                "Gid": 1000
+            },
+            "RootDirectory": {
+                "Path": "/staging",
+                "CreationInfo": {
+                    "OwnerUid": 1000,
+                    "OwnerGid": 1000,
+                    "Permissions": "0750"
+                }
+            },
+            "OwnerId": "596261186564",
+            "LifeCycleState": "available"
+        }
+    ]
+}

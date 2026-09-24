@@ -1,0 +1,27 @@
+﻿{
+    "http_status":  200,
+    "question":  "What deployment authentication mechanism is mentioned in the verification document?",
+    "response":  {
+                     "answer":  "[FIXTURE - trÃ­ch Äoáº¡n kiá»m thá»­, khÃ´ng pháº£i cÃ¢u tráº£ lá»i tá»« AI]\n\nInsightHub Day 3 final evidence. Verification marker: c2bb3266-be51-4ed0-812f-e990b4c522c0. The deployment pipeline uses GitHub OIDC and SSM.",
+                     "sources":  [
+                                     "insighthub-day3-smoke-c2bb3266-be51-4ed0-812f-e990b4c522c0.md"
+                                 ],
+                     "contexts":  [
+                                      {
+                                          "id":  1,
+                                          "chunk_text":  "InsightHub Day 3 final evidence. Verification marker: c2bb3266-be51-4ed0-812f-e990b4c522c0. The deployment pipeline uses GitHub OIDC and SSM.",
+                                          "source":  "insighthub-day3-smoke-c2bb3266-be51-4ed0-812f-e990b4c522c0.md",
+                                          "similarity":  -0.0066
+                                      }
+                                  ],
+                     "latency_ms":  20,
+                     "mode":  "fixture",
+                     "provider":  "fixture",
+                     "model":  "extractive-fixture-v1",
+                     "usage":  {
+                                   "input_tokens":  null,
+                                   "output_tokens":  null,
+                                   "source":  "unavailable"
+                               }
+                 }
+}

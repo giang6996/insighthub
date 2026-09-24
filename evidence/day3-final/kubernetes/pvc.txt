@@ -1,0 +1,2 @@
+NAME                 STATUS   VOLUME                   CAPACITY   ACCESS MODES   STORAGECLASS            VOLUMEATTRIBUTESCLASS   AGE
+insighthub-staging   Bound    insighthub-staging-efs   10Gi       RWX            insighthub-efs-static   <unset>                 10h

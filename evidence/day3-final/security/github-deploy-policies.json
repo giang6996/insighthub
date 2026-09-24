@@ -1,0 +1,63 @@
+﻿{
+    "attached":  [
+
+                 ],
+    "inline":  [
+                   {
+                       "policyName":  "insighthub-day3-github-deploy",
+                       "document":  {
+                                        "Version":  "2012-10-17",
+                                        "Statement":  [
+                                                          {
+                                                              "Action":  "ecr:GetAuthorizationToken",
+                                                              "Effect":  "Allow",
+                                                              "Resource":  "*"
+                                                          },
+                                                          {
+                                                              "Action":  [
+                                                                             "ecr:BatchCheckLayerAvailability",
+                                                                             "ecr:BatchGetImage",
+                                                                             "ecr:CompleteLayerUpload",
+                                                                             "ecr:DescribeImages",
+                                                                             "ecr:GetDownloadUrlForLayer",
+                                                                             "ecr:InitiateLayerUpload",
+                                                                             "ecr:PutImage",
+                                                                             "ecr:UploadLayerPart"
+                                                                         ],
+                                                              "Effect":  "Allow",
+                                                              "Resource":  [
+                                                                               "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-api",
+                                                                               "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-ingestion-worker",
+                                                                               "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-web"
+                                                                           ]
+                                                          },
+                                                          {
+                                                              "Action":  "ssm:SendCommand",
+                                                              "Effect":  "Allow",
+                                                              "Resource":  "arn:aws:ssm:ap-southeast-1::document/AWS-RunShellScript"
+                                                          },
+                                                          {
+                                                              "Action":  "ssm:SendCommand",
+                                                              "Condition":  {
+                                                                                "StringEquals":  {
+                                                                                                     "ssm:resourceTag/DeploymentTarget":  "insighthub-day3"
+                                                                                                 }
+                                                                            },
+                                                              "Effect":  "Allow",
+                                                              "Resource":  "arn:aws:ec2:ap-southeast-1:596261186564:instance/*"
+                                                          },
+                                                          {
+                                                              "Action":  [
+                                                                             "ssm:DescribeInstanceInformation",
+                                                                             "ssm:GetCommandInvocation",
+                                                                             "ssm:ListCommandInvocations",
+                                                                             "ssm:ListCommands"
+                                                                         ],
+                                                              "Effect":  "Allow",
+                                                              "Resource":  "*"
+                                                          }
+                                                      ]
+                                    }
+                   }
+               ]
+}

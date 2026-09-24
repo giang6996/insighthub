@@ -1,0 +1,16 @@
+﻿{
+    "name": "insighthub-day3-nodes",
+    "status": "ACTIVE",
+    "instanceTypes": [
+        "t3.small"
+    ],
+    "scalingConfig": {
+        "minSize": 2,
+        "maxSize": 3,
+        "desiredSize": 2
+    },
+    "subnets": [
+        "subnet-016e01bb9c0389a88",
+        "subnet-030c916568d0fb5a2"
+    ]
+}

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "repositoryName": "insighthub-day3-api",
+        "repositoryArn": "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-api",
+        "imageTagMutability": "IMMUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": true
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "KMS",
+            "kmsKey": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a"
+        }
+    },
+    {
+        "repositoryName": "insighthub-day3-ingestion-worker",
+        "repositoryArn": "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-ingestion-worker",
+        "imageTagMutability": "IMMUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": true
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "KMS",
+            "kmsKey": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a"
+        }
+    },
+    {
+        "repositoryName": "insighthub-day3-web",
+        "repositoryArn": "arn:aws:ecr:ap-southeast-1:596261186564:repository/insighthub-day3-web",
+        "imageTagMutability": "IMMUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": true
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "KMS",
+            "kmsKey": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a"
+        }
+    }
+]

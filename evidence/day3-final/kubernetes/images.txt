@@ -1,0 +1,3 @@
+﻿api                1/1     1            1           9h    api                596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api@sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c                app=api
+ingestion-worker   1/1     1            1           9h    ingestion-worker   596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker@sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c   app=ingestion-worker
+web                1/1     1            1           9h    web                596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web@sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10                app=web

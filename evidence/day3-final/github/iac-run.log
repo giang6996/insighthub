@@ -1,0 +1,655 @@
+﻿verify	UNKNOWN STEP	﻿2026-09-24T03:00:20.2566414Z Current runner version: '2.337.0'
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2586966Z ##[group]Runner Image Provisioner
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2587774Z Hosted Compute Agent
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2588260Z Version: 20260828.587
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2588841Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2589574Z Build Date: 2026-08-28T16:44:25Z
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2590132Z Worker ID: {c1ec2cf7-e7d5-45da-a668-d7f6295cb013}
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2590787Z Azure Region: westcentralus
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2591284Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2592443Z ##[group]Operating System
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2593018Z Ubuntu
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2593497Z 24.04.5
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2593971Z LTS
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2594413Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2594885Z ##[group]Runner Image
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2595421Z Image: ubuntu-24.04
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2595886Z Version: 20260907.300.1
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2597294Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2598546Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2599532Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2600437Z ##[group]GITHUB_TOKEN Permissions
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2602228Z Contents: read
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2602724Z Metadata: read
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2603244Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2604883Z Secret source: Actions
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2605739Z Cache mode: write
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2606311Z Prepare workflow directory
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2871601Z Prepare all required actions
+verify	UNKNOWN STEP	2026-09-24T03:00:20.2911163Z Getting action download info
+verify	UNKNOWN STEP	2026-09-24T03:00:20.5756007Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+verify	UNKNOWN STEP	2026-09-24T03:00:20.6862701Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+verify	UNKNOWN STEP	2026-09-24T03:00:21.2662603Z Download action repository 'actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c' (SHA:e797f83bcb11b83ae66e0230d6156d7c80228e7c)
+verify	UNKNOWN STEP	2026-09-24T03:00:21.4588029Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify	UNKNOWN STEP	2026-09-24T03:00:22.1465238Z Complete job name: verify
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2246061Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2247484Z with:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2248204Z   persist-credentials: false
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2249072Z   repository: giang6996/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2256192Z   token: ***
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2256904Z   ssh-strict: true
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2257630Z   ssh-user: git
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2258332Z   clean: true
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2259077Z   sparse-checkout-cone-mode: true
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2260110Z   fetch-depth: 1
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2260830Z   fetch-tags: false
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2261594Z   show-progress: true
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2262346Z   lfs: false
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2263029Z   submodules: false
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2263803Z   set-safe-directory: true
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2264644Z   allow-unsafe-pr-checkout: false
+verify	UNKNOWN STEP	2026-09-24T03:00:22.2265716Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3170855Z Syncing repository: giang6996/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3174175Z ##[group]Getting Git version info
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3175863Z Working directory is '/home/runner/work/insighthub/insighthub'
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3178362Z [command]/usr/bin/git version
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3431945Z git version 2.55.0
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3474660Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3492057Z Temporarily overriding HOME='/home/runner/work/_temp/6864fedb-104c-4936-af92-a5123f37b79f' before making global git config changes
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3495396Z Adding repository directory to the temporary git global config as a safe directory
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3498690Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3560605Z Deleting the contents of '/home/runner/work/insighthub/insighthub'
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3581226Z ##[group]Determining repository object format
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3583771Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3590870Z ##[group]Initializing the repository
+verify	UNKNOWN STEP	2026-09-24T03:00:22.3592113Z [command]/usr/bin/git init /home/runner/work/insighthub/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4574425Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4576738Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4578372Z hint: to use in all of your new repositories, which will suppress this warning,
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4579784Z hint: call:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4580570Z hint:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4581439Z hint: 	git config --global init.defaultBranch <name>
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4582464Z hint:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4583795Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4585390Z hint: 'development'. The just-created branch can be renamed via this command:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4586621Z hint:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4587310Z hint: 	git branch -m <name>
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4588128Z hint:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4589331Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4591944Z Initialized empty Git repository in /home/runner/work/insighthub/insighthub/.git/
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4595067Z [command]/usr/bin/git remote add origin https://github.com/giang6996/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4965117Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4966403Z ##[group]Disabling automatic garbage collection
+verify	UNKNOWN STEP	2026-09-24T03:00:22.4968179Z [command]/usr/bin/git config --local gc.auto 0
+verify	UNKNOWN STEP	2026-09-24T03:00:22.5561075Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.5562508Z ##[group]Setting up auth
+verify	UNKNOWN STEP	2026-09-24T03:00:22.5563402Z Removing SSH command configuration
+verify	UNKNOWN STEP	2026-09-24T03:00:22.5566612Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	UNKNOWN STEP	2026-09-24T03:00:22.5600568Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6476946Z Removing HTTP extra header
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6481560Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6512427Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6699999Z Removing includeIf entries pointing to credentials config files
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6703409Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6733537Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	UNKNOWN STEP	2026-09-24T03:00:22.6927490Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7046145Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git.path /home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7141894Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7255016Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7341675Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7657609Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7658829Z ##[group]Fetching the repository
+verify	UNKNOWN STEP	2026-09-24T03:00:22.7662601Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +120843f337943d6fd8f55a7c3115d76b1bb3d129:refs/remotes/origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4232502Z From https://github.com/giang6996/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4234039Z  * [new ref]         120843f337943d6fd8f55a7c3115d76b1bb3d129 -> origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4240129Z [command]/usr/bin/git branch --list --remote origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4266669Z   origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4273413Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4296784Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4300576Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4301219Z ##[group]Determining the checkout info
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4301878Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4364072Z [command]/usr/bin/git sparse-checkout disable
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4684243Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4995290Z ##[group]Checking out the ref
+verify	UNKNOWN STEP	2026-09-24T03:00:24.4997509Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5276674Z Switched to a new branch 'main'
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5283072Z branch 'main' set up to track 'origin/main'.
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5298894Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5583111Z [command]/usr/bin/git log -1 --format=%H
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5608946Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5616373Z ##[group]Removing auth
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5616705Z Removing SSH command configuration
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5619531Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5649724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5844192Z Removing HTTP extra header
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5847093Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	UNKNOWN STEP	2026-09-24T03:00:24.5876391Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6060893Z Removing includeIf entries pointing to credentials config files
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6063078Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6088568Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6089484Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6089971Z includeif.gitdir:/github/workspace/.git.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6090366Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6095344Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6117996Z /home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6125228Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-0784bfb7\-9677\-4558\-8619\-1cce9b266ffd\.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6283520Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6307664Z /home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6315213Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-0784bfb7\-9677\-4558\-8619\-1cce9b266ffd\.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6472922Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6499269Z /github/runner_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6507553Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-0784bfb7\-9677\-4558\-8619\-1cce9b266ffd\.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6672815Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6697111Z /github/runner_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6702752Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-0784bfb7\-9677\-4558\-8619\-1cce9b266ffd\.config
+verify	UNKNOWN STEP	2026-09-24T03:00:24.6879400Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7064538Z Removing credentials config '/home/runner/work/_temp/git-credentials-0784bfb7-9677-4558-8619-1cce9b266ffd.config'
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7071729Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7250950Z ##[group]Run hashicorp/setup-terraform@v3
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7251404Z with:
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7251765Z   cli_config_credentials_hostname: app.terraform.io
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7252290Z   terraform_version: latest
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7252662Z   terraform_wrapper: true
+verify	UNKNOWN STEP	2026-09-24T03:00:24.7252982Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:24.8330963Z (node:2189) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify	UNKNOWN STEP	2026-09-24T03:00:24.8332479Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	UNKNOWN STEP	2026-09-24T03:00:25.3727168Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/20c592e4-6b54-4aae-bb49-32f8332e2256
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0688913Z ##[group]Run actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0689462Z with:
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0689635Z   python-version: 3.12
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0689818Z   check-latest: false
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0691716Z   token: ***
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0691891Z   update-environment: true
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0692101Z   allow-prereleases: false
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0692291Z   freethreaded: false
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0692464Z env:
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0692723Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:00:26.0693028Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:26.1769022Z ##[group]Installed versions
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2513528Z (node:2203) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2514090Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2514864Z Successfully set up CPython (3.12.14)
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2515591Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2664557Z ##[group]Run python -m pip install --disable-pip-version-check checkov==3.3.19 pytest==8.4.2 pyyaml==6.0.2
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2665559Z [36;1mpython -m pip install --disable-pip-version-check checkov==3.3.19 pytest==8.4.2 pyyaml==6.0.2[0m
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2718356Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2718671Z env:
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2719083Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2719827Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2720363Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2720894Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2721376Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2721873Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2722355Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:00:26.2722803Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:27.7411917Z Collecting checkov==3.3.19
+verify	UNKNOWN STEP	2026-09-24T03:00:27.8361943Z   Downloading checkov-3.3.19-py3-none-any.whl.metadata (26 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:27.8836511Z Collecting pytest==8.4.2
+verify	UNKNOWN STEP	2026-09-24T03:00:27.9023765Z   Downloading pytest-8.4.2-py3-none-any.whl.metadata (7.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.0258166Z Collecting pyyaml==6.0.2
+verify	UNKNOWN STEP	2026-09-24T03:00:28.0448669Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.0794636Z Collecting bc-jsonpath-ng==1.6.1 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.0984615Z   Downloading bc_jsonpath_ng-1.6.1-py3-none-any.whl.metadata (17 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.1390506Z Collecting pycep-parser==0.5.1 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.1578283Z   Downloading pycep_parser-0.5.1-py3-none-any.whl.metadata (2.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.2275536Z Collecting tabulate<0.10.0,>=0.9.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.2486502Z   Downloading tabulate-0.9.0-py3-none-any.whl.metadata (34 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.5381509Z Collecting colorama<0.5.0,>=0.4.3 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.5578053Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.5859543Z Collecting termcolor<2.4.0,>=1.1.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.6046407Z   Downloading termcolor-2.3.0-py3-none-any.whl.metadata (5.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.6628535Z Collecting junit-xml<2.0,>=1.9 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.6813667Z   Downloading junit_xml-1.9-py2.py3-none-any.whl.metadata (3.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.7501005Z Collecting dpath==2.1.3 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.7684917Z   Downloading dpath-2.1.3-py3-none-any.whl.metadata (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.9373977Z Collecting boto3==1.35.49 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.9560636Z   Downloading boto3-1.35.49-py3-none-any.whl.metadata (6.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:28.9894156Z Collecting gitpython<4.0.0,>=3.1.30 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.0079690Z   Downloading gitpython-3.1.62-py3-none-any.whl.metadata (13 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.1627735Z Collecting jmespath<2.0.0,>=1.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.1814485Z   Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.3700807Z Collecting tqdm<5.0.0,>=4.65.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.3885045Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.4273081Z Collecting packaging<24.0,>=23.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.4469289Z   Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.4781778Z Collecting cloudsplaining<0.8.0,>=0.7.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.4970639Z   Downloading cloudsplaining-0.7.0-py3-none-any.whl.metadata (21 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.5305088Z Collecting networkx<2.7 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.5494984Z   Downloading networkx-2.6.3-py3-none-any.whl.metadata (5.0 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.5790597Z Collecting dockerfile-parse<3.0.0,>=2.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.5985816Z   Downloading dockerfile_parse-2.0.1-py2.py3-none-any.whl.metadata (3.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.6358562Z Collecting docker<8.0.0,>=6.0.1 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.6544595Z   Downloading docker-7.2.0-py3-none-any.whl.metadata (3.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.8416596Z Collecting configargparse<2.0.0,>=1.5.3 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:29.8609316Z   Downloading configargparse-1.7.7-py3-none-any.whl.metadata (23 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.0735895Z Collecting argcomplete<4.0.0,>=3.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.0924841Z   Downloading argcomplete-3.7.2-py3-none-any.whl.metadata (16 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.1221577Z Collecting typing-extensions<5.0.0,>=4.5.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.1410610Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.1751798Z Collecting importlib-metadata<8.0.0,>=6.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.1942946Z   Downloading importlib_metadata-7.2.1-py3-none-any.whl.metadata (4.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.2508242Z Collecting cachetools<6.0.0,>=5.2.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.2708342Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.3222022Z Collecting cyclonedx-python-lib<8.0.0,>=6.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.3410077Z   Downloading cyclonedx_python_lib-7.6.2-py3-none-any.whl.metadata (6.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.3705732Z Collecting packageurl-python<0.14.0,>=0.11.1 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.3891098Z   Downloading packageurl_python-0.13.4-py3-none-any.whl.metadata (5.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.4242566Z Collecting click<9.0.0,>=8.1.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.4427692Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.8575847Z Collecting aiohttp<3.15.0,>=3.8.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.8766358Z   Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.9050818Z Collecting aiodns<4.0.0,>=3.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.9240164Z   Downloading aiodns-3.6.1-py3-none-any.whl.metadata (5.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.9625701Z Collecting aiomultiprocess<0.10.0,>=0.9.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:30.9811951Z   Downloading aiomultiprocess-0.9.1-py3-none-any.whl.metadata (4.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.0106771Z Collecting schema<=0.7.5 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.0295136Z   Downloading schema-0.7.5-py2.py3-none-any.whl.metadata (34 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.0653038Z Collecting jsonschema<5.0.0,>=4.17.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.0842707Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.1130473Z Collecting prettytable<4.0.0,>=3.6.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.1316467Z   Downloading prettytable-3.18.0-py3-none-any.whl.metadata (37 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.2306916Z Collecting charset-normalizer<4.0.0,>=3.1.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.2495597Z   Downloading charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (45 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.2861339Z Collecting requests<3.0.0,>=2.28.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.3050999Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.6611591Z Collecting yarl<2.0.0,>=1.9.1 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.6803696Z   Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (111 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.7862486Z Collecting spdx-tools<0.9.0,>=0.8.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.8052324Z   Downloading spdx_tools-0.8.5-py3-none-any.whl.metadata (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.8347469Z Collecting license-expression<31.0.0,>=30.1.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.8555915Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.9413453Z Collecting rustworkx<1.0.0,>=0.13.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:31.9602551Z   Downloading rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.0520140Z Collecting pydantic<3.0.0,>=2.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.0709255Z   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.2369036Z Collecting asteval==1.0.6 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.2561642Z   Downloading asteval-1.0.6-py3-none-any.whl.metadata (6.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.3892836Z Collecting bc-detect-secrets==1.5.50 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.4094307Z   Downloading bc_detect_secrets-1.5.50-py3-none-any.whl.metadata (23 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.4879340Z Collecting urllib3>=1.26.20 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.5072144Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.5369054Z Collecting bc-python-hcl2==0.4.3 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.5555978Z   Downloading bc_python_hcl2-0.4.3-py3-none-any.whl.metadata (4.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.5867501Z Collecting platformdirs<5.0.0,>=4.0.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.6053852Z   Downloading platformdirs-4.11.12-py3-none-any.whl.metadata (5.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.6314731Z Collecting ecdsa<1.0.0,>=0.19.0 (from checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.6502213Z   Downloading ecdsa-0.19.2-py2.py3-none-any.whl.metadata (29 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.6796789Z Collecting iniconfig>=1 (from pytest==8.4.2)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.6985089Z   Downloading iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.7250763Z Collecting pluggy<2,>=1.5 (from pytest==8.4.2)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.7439581Z   Downloading pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.7751647Z Collecting pygments>=2.7.2 (from pytest==8.4.2)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.7941833Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.8265899Z Collecting unidiff (from bc-detect-secrets==1.5.50->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.8454303Z   Downloading unidiff-1.0.1-py3-none-any.whl.metadata (8.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.8893709Z Collecting ply (from bc-jsonpath-ng==1.6.1->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.9080989Z   Downloading ply-3.11-py2.py3-none-any.whl.metadata (844 bytes)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.9360051Z Collecting decorator (from bc-jsonpath-ng==1.6.1->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.9579320Z   Downloading decorator-5.3.1-py3-none-any.whl.metadata (3.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:32.9861820Z Collecting lark>=1.0.0 (from bc-python-hcl2==0.4.3->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.0049954Z   Downloading lark-1.3.1-py3-none-any.whl.metadata (1.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.1855363Z Collecting botocore<1.36.0,>=1.35.49 (from boto3==1.35.49->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.2046147Z   Downloading botocore-1.35.99-py3-none-any.whl.metadata (5.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.2349440Z Collecting s3transfer<0.11.0,>=0.10.0 (from boto3==1.35.49->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.2542556Z   Downloading s3transfer-0.10.4-py3-none-any.whl.metadata (1.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.6188186Z Collecting regex>=2022.1.18 (from pycep-parser==0.5.1->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.6379578Z   Downloading regex-2026.9.10-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.7091445Z Collecting pycares<5,>=4.9.0 (from aiodns<4.0.0,>=3.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.7281617Z   Downloading pycares-4.11.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.7581672Z Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.7767915Z   Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl.metadata (5.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.8020882Z Collecting aiosignal>=1.4.0 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.8212211Z   Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.8498671Z Collecting attrs>=17.3.0 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:33.8695550Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.0604785Z Collecting frozenlist>=1.1.1 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.0810265Z   Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (20 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.2660781Z Collecting multidict<7.0,>=4.5 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.2854949Z   Downloading multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.3522243Z Collecting propcache>=0.2.0 (from aiohttp<3.15.0,>=3.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.3713338Z   Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (25 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.5662053Z Collecting python-dateutil<3.0.0,>=2.1 (from botocore<1.36.0,>=1.35.49->boto3==1.35.49->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.5856240Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.6702244Z Collecting cached-property (from cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.6909709Z   Downloading cached_property-2.0.1-py3-none-any.whl.metadata (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.7446343Z Collecting click-option-group (from cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.7634559Z   Downloading click_option_group-0.5.9-py3-none-any.whl.metadata (5.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.8843056Z Collecting jinja2 (from cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:34.9031195Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.0727663Z Collecting markdown (from cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.0913221Z   Downloading markdown-3.10.3-py3-none-any.whl.metadata (5.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.2967812Z Collecting policy-sentry<0.14,>=0.13.0 (from cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.3171502Z   Downloading policy_sentry-0.13.2-py3-none-any.whl.metadata (1.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.3500055Z Collecting py-serializable<2.0.0,>=1.1.0 (from cyclonedx-python-lib<8.0.0,>=6.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.3697034Z   Downloading py_serializable-1.1.2-py3-none-any.whl.metadata (4.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.5672501Z Collecting sortedcontainers<3.0.0,>=2.4.0 (from cyclonedx-python-lib<8.0.0,>=6.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.5860375Z   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.6530542Z Collecting six>=1.9.0 (from ecdsa<1.0.0,>=0.19.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.6730214Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.7002579Z Collecting gitdb<5,>=4.0.1 (from gitpython<4.0.0,>=3.1.30->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.7196171Z   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.7501423Z Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython<4.0.0,>=3.1.30->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.7690470Z   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.8526165Z Collecting zipp>=0.5 (from importlib-metadata<8.0.0,>=6.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.8732253Z   Downloading zipp-4.1.0-py3-none-any.whl.metadata (3.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.9104159Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema<5.0.0,>=4.17.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.9293234Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:35.9905306Z Collecting referencing>=0.28.4 (from jsonschema<5.0.0,>=4.17.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.0094932Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.3093612Z Collecting rpds-py>=0.25.0 (from jsonschema<5.0.0,>=4.17.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.3290340Z   Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.3691829Z Collecting boolean.py>=4.0 (from license-expression<31.0.0,>=30.1.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.3880923Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.5054530Z Collecting beautifulsoup4 (from policy-sentry<0.14,>=0.13.0->cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.5245313Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.7458599Z Collecting orjson (from policy-sentry<0.14,>=0.13.0->cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.7654369Z   Downloading orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (41 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.7978758Z Collecting wcwidth>=0.3.5 (from prettytable<4.0.0,>=3.6.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.8167985Z   Downloading wcwidth-0.9.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.8898106Z Collecting defusedxml<0.8.0,>=0.7.1 (from py-serializable<2.0.0,>=1.1.0->cyclonedx-python-lib<8.0.0,>=6.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:36.9089720Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.0505218Z Collecting cffi>=1.5.0 (from pycares<5,>=4.9.0->aiodns<4.0.0,>=3.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.0700853Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.2427615Z Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.2614052Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.8211124Z Collecting pydantic-core==2.46.5 (from pydantic<3.0.0,>=2.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.8427609Z   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.9165542Z Collecting typing-inspection>=0.4.2 (from pydantic<3.0.0,>=2.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:37.9376425Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.0115224Z Collecting idna<4,>=2.5 (from requests<3.0.0,>=2.28.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.0307312Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.0605953Z Collecting certifi>=2023.5.7 (from requests<3.0.0,>=2.28.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.0824412Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.2473519Z Collecting numpy<3,>=1.16.0 (from rustworkx<1.0.0,>=0.13.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.2665004Z   Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.3137762Z Collecting contextlib2>=0.5.5 (from schema<=0.7.5->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.3324063Z   Downloading contextlib2-21.6.0-py2.py3-none-any.whl.metadata (4.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.3894368Z Collecting beartype (from spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.4081316Z   Downloading beartype-0.22.9-py3-none-any.whl.metadata (37 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.5172933Z Collecting rdflib (from spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.5356329Z   Downloading rdflib-7.6.0-py3-none-any.whl.metadata (12 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.6470469Z Collecting semantic_version (from spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.6666199Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.9031446Z Collecting uritools (from spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:38.9220722Z   Downloading uritools-6.1.3-py3-none-any.whl.metadata (5.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.0063792Z Collecting xmltodict (from spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.0247869Z   Downloading xmltodict-1.0.4-py3-none-any.whl.metadata (14 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.1010780Z Collecting pycparser (from cffi>=1.5.0->pycares<5,>=4.9.0->aiodns<4.0.0,>=3.0.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.1194692Z   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.2672247Z Collecting soupsieve>=1.6.1 (from beautifulsoup4->policy-sentry<0.14,>=0.13.0->cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.2862314Z   Downloading soupsieve-2.10-py3-none-any.whl.metadata (4.4 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.3420632Z Collecting MarkupSafe>=2.0 (from jinja2->cloudsplaining<0.8.0,>=0.7.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.3607871Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.5603579Z Collecting pyparsing<4,>=2.1.0 (from rdflib->spdx-tools<0.9.0,>=0.8.0->checkov==3.3.19)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.5800114Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.6461524Z Downloading checkov-3.3.19-py3-none-any.whl (2.3 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.7800653Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 18.2 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:39.8000006Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.8110203Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 56.9 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:39.8296219Z Downloading pytest-8.4.2-py3-none-any.whl (365 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.8954976Z Downloading asteval-1.0.6-py3-none-any.whl (22 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.9172046Z Downloading bc_detect_secrets-1.5.50-py3-none-any.whl (126 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.9386196Z Downloading bc_jsonpath_ng-1.6.1-py3-none-any.whl (29 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.9752369Z Downloading bc_python_hcl2-0.4.3-py3-none-any.whl (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:39.9987250Z Downloading boto3-1.35.49-py3-none-any.whl (139 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.0195137Z Downloading dpath-2.1.3-py3-none-any.whl (17 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.0516566Z Downloading pycep_parser-0.5.1-py3-none-any.whl (23 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.0756870Z Downloading aiodns-3.6.1-py3-none-any.whl (8.0 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.1016443Z Downloading aiohttp-3.14.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.1234366Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 77.1 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:40.1439548Z Downloading aiomultiprocess-0.9.1-py3-none-any.whl (17 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.1686146Z Downloading argcomplete-3.7.2-py3-none-any.whl (43 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.1941986Z Downloading botocore-1.35.99-py3-none-any.whl (13.3 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.3724640Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.3/13.3 MB 74.2 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:40.3909584Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.4115319Z Downloading charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (248 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.4331534Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.4550016Z Downloading cloudsplaining-0.7.0-py3-none-any.whl (1.8 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.4814620Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 62.5 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:40.5003079Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.5708366Z Downloading configargparse-1.7.7-py3-none-any.whl (34 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.6331287Z Downloading cyclonedx_python_lib-7.6.2-py3-none-any.whl (361 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.6553762Z Downloading docker-7.2.0-py3-none-any.whl (148 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.6884289Z Downloading dockerfile_parse-2.0.1-py2.py3-none-any.whl (14 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.7142213Z Downloading ecdsa-0.19.2-py2.py3-none-any.whl (150 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.8126980Z Downloading gitpython-3.1.62-py3-none-any.whl (222 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.8555192Z Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.8762092Z Downloading importlib_metadata-7.2.1-py3-none-any.whl (25 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.8969277Z Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.9183614Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.9463318Z Downloading junit_xml-1.9-py2.py3-none-any.whl (7.1 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.9671639Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:40.9884002Z Downloading multidict-6.9.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (336 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.0554448Z Downloading networkx-2.6.3-py3-none-any.whl (1.9 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.0703970Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 132.5 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.0888474Z Downloading packageurl_python-0.13.4-py3-none-any.whl (26 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.1106303Z Downloading packaging-23.2-py3-none-any.whl (53 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.1309967Z Downloading platformdirs-4.11.12-py3-none-any.whl (24 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.1541126Z Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.1761505Z Downloading policy_sentry-0.13.2-py3-none-any.whl (966 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.1827458Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 966.6/966.6 kB 178.3 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.2015472Z Downloading prettytable-3.18.0-py3-none-any.whl (37 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.2218841Z Downloading py_serializable-1.1.2-py3-none-any.whl (22 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.2431394Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.3620018Z Downloading pycares-4.11.0-cp312-cp312-manylinux_2_28_x86_64.whl (641 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.3665299Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 641.1/641.1 kB 140.7 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.3853065Z Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.4076105Z Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.4169011Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 274.4 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.4371944Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.4578287Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.4783645Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.5357701Z Downloading rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.5895065Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 40.9 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.6086658Z Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.7256051Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 143.2 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:41.7469468Z Downloading s3transfer-0.10.4-py3-none-any.whl (83 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.7681543Z Downloading schema-0.7.5-py2.py3-none-any.whl (17 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.7893739Z Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.8358680Z Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.9471564Z Downloading spdx_tools-0.8.5-py3-none-any.whl (286 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.9688453Z Downloading tabulate-0.9.0-py3-none-any.whl (35 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:41.9980200Z Downloading termcolor-2.3.0-py3-none-any.whl (6.9 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.0900671Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.2086033Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.2489561Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.4319675Z Downloading yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (117 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.4586863Z Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.4797138Z Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.5000327Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.5389702Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.5593609Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.5803881Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.6009831Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.6219417Z Downloading contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.6583684Z Downloading frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (242 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.6789321Z Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.7004365Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.7206738Z Downloading lark-1.3.1-py3-none-any.whl (113 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.7414350Z Downloading propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (250 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.9646548Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:42.9703365Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 255.8 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:42.9889048Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.0098044Z Downloading regex-2026.9.10-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.0144847Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 804.6/804.6 kB 183.2 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:43.0329386Z Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.0536835Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.3310094Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.3818746Z Downloading wcwidth-0.9.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (768 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.5390635Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 768.4/768.4 kB 3.3 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:43.5576747Z Downloading zipp-4.1.0-py3-none-any.whl (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.7802927Z Downloading beartype-0.22.9-py3-none-any.whl (1.3 MB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.7861001Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 262.0 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:43.8048150Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.8295770Z Downloading soupsieve-2.10-py3-none-any.whl (38 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:43.8501536Z Downloading cached_property-2.0.1-py3-none-any.whl (7.4 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.0041208Z Downloading click_option_group-0.5.9-py3-none-any.whl (11 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.0893400Z Downloading decorator-5.3.1-py3-none-any.whl (10 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.2275326Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.2486178Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.2690381Z Downloading markdown-3.10.3-py3-none-any.whl (110 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.2894169Z Downloading orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.3129250Z Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.3340163Z Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.3578765Z Downloading rdflib-7.6.0-py3-none-any.whl (615 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.3760652Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.4/615.4 kB 21.6 MB/s  0:00:00
+verify	UNKNOWN STEP	2026-09-24T03:00:44.3971371Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.4190804Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.4420290Z Downloading unidiff-1.0.1-py3-none-any.whl (18 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.4637152Z Downloading uritools-6.1.3-py3-none-any.whl (11 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.4846866Z Downloading xmltodict-1.0.4-py3-none-any.whl (13 kB)
+verify	UNKNOWN STEP	2026-09-24T03:00:44.8932113Z Installing collected packages: sortedcontainers, ply, boolean.py, zipp, xmltodict, wcwidth, urllib3, uritools, unidiff, typing-extensions, tqdm, termcolor, tabulate, soupsieve, smmap, six, semantic_version, rpds-py, regex, pyyaml, pyparsing, pygments, pycparser, propcache, pluggy, platformdirs, packaging, packageurl-python, orjson, numpy, networkx, multidict, MarkupSafe, markdown, license-expression, lark, jmespath, iniconfig, idna, frozenlist, dpath, dockerfile-parse, defusedxml, decorator, contextlib2, configargparse, colorama, click, charset-normalizer, certifi, cachetools, cached-property, beartype, attrs, asteval, argcomplete, annotated-types, aiomultiprocess, aiohappyeyeballs, yarl, typing-inspection, schema, rustworkx, requests, referencing, rdflib, python-dateutil, pytest, pydantic-core, pycep-parser, py-serializable, prettytable, junit-xml, jinja2, importlib-metadata, gitdb, ecdsa, click-option-group, cffi, beautifulsoup4, bc-python-hcl2, bc-jsonpath-ng, aiosignal, spdx-tools, pydantic, pycares, policy-sentry, jsonschema-specifications, gitpython, docker, cyclonedx-python-lib, botocore, bc-detect-secrets, aiohttp, s3transfer, jsonschema, aiodns, boto3, cloudsplaining, checkov
+verify	UNKNOWN STEP	2026-09-24T03:00:56.3839503Z 
+verify	UNKNOWN STEP	2026-09-24T03:00:56.3899563Z Successfully installed MarkupSafe-3.0.3 aiodns-3.6.1 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiomultiprocess-0.9.1 aiosignal-1.4.0 annotated-types-0.8.0 argcomplete-3.7.2 asteval-1.0.6 attrs-26.1.0 bc-detect-secrets-1.5.50 bc-jsonpath-ng-1.6.1 bc-python-hcl2-0.4.3 beartype-0.22.9 beautifulsoup4-4.15.0 boolean.py-5.0 boto3-1.35.49 botocore-1.35.99 cached-property-2.0.1 cachetools-5.5.2 certifi-2026.7.22 cffi-2.1.1 charset-normalizer-3.5.1 checkov-3.3.19 click-8.5.0 click-option-group-0.5.9 cloudsplaining-0.7.0 colorama-0.4.6 configargparse-1.7.7 contextlib2-21.6.0 cyclonedx-python-lib-7.6.2 decorator-5.3.1 defusedxml-0.7.1 docker-7.2.0 dockerfile-parse-2.0.1 dpath-2.1.3 ecdsa-0.19.2 frozenlist-1.8.0 gitdb-4.0.12 gitpython-3.1.62 idna-3.20 importlib-metadata-7.2.1 iniconfig-2.3.0 jinja2-3.1.6 jmespath-1.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 junit-xml-1.9 lark-1.3.1 license-expression-30.4.4 markdown-3.10.3 multidict-6.9.1 networkx-2.6.3 numpy-2.5.3 orjson-3.12.0 packageurl-python-0.13.4 packaging-23.2 platformdirs-4.11.12 pluggy-1.6.0 ply-3.11 policy-sentry-0.13.2 prettytable-3.18.0 propcache-0.5.4 py-serializable-1.1.2 pycares-4.11.0 pycep-parser-0.5.1 pycparser-3.0 pydantic-2.13.5 pydantic-core-2.46.5 pygments-2.21.0 pyparsing-3.3.3 pytest-8.4.2 python-dateutil-2.9.0.post0 pyyaml-6.0.2 rdflib-7.6.0 referencing-0.37.0 regex-2026.9.10 requests-2.34.2 rpds-py-2026.6.3 rustworkx-0.18.1 s3transfer-0.10.4 schema-0.7.5 semantic_version-2.10.0 six-1.17.0 smmap-5.0.3 sortedcontainers-2.4.0 soupsieve-2.10 spdx-tools-0.8.5 tabulate-0.9.0 termcolor-2.3.0 tqdm-4.70.1 typing-extensions-4.16.0 typing-inspection-0.4.4 unidiff-1.0.1 uritools-6.1.3 urllib3-2.8.0 wcwidth-0.9.1 xmltodict-1.0.4 yarl-1.25.1 zipp-4.1.0
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7705251Z ##[group]Run python -m pytest -q tests/milestones/day3
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7705612Z [36;1mpython -m pytest -q tests/milestones/day3[0m
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7738562Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7738765Z env:
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7739039Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7739512Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7739844Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7740178Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7740468Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7740771Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7741059Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:00:56.7741312Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0528843Z ..                                                                       [100%]
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0529485Z 2 passed in 0.01s
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0738179Z ##[group]Run terraform fmt -check -recursive infra
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0738701Z [36;1mterraform fmt -check -recursive infra[0m
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0784556Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0784874Z env:
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0785301Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0785905Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0786449Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0786976Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0787713Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0788190Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0788699Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:00:57.0789057Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8821906Z ##[group]Run terraform init -backend=false -input=false -lockfile=readonly
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8822346Z [36;1mterraform init -backend=false -input=false -lockfile=readonly[0m
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8870589Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8870823Z env:
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8871154Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8871751Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8872280Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8872840Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8873348Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8873830Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8874336Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:00:57.8874718Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:00:57.9837924Z [0m[1mInitializing provider plugins...[0m
+verify	UNKNOWN STEP	2026-09-24T03:00:57.9838543Z - Reusing previous version of hashicorp/aws from the dependency lock file
+verify	UNKNOWN STEP	2026-09-24T03:00:58.5618736Z - Installing hashicorp/aws v5.100.0...
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6319939Z - Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6320294Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6320855Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6321286Z [0m[32m
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6321678Z You may now begin working with Terraform. Try running "terraform plan" to see
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6322299Z any changes that are required for your infrastructure. All Terraform commands
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6322806Z should now work.
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6322961Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6323190Z If you ever set or change modules or backend configuration for Terraform,
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6323793Z rerun this command to reinitialize your working directory. If you forget, other
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6324476Z commands will detect it and remind you to do so if necessary.[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6434663Z ##[group]Run terraform validate -no-color
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6434942Z [36;1mterraform validate -no-color[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6467741Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6467952Z env:
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6468226Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6468592Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6468942Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6469510Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6469928Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6470249Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6470537Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:01:04.6470790Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2471894Z Success! The configuration is valid.
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2472306Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2586424Z ##[group]Run checkov -d infra --quiet
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2586707Z [36;1mcheckov -d infra --quiet[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2619888Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2620099Z env:
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2620368Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2620735Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2621060Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2621388Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2621860Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2622148Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2622438Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:01:06.2622692Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:01:13.8168813Z terraform scan results:
+verify	UNKNOWN STEP	2026-09-24T03:01:13.8169090Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:13.8169620Z Passed checks: 184, Failed checks: 0, Skipped checks: 8
+verify	UNKNOWN STEP	2026-09-24T03:01:13.8169931Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:13.8169945Z 
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3485545Z ##[group]Run mkdir -p ci-output
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3486062Z [36;1mmkdir -p ci-output[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3533778Z [36;1mpython scripts/build_day3_artifact.py \[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3534275Z [36;1m  --output ci-output/day3-deployment.zip \[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3534718Z [36;1m  --manifest ci-output/source-manifest.json[0m
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3567892Z shell: /usr/bin/bash -e {0}
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3568094Z env:
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3568382Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3568751Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3569085Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3569555Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3569856Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3570177Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3570469Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:01:14.3570720Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4481290Z {"source_sha256": "0fdd74862a3f6ec771efe67b899ab5958155b8aeb60666da88d4a884f2f93e0b", "artifact_sha256": "a02d2597e3a9d54c95222103f7cc1ba19849f570ad7551576f0613428744dcad", "artifact": "/home/runner/work/insighthub/insighthub/ci-output/day3-deployment.zip"}
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4605020Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4605356Z with:
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4605528Z   name: verification-source
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4605724Z   path: ci-output/
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4605898Z   if-no-files-found: error
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4606084Z   retention-days: 7
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4606252Z   compression-level: 6
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4606423Z   overwrite: false
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4606594Z   include-hidden-files: false
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4606784Z env:
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4607036Z   TERRAFORM_CLI_PATH: /home/runner/work/_temp/82285421-8374-4d8e-8be3-3c4a0dc2ccd5
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4607388Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4607712Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4608035Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4608325Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4608643Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4608938Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+verify	UNKNOWN STEP	2026-09-24T03:01:14.4609420Z ##[endgroup]
+verify	UNKNOWN STEP	2026-09-24T03:01:14.5942036Z (node:2507) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	UNKNOWN STEP	2026-09-24T03:01:14.5942918Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	UNKNOWN STEP	2026-09-24T03:01:14.6010352Z With the provided path, there will be 2 files uploaded
+verify	UNKNOWN STEP	2026-09-24T03:01:14.6011013Z Artifact name is valid!
+verify	UNKNOWN STEP	2026-09-24T03:01:14.6011325Z Root directory input is valid!
+verify	UNKNOWN STEP	2026-09-24T03:01:14.8954077Z Beginning upload of artifact content to blob storage
+verify	UNKNOWN STEP	2026-09-24T03:01:14.9112423Z (node:2507) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify	UNKNOWN STEP	2026-09-24T03:01:15.1882444Z Uploaded bytes 13605
+verify	UNKNOWN STEP	2026-09-24T03:01:15.2516974Z Finished uploading artifact content to blob storage!
+verify	UNKNOWN STEP	2026-09-24T03:01:15.2517840Z SHA256 digest of uploaded artifact zip is 1477382dbff36017354d77b33ae58435e9a1ba9a02d380acd14fcebe853c30ba
+verify	UNKNOWN STEP	2026-09-24T03:01:15.2518973Z Finalizing artifact upload
+verify	UNKNOWN STEP	2026-09-24T03:01:15.4808330Z Artifact verification-source.zip successfully finalized. Artifact ID 10788211876
+verify	UNKNOWN STEP	2026-09-24T03:01:15.4809474Z Artifact verification-source has been successfully uploaded! Final size is 13605 bytes. Artifact ID is 10788211876
+verify	UNKNOWN STEP	2026-09-24T03:01:15.4815208Z Artifact download URL: https://github.com/giang6996/insighthub/actions/runs/35949605102/artifacts/10788211876
+verify	UNKNOWN STEP	2026-09-24T03:01:15.4974146Z Post job cleanup.
+verify	UNKNOWN STEP	2026-09-24T03:01:15.5925443Z (node:2519) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	UNKNOWN STEP	2026-09-24T03:01:15.5926134Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6096443Z Post job cleanup.
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6773390Z [command]/usr/bin/git version
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6815791Z git version 2.55.0
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6842630Z Temporarily overriding HOME='/home/runner/work/_temp/5ac435d2-4b55-4a1d-8abd-40215ce7fc7f' before making global git config changes
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6843697Z Adding repository directory to the temporary git global config as a safe directory
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6846190Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6875313Z Removing SSH command configuration
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6881027Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	UNKNOWN STEP	2026-09-24T03:01:15.6911849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7126874Z Removing HTTP extra header
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7131316Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7160911Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7368734Z Removing includeIf entries pointing to credentials config files
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7374122Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7407985Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7727028Z Cleaning up orphan processes
+verify	UNKNOWN STEP	2026-09-24T03:01:15.7962154Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02, hashicorp/setup-terraform@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

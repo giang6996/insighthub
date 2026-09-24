@@ -1,0 +1,32 @@
+=== nodes ===
+NAME                                              STATUS   ROLES    AGE   VERSION                INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                        KERNEL-VERSION                     CONTAINER-RUNTIME
+ip-10-20-39-78.ap-southeast-1.compute.internal    Ready    <none>   12h   v1.34.11-eks-a887778   10.20.39.78    <none>        Amazon Linux 2023.12.20260914   6.12.103-127.188.amzn2023.x86_64   containerd://2.2.7+unknown
+ip-10-20-50-213.ap-southeast-1.compute.internal   Ready    <none>   12h   v1.34.11-eks-a887778   10.20.50.213   <none>        Amazon Linux 2023.12.20260914   6.12.103-127.188.amzn2023.x86_64   containerd://2.2.7+unknown
+=== deployments ===
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS         IMAGES                                                                                                                                                       SELECTOR
+api                1/1     1            1           9h    api                596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api@sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c                app=api
+ingestion-worker   1/1     1            1           9h    ingestion-worker   596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker@sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c   app=ingestion-worker
+web                1/1     1            1           9h    web                596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web@sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10                app=web
+=== pods ===
+NAME                                READY   STATUS      RESTARTS   AGE   IP             NODE                                              NOMINATED NODE   READINESS GATES
+api-cc777ff55-ptb45                 1/1     Running     0          75m   10.20.33.99    ip-10-20-39-78.ap-southeast-1.compute.internal    <none>           <none>
+database-init-vkg88                 0/1     Completed   0          10h   10.20.56.246   ip-10-20-50-213.ap-southeast-1.compute.internal   <none>           <none>
+ingestion-worker-5b96c6888d-pxq22   1/1     Running     0          74m   10.20.32.251   ip-10-20-39-78.ap-southeast-1.compute.internal    <none>           <none>
+web-55f45d7c89-r5djl                1/1     Running     0          74m   10.20.57.237   ip-10-20-50-213.ap-southeast-1.compute.internal   <none>           <none>
+=== services ===
+NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+api    ClusterIP   172.20.60.169   <none>        8000/TCP   9h    app=api
+web    ClusterIP   172.20.246.87   <none>        3000/TCP   9h    app=web
+=== ingress ===
+NAME   CLASS   HOSTS   ADDRESS                                                                  PORTS   AGE
+web    alb     *       k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com   80      8h
+=== pvc ===
+NAME                 STATUS   VOLUME                   CAPACITY   ACCESS MODES   STORAGECLASS            VOLUMEATTRIBUTESCLASS   AGE
+insighthub-staging   Bound    insighthub-staging-efs   10Gi       RWX            insighthub-efs-static   <unset>                 10h
+=== database-init ===
+NAME            STATUS     COMPLETIONS   DURATION   AGE
+database-init   Complete   1/1           24m        10h
+=== alb-controller ===
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                     IMAGES                                                   SELECTOR
+aws-load-balancer-controller   2/2     2            2           10h   aws-load-balancer-controller   public.ecr.aws/eks/aws-load-balancer-controller:v2.8.3   app.kubernetes.io/instance=aws-load-balancer-controller,app.kubernetes.io/name=aws-load-balancer-controller
+=== images ===

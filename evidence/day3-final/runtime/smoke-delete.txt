@@ -1,0 +1,8 @@
+﻿{
+    "document_id":  1,
+    "ssm_command_id":  "5a69060a-656f-4973-9902-24606e78d69b",
+    "status":  "Success",
+    "response_code":  0,
+    "stdout":  "HTTP_STATUS:204\n",
+    "stderr":  ""
+}

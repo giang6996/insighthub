@@ -1,0 +1,15 @@
+﻿{
+    "fileSystemId": "fs-0bcc1844b7a8a9e05",
+    "encrypted": true,
+    "kmsKeyId": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a",
+    "lifeCycleState": "available",
+    "performanceMode": "generalPurpose",
+    "throughputMode": "bursting",
+    "sizeInBytes": {
+        "Value": 12288,
+        "Timestamp": 1790223019.0,
+        "ValueInIA": 0,
+        "ValueInStandard": 12288,
+        "ValueInArchive": 0
+    }
+}

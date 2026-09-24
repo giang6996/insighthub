@@ -1,0 +1,17 @@
+﻿[
+    {
+        "listenerArn": "arn:aws:elasticloadbalancing:ap-southeast-1:596261186564:listener/app/k8s-insighth-web-b8cc1a786d/6babb8cc418efea1/9f91764ac6a99f0d",
+        "protocol": "HTTP",
+        "port": 80,
+        "defaultActions": [
+            {
+                "Type": "fixed-response",
+                "Order": 1,
+                "FixedResponseConfig": {
+                    "StatusCode": "404",
+                    "ContentType": "text/plain"
+                }
+            }
+        ]
+    }
+]

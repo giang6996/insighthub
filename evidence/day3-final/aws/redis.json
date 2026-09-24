@@ -1,0 +1,17 @@
+﻿{
+    "id":  "insighthub-day3",
+    "status":  "available",
+    "engine":  "redis",
+    "engineVersion":  "7.1.0",
+    "cacheNodeType":  "cache.t3.micro",
+    "transitEncryptionEnabled":  true,
+    "atRestEncryptionEnabled":  true,
+    "kmsKeyId":  null,
+    "cacheSubnetGroupName":  "insighthub-day3-redis",
+    "securityGroups":  [
+                           {
+                               "SecurityGroupId":  "sg-0442ad7fcc108ab62",
+                               "Status":  "active"
+                           }
+                       ]
+}

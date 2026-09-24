@@ -1,0 +1,14 @@
+﻿{
+    "name": "insighthub-day3",
+    "version": "1.34",
+    "status": "ACTIVE",
+    "endpointPublicAccess": false,
+    "endpointPrivateAccess": true,
+    "vpcId": "vpc-0d234b1f2284fe153",
+    "subnetIds": [
+        "subnet-016e01bb9c0389a88",
+        "subnet-030c916568d0fb5a2"
+    ],
+    "securityGroupIds": [],
+    "authenticationMode": "API_AND_CONFIG_MAP"
+}

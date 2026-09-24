@@ -1,0 +1,12 @@
+﻿[
+    {
+        "target": {
+            "Id": "10.20.57.237",
+            "Port": 3000,
+            "AvailabilityZone": "ap-southeast-1b"
+        },
+        "health": {
+            "State": "healthy"
+        }
+    }
+]

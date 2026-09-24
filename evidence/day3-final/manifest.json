@@ -1,0 +1,309 @@
+﻿{
+    "schema_version":  1,
+    "project":  "InsightHub",
+    "day":  3,
+    "captured_at":  "2026-09-24T04:27:34.7650227Z",
+    "aws_account":  "596261186564",
+    "region":  "ap-southeast-1",
+    "final_commit_sha":  "120843f337943d6fd8f55a7c3115d76b1bb3d129",
+    "source_fingerprint":  "0fdd74862a3f6ec771efe67b899ab5958155b8aeb60666da88d4a884f2f93e0b",
+    "final_deployment_artifact_sha256":  "a02d2597e3a9d54c95222103f7cc1ba19849f570ad7551576f0613428744dcad",
+    "github_runs":  {
+                        "starter":  35949605078,
+                        "iac":  35949605102,
+                        "deploy":  35949774330,
+                        "official_verifier":  35953587899
+                    },
+    "ssm_command_id":  "681f3ea5-23e9-4efc-b3d8-be72ff4f12b8",
+    "alb_hostname":  "k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com",
+    "ecr_final_digests":  {
+                              "api":  "sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c",
+                              "worker":  "sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c",
+                              "web":  "sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10"
+                          },
+    "official_verifier_result":  {
+                                     "status":  "PASS",
+                                     "runtime_verified":  true,
+                                     "scope":  "partial-runtime-contract",
+                                     "specification_review_required":  true,
+                                     "milestone_complete":  false,
+                                     "note":  "PASS covers implemented checks only, not all project requirements; use the complete specification and reviewer evidence."
+                                 },
+    "files":  [
+                  {
+                      "path":  "evidence/day3-final/aws/alb.json",
+                      "sha256":  "04983c857730f9dacacbef1007f2e2bf05a58a5526995857e89affae971eb355",
+                      "size_bytes":  782
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/alb-listeners.json",
+                      "sha256":  "af102d13c363fb0c6dc2aa7573fc5a9319edee0e3aa7751c38be5c48d623dad6",
+                      "size_bytes":  526
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/alb-target-health.json",
+                      "sha256":  "321121981fb8987136f8aeff2f3c635afe9f9356df8d1bdb75886c40e23a3dfa",
+                      "size_bytes":  233
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/deployment-runner.json",
+                      "sha256":  "966e5beeb36cfb66d36ceb85d92e5266a4b5cfdfc87bfbe26764db7e309e9202",
+                      "size_bytes":  607
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/deployment-runner-sg.json",
+                      "sha256":  "097582c2d4f10f2752eec1541363182f55bc3e991103a0e851f7f063bfbef2b5",
+                      "size_bytes":  706
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/deployment-runner-ssm.json",
+                      "sha256":  "53d1a328855a5bb302e4af5b6e186ca727abeec990dfbb1c5418f4ec1f0f3fd8",
+                      "size_bytes":  224
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/deployment-runner-ssm-command.json",
+                      "sha256":  "0a2b7b7057d921dd11e80d71c698dc7f3e324868bddd73b3462147229cfebe03",
+                      "size_bytes":  200
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/ecr-final-images.json",
+                      "sha256":  "709ab0183e06ef8978a0042c51f18829511063f17bde8775d6ec117110313a8b",
+                      "size_bytes":  1032
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/ecr-repositories.json",
+                      "sha256":  "0b4ad424aa0c693c3199d1b944a4a842dbb34ed46a542ee4b99dce8fc635dcd2",
+                      "size_bytes":  1495
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/efs.json",
+                      "sha256":  "1362de647176a1116510a33968dfb8f28fd34d9ced149b16d2340b5c9b015e79",
+                      "size_bytes":  471
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/efs-mount-targets.json",
+                      "sha256":  "0edf48874fb9863b1d86a3bc2e6d1d71837a66f577c1e73ffd4d757e0c437a2c",
+                      "size_bytes":  459
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/eks-cluster.json",
+                      "sha256":  "eec713c9cc712e2fe6d5c86618ffbdb1cbb40ed1409f5afa925ab34f9dbd1c07",
+                      "size_bytes":  379
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/eks-nodegroup.json",
+                      "sha256":  "62522e90d0ae2f21237dc609936efeaf7c9e1b012009d0252d52831f87061787",
+                      "size_bytes":  326
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/kms-aliases.json",
+                      "sha256":  "8184e99220ee867ac2d0754e133ff81cfa0f3782ab33518a4b04f093390ed8dc",
+                      "size_bytes":  247
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/kms-data-services.json",
+                      "sha256":  "3d357331b48088bf5e4a2a660f5be4373035051a845dbbc6b64e21850c7e51c1",
+                      "size_bytes":  355
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/rds.json",
+                      "sha256":  "26e366e80cf0b67165447a609de3b201c9b29b2964e0a3a22efc54565f9f5927",
+                      "size_bytes":  517
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/redis.json",
+                      "sha256":  "09dbb3b28192fb4d10cd73b88b76f1c982c8bc622aaeb50d1947d283e1de659f",
+                      "size_bytes":  565
+                  },
+                  {
+                      "path":  "evidence/day3-final/aws/sts-identity.json",
+                      "sha256":  "80468bb21b137c63c8b7dfaeecec1e8e33f3bfef5615a140c551c4cd3bb3cffa",
+                      "size_bytes":  133
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/deploy-run.json",
+                      "sha256":  "800f03a054d78a8eafd9455511ad532a9db4c0db19a71b4d4af6490783ab1afa",
+                      "size_bytes":  337
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/deploy-run.log",
+                      "sha256":  "f51c4fa42b243ee1065f73a486fa354972af43797958758ce1e78d42d0287580",
+                      "size_bytes":  121554
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/iac-run.json",
+                      "sha256":  "092adc0b76873a3628f202196fab604130ae71b30b7ed391130866e1f57ee5e0",
+                      "size_bytes":  329
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/iac-run.log",
+                      "sha256":  "9c1b0203cbefbf3698d73277421f2b6b5bc4c5a49e3efc5c9b5a2cea1d57a253",
+                      "size_bytes":  78593
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/starter-run.json",
+                      "sha256":  "1bb80afc00a363b736f9be9787234fbb144b59ba190c2e70ad0e349c1284b146",
+                      "size_bytes":  312
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/starter-run.log",
+                      "sha256":  "83525d87d02e47ae99dd452455e9d69508275c3cf41a6df2a13032eaed104bef",
+                      "size_bytes":  164962
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/verifier-run.json",
+                      "sha256":  "d89b57e2e5b925a0ed214b6700cb5fc39daf734589384bcc6e7faa60edae4fca",
+                      "size_bytes":  325
+                  },
+                  {
+                      "path":  "evidence/day3-final/github/verifier-run.log",
+                      "sha256":  "3c6a5c21385949d59a644379cd9120b288423e59f88776e2073ffe98b78d2859",
+                      "size_bytes":  95106
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/alb-controller.txt",
+                      "sha256":  "24453280338bc8946d4eea5e24a649d16e855609bc7ea21208cc03eebc44cfa1",
+                      "size_bytes":  434
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/database-init.txt",
+                      "sha256":  "d6327b4c2a3f154b890e2f4f6aa4b67d08d2da9d4d03c02867110b5c38fca201",
+                      "size_bytes":  113
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/deployments.txt",
+                      "sha256":  "5ed94b1d47990b1f9fb7e58b685743b6c840af4a5c33799aa85b1724a893f9f6",
+                      "size_bytes":  983
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/images.txt",
+                      "sha256":  "b8d750c92086b774f5d83624a256b1d228b6831a230cfb7c40a86d16221d14b6",
+                      "size_bytes":  745
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/ingress.txt",
+                      "sha256":  "8724357d5fc037c80da27c9234f09ee038abc5e5eac6393f57c7f2447e8d119d",
+                      "size_bytes":  216
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/nodes.txt",
+                      "sha256":  "6087550e0b8cbdb1a9198da535e38bbf0335d3dcb0e13e6d82c745f219748233",
+                      "size_bytes":  652
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/pods.txt",
+                      "sha256":  "ee11935920ff8313431f8a40873bac57bbcdc836a0d2029347915324bd8f13dd",
+                      "size_bytes":  820
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/pvc.txt",
+                      "sha256":  "406182010a1d32c37f53d34971db56ec878c06df3d9b7c102aadb5ea8be5af2b",
+                      "size_bytes":  267
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/services.txt",
+                      "sha256":  "c64608ad05973284d630067698a1d543bf9e8a6861d437ef512d8824ba93fbdc",
+                      "size_bytes":  224
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/ssm-readonly-output.txt",
+                      "sha256":  "a7284de56d62b923d1995536c630d10d3c48687f9a9db81f6deab41763b6e411",
+                      "size_bytes":  3853
+                  },
+                  {
+                      "path":  "evidence/day3-final/kubernetes/ssm-readonly-result.json",
+                      "sha256":  "255c30e96319957c8ef923beb05762bf16b555bfb6bd077825dc5e75bf141acd",
+                      "size_bytes":  4342
+                  },
+                  {
+                      "path":  "evidence/day3-final/README.md",
+                      "sha256":  "f291a614ee41c5504f98b4616f3f9a099661de7a804a5572896a6d8c765259fc",
+                      "size_bytes":  3259
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/api-health.json",
+                      "sha256":  "fa04dcc413152605830c55bebda0f25ba0513177760f77c4f2a9adc6925a5ab6",
+                      "size_bytes":  42
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/documents-after.json",
+                      "sha256":  "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                      "size_bytes":  2
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/documents-before.json",
+                      "sha256":  "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+                      "size_bytes":  2
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/root.txt",
+                      "sha256":  "a68c480eb394e9d66ba9267efb98411e21aee7494371af03668709fce7a4da6b",
+                      "size_bytes":  6860
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/smoke-chat.json",
+                      "sha256":  "a95e4b17ef79132755cfe781e2b2726ec9e310c4e03d3e12df1f0675345d636e",
+                      "size_bytes":  1677
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/smoke-delete.txt",
+                      "sha256":  "ba0adab10ea0884c717c51b4fbecc6c87ddf2bcb3883fca8fb92773c51d2a8fc",
+                      "size_bytes":  206
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/smoke-document-ready.json",
+                      "sha256":  "3ec57be47d129bdbeda18fd2a0372a6c08f1c4afb8971635baf708f0e01b8625",
+                      "size_bytes":  527
+                  },
+                  {
+                      "path":  "evidence/day3-final/runtime/smoke-upload.json",
+                      "sha256":  "252a7a29fd3e8c3c797481ac79cc59ae217eb3e9822af62d9f4528ea23767106",
+                      "size_bytes":  319
+                  },
+                  {
+                      "path":  "evidence/day3-final/security/github-deploy-policies.json",
+                      "sha256":  "dcf0277b26e2bb9e93c067b315df7b3059969a954a51565d471ea1674f58a411",
+                      "size_bytes":  4904
+                  },
+                  {
+                      "path":  "evidence/day3-final/security/github-deploy-role.json",
+                      "sha256":  "e966ec342686ce8c531ffeb948fbcbb99982f3be2d8e90c59bc53c6420f6d80c",
+                      "size_bytes":  1822
+                  },
+                  {
+                      "path":  "evidence/day3-final/security/secret-scan.txt",
+                      "sha256":  "b1ccb7d3b31bf1b7e4ffc73735e4a82f191a03ed5cd45970d35150d105fbf23b",
+                      "size_bytes":  267
+                  },
+                  {
+                      "path":  "evidence/day3-final/security/security-summary.md",
+                      "sha256":  "0c9748b62b86b4b8ceb9f6c1d48771a842418179fdf775e3208402acf89e0c80",
+                      "size_bytes":  1106
+                  },
+                  {
+                      "path":  "evidence/day3-final/source/day3.json",
+                      "sha256":  "a7975c45b8a516a34ac4df27552c563a97e79e2add7ef17cba3a9e6aa602e5f8",
+                      "size_bytes":  525
+                  },
+                  {
+                      "path":  "evidence/day3-final/source/day3-ci-binding.json",
+                      "sha256":  "47bb9b2328ae5d18f056c1b9d1e715e1ef2f8e1e751a1cec842588299ce8ecdd",
+                      "size_bytes":  179
+                  },
+                  {
+                      "path":  "evidence/day3-final/source/day3-deployment.zip",
+                      "sha256":  "a02d2597e3a9d54c95222103f7cc1ba19849f570ad7551576f0613428744dcad",
+                      "size_bytes":  58907
+                  },
+                  {
+                      "path":  "evidence/day3-final/source/day3-verifier-result.json",
+                      "sha256":  "2c6d8e563860ed65b47c6b09df68db596ad137f9bd44e10fe0c591aeacf51beb",
+                      "size_bytes":  688
+                  },
+                  {
+                      "path":  "evidence/day3-final/source/final-source.txt",
+                      "sha256":  "44e1fc673a5329a6504d621e5d2ced525c2c6813800948e290a238f3b3330666",
+                      "size_bytes":  350
+                  }
+              ]
+}

@@ -1,0 +1,19 @@
+﻿{
+    "identifier": "insighthub-day3-postgres",
+    "engine": "postgres",
+    "engineVersion": "16.15",
+    "instanceClass": "db.t3.micro",
+    "storageType": "gp3",
+    "allocatedStorage": 20,
+    "storageEncrypted": true,
+    "publiclyAccessible": false,
+    "dbSubnetGroup": "insighthub-day3-rds",
+    "vpcSecurityGroups": [
+        {
+            "VpcSecurityGroupId": "sg-0c74f675ce82451f1",
+            "Status": "active"
+        }
+    ],
+    "multiAZ": false,
+    "dbName": "insighthub"
+}

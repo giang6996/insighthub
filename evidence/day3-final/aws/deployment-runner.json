@@ -1,0 +1,20 @@
+﻿{
+    "instanceId": "i-0f0a4752d604254ed",
+    "name": "insighthub-day3-deploy-runner",
+    "privateIp": "10.20.45.175",
+    "publicIp": null,
+    "publicDns": "",
+    "subnetId": "subnet-030c916568d0fb5a2",
+    "iamInstanceProfile": {
+        "Arn": "arn:aws:iam::596261186564:instance-profile/insighthub-day3-deploy-runner",
+        "Id": "AIPAYVU7PVQCKL4IDTC4N"
+    },
+    "securityGroups": [
+        {
+            "GroupId": "sg-0740cb83447f304a5",
+            "GroupName": "insighthub-day3-deploy-runner"
+        }
+    ],
+    "instanceType": "t3.micro",
+    "state": "running"
+}

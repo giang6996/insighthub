@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "target": "day3",
+  "status": "PASS",
+  "scope": "partial-runtime-contract",
+  "runtime_verified": true,
+  "source_sha256": "0fdd74862a3f6ec771efe67b899ab5958155b8aeb60666da88d4a884f2f93e0b",
+  "milestone_complete": false,
+  "checks": [
+    {
+      "id": "day3",
+      "status": "PASS",
+      "runtime_verified": true,
+      "ci_url": "https://github.com/giang6996/insighthub/actions/runs/35949605102",
+      "note": "CI/policy verified; deployment health is not attested."
+    }
+  ],
+  "specification_review_required": true,
+  "note": "PASS covers implemented checks only, not all project requirements; use the complete specification and reviewer evidence."
+}

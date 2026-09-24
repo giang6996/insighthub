@@ -1,0 +1,25 @@
+﻿{
+    "Path":  "/",
+    "RoleName":  "insighthub-day3-github-deploy",
+    "Arn":  "arn:aws:iam::596261186564:role/insighthub-day3-github-deploy",
+    "CreateDate":  "2026-09-23T20:20:52Z",
+    "AssumeRolePolicyDocument":  {
+                                     "Version":  "2012-10-17",
+                                     "Statement":  [
+                                                       {
+                                                           "Effect":  "Allow",
+                                                           "Principal":  {
+                                                                             "Federated":  "arn:aws:iam::596261186564:oidc-provider/token.actions.githubusercontent.com"
+                                                                         },
+                                                           "Action":  "sts:AssumeRoleWithWebIdentity",
+                                                           "Condition":  {
+                                                                             "StringEquals":  {
+                                                                                                  "token.actions.githubusercontent.com:aud":  "sts.amazonaws.com",
+                                                                                                  "token.actions.githubusercontent.com:sub":  "repo:giang6996@45038262/insighthub@1362442603:ref:refs/heads/main"
+                                                                                              }
+                                                                         }
+                                                       }
+                                                   ]
+                                 },
+    "MaxSessionDuration":  3600
+}

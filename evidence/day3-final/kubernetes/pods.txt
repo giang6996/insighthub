@@ -1,0 +1,5 @@
+NAME                                READY   STATUS      RESTARTS   AGE   IP             NODE                                              NOMINATED NODE   READINESS GATES
+api-cc777ff55-ptb45                 1/1     Running     0          75m   10.20.33.99    ip-10-20-39-78.ap-southeast-1.compute.internal    <none>           <none>
+database-init-vkg88                 0/1     Completed   0          10h   10.20.56.246   ip-10-20-50-213.ap-southeast-1.compute.internal   <none>           <none>
+ingestion-worker-5b96c6888d-pxq22   1/1     Running     0          74m   10.20.32.251   ip-10-20-39-78.ap-southeast-1.compute.internal    <none>           <none>
+web-55f45d7c89-r5djl                1/1     Running     0          74m   10.20.57.237   ip-10-20-50-213.ap-southeast-1.compute.internal   <none>           <none>

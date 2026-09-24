@@ -1,0 +1,1397 @@
+﻿local-baseline	UNKNOWN STEP	﻿2026-09-24T03:00:20.2382287Z Current runner version: '2.337.0'
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2418342Z ##[group]Runner Image Provisioner
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2419648Z Hosted Compute Agent
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2420574Z Version: 20260828.587
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2421762Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2423157Z Build Date: 2026-08-28T16:44:25Z
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2424379Z Worker ID: {c4d47c03-e753-4d91-89b8-1ba2d52e1af2}
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2425617Z Azure Region: centralus
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2426541Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2429534Z ##[group]Operating System
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2430558Z Ubuntu
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2431517Z 24.04.5
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2432635Z LTS
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2433437Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2434418Z ##[group]Runner Image
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2435407Z Image: ubuntu-24.04
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2436295Z Version: 20260907.300.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2438540Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2441784Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2443604Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2445547Z ##[group]GITHUB_TOKEN Permissions
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2448374Z Contents: read
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2449259Z Metadata: read
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2450319Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2453220Z Secret source: Actions
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2454831Z Cache mode: write
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2456297Z Prepare workflow directory
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2918678Z Prepare all required actions
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.2986150Z Getting action download info
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.5286742Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7023717Z Complete job name: local-baseline
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7976361Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7977406Z with:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7977865Z   persist-credentials: false
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7978421Z   repository: giang6996/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7982549Z   token: ***
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7983005Z   ssh-strict: true
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7983459Z   ssh-user: git
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7983891Z   clean: true
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7984357Z   sparse-checkout-cone-mode: true
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7984892Z   fetch-depth: 1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7985328Z   fetch-tags: false
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7985778Z   show-progress: true
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7986231Z   lfs: false
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7986654Z   submodules: false
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7987119Z   set-safe-directory: true
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7987637Z   allow-unsafe-pr-checkout: false
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7988402Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7988839Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7989377Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7989869Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7990348Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.7990840Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.8992515Z Syncing repository: giang6996/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.8995041Z ##[group]Getting Git version info
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.8996178Z Working directory is '/home/runner/work/insighthub/insighthub'
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.8997818Z [command]/usr/bin/git version
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9060788Z git version 2.55.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9079746Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9089834Z Temporarily overriding HOME='/home/runner/work/_temp/ea05c701-da5d-4b63-b815-012d3ad318b7' before making global git config changes
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9092372Z Adding repository directory to the temporary git global config as a safe directory
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9096188Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9152223Z Deleting the contents of '/home/runner/work/insighthub/insighthub'
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9155887Z ##[group]Determining repository object format
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9157587Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9158788Z ##[group]Initializing the repository
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9169818Z [command]/usr/bin/git init /home/runner/work/insighthub/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9241553Z hint: Using 'master' as the name for the initial branch. This default branch name
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9243576Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9245353Z hint: to use in all of your new repositories, which will suppress this warning,
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9246791Z hint: call:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9247864Z hint:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9248802Z hint: 	git config --global init.defaultBranch <name>
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9249850Z hint:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9250830Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9254549Z hint: 'development'. The just-created branch can be renamed via this command:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9255770Z hint:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9256461Z hint: 	git branch -m <name>
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9257228Z hint:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9258227Z hint: Disable this message with "git config set advice.defaultBranchName false"
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9259914Z Initialized empty Git repository in /home/runner/work/insighthub/insighthub/.git/
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9262852Z [command]/usr/bin/git remote add origin https://github.com/giang6996/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9301501Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9307073Z ##[group]Disabling automatic garbage collection
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9308210Z [command]/usr/bin/git config --local gc.auto 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9338442Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9339539Z ##[group]Setting up auth
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9340379Z Removing SSH command configuration
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9345313Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9386511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9715003Z Removing HTTP extra header
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9721286Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:20.9769091Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0023909Z Removing includeIf entries pointing to credentials config files
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0029100Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0066829Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0308035Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0349597Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git.path /home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0384561Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0425755Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0463319Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0497982Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0498791Z ##[group]Fetching the repository
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.0504049Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +120843f337943d6fd8f55a7c3115d76b1bb3d129:refs/remotes/origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5664987Z From https://github.com/giang6996/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5666526Z  * [new ref]         120843f337943d6fd8f55a7c3115d76b1bb3d129 -> origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5675611Z [command]/usr/bin/git branch --list --remote origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5705571Z   origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5713396Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5741284Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5746213Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5747483Z ##[group]Determining the checkout info
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5749019Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5750755Z [command]/usr/bin/git sparse-checkout disable
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5803122Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5838619Z ##[group]Checking out the ref
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.5842683Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6003816Z Switched to a new branch 'main'
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6008564Z branch 'main' set up to track 'origin/main'.
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6044530Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6074027Z [command]/usr/bin/git log -1 --format=%H
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6099067Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6108913Z ##[group]Removing auth
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6109814Z Removing SSH command configuration
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6113963Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6154760Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6396265Z Removing HTTP extra header
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6397843Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6434072Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6666928Z Removing includeIf entries pointing to credentials config files
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6671429Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6704807Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6706779Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6708320Z includeif.gitdir:/github/workspace/.git.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6709588Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6715852Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6744247Z /home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6754451Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-aae8241e\-6312\-432f\-ae50\-4891eb2acb18\.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6792217Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6823182Z /home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6831408Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-aae8241e\-6312\-432f\-ae50\-4891eb2acb18\.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6867687Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6913669Z /github/runner_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6950613Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-aae8241e\-6312\-432f\-ae50\-4891eb2acb18\.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.6990766Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7017697Z /github/runner_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7027273Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-aae8241e\-6312\-432f\-ae50\-4891eb2acb18\.config
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7065361Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7299020Z Removing credentials config '/home/runner/work/_temp/git-credentials-aae8241e-6312-432f-ae50-4891eb2acb18.config'
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7306629Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7516562Z ##[group]Run sudo install -d -m 0770 -o 1001 -g 1001 .staging
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7517641Z [36;1msudo install -d -m 0770 -o 1001 -g 1001 .staging[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7518493Z [36;1mstat -c '%u:%g %a %n' .staging[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7562678Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7563268Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7563722Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7564376Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7564856Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7565370Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7565926Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7753337Z 1001:1001 770 .staging
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7805884Z ##[group]Run docker compose up --build -d --wait
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7806685Z [36;1mdocker compose up --build -d --wait[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7844399Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7844960Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7845419Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7846030Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7846500Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7847022Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.7847598Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.9934966Z  redis Pulling 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:21.9936460Z  postgres Pulling 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5882656Z  9b02e9fcb401 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5884008Z  00cbddfda95d Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5884957Z  abba0514855b Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5885973Z  ab7008ef24f7 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5886928Z  58306f588cc8 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5887858Z  dcd19d131e85 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5888958Z  b9bd4f060e77 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5963435Z  3ef6f5cde6ed Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5964370Z  1a02645c4ae0 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5965391Z  4a542bded99f Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5966418Z  0ef25a3a59d4 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5967352Z  b56c991682ce Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5968411Z  d05653db956a Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5969376Z  f0a3f2ba6a7b Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5970311Z  0f084233221f Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5971267Z  169a0405fdd2 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5972273Z  dcd19d131e85 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5973152Z  b9bd4f060e77 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5974270Z  3ef6f5cde6ed Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5975382Z  1a02645c4ae0 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5976499Z  4a542bded99f Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5977699Z  0ef25a3a59d4 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5978833Z  b56c991682ce Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5979980Z  d05653db956a Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5981121Z  f0a3f2ba6a7b Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5982359Z  0f084233221f Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5983486Z  169a0405fdd2 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5984618Z  ab7008ef24f7 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.5985761Z  58306f588cc8 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.7457674Z  00cbddfda95d Downloading [==================================================>]  1.168kB/1.168kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.7460382Z  00cbddfda95d Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.7462273Z  00cbddfda95d Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.7654190Z  abba0514855b Downloading [>                                                  ]  48.51kB/4.534MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.7900926Z  9b02e9fcb401 Downloading [>                                                  ]  294.3kB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8393527Z  da9db072f522 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8396504Z  dd8d46bd4047 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8398277Z  5057e26f1a86 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8400012Z  be83d0fd33a3 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8401729Z  b3d150cb1b6c Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8403716Z  369ad5b9119b Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8405379Z  4f4fb700ef54 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8406785Z  37d63ae71d35 Pulling fs layer 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8408013Z  da9db072f522 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8409086Z  dd8d46bd4047 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8410267Z  5057e26f1a86 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8411494Z  be83d0fd33a3 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8412946Z  b3d150cb1b6c Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8414194Z  369ad5b9119b Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8415597Z  4f4fb700ef54 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8416813Z  37d63ae71d35 Waiting 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8658184Z  abba0514855b Downloading [==========================================>        ]  3.833MB/4.534MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8717858Z  abba0514855b Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8719433Z  abba0514855b Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.8906813Z  9b02e9fcb401 Downloading [==============>                                    ]  8.257MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9153740Z  ab7008ef24f7 Downloading [>                                                  ]  16.38kB/1.25MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9533096Z  9b02e9fcb401 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9535442Z  9b02e9fcb401 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9857369Z  9b02e9fcb401 Extracting [>                                                  ]  294.9kB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9955585Z  ab7008ef24f7 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:22.9965103Z  ab7008ef24f7 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.0248935Z  58306f588cc8 Downloading [>                                                  ]  81.28kB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.0867011Z  9b02e9fcb401 Extracting [========>                                          ]  5.014MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.0906025Z  dcd19d131e85 Downloading [>                                                  ]  15.74kB/1.196MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1148292Z  58306f588cc8 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1150064Z  58306f588cc8 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1389121Z  b9bd4f060e77 Downloading [==================================================>]     116B/116B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1393174Z  b9bd4f060e77 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1396292Z  b9bd4f060e77 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1702883Z  dcd19d131e85 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1705019Z  dcd19d131e85 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.1882191Z  9b02e9fcb401 Extracting [================>                                  ]  9.142MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.2826280Z  3ef6f5cde6ed Downloading [==================================================>]  3.142kB/3.142kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.2830182Z  3ef6f5cde6ed Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.2832646Z  3ef6f5cde6ed Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.2911728Z  9b02e9fcb401 Extracting [======================>                            ]  12.68MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.3096445Z  4a542bded99f Downloading [=================>                                 ]    3.5kB/9.973kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.3099997Z  4a542bded99f Downloading [==================================================>]  9.973kB/9.973kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.3108658Z  4a542bded99f Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.3110429Z  4a542bded99f Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.3964762Z  9b02e9fcb401 Extracting [===================================>               ]  20.05MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4007145Z  1a02645c4ae0 Downloading [>                                                  ]  536.8kB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4553294Z  0ef25a3a59d4 Downloading [==================================================>]     128B/128B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4555688Z  0ef25a3a59d4 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4732239Z  b56c991682ce Downloading [==================================================>]     169B/169B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4734271Z  b56c991682ce Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.4735080Z  b56c991682ce Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.5015590Z  1a02645c4ae0 Downloading [=====>                                             ]  11.23MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.5885627Z  d05653db956a Downloading [============================>                      ]    3.5kB/6.101kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.5887037Z  d05653db956a Downloading [==================================================>]  6.101kB/6.101kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.5887806Z  d05653db956a Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.5896537Z  d05653db956a Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.6015441Z  1a02645c4ae0 Downloading [==================>                                ]   42.1MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.6104741Z  f0a3f2ba6a7b Downloading [==================================================>]     188B/188B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.6110780Z  f0a3f2ba6a7b Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.6111794Z  f0a3f2ba6a7b Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.6195302Z  9b02e9fcb401 Extracting [==========================================>        ]  23.89MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7054271Z  1a02645c4ae0 Downloading [================================>                  ]  73.03MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7210811Z  9b02e9fcb401 Extracting [==============================================>    ]  26.54MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7310461Z  0f084233221f Downloading [=>                                                 ]  3.498kB/124.8kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7529753Z  0f084233221f Downloading [==================================================>]  124.8kB/124.8kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7534013Z  0f084233221f Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.7601788Z  169a0405fdd2 Downloading [>                                                  ]  15.74kB/919.1kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8056752Z  1a02645c4ae0 Downloading [============================================>      ]  98.65MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8266768Z  169a0405fdd2 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8267276Z  169a0405fdd2 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8483397Z  9b02e9fcb401 Extracting [================================================>  ]  27.13MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8539822Z  1a02645c4ae0 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.8542124Z  1a02645c4ae0 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.9278681Z  da9db072f522 Downloading [>                                                  ]  48.51kB/3.624MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.9781633Z  dd8d46bd4047 Downloading [==================================================>]     966B/966B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.9782416Z  dd8d46bd4047 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.9782703Z  dd8d46bd4047 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:23.9955885Z  5057e26f1a86 Downloading [====>                                              ]  16.38kB/171.3kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.0148786Z  5057e26f1a86 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.0278625Z  da9db072f522 Downloading [==============================>                    ]  2.211MB/3.624MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.0461332Z  da9db072f522 Downloading [==================================================>]  3.624MB/3.624MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.0467653Z  da9db072f522 Extracting [>                                                  ]  65.54kB/3.624MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.0722740Z  9b02e9fcb401 Extracting [================================================>  ]  27.43MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1129096Z  be83d0fd33a3 Downloading [>                                                  ]  15.74kB/1.003MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1244929Z  da9db072f522 Extracting [==================================================>]  3.624MB/3.624MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1718283Z  da9db072f522 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1749512Z  dd8d46bd4047 Extracting [==================================================>]     966B/966B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1750676Z  dd8d46bd4047 Extracting [==================================================>]     966B/966B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1954795Z  b3d150cb1b6c Downloading [>                                                  ]  146.8kB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1995216Z  be83d0fd33a3 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.1997390Z  be83d0fd33a3 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.2068277Z  9b02e9fcb401 Extracting [==================================================>]  28.24MB/28.24MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.2141798Z  369ad5b9119b Downloading [==================================================>]     100B/100B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.2143913Z  369ad5b9119b Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.2144556Z  369ad5b9119b Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.2955287Z  b3d150cb1b6c Downloading [==================>                                ]  5.455MB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3503479Z  4f4fb700ef54 Downloading [==================================================>]      32B/32B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3638845Z  4f4fb700ef54 Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3639548Z  37d63ae71d35 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3640058Z  4f4fb700ef54 Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3758708Z  b3d150cb1b6c Verifying Checksum 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.3759176Z  b3d150cb1b6c Download complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.7036395Z  9b02e9fcb401 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.8557381Z  00cbddfda95d Extracting [==================================================>]  1.168kB/1.168kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:24.8558202Z  00cbddfda95d Extracting [==================================================>]  1.168kB/1.168kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0129275Z  00cbddfda95d Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0129792Z  dd8d46bd4047 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0145180Z  abba0514855b Extracting [>                                                  ]  65.54kB/4.534MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0157460Z  5057e26f1a86 Extracting [=========>                                         ]  32.77kB/171.3kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0190300Z  5057e26f1a86 Extracting [==================================================>]  171.3kB/171.3kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.0478133Z  5057e26f1a86 Extracting [==================================================>]  171.3kB/171.3kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1105194Z  abba0514855b Extracting [==================================================>]  4.534MB/4.534MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1654944Z  abba0514855b Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1666658Z  ab7008ef24f7 Extracting [=>                                                 ]  32.77kB/1.25MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1758444Z  5057e26f1a86 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1772590Z  be83d0fd33a3 Extracting [=>                                                 ]  32.77kB/1.003MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1969927Z  ab7008ef24f7 Extracting [==================================================>]   1.25MB/1.25MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.1998386Z  be83d0fd33a3 Extracting [==================================================>]  1.003MB/1.003MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.2002296Z  be83d0fd33a3 Extracting [==================================================>]  1.003MB/1.003MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.2098235Z  be83d0fd33a3 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.2122725Z  b3d150cb1b6c Extracting [>                                                  ]  163.8kB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.2139161Z  ab7008ef24f7 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.2159241Z  58306f588cc8 Extracting [>                                                  ]   98.3kB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.3139394Z  b3d150cb1b6c Extracting [================>                                  ]  4.915MB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.3162471Z  58306f588cc8 Extracting [=====================>                             ]  3.441MB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.4141475Z  b3d150cb1b6c Extracting [========================================>          ]   11.8MB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.4164794Z  58306f588cc8 Extracting [================================>                  ]   5.21MB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.4704437Z  b3d150cb1b6c Extracting [==================================================>]  14.64MB/14.64MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5082219Z  b3d150cb1b6c Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5095425Z  369ad5b9119b Extracting [==================================================>]     100B/100B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5107142Z  369ad5b9119b Extracting [==================================================>]     100B/100B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5165128Z  58306f588cc8 Extracting [======================================>            ]  6.291MB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5203168Z  369ad5b9119b Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5214073Z  4f4fb700ef54 Extracting [==================================================>]      32B/32B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5218939Z  4f4fb700ef54 Extracting [==================================================>]      32B/32B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5287624Z  4f4fb700ef54 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5305978Z  37d63ae71d35 Extracting [==================================================>]     572B/572B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5310691Z  37d63ae71d35 Extracting [==================================================>]     572B/572B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5389583Z  37d63ae71d35 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5448305Z  redis Pulled 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5660210Z  58306f588cc8 Extracting [==================================================>]  8.066MB/8.066MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5861496Z  58306f588cc8 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.5870395Z  dcd19d131e85 Extracting [=>                                                 ]  32.77kB/1.196MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6201055Z  dcd19d131e85 Extracting [==================================================>]  1.196MB/1.196MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6261096Z  dcd19d131e85 Extracting [==================================================>]  1.196MB/1.196MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6539396Z  dcd19d131e85 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6548222Z  b9bd4f060e77 Extracting [==================================================>]     116B/116B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6552764Z  b9bd4f060e77 Extracting [==================================================>]     116B/116B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6600002Z  b9bd4f060e77 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6608228Z  3ef6f5cde6ed Extracting [==================================================>]  3.142kB/3.142kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6616975Z  3ef6f5cde6ed Extracting [==================================================>]  3.142kB/3.142kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.6695926Z  3ef6f5cde6ed Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.7196490Z  1a02645c4ae0 Extracting [>                                                  ]  557.1kB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.8428244Z  1a02645c4ae0 Extracting [===>                                               ]  7.799MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:27.9589489Z  1a02645c4ae0 Extracting [=====>                                             ]   11.7MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.0628531Z  1a02645c4ae0 Extracting [======>                                            ]   15.6MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.1653008Z  1a02645c4ae0 Extracting [=========>                                         ]  20.61MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.2660083Z  1a02645c4ae0 Extracting [============>                                      ]   27.3MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.3708770Z  1a02645c4ae0 Extracting [================>                                  ]  36.21MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.4771695Z  1a02645c4ae0 Extracting [====================>                              ]  45.12MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.5801242Z  1a02645c4ae0 Extracting [=======================>                           ]  52.92MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.6836474Z  1a02645c4ae0 Extracting [=========================>                         ]  57.93MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.7851672Z  1a02645c4ae0 Extracting [=============================>                     ]  65.18MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.8889137Z  1a02645c4ae0 Extracting [=================================>                 ]   75.2MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:28.9929821Z  1a02645c4ae0 Extracting [=====================================>             ]  83.56MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.0966505Z  1a02645c4ae0 Extracting [=========================================>         ]  91.91MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.2013325Z  1a02645c4ae0 Extracting [==========================================>        ]  95.81MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.3193036Z  1a02645c4ae0 Extracting [============================================>      ]  99.71MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.4333640Z  1a02645c4ae0 Extracting [==============================================>    ]  103.6MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.5477747Z  1a02645c4ae0 Extracting [===============================================>   ]  106.4MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.6534432Z  1a02645c4ae0 Extracting [================================================>  ]  108.1MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:29.9181569Z  1a02645c4ae0 Extracting [=================================================> ]  110.3MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.0317584Z  1a02645c4ae0 Extracting [==================================================>]  111.8MB/111.8MB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6195844Z  1a02645c4ae0 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6203997Z  4a542bded99f Extracting [==================================================>]  9.973kB/9.973kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6210928Z  4a542bded99f Extracting [==================================================>]  9.973kB/9.973kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6319283Z  4a542bded99f Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6328220Z  0ef25a3a59d4 Extracting [==================================================>]     128B/128B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6330600Z  0ef25a3a59d4 Extracting [==================================================>]     128B/128B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6401750Z  0ef25a3a59d4 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6411194Z  b56c991682ce Extracting [==================================================>]     169B/169B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6432826Z  b56c991682ce Extracting [==================================================>]     169B/169B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6496726Z  b56c991682ce Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6506080Z  d05653db956a Extracting [==================================================>]  6.101kB/6.101kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6511219Z  d05653db956a Extracting [==================================================>]  6.101kB/6.101kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6575507Z  d05653db956a Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6585001Z  f0a3f2ba6a7b Extracting [==================================================>]     188B/188B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6593411Z  f0a3f2ba6a7b Extracting [==================================================>]     188B/188B
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6652899Z  f0a3f2ba6a7b Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6662089Z  0f084233221f Extracting [=============>                                     ]  32.77kB/124.8kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6672945Z  0f084233221f Extracting [==================================================>]  124.8kB/124.8kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.6674050Z  0f084233221f Extracting [==================================================>]  124.8kB/124.8kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.7114443Z  0f084233221f Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.7123170Z  169a0405fdd2 Extracting [=>                                                 ]  32.77kB/919.1kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.7569711Z  169a0405fdd2 Extracting [==================================================>]  919.1kB/919.1kB
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.7782567Z  169a0405fdd2 Pull complete 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.7835707Z  postgres Pulled 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:30.9553035Z #1 [internal] load local bake definitions
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1400391Z #1 reading from stdin 1.03kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1401015Z #1 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1401775Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1402536Z #2 [ingestion-worker internal] load build definition from Dockerfile
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1403365Z #2 transferring dockerfile: 1.28kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1403774Z #2 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1403970Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1404186Z #3 [web internal] load build definition from Dockerfile
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1405358Z #3 transferring dockerfile: 1.39kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1405757Z #3 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1405928Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1406127Z #4 [api internal] load build definition from Dockerfile
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1406615Z #4 transferring dockerfile: 1.32kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1406995Z #4 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1407161Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.1407632Z #5 [auth] library/python:pull token for registry-1.docker.io
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3020031Z #5 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3020211Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3020388Z #6 [auth] library/node:pull token for registry-1.docker.io
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3020739Z #6 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3020857Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.3022111Z #7 [api internal] load metadata for docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.7268259Z #7 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.7269130Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.7270005Z #8 [web internal] load metadata for docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.7270865Z #8 DONE 0.7s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8437202Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8437725Z #9 [web internal] load .dockerignore
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8438240Z #9 transferring context: 93B done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8438573Z #9 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8438688Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8438830Z #10 [web internal] load build context
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8439224Z #10 transferring context: 51.19kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8439603Z #10 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8439774Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8440589Z #7 [ingestion-worker internal] load metadata for docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8441627Z #7 DONE 0.7s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8441814Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8442170Z #11 [api internal] load .dockerignore
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8442949Z #11 transferring context: 111B done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8443335Z #11 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8443501Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8443700Z #12 [ingestion-worker internal] load .dockerignore
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8444178Z #12 transferring context: 2B done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8444550Z #12 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8444722Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8444871Z #13 [api internal] load build context
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8445326Z #13 transferring context: 170.19kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8445740Z #13 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8445905Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8446106Z #14 [ingestion-worker internal] load build context
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8446584Z #14 transferring context: 122.78kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8446894Z #14 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8447005Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8447515Z #15 [ingestion-worker 1/9] FROM docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.8448576Z #15 resolve docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.9508386Z #15 sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea 10.37kB / 10.37kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.9513407Z #15 sha256:2fe5997d249a808b8eeea52c58a1dbffbba28754dc11699ef5c029f2d818ce79 1.75kB / 1.75kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:31.9514084Z #15 sha256:ec7d6c95cd3692a2e2d228a8b1ca74e4025b54121fcc4c5da6f09cfa473315ad 5.66kB / 5.66kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.0518066Z #15 sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 0B / 4.27MB 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.0519585Z #15 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 0B / 29.79MB 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.1531246Z #15 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 0B / 12.12MB 0.3s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.2595559Z #15 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 16.78MB / 29.79MB 0.4s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.3648361Z #15 sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 4.27MB / 4.27MB 0.4s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.3651152Z #15 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 29.79MB / 29.79MB 0.4s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.3653062Z #15 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 4.19MB / 12.12MB 0.5s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.3654265Z #15 extracting sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.3655258Z #15 sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f 249B / 249B 0.5s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:32.4665115Z #15 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 12.12MB / 12.12MB 0.5s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:33.3795567Z #15 extracting sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 1.1s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:33.3796683Z #15 extracting sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:33.6069442Z #15 extracting sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 0.2s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0884181Z #15 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0885843Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0886880Z #16 [web deps 1/5] FROM docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0890863Z #16 resolve docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0948346Z #16 sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 53.38MB / 53.38MB 0.3s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0950179Z #16 sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f 1.26MB / 1.26MB 0.2s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0951642Z #16 sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9 448B / 448B 0.2s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0953764Z #16 sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf 3.87kB / 3.87kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0955512Z #16 sha256:4caaaf42195bcd6f6f3559a413b20cb8f8ad089e231ee874cf7701643966689f 1.72kB / 1.72kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0956795Z #16 sha256:ee289c69ed1ac50a5a042112ea97f132800e2dd53e832da27784f00e45b3289c 6.49kB / 6.49kB done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0958216Z #16 extracting sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 1.6s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0959482Z #16 extracting sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f 0.0s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0960697Z #16 extracting sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9 done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0961603Z #16 DONE 2.3s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0962137Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0962489Z #17 [web builder 2/5] WORKDIR /app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0963198Z #17 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0963736Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0964669Z #15 [ingestion-worker 1/9] FROM docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.0966321Z #15 extracting sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 0.1s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4036517Z #15 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4036789Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4038141Z #18 [web runner 3/7] RUN addgroup --system --gid 1001 nodejs     && adduser --system --uid 1001 nextjs
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4038899Z #18 DONE 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4039095Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.4039825Z #15 [ingestion-worker 1/9] FROM docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8695657Z #15 extracting sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 0.7s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8696817Z #15 extracting sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8697536Z #15 DONE 2.9s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8697703Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8697852Z #19 [api 2/9] WORKDIR /app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8698193Z #19 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8698390Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8698743Z #20 [ingestion-worker 3/9] COPY api/requirements.txt /tmp/api-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8699447Z #20 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8699622Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8699804Z #21 [api deps 1/3] COPY requirements.txt .
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8700206Z #21 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8700372Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:34.8700755Z #22 [api deps 2/3] RUN pip install --no-cache-dir --require-hashes -r requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.0746262Z #22 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.0746861Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.0747771Z #23 [api runtime 1/5] RUN groupadd --system --gid 1001 appuser     && useradd --system --uid 1001 --gid appuser appuser
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.0749548Z #23 0.212 useradd warning: appuser's uid 1001 is greater than SYS_UID_MAX 999
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.0750363Z #23 DONE 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.2247662Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.2249118Z #24 [ingestion-worker 4/9] RUN pip install --no-cache-dir --require-hashes -r /tmp/api-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5461170Z #24 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5495005Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5495583Z #25 [web deps 2/5] RUN apk add --no-cache libc6-compat
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5497109Z #25 1.381 (1/3) Installing musl-obstack (1.2.3-r2)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5498703Z #25 1.408 (2/3) Installing libucontext (1.5.1-r0)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5499226Z #25 1.424 (3/3) Installing gcompat (1.1.0-r4)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5499692Z #25 1.449 OK: 11.0 MiB in 21 packages
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.5500085Z #25 DONE 1.5s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7443044Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7447146Z #26 [web deps 3/5] WORKDIR /app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7448278Z #26 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7457535Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7458186Z #27 [web deps 4/5] COPY package.json package-lock.json* ./
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7458974Z #27 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7459361Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:35.7459709Z #28 [web deps 5/5] RUN npm ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7027707Z #28 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7028084Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7028871Z #24 [ingestion-worker 4/9] RUN pip install --no-cache-dir --require-hashes -r /tmp/api-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7029953Z #24 1.754 Ignoring tzdata: markers 'sys_platform == "win32"' don't match your environment
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7031243Z #24 1.822 Collecting annotated-doc==0.0.5 (from -r /tmp/api-requirements.txt (line 3))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7032275Z #24 1.866   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7033117Z #24 1.888 Collecting annotated-types==0.8.0 (from -r /tmp/api-requirements.txt (line 7))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7033967Z #24 1.898   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7034753Z #24 1.927 Collecting anyio==4.15.1 (from -r /tmp/api-requirements.txt (line 11))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7035507Z #24 1.937   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7036264Z #24 1.986 Collecting certifi==2026.7.22 (from -r /tmp/api-requirements.txt (line 18))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7037055Z #24 1.996   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7037809Z #24 2.036 Collecting click==8.5.0 (from -r /tmp/api-requirements.txt (line 24))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7038583Z #24 2.048   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7039314Z #24 2.141 Collecting fastapi==0.141.1 (from -r /tmp/api-requirements.txt (line 28))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7040243Z #24 2.152   Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7041087Z #24 2.183 Collecting h11==0.16.0 (from -r /tmp/api-requirements.txt (line 32))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7042422Z #24 2.195   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7043206Z #24 2.229 Collecting httpcore==1.0.9 (from -r /tmp/api-requirements.txt (line 38))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7043985Z #24 2.246   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7044745Z #24 2.295 Collecting httptools==0.8.0 (from -r /tmp/api-requirements.txt (line 42))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7045885Z #24 2.305   Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (523 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7046974Z #24 2.346 Collecting httpx==0.28.1 (from -r /tmp/api-requirements.txt (line 94))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7047699Z #24 2.357   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7048387Z #24 2.381 Collecting idna==3.19 (from -r /tmp/api-requirements.txt (line 98))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7049110Z #24 2.392   Downloading idna-3.19-py3-none-any.whl (68 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7049844Z #24 2.412 Collecting pgvector==0.5.0 (from -r /tmp/api-requirements.txt (line 104))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7050611Z #24 2.423   Downloading pgvector-0.5.0-py3-none-any.whl (30 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7051660Z #24 2.452 Collecting prometheus-client==0.26.0 (from -r /tmp/api-requirements.txt (line 108))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7053088Z #24 2.462   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7053928Z #24 2.491 Collecting psycopg==3.3.5 (from -r /tmp/api-requirements.txt (line 112))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7054699Z #24 2.502   Downloading psycopg-3.3.5-py3-none-any.whl (213 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7055502Z #24 2.772 Collecting psycopg-binary==3.3.5 (from -r /tmp/api-requirements.txt (line 116))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7056602Z #24 2.782   Downloading psycopg_binary-3.3.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7058055Z #24 2.835      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 101.6 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7058934Z #24 2.869 Collecting psycopg-pool==3.3.1 (from -r /tmp/api-requirements.txt (line 173))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7059749Z #24 2.879   Downloading psycopg_pool-3.3.1-py3-none-any.whl (40 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7060552Z #24 3.056 Collecting pydantic==2.13.5 (from -r /tmp/api-requirements.txt (line 177))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7061328Z #24 3.067   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7062507Z #24 3.926 Collecting pydantic-core==2.46.5 (from -r /tmp/api-requirements.txt (line 184))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7063599Z #24 3.939   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7065032Z #24 3.949      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 344.0 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7065949Z #24 3.974 Collecting pydantic-settings==2.15.0 (from -r /tmp/api-requirements.txt (line 306))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7066872Z #24 3.984   Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7067717Z #24 4.022 Collecting pypdf==6.18.0 (from -r /tmp/api-requirements.txt (line 310))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7068469Z #24 4.033   Downloading pypdf-6.18.0-py3-none-any.whl (393 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7069268Z #24 4.062 Collecting python-dotenv==1.2.3 (from -r /tmp/api-requirements.txt (line 314))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7070105Z #24 4.072   Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7070948Z #24 4.094 Collecting python-multipart==0.0.32 (from -r /tmp/api-requirements.txt (line 320))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7071823Z #24 4.107   Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7072836Z #24 4.157 Collecting pyyaml==6.0.3 (from -r /tmp/api-requirements.txt (line 324))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7073977Z #24 4.167   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7075286Z #24 4.176      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 581.8 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7076132Z #24 4.225 Collecting starlette==1.6.0 (from -r /tmp/api-requirements.txt (line 399))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7076914Z #24 4.238   Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7077755Z #24 4.266 Collecting typing-extensions==4.16.0 (from -r /tmp/api-requirements.txt (line 403))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7078727Z #24 4.280   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7079610Z #24 4.295 Collecting typing-inspection==0.4.4 (from -r /tmp/api-requirements.txt (line 415))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7080492Z #24 4.307   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7081322Z #24 4.348 Collecting uvicorn==0.52.4 (from -r /tmp/api-requirements.txt (line 426))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7082388Z #24 4.359   Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7083131Z #24 4.414 Collecting uvloop==0.22.1 (from -r /tmp/api-requirements.txt (line 430))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7084241Z #24 4.426   Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7085508Z #24 4.448      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 235.7 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7086609Z #24 4.578 Collecting watchfiles==1.2.0 (from -r /tmp/api-requirements.txt (line 481))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7087637Z #24 4.588   Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7088731Z #24 4.732 Collecting websockets==17.1 (from -r /tmp/api-requirements.txt (line 590))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7089976Z #24 4.743   Downloading websockets-17.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:40.7093325Z #24 4.976 Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-multipart, python-dotenv, pypdf, psycopg-binary, prometheus-client, pgvector, idna, httptools, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, psycopg-pool, psycopg, httpcore, anyio, watchfiles, starlette, pydantic, httpx, pydantic-settings, fastapi
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:42.4043905Z #24 7.690 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.141.1 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.19 pgvector-0.5.0 prometheus-client-0.26.0 psycopg-3.3.5 psycopg-binary-3.3.5 psycopg-pool-3.3.1 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pypdf-6.18.0 python-dotenv-1.2.3 python-multipart-0.0.32 pyyaml-6.0.3 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:42.5549929Z #24 7.690 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:42.5587801Z #24 7.844 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:42.5592840Z #24 7.844 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:42.5593933Z #24 7.844 [notice] To update, run: pip install --upgrade pip
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4654598Z #24 DONE 8.8s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4654857Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4655285Z #22 [api deps 2/3] RUN pip install --no-cache-dir --require-hashes -r requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4656216Z #22 1.688 Ignoring tzdata: markers 'sys_platform == "win32"' don't match your environment
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4657068Z #22 1.754 Collecting annotated-doc==0.0.5 (from -r requirements.txt (line 3))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4658656Z #22 1.803   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4659432Z #22 1.823 Collecting annotated-types==0.8.0 (from -r requirements.txt (line 7))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4660792Z #22 1.836   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4661530Z #22 1.870 Collecting anyio==4.15.1 (from -r requirements.txt (line 11))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4662409Z #22 1.883   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4663127Z #22 1.941 Collecting certifi==2026.7.22 (from -r requirements.txt (line 18))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4663847Z #22 1.955   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4664531Z #22 1.998 Collecting click==8.5.0 (from -r requirements.txt (line 24))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4665187Z #22 2.012   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4665881Z #22 2.091 Collecting fastapi==0.141.1 (from -r requirements.txt (line 28))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4666582Z #22 2.104   Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4667252Z #22 2.133 Collecting h11==0.16.0 (from -r requirements.txt (line 32))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4667907Z #22 2.147   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4668633Z #22 2.174 Collecting httpcore==1.0.9 (from -r requirements.txt (line 38))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4669361Z #22 2.187   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4670411Z #22 2.234 Collecting httptools==0.8.0 (from -r requirements.txt (line 42))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4671467Z #22 2.248   Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (523 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4672581Z #22 2.305 Collecting httpx==0.28.1 (from -r requirements.txt (line 94))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4673172Z #22 2.319   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4673851Z #22 2.347 Collecting idna==3.19 (from -r requirements.txt (line 98))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4674491Z #22 2.360   Downloading idna-3.19-py3-none-any.whl (68 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4675162Z #22 2.382 Collecting pgvector==0.5.0 (from -r requirements.txt (line 104))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4675775Z #22 2.395   Downloading pgvector-0.5.0-py3-none-any.whl (30 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4676548Z #22 2.423 Collecting prometheus-client==0.26.0 (from -r requirements.txt (line 108))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4677366Z #22 2.437   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4678149Z #22 2.468 Collecting psycopg==3.3.5 (from -r requirements.txt (line 112))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4678756Z #22 2.484   Downloading psycopg-3.3.5-py3-none-any.whl (213 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4679511Z #22 2.695 Collecting psycopg-binary==3.3.5 (from -r requirements.txt (line 116))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4680599Z #22 2.709   Downloading psycopg_binary-3.3.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4681904Z #22 2.769      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 88.9 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4682674Z #22 2.803 Collecting psycopg-pool==3.3.1 (from -r requirements.txt (line 173))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4683179Z #22 2.816   Downloading psycopg_pool-3.3.1-py3-none-any.whl (40 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4683710Z #22 2.966 Collecting pydantic==2.13.5 (from -r requirements.txt (line 177))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4684267Z #22 2.984   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4684717Z #22 3.910 Collecting pydantic-core==2.46.5 (from -r requirements.txt (line 184))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4685752Z #22 3.925   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4686992Z #22 3.934      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 587.4 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4687769Z #22 3.960 Collecting pydantic-settings==2.15.0 (from -r requirements.txt (line 306))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4688566Z #22 3.972   Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4689308Z #22 4.005 Collecting pypdf==6.18.0 (from -r requirements.txt (line 310))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4689781Z #22 4.018   Downloading pypdf-6.18.0-py3-none-any.whl (393 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4690384Z #22 4.048 Collecting python-dotenv==1.2.3 (from -r requirements.txt (line 314))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4691148Z #22 4.062   Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4691668Z #22 4.084 Collecting python-multipart==0.0.32 (from -r requirements.txt (line 320))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4692668Z #22 4.099   Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4693443Z #22 4.171 Collecting pyyaml==6.0.3 (from -r requirements.txt (line 324))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4694341Z #22 4.184   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4695673Z #22 4.191      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 297.6 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4696381Z #22 4.238 Collecting starlette==1.6.0 (from -r requirements.txt (line 399))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4697171Z #22 4.251   Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4697870Z #22 4.280 Collecting typing-extensions==4.16.0 (from -r requirements.txt (line 403))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4698497Z #22 4.294   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4699214Z #22 4.310 Collecting typing-inspection==0.4.4 (from -r requirements.txt (line 415))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4700218Z #22 4.323   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4700950Z #22 4.376 Collecting uvicorn==0.52.4 (from -r requirements.txt (line 426))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4701644Z #22 4.391   Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4702405Z #22 4.452 Collecting uvloop==0.22.1 (from -r requirements.txt (line 430))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4703216Z #22 4.465   Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4704507Z #22 4.484      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 362.3 MB/s eta 0:00:00
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4705659Z #22 4.626 Collecting watchfiles==1.2.0 (from -r requirements.txt (line 481))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4707441Z #22 4.641   Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4708530Z #22 4.831 Collecting websockets==17.1 (from -r requirements.txt (line 590))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4709655Z #22 4.846   Downloading websockets-17.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4713810Z #22 5.084 Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-multipart, python-dotenv, pypdf, psycopg-binary, prometheus-client, pgvector, idna, httptools, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, psycopg-pool, psycopg, httpcore, anyio, watchfiles, starlette, pydantic, httpx, pydantic-settings, fastapi
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4718308Z #22 8.104 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.141.1 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.19 pgvector-0.5.0 prometheus-client-0.26.0 psycopg-3.3.5 psycopg-binary-3.3.5 psycopg-pool-3.3.1 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pypdf-6.18.0 python-dotenv-1.2.3 python-multipart-0.0.32 pyyaml-6.0.3 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4723429Z #22 8.104 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4725424Z #22 8.263 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4725832Z #22 8.263 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.4726450Z #22 8.263 [notice] To update, run: pip install --upgrade pip
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6316803Z #22 DONE 8.8s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6319259Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6319814Z #29 [ingestion-worker 5/9] COPY ingestion-worker/requirements.txt /tmp/worker-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6320556Z #29 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6320763Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:43.6321076Z #30 [ingestion-worker 6/9] RUN pip install --no-cache-dir -r /tmp/worker-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.5435498Z #30 2.017 Collecting arq==0.26.3 (from -r /tmp/worker-requirements.txt (line 2))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.5438966Z #30 2.062   Downloading arq-0.26.3-py3-none-any.whl.metadata (2.7 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.6456011Z #30 2.121 Collecting redis==5.0.8 (from -r /tmp/worker-requirements.txt (line 3))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.6458464Z #30 2.132   Downloading redis-5.0.8-py3-none-any.whl.metadata (9.2 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.6460302Z #30 2.139 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.12/site-packages (from arq==0.26.3->-r /tmp/worker-requirements.txt (line 2)) (8.5.0)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.9537456Z #30 2.325 Collecting hiredis>1.0.0 (from redis[hiredis]<6,>=4.2.0->arq==0.26.3->-r /tmp/worker-requirements.txt (line 2))
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.9539223Z #30 2.336   Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.9549840Z #30 2.352 Downloading arq-0.26.3-py3-none-any.whl (25 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.9550863Z #30 2.367 Downloading redis-5.0.8-py3-none-any.whl (255 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:45.9552320Z #30 2.401 Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (313 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.1135551Z #30 2.483 Installing collected packages: redis, hiredis, arq
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2280848Z #30 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2281129Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2284088Z #28 [web deps 5/5] RUN npm ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2284581Z #28 10.36 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2285004Z #28 10.36 added 27 packages, and audited 28 packages in 10s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2285503Z #28 10.36 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2285835Z #28 10.36 6 packages are looking for funding
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2286337Z #28 10.36   run `npm fund` for details
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2286737Z #28 10.36 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2287044Z #28 10.36 found 0 vulnerabilities
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2287456Z #28 10.36 npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2287948Z #28 10.36 npm notice New major version of npm available! 11.19.0 -> 12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2288755Z #28 10.36 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2289606Z #28 10.36 npm notice To update run: npm install -g npm@12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2290031Z #28 10.36 npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.2290317Z #28 DONE 10.6s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3903218Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3904352Z #31 [api deps 3/3] RUN pip install --no-cache-dir arq==0.26.3 redis==5.0.8
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3905193Z #31 1.822 Collecting arq==0.26.3
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3906030Z #31 1.878   Downloading arq-0.26.3-py3-none-any.whl.metadata (2.7 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3906917Z #31 1.934 Collecting redis==5.0.8
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3907649Z #31 1.947   Downloading redis-5.0.8-py3-none-any.whl.metadata (9.2 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3908834Z #31 1.954 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.12/site-packages (from arq==0.26.3) (8.5.0)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3910083Z #31 2.159 Collecting hiredis>1.0.0 (from redis[hiredis]<6,>=4.2.0->arq==0.26.3)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3911388Z #31 2.173   Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3912785Z #31 2.190 Downloading arq-0.26.3-py3-none-any.whl (25 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3913569Z #31 2.209 Downloading redis-5.0.8-py3-none-any.whl (255 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3914716Z #31 2.248 Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (313 kB)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3915887Z #31 2.328 Installing collected packages: redis, hiredis, arq
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3916809Z #31 2.649 Successfully installed arq-0.26.3 hiredis-3.4.2 redis-5.0.8
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3919374Z #31 2.649 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3921791Z #31 2.756 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3922603Z #31 2.756 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3923369Z #31 2.756 [notice] To update, run: pip install --upgrade pip
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3924007Z #31 DONE 2.8s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3924352Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3924885Z #30 [ingestion-worker 6/9] RUN pip install --no-cache-dir -r /tmp/worker-requirements.txt
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3927467Z #30 2.788 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3930452Z #30 2.788 Successfully installed arq-0.26.3 hiredis-3.4.2 redis-5.0.8
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3931204Z #30 2.910 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3931821Z #30 2.910 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.3932865Z #30 2.910 [notice] To update, run: pip install --upgrade pip
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.5233371Z #30 DONE 3.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.5235087Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.5235763Z #32 [ingestion-worker 7/9] COPY api/app ./app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.5236573Z #32 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.6451841Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.6452707Z #33 [ingestion-worker 8/9] COPY ingestion-worker/worker.py ./worker.py
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.6453524Z #33 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.6453746Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.6454349Z #34 [api runtime 2/5] COPY --from=deps /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.7699829Z #34 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.7700367Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.7701652Z #35 [ingestion-worker 9/9] RUN groupadd --system --gid 1001 appuser     && useradd --system --uid 1001 --gid appuser appuser     && mkdir -p /data/staging     && chown -R appuser:appuser /data/staging /app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.7703277Z #35 0.202 useradd warning: appuser's uid 1001 is greater than SYS_UID_MAX 999
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.7703877Z #35 DONE 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.9210994Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.9211799Z #36 [ingestion-worker] exporting to image
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:46.9212901Z #36 exporting layers
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.8823348Z #36 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.8823639Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.8824609Z #34 [api runtime 2/5] COPY --from=deps /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.8825470Z #34 DONE 1.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9883088Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9884130Z #37 [api runtime 3/5] COPY --from=deps /usr/local/bin /usr/local/bin
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9885016Z #37 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9885402Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9885858Z #38 [api runtime 4/5] COPY --chown=appuser:appuser app ./app
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9886546Z #38 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9886979Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9887419Z #39 [api runtime 5/5] COPY --chown=appuser:appuser tests ./tests
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9888125Z #39 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9888482Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:47.9888946Z #40 [web builder 3/5] COPY --from=deps /app/node_modules ./node_modules
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7696138Z #40 ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7697748Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7698239Z #36 [ingestion-worker] exporting to image
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7698746Z #36 exporting layers 1.8s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7699464Z #36 writing image sha256:75a4da8a322f790b7d3d5552bbf47b436cb38943245a4faf70660ded5f06111b done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7700232Z #36 naming to docker.io/library/insighthub-ci-ingestion-worker done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7700803Z #36 DONE 1.8s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7700933Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7701111Z #41 [ingestion-worker] resolving provenance for metadata file
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.7701647Z #41 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.8531846Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.8532695Z #42 [api] exporting to image
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:48.8533191Z #42 exporting layers 0.9s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0274632Z #42 writing image sha256:04c7ea585b73d3a5eae2c445a147daa06e7e1b1530dab189126dff9b0119613d done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0275512Z #42 naming to docker.io/library/insighthub-ci-api done
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0275892Z #42 DONE 0.9s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0276023Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0276148Z #43 [api] resolving provenance for metadata file
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0294515Z #43 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0294748Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:49.0295092Z #40 [web builder 3/5] COPY --from=deps /app/node_modules ./node_modules
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.0150917Z #40 DONE 2.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.1768520Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.1769033Z #44 [web builder 4/5] COPY . .
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.1769482Z #44 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.1769660Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.1769869Z #45 [web builder 5/5] RUN npm run typecheck && npm run build
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.5442983Z #45 0.518 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.5443409Z #45 0.518 > insighthub-web@0.2.3 typecheck
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.5444464Z #45 0.518 > tsc --noEmit
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:50.5444827Z #45 0.518 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.4738012Z #45 2.447 npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.4738620Z #45 2.447 npm notice New major version of npm available! 11.19.0 -> 12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.4739438Z #45 2.447 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.4740174Z #45 2.447 npm notice To update run: npm install -g npm@12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.4740677Z #45 2.447 npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.6524105Z #45 2.626 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.6524446Z #45 2.626 > insighthub-web@0.2.3 build
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.6524781Z #45 2.626 > next build
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:52.6525012Z #45 2.626 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:53.1271380Z #45 3.101 ▲ Next.js 16.3.4 (Turbopack)
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:53.3624092Z #45 3.121 ✓ Running next.config.js took 20ms
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:53.3624442Z #45 3.155 
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:53.3624705Z #45 3.185   Creating an optimized production build ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:58.7151660Z #45 8.688 ✓ Compiled successfully in 5.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:00:58.8655186Z #45 8.689   Running TypeScript ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:00.8314049Z #45 10.80   Finished TypeScript in 2.1s ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:00.9842398Z #45 10.81   Collecting page data using 3 workers ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.5548904Z #45 11.53   Generating static pages using 3 workers (0/5) ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.6972925Z #45 11.55   Generating static pages using 3 workers (1/5) 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.6973832Z #45 11.55   Generating static pages using 3 workers (2/5) 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.6974831Z #45 11.56   Generating static pages using 3 workers (3/5) 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.6975698Z #45 11.67 ✓ Generating static pages using 3 workers (5/5) in 143ms
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.8515303Z #45 11.67   Finalizing page optimization ...
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:01.8583931Z #45 11.83 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0856991Z #45 11.83 Route (app)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0857699Z #45 11.83 ┌ ƒ /
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0858075Z #45 11.83 ├ ○ /_not-found
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0858503Z #45 11.83 ├ ƒ /api/documents
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0858919Z #45 11.83 ├ ƒ /api/health
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0859338Z #45 11.83 └ ƒ /api/proxy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0859661Z #45 11.83 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0859935Z #45 11.83 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0860367Z #45 11.83 ○  (Static)   prerendered as static content
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0860967Z #45 11.83 ƒ  (Dynamic)  server-rendered on demand
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0861404Z #45 11.83 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.0861678Z #45 DONE 11.9s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.2660635Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.2662441Z #46 [web runner 4/7] COPY --from=builder /app/public ./public
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.3991825Z #46 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.3992736Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.3993035Z #47 [web runner 5/7] RUN mkdir .next && chown nextjs:nodejs .next
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.3993580Z #47 DONE 0.1s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.5502294Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.5503059Z #48 [web runner 6/7] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.6075788Z #48 DONE 0.2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7716781Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7717584Z #49 [web runner 7/7] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7718351Z #49 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7718540Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7718718Z #50 [web] exporting to image
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:02.7719103Z #50 exporting layers
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1693071Z #50 exporting layers 0.5s done
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1924888Z #50 writing image sha256:a302c94c4b4b31ee53b827794b48b0414ff10e34e81ae9e072e65cce49c32da2 done
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1925714Z #50 naming to docker.io/library/insighthub-ci-web done
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1926161Z #50 DONE 0.6s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1926349Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1926533Z #51 [web] resolving provenance for metadata file
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1926954Z #51 DONE 0.0s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1927263Z  api  Built
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1927575Z  ingestion-worker  Built
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1927815Z  web  Built
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.1940884Z  Network insighthub-ci_default  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2302905Z  Network insighthub-ci_default  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2310624Z  Volume "insighthub-ci_pgdata"  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2323229Z  Volume "insighthub-ci_pgdata"  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2328101Z  Container insighthub-ci-redis-1  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2328723Z  Container insighthub-ci-postgres-1  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2516632Z  Container insighthub-ci-redis-1  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2517379Z  Container insighthub-ci-postgres-1  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2518200Z  Container insighthub-ci-ingestion-worker-1  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2518888Z  Container insighthub-ci-api-1  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2652883Z  Container insighthub-ci-api-1  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2653694Z  Container insighthub-ci-web-1  Creating
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2672389Z  Container insighthub-ci-ingestion-worker-1  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2746157Z  Container insighthub-ci-web-1  Created
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2759448Z  Container insighthub-ci-redis-1  Starting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.2760012Z  Container insighthub-ci-postgres-1  Starting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4527789Z  Container insighthub-ci-postgres-1  Started
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4763158Z  Container insighthub-ci-redis-1  Started
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4763997Z  Container insighthub-ci-postgres-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4764962Z  Container insighthub-ci-redis-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4765748Z  Container insighthub-ci-redis-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:03.4766456Z  Container insighthub-ci-postgres-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9785284Z  Container insighthub-ci-redis-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9785862Z  Container insighthub-ci-postgres-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9789065Z  Container insighthub-ci-postgres-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9789902Z  Container insighthub-ci-ingestion-worker-1  Starting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9790682Z  Container insighthub-ci-redis-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:08.9791348Z  Container insighthub-ci-api-1  Starting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:09.1090357Z  Container insighthub-ci-ingestion-worker-1  Started
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:09.1415421Z  Container insighthub-ci-api-1  Started
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:09.1416196Z  Container insighthub-ci-api-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.6430902Z  Container insighthub-ci-api-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.6431480Z  Container insighthub-ci-web-1  Starting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7787172Z  Container insighthub-ci-web-1  Started
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7787959Z  Container insighthub-ci-redis-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7788496Z  Container insighthub-ci-api-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7789055Z  Container insighthub-ci-ingestion-worker-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7789579Z  Container insighthub-ci-web-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:14.7790127Z  Container insighthub-ci-postgres-1  Waiting
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:15.2805652Z  Container insighthub-ci-redis-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:15.2806211Z  Container insighthub-ci-postgres-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:15.2806557Z  Container insighthub-ci-api-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:15.2806891Z  Container insighthub-ci-ingestion-worker-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2800678Z  Container insighthub-ci-web-1  Healthy
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2878377Z ##[group]Run python3 -m unittest discover -s tests -p 'test_verify*.py' -v
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2878936Z [36;1mpython3 -m unittest discover -s tests -p 'test_verify*.py' -v[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2920603Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2920854Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2921074Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2921347Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2921560Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2921809Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.2922221Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5225886Z test_all_unimplemented_days_incomplete (test_verify.CommonTests.test_all_unimplemented_days_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5433233Z test_composite_preserves_failure_and_incomplete (test_verify.CommonTests.test_composite_preserves_failure_and_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5478874Z test_day1_extended_missing_worker_is_incomplete (test_verify.CommonTests.test_day1_extended_missing_worker_is_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5523212Z test_day1_without_worker_cannot_pass_by_default (test_verify.CommonTests.test_day1_without_worker_cannot_pass_by_default) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5582444Z test_default_starter_is_not_runtime (test_verify.CommonTests.test_default_starter_is_not_runtime) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5631427Z test_digest_stable_across_cache_and_evidence (test_verify.CommonTests.test_digest_stable_across_cache_and_evidence) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5674100Z test_dirty_content_changes_fingerprint_without_git (test_verify.CommonTests.test_dirty_content_changes_fingerprint_without_git) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5702103Z test_duplicate_json_and_nan_rejected (test_verify.CommonTests.test_duplicate_json_and_nan_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5779740Z test_fixture_can_never_complete_milestone (test_verify.CommonTests.test_fixture_can_never_complete_milestone) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5836386Z test_invalid_arguments_incomplete (test_verify.CommonTests.test_invalid_arguments_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5884804Z test_json_commands_are_never_executed (test_verify.CommonTests.test_json_commands_are_never_executed) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5913413Z test_junit_empty_failure_skipped_missing_case_rejected (test_verify.CommonTests.test_junit_empty_failure_skipped_missing_case_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5933933Z test_junit_valid_parametrized_cases (test_verify.CommonTests.test_junit_valid_parametrized_cases) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.5971110Z test_missing_empty_hash_and_path_escape_rejected (test_verify.CommonTests.test_missing_empty_hash_and_path_escape_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6024118Z test_missing_starter_artifact_incomplete (test_verify.CommonTests.test_missing_starter_artifact_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6358401Z test_missing_tool_and_timeout_are_incomplete (test_verify.CommonTests.test_missing_tool_and_timeout_are_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6387549Z test_passed_text_cannot_override_test_exit (test_verify.CommonTests.test_passed_text_cannot_override_test_exit) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6417769Z test_placeholder_python_comments_do_not_pass (test_verify.CommonTests.test_placeholder_python_comments_do_not_pass) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6499645Z test_schema_and_day_validated (test_verify.CommonTests.test_schema_and_day_validated) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6553083Z test_source_change_during_checks_is_incomplete (test_verify.CommonTests.test_source_change_during_checks_is_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6636567Z test_stale_dirty_and_future_evidence_rejected (test_verify.CommonTests.test_stale_dirty_and_future_evidence_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6657194Z test_symlink_escape_rejected (test_verify.CommonTests.test_symlink_escape_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.6691827Z test_wrapper_missing_python_is_incomplete (test_verify.CommonTests.test_wrapper_missing_python_is_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7801162Z test_wrappers_portable_outside_repo (test_verify.CommonTests.test_wrappers_portable_outside_repo) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7825194Z test_audit_timestamp_run_binding_and_decisions (test_verify.DomainTests.test_audit_timestamp_run_binding_and_decisions) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7899860Z test_ci_policy_exit_cannot_be_hidden_by_passed_text (test_verify.DomainTests.test_ci_policy_exit_cannot_be_hidden_by_passed_text) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7924785Z test_cost_mismatch_nan_duplicate_and_budget (test_verify.DomainTests.test_cost_mismatch_nan_duplicate_and_budget) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7946997Z test_empty_duplicate_uncovered_eval_rejected (test_verify.DomainTests.test_empty_duplicate_uncovered_eval_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7967356Z test_failed_high_eval_is_fail (test_verify.DomainTests.test_failed_high_eval_is_fail) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.7987647Z test_fake_real_provider_rejected (test_verify.DomainTests.test_fake_real_provider_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8007363Z test_fixture_report_can_validate_but_is_labelled (test_verify.DomainTests.test_fixture_report_can_validate_but_is_labelled) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8079402Z test_local_ci_does_not_call_github (test_verify.DomainTests.test_local_ci_does_not_call_github) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8099583Z test_ollama_is_real_and_measured_zero_provider_cost_valid (test_verify.DomainTests.test_ollama_is_real_and_measured_zero_provider_cost_valid) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8119290Z test_zero_cost_without_resource_measurement_rejected (test_verify.DomainTests.test_zero_cost_without_resource_measurement_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8150517Z test_detailed_junit_not_pass_string_is_required (test_verify.ExtraGuards.test_detailed_junit_not_pass_string_is_required) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8170569Z test_http_read_total_time_and_size_are_bounded (test_verify.ExtraGuards.test_http_read_total_time_and_size_are_bounded) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8222259Z test_known_dummy_artifacts_rejected_even_with_valid_hash (test_verify.ExtraGuards.test_known_dummy_artifacts_rejected_even_with_valid_hash) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8274639Z test_fixture_sdk_cannot_be_live_proof (test_verify.McpContractTests.test_fixture_sdk_cannot_be_live_proof) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8320995Z test_live_backend_maps_to_real_envelope (test_verify.McpContractTests.test_live_backend_maps_to_real_envelope) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8398325Z test_no_calls_or_protocol_mismatch_fails (test_verify.McpContractTests.test_no_calls_or_protocol_mismatch_fails) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8507287Z test_sdk_missing_dependency_and_skips_are_incomplete (test_verify.McpContractTests.test_sdk_missing_dependency_and_skips_are_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8555012Z test_all_three_rca_are_checked (test_verify.RestoredProjectScopeTests.test_all_three_rca_are_checked) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8752945Z test_automated_subset_cannot_complete_project (test_verify.RestoredProjectScopeTests.test_automated_subset_cannot_complete_project) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8771870Z test_defaults_require_github_and_http_signature (test_verify.RestoredProjectScopeTests.test_defaults_require_github_and_http_signature) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8816105Z test_one_rca_or_one_panel_cannot_pass_day4 (test_verify.RestoredProjectScopeTests.test_one_rca_or_one_panel_cannot_pass_day4) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8840167Z test_async_required_rejects_sync (test_verify.SmokeTests.test_async_required_rejects_sync) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8867015Z test_async_smoke_polls_fresh_document (test_verify.SmokeTests.test_async_smoke_polls_fresh_document) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8889875Z test_failed_worker_stops_poll (test_verify.SmokeTests.test_failed_worker_stops_poll) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.8926012Z test_malformed_empty_chat_and_comment_metrics_fail (test_verify.SmokeTests.test_malformed_empty_chat_and_comment_metrics_fail) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9257176Z test_polling_is_bounded_and_does_not_accept_old_id (test_verify.SmokeTests.test_polling_is_bounded_and_does_not_accept_old_id) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9282741Z test_sync_smoke (test_verify.SmokeTests.test_sync_smoke) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9481111Z test_unavailable_endpoint_is_incomplete (test_verify.SmokeTests.test_unavailable_endpoint_is_incomplete) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9511922Z test_empty_rule_groups_or_tests_not_success (test_verify.TelemetryTests.test_empty_rule_groups_or_tests_not_success) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9564910Z test_live_timestamped_telemetry_matches (test_verify.TelemetryTests.test_live_timestamped_telemetry_matches) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9614828Z test_promtool_nonzero_not_overridden_by_success_text (test_verify.TelemetryTests.test_promtool_nonzero_not_overridden_by_success_text) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9639382Z test_rule_test_requires_assertion_not_only_input (test_verify.TelemetryTests.test_rule_test_requires_assertion_not_only_input) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9758255Z test_stale_or_mismatched_telemetry_not_accepted (test_verify.TelemetryTests.test_stale_or_mismatched_telemetry_not_accepted) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9768612Z test_config_cannot_escape_repo (test_verify_hosts.HostTests.test_config_cannot_escape_repo) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9810883Z test_cross_host_format_rejected (test_verify_hosts.HostTests.test_cross_host_format_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9820142Z test_duplicate_json_rejected (test_verify_hosts.HostTests.test_duplicate_json_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:20.9830349Z test_external_config_symlink_rejected (test_verify_hosts.HostTests.test_external_config_symlink_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.1030619Z test_helper_rejects_unknown_host (test_verify_hosts.HostTests.test_helper_rejects_unknown_host) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.1994512Z test_helper_three_hosts_same_backend_unicode_paths (test_verify_hosts.HostTests.test_helper_three_hosts_same_backend_unicode_paths) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2088593Z test_host_artifacts_change_fingerprint (test_verify_hosts.HostTests.test_host_artifacts_change_fingerprint) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2101163Z test_length_limit_and_todo_not_milestone (test_verify_hosts.HostTests.test_length_limit_and_todo_not_milestone) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2120511Z test_malformed_transport_rejected (test_verify_hosts.HostTests.test_malformed_transport_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2132228Z test_missing_or_duplicate_section_rejected (test_verify_hosts.HostTests.test_missing_or_duplicate_section_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2151584Z test_remote_host_fields (test_verify_hosts.HostTests.test_remote_host_fields) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2152301Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2152549Z ----------------------------------------------------------------------
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2153108Z Ran 68 tests in 0.699s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2153315Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2153415Z OK
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2355374Z ##[group]Run docker compose run --rm --no-deps api sh -ec '
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2355827Z [36;1mdocker compose run --rm --no-deps api sh -ec '[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2356139Z [36;1m  id[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2356369Z [36;1m  stat -c "%u:%g %a %n" /data/staging[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2356663Z [36;1m  test -d /data/staging[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2356918Z [36;1m  test -w /data/staging[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2357184Z [36;1m  echo INSIGHTHUB_STAGING_WRITABLE[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2357477Z [36;1m'[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2397058Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2397323Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2397551Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2397834Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2398050Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2398294Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.2398538Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.4640192Z uid=1001(appuser) gid=1001(appuser) groups=1001(appuser)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.4651672Z 1001:1001 770 /data/staging
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.4654103Z INSIGHTHUB_STAGING_WRITABLE
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5372735Z ##[group]Run make test-backend
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5373067Z [36;1mmake test-backend[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5411361Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5411618Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5411841Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5412362Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5412584Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5412813Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5413074Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:21.5493183Z docker compose run --rm --no-deps -e RUN_DB_TESTS=1 -e TEST_SCHEMA_PATH=/tmp/init.sql -v "/home/runner/work/insighthub/insighthub/infra/db/init.sql:/tmp/init.sql:ro" api python -m unittest discover -s tests -v
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:22.6415752Z /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:22.6417210Z   from starlette.testclient import TestClient as TestClient  # noqa
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:22.9096159Z test_concurrent_successful_retries_call_provider_once (test_integration.IntegrationTests.test_concurrent_successful_retries_call_provider_once) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:22.9213959Z test_dimension_mismatch_is_rejected_before_provider (test_integration.IntegrationTests.test_dimension_mismatch_is_rejected_before_provider) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:23.2138682Z test_empty_extracted_text_is_failed_and_422 (test_integration.IntegrationTests.test_empty_extracted_text_is_failed_and_422) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:23.2295730Z test_enqueue_failure_does_not_orphan_pending_and_cleans_staging (test_integration.IntegrationTests.test_enqueue_failure_does_not_orphan_pending_and_cleans_staging) ... WARNING:insighthub.documents:Enqueue failed: id=3 type=RuntimeError
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:23.2326339Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:23.2482456Z test_failed_attempt_and_concurrent_retry_end_ready (test_integration.IntegrationTests.test_failed_attempt_and_concurrent_retry_end_ready) ... WARNING:insighthub.ingestion:Document processing failed: id=4 code=provider_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:23.2564671Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.0391243Z test_failed_document_can_be_retried_to_ready (test_integration.IntegrationTests.test_failed_document_can_be_retried_to_ready) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.0527352Z test_failed_vectors_are_atomic_and_can_retry (test_integration.IntegrationTests.test_failed_vectors_are_atomic_and_can_retry) ... WARNING:insighthub.ingestion:Document processing failed: id=6 code=provider_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.0566980Z WARNING:insighthub.ingestion:Document processing failed: id=6 code=provider_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.0604768Z WARNING:insighthub.ingestion:Document processing failed: id=6 code=provider_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.0678892Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:24.6196882Z test_fixture_upload_retrieve_chat_metrics_delete_end_to_end (test_integration.IntegrationTests.test_fixture_upload_retrieve_chat_metrics_delete_end_to_end) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1483847Z test_index_identity_change_rejects_query_upload_and_readiness (test_integration.IntegrationTests.test_index_identity_change_rejects_query_upload_and_readiness) ... WARNING:insighthub.db:Database readiness check failed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1497970Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1750203Z test_mid_insert_database_failure_rolls_back_all_chunks (test_integration.IntegrationTests.test_mid_insert_database_failure_rolls_back_all_chunks) ... WARNING:insighthub.ingestion:Document processing failed: id=9 code=internal_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1767339Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1917420Z test_provider_failure_is_502_and_metadata_truthful (test_integration.IntegrationTests.test_provider_failure_is_502_and_metadata_truthful) ... WARNING:insighthub.ingestion:Document processing failed: id=10 code=provider_error
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.1926850Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.7200101Z test_ready_and_pending_documents_cannot_be_retried (test_integration.IntegrationTests.test_ready_and_pending_documents_cannot_be_retried) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:25.7467857Z test_real_gateway_full_pipeline_with_mock_http (test_integration.IntegrationTests.test_real_gateway_full_pipeline_with_mock_http) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:26.0204158Z test_reenqueue_ready_document_does_not_duplicate_chunks (test_integration.IntegrationTests.test_reenqueue_ready_document_does_not_duplicate_chunks) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:26.5438939Z test_retry_enqueue_failure_does_not_corrupt_document_state (test_integration.IntegrationTests.test_retry_enqueue_failure_does_not_corrupt_document_state) ... WARNING:insighthub.documents:Retry enqueue failed: id=15 type=RuntimeError
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:26.5460281Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.0712158Z test_retry_requires_existing_staged_payload (test_integration.IntegrationTests.test_retry_requires_existing_staged_payload) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.5937683Z test_same_dimension_real_provider_cannot_query_fixture_index (test_integration.IntegrationTests.test_same_dimension_real_provider_cannot_query_fixture_index) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6163836Z test_successful_retry_is_noop_and_conflicting_payload_is_409 (test_integration.IntegrationTests.test_successful_retry_is_noop_and_conflicting_payload_is_409) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6179298Z test_chunking_progress_overlap_and_empty (test_unit_config.ConfigTests.test_chunking_progress_overlap_and_empty) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6194195Z test_explicit_database_url_keeps_precedence (test_unit_config.ConfigTests.test_explicit_database_url_keeps_precedence) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6300368Z test_fixture_requires_both_explicit_providers (test_unit_config.ConfigTests.test_fixture_requires_both_explicit_providers) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6393893Z test_identity_changes_with_vector_space_but_not_chat_model_or_key (test_unit_config.ConfigTests.test_identity_changes_with_vector_space_but_not_chat_model_or_key) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6508498Z test_invalid_numeric_configuration (test_unit_config.ConfigTests.test_invalid_numeric_configuration) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6549046Z test_ollama_uses_dedicated_native_dimension (test_unit_config.ConfigTests.test_ollama_uses_dedicated_native_dimension) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6653649Z test_real_requires_credentials_explicit_model_and_endpoint (test_unit_config.ConfigTests.test_real_requires_credentials_explicit_model_and_endpoint) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6667895Z test_settings_errors_hide_secrets (test_unit_config.ConfigTests.test_settings_errors_hide_secrets) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6683886Z test_structured_database_configuration_requires_all_fields (test_unit_config.ConfigTests.test_structured_database_configuration_requires_all_fields) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6700663Z test_structured_database_configuration_uses_native_conninfo_builder (test_unit_config.ConfigTests.test_structured_database_configuration_uses_native_conninfo_builder) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6736533Z test_chunked_upload_limit_stops_before_parser_and_without_content_length (test_unit_http.AsyncHttpTests.test_chunked_upload_limit_stops_before_parser_and_without_content_length) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6951033Z test_health_remains_responsive_during_blocking_chat (test_unit_http.AsyncHttpTests.test_health_remains_responsive_during_blocking_chat) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.6991559Z test_empty_upload_returns_422 (test_unit_http.HttpTests.test_empty_upload_returns_422) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7008757Z test_file_read_is_bounded_and_closed (test_unit_http.HttpTests.test_file_read_is_bounded_and_closed) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7026042Z test_invalid_documents_and_blank_pdf_are_422_errors (test_unit_http.HttpTests.test_invalid_documents_and_blank_pdf_are_422_errors) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7688098Z test_metrics_route_labels_do_not_include_user_paths_or_methods (test_unit_http.HttpTests.test_metrics_route_labels_do_not_include_user_paths_or_methods) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7711411Z test_provider_error_response_is_sanitized (test_unit_http.HttpTests.test_provider_error_response_is_sanitized) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7736812Z test_unexpected_errors_are_sanitized_and_counted_as_500 (test_unit_http.HttpTests.test_unexpected_errors_are_sanitized_and_counted_as_500) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7790938Z test_whitespace_question_and_unknown_fields_rejected (test_unit_http.HttpTests.test_whitespace_question_and_unknown_fields_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7810756Z test_batches_have_a_bounded_size (test_unit_providers.EmbeddingTests.test_batches_have_a_bounded_size) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7826108Z test_empty_input_is_explicit (test_unit_providers.EmbeddingTests.test_empty_input_is_explicit) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7834418Z test_estimate_and_reported_usage_are_separate (test_unit_providers.EmbeddingTests.test_estimate_and_reported_usage_are_separate) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7948188Z test_fixture_is_deterministic_finite_and_normalized (test_unit_providers.EmbeddingTests.test_fixture_is_deterministic_finite_and_normalized) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.7966058Z test_gemini_one_uses_task_type (test_unit_providers.EmbeddingTests.test_gemini_one_uses_task_type) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8007768Z test_gemini_two_separate_requests_and_task_prefixes (test_unit_providers.EmbeddingTests.test_gemini_two_separate_requests_and_task_prefixes) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8112805Z test_gemini_usage_uses_provider_tokens_without_inventing_missing_values (test_unit_providers.EmbeddingTests.test_gemini_usage_uses_provider_tokens_without_inventing_missing_values) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8115374Z test_invalid_vectors_are_rejected (test_unit_providers.EmbeddingTests.test_invalid_vectors_are_rejected) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8191383Z test_missing_duplicate_or_wrong_embedding_indices_fail (test_unit_providers.EmbeddingTests.test_missing_duplicate_or_wrong_embedding_indices_fail) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8207950Z test_ollama_native_vectors_no_truncation_or_padding (test_unit_providers.EmbeddingTests.test_ollama_native_vectors_no_truncation_or_padding) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8224333Z test_openai_request_dimension_and_response_order (test_unit_providers.EmbeddingTests.test_openai_request_dimension_and_response_order) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8242953Z test_real_failure_never_uses_fixture (test_unit_providers.EmbeddingTests.test_real_failure_never_uses_fixture) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8259413Z test_voyage_payload_and_usage (test_unit_providers.EmbeddingTests.test_voyage_payload_and_usage) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8305884Z test_failure_or_empty_real_answer_is_not_fixture (test_unit_providers.GenerationTests.test_failure_or_empty_real_answer_is_not_fixture) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8321525Z test_fixture_label_and_usage_truth (test_unit_providers.GenerationTests.test_fixture_label_and_usage_truth) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8338343Z test_missing_usage_is_not_reported_as_zero (test_unit_providers.GenerationTests.test_missing_usage_is_not_reported_as_zero) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8356092Z test_openai_gateway_explicit_endpoint_and_usage (test_unit_providers.GenerationTests.test_openai_gateway_explicit_endpoint_and_usage) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8401510Z test_other_chat_provider_contracts (test_unit_providers.GenerationTests.test_other_chat_provider_contracts) ... ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8423038Z test_timeout_is_sanitized (test_unit_providers.GenerationTests.test_timeout_is_sanitized) ... WARNING:insighthub.providers:AI provider request failed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8424612Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8448109Z test_transport_errors_and_bodies_are_sanitized (test_unit_providers.GenerationTests.test_transport_errors_and_bodies_are_sanitized) ... WARNING:insighthub.providers:AI provider request failed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8474872Z WARNING:insighthub.providers:AI provider request failed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8496575Z WARNING:insighthub.providers:AI provider request failed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8499252Z ok
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8499444Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8500023Z ----------------------------------------------------------------------
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8500560Z Ran 57 tests in 4.999s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8500758Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:27.8500876Z OK
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0149385Z ##[group]Run docker run --rm --network host -v "$PWD:/work" -w /work node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf sh -ec '
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0150511Z [36;1mdocker run --rm --network host -v "$PWD:/work" -w /work node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf sh -ec '[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0151242Z [36;1m  npm ci --prefix tools/mcp --ignore-scripts[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0151571Z [36;1m  npm --prefix tools/mcp test[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0151855Z [36;1m  node tools/mcp/smoke.mjs[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0152421Z [36;1m  node tools/mcp/smoke.mjs --live[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0152700Z [36;1m'[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0190840Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0191095Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0191325Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0191612Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0191831Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0192679Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0192932Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.0396952Z Unable to find image 'node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf' locally
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.4080613Z docker.io/library/node@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf: Pulling from library/node
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.5723247Z 55afa1ecc21d: Already exists
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.5734170Z a0f82f71477f: Already exists
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.5743573Z b38a07ecd3ea: Already exists
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.5754825Z 502142e2f202: Already exists
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.7004414Z Digest: sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:28.7009360Z Status: Downloaded newer image for node@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7750197Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7750658Z added 97 packages, and audited 98 packages in 2s
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7751561Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7751754Z 33 packages are looking for funding
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7753523Z   run `npm fund` for details
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7762542Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7762719Z found 0 vulnerabilities
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7780609Z npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7781105Z npm notice New major version of npm available! 11.19.0 -> 12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7781866Z npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7782736Z npm notice To update run: npm install -g npm@12.1.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.7783210Z npm notice
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.9795911Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.9796404Z > insighthub-readonly-mcp@1.0.0 test
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.9796839Z > node --test test/*.test.mjs
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:30.9797059Z 
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1545412Z ✔ origin parser rejects SSRF, DNS/rebinding, path and credential inputs (2.098499ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1551069Z ✔ configuration is closed by default and fails on misspelled controls (1.279633ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1701258Z ✔ service projects metadata, limits rows, uses only fixed GET routes (35.547156ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1752186Z ✔ readiness 503 is a valid unhealthy observation (6.8012ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1820134Z ✔ Prometheus allows only fixed aggregate queries and drops labels (6.819106ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1858891Z ✔ redirect fails closed without reflecting body (3.925797ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1895532Z ✔ declared body limit fails closed without reflecting body (4.072083ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1945290Z ✔ chunked body limit fails closed without reflecting body (3.384321ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1965630Z ✔ malformed JSON fails closed without reflecting body (3.155704ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.1999926Z ✔ wrong content type fails closed without reflecting body (2.486049ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.2036516Z ✔ compressed body fails closed without reflecting body (4.121615ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.2065291Z ✔ upstream error fails closed without reflecting body (2.693284ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.3589929Z ✔ slow headers fails closed without reflecting body (152.189048ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.5115028Z ✔ slow body fails closed without reflecting body (151.640732ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.5157101Z ✔ malicious metadata and malformed metrics fail instead of leaking (4.063721ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.5165232Z ✔ cancellation and maximum four concurrent tool calls are enforced (2.641558ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:31.9706375Z ✔ modern: server allowlist cannot be bypassed through direct tools/call (598.862456ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:32.5054166Z ✔ modern: list bounds and arbitrary PromQL are rejected by server (525.500785ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:32.7796232Z ✔ legacy: server allowlist cannot be bypassed through direct tools/call (285.280444ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.0478957Z ✔ legacy: list bounds and arbitrary PromQL are rejected by server (268.200926ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.5757355Z ✔ empty allowlist exposes no tools and denies direct invocation (527.892282ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8065629Z ✔ invalid endpoint exits without reflecting a credential on stderr/stdout (230.652934ms)
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8244334Z ℹ tests 22
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8255277Z ℹ suites 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8255658Z ℹ pass 22
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8256019Z ℹ fail 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8256345Z ℹ cancelled 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8256738Z ℹ skipped 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8257086Z ℹ todo 0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:33.8257427Z ℹ duration_ms 2802.499319
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8457671Z {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8458108Z   "passed": true,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8458367Z   "backend_mode": "fixture",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8458635Z   "live": false,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8458974Z   "backend": "fixture-loopback",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8459267Z   "node": "v24.20.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8459532Z   "server": "@modelcontextprotocol/server@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8460212Z   "results": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8460448Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8460700Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8461035Z       "mode": "modern",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8461280Z       "protocol": "2026-07-28",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8461535Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8461796Z         "server/discover",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8462481Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8462709Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8462917Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8463103Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8463335Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8463620Z         "insighthub_list_documents",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8463902Z         "prometheus_summary"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8464150Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8464365Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8464595Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8464772Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8465020Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8465332Z       "mode": "legacy",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8465557Z       "protocol": "2025-11-25",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8465793Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8466012Z         "initialize",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8466245Z         "notifications/initialized",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8466524Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8466729Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8466944Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8467127Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8467393Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8467648Z         "insighthub_list_documents",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8467944Z         "prometheus_summary"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8468196Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8468396Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8468608Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8468785Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8469017Z       "client": "@modelcontextprotocol/sdk@1.30.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8469314Z       "mode": "v1",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8469519Z       "protocol": "2025-11-25",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8469769Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8469967Z         "initialize",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8470189Z         "notifications/initialized",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8470433Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8470628Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8470846Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8471034Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8471253Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8471674Z         "insighthub_list_documents",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8471925Z         "prometheus_summary"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8472344Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8472522Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8472739Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8472911Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8473128Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8473436Z       "mode": "auto",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8473660Z       "protocol": "2026-07-28",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8473904Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8474143Z         "server/discover",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8474408Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8474661Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8474862Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8475055Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8475257Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8475509Z         "insighthub_list_documents",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8475780Z         "prometheus_summary"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8476013Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8476194Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8476406Z     }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8476600Z   ]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:35.8476789Z }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8405603Z {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8405914Z   "passed": true,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8406186Z   "backend_mode": "live",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8406465Z   "live": true,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8406711Z   "backend": "live-loopback",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8407000Z   "node": "v24.20.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8407296Z   "server": "@modelcontextprotocol/server@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8407597Z   "results": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8407807Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8408044Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8408711Z       "mode": "modern",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8408967Z       "protocol": "2026-07-28",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8409231Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8409461Z         "server/discover",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8409685Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8409882Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8410085Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8410265Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8410500Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8410772Z         "insighthub_list_documents"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8411034Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8411224Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8411425Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8411618Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8411869Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8412462Z       "mode": "legacy",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8412730Z       "protocol": "2025-11-25",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8413000Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8413221Z         "initialize",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8413466Z         "notifications/initialized",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8413735Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8413938Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8414140Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8414319Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8414533Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8414782Z         "insighthub_list_documents"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8415034Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8415227Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8415431Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8415632Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8415877Z       "client": "@modelcontextprotocol/sdk@1.30.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8416375Z       "mode": "v1",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8416625Z       "protocol": "2025-11-25",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8416906Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8417124Z         "initialize",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8417351Z         "notifications/initialized",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8417648Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8417858Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8418057Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8418259Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8418485Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8418784Z         "insighthub_list_documents"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8419068Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8419290Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8419536Z     },
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8419745Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8420002Z       "client": "@modelcontextprotocol/client@2.0.0",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8420504Z       "mode": "auto",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8420788Z       "protocol": "2026-07-28",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8421026Z       "methods": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8421259Z         "server/discover",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8421543Z         "tools/list",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8421771Z         "tools/call"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8422661Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8422862Z       "calls": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8423091Z         "insighthub_health",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8423360Z         "insighthub_list_documents"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8423600Z       ],
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8423800Z       "passed": true
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8424017Z     }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8424223Z   ]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.8424415Z }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.9994914Z ##[group]Run python3 scripts/verify.py smoke --json
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:37.9995327Z [36;1mpython3 scripts/verify.py smoke --json[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0035486Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0035752Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0035980Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0036265Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0036482Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0036720Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:38.0036959Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3380775Z {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3381175Z   "schema_version": 1,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3381545Z   "target": "smoke",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3381886Z   "status": "PASS",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3382403Z   "scope": "runtime-contract",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3382793Z   "runtime_verified": true,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3383412Z   "source_sha256": "0fdd74862a3f6ec771efe67b899ab5958155b8aeb60666da88d4a884f2f93e0b",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3384513Z   "milestone_complete": false,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3384904Z   "checks": [
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3385098Z     {
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3385286Z       "id": "smoke",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3385507Z       "status": "PASS",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3385738Z       "runtime_verified": true,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3385987Z       "document_id": 19,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3386284Z       "filename": "verify-7ff3b6f9d8464e5c89a9c7d384482aed.md",
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3386631Z       "started_at": 1790218898.1668112,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3386900Z       "upload_status": 202,
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3387416Z       "note": "Pipeline smoke only; retrieval quality/provider effectiveness not evaluated. Uploaded document retained."
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3387918Z     }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3388096Z   ]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3388292Z }
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3521052Z ##[group]Run docker compose --profile ollama down --volumes --remove-orphans
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3521607Z [36;1mdocker compose --profile ollama down --volumes --remove-orphans[0m
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3559961Z shell: /usr/bin/bash -e {0}
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3560221Z env:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3560435Z   COMPOSE_PROJECT_NAME: insighthub-ci
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3560706Z   RAG_MODE: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3560922Z   LLM_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3561160Z   EMBEDDING_PROVIDER: fixture
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.3561408Z ##[endgroup]
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.4294352Z  Container insighthub-ci-web-1  Stopping
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.4299854Z  Container insighthub-ci-ingestion-worker-1  Stopping
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5731465Z  Container insighthub-ci-web-1  Stopped
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5732653Z  Container insighthub-ci-web-1  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5777915Z  Container insighthub-ci-web-1  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5778579Z  Container insighthub-ci-api-1  Stopping
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5911122Z  Container insighthub-ci-ingestion-worker-1  Stopped
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.5911913Z  Container insighthub-ci-ingestion-worker-1  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.6027109Z  Container insighthub-ci-ingestion-worker-1  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.9435576Z  Container insighthub-ci-api-1  Stopped
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.9436164Z  Container insighthub-ci-api-1  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.9478535Z  Container insighthub-ci-api-1  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.9479096Z  Container insighthub-ci-postgres-1  Stopping
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:39.9479854Z  Container insighthub-ci-redis-1  Stopping
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.0377067Z  Container insighthub-ci-postgres-1  Stopped
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.0377769Z  Container insighthub-ci-postgres-1  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.0451798Z  Container insighthub-ci-postgres-1  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1153799Z  Container insighthub-ci-redis-1  Stopped
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1156387Z  Container insighthub-ci-redis-1  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1198813Z  Container insighthub-ci-redis-1  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1206632Z  Volume insighthub-ci_pgdata  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1208296Z  Network insighthub-ci_default  Removing
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.1563389Z  Volume insighthub-ci_pgdata  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.2298447Z  Network insighthub-ci_default  Removed
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.2446135Z Post job cleanup.
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3271209Z [command]/usr/bin/git version
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3323805Z git version 2.55.0
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3390293Z Temporarily overriding HOME='/home/runner/work/_temp/e38b5c76-c3de-4874-b208-be76519066a1' before making global git config changes
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3391573Z Adding repository directory to the temporary git global config as a safe directory
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3396280Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3429784Z Removing SSH command configuration
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3436854Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3473506Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3724929Z Removing HTTP extra header
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3729519Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.3772705Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.4041056Z Removing includeIf entries pointing to credentials config files
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.4048525Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.4090132Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+local-baseline	UNKNOWN STEP	2026-09-24T03:01:40.4486582Z Cleaning up orphan processes

@@ -1,0 +1,23 @@
+﻿{
+    "groupId": "sg-0740cb83447f304a5",
+    "groupName": "insighthub-day3-deploy-runner",
+    "vpcId": "vpc-0d234b1f2284fe153",
+    "description": "Private deployment runner with HTTPS-only egress",
+    "ipPermissions": [],
+    "ipPermissionsEgress": [
+        {
+            "IpProtocol": "tcp",
+            "FromPort": 443,
+            "ToPort": 443,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+                {
+                    "Description": "HTTPS for AWS APIs, SSM, packages, and GitHub via NAT",
+                    "CidrIp": "0.0.0.0/0"
+                }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+        }
+    ]
+}

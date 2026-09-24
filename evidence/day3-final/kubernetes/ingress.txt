@@ -1,0 +1,2 @@
+NAME   CLASS   HOSTS   ADDRESS                                                                  PORTS   AGE
+web    alb     *       k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com   80      8h

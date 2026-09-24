@@ -1,0 +1,29 @@
+﻿[
+    {
+        "repository":  "insighthub-day3-api",
+        "imageDigest":  "sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c",
+        "imageTags":  [
+                          "120843f33794"
+                      ],
+        "imagePushedAt":  1790219042.065,
+        "imageSizeInBytes":  67536047
+    },
+    {
+        "repository":  "insighthub-day3-ingestion-worker",
+        "imageDigest":  "sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c",
+        "imageTags":  [
+                          "120843f33794"
+                      ],
+        "imagePushedAt":  1790219058.378,
+        "imageSizeInBytes":  67572454
+    },
+    {
+        "repository":  "insighthub-day3-web",
+        "imageDigest":  "sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10",
+        "imageTags":  [
+                          "120843f33794"
+                      ],
+        "imagePushedAt":  1790219071.689,
+        "imageSizeInBytes":  70428365
+    }
+]

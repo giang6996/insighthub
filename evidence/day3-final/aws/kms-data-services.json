@@ -1,0 +1,9 @@
+﻿{
+    "keyId": "602e16f8-3482-4834-a02e-f374ffeaca1a",
+    "arn": "arn:aws:kms:ap-southeast-1:596261186564:key/602e16f8-3482-4834-a02e-f374ffeaca1a",
+    "description": "Day 3 data services encryption for insighthub-day3",
+    "keyState": "Enabled",
+    "keyUsage": "ENCRYPT_DECRYPT",
+    "keySpec": "SYMMETRIC_DEFAULT",
+    "enabled": true
+}

@@ -1,0 +1,2 @@
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                     IMAGES                                                   SELECTOR
+aws-load-balancer-controller   2/2     2            2           10h   aws-load-balancer-controller   public.ecr.aws/eks/aws-load-balancer-controller:v2.8.3   app.kubernetes.io/instance=aws-load-balancer-controller,app.kubernetes.io/name=aws-load-balancer-controller

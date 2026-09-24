@@ -1,0 +1,16 @@
+﻿[
+    {
+        "mountTargetId": "fsmt-020ec54a1ec529aea",
+        "subnetId": "subnet-030c916568d0fb5a2",
+        "ipAddress": "10.20.33.208",
+        "lifeCycleState": "available",
+        "securityGroups": null
+    },
+    {
+        "mountTargetId": "fsmt-07b99be6ea09a4e14",
+        "subnetId": "subnet-016e01bb9c0389a88",
+        "ipAddress": "10.20.60.79",
+        "lifeCycleState": "available",
+        "securityGroups": null
+    }
+]

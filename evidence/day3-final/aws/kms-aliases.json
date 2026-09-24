@@ -1,0 +1,7 @@
+﻿[
+    {
+        "aliasName": "alias/insighthub-day3-data-services",
+        "targetKeyId": "602e16f8-3482-4834-a02e-f374ffeaca1a",
+        "aliasArn": "arn:aws:kms:ap-southeast-1:596261186564:alias/insighthub-day3-data-services"
+    }
+]

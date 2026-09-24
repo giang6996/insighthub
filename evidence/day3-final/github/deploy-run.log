@@ -1,0 +1,950 @@
+﻿deploy	Set up job	﻿2026-09-24T03:02:37.3903091Z Current runner version: '2.337.0'
+deploy	Set up job	2026-09-24T03:02:37.3930854Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-09-24T03:02:37.3931847Z Hosted Compute Agent
+deploy	Set up job	2026-09-24T03:02:37.3932517Z Version: 20260828.587
+deploy	Set up job	2026-09-24T03:02:37.3933359Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+deploy	Set up job	2026-09-24T03:02:37.3934235Z Build Date: 2026-08-28T16:44:25Z
+deploy	Set up job	2026-09-24T03:02:37.3935133Z Worker ID: {786d2806-1828-4360-ae6d-2ff1555ac284}
+deploy	Set up job	2026-09-24T03:02:37.3936020Z Azure Region: westus3
+deploy	Set up job	2026-09-24T03:02:37.3936883Z ##[endgroup]
+deploy	Set up job	2026-09-24T03:02:37.3938701Z ##[group]Operating System
+deploy	Set up job	2026-09-24T03:02:37.3939527Z Ubuntu
+deploy	Set up job	2026-09-24T03:02:37.3940269Z 24.04.5
+deploy	Set up job	2026-09-24T03:02:37.3940894Z LTS
+deploy	Set up job	2026-09-24T03:02:37.3941509Z ##[endgroup]
+deploy	Set up job	2026-09-24T03:02:37.3942247Z ##[group]Runner Image
+deploy	Set up job	2026-09-24T03:02:37.3943009Z Image: ubuntu-24.04
+deploy	Set up job	2026-09-24T03:02:37.3943723Z Version: 20260920.314.1
+deploy	Set up job	2026-09-24T03:02:37.3945134Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260920.314/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-09-24T03:02:37.3948030Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260920.314
+deploy	Set up job	2026-09-24T03:02:37.3949305Z ##[endgroup]
+deploy	Set up job	2026-09-24T03:02:37.3950735Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-09-24T03:02:37.3952778Z Contents: read
+deploy	Set up job	2026-09-24T03:02:37.3953494Z Metadata: read
+deploy	Set up job	2026-09-24T03:02:37.3954307Z ##[endgroup]
+deploy	Set up job	2026-09-24T03:02:37.3956989Z Secret source: Actions
+deploy	Set up job	2026-09-24T03:02:37.3958143Z Cache mode: write
+deploy	Set up job	2026-09-24T03:02:37.3958956Z Prepare workflow directory
+deploy	Set up job	2026-09-24T03:02:37.4737416Z Prepare all required actions
+deploy	Set up job	2026-09-24T03:02:37.4791266Z Getting action download info
+deploy	Set up job	2026-09-24T03:02:37.7766097Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+deploy	Set up job	2026-09-24T03:02:38.0488532Z Download action repository 'aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+deploy	Set up job	2026-09-24T03:02:38.7332485Z Complete job name: deploy
+deploy	Checkout	﻿2026-09-24T03:02:38.7914297Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+deploy	Checkout	2026-09-24T03:02:38.7915202Z with:
+deploy	Checkout	2026-09-24T03:02:38.7915597Z   persist-credentials: false
+deploy	Checkout	2026-09-24T03:02:38.7916058Z   repository: giang6996/insighthub
+deploy	Checkout	2026-09-24T03:02:38.7919585Z   token: ***
+deploy	Checkout	2026-09-24T03:02:38.7919972Z   ssh-strict: true
+deploy	Checkout	2026-09-24T03:02:38.7920363Z   ssh-user: git
+deploy	Checkout	2026-09-24T03:02:38.7920733Z   clean: true
+deploy	Checkout	2026-09-24T03:02:38.7921123Z   sparse-checkout-cone-mode: true
+deploy	Checkout	2026-09-24T03:02:38.7921578Z   fetch-depth: 1
+deploy	Checkout	2026-09-24T03:02:38.7921953Z   fetch-tags: false
+deploy	Checkout	2026-09-24T03:02:38.7922341Z   show-progress: true
+deploy	Checkout	2026-09-24T03:02:38.7922729Z   lfs: false
+deploy	Checkout	2026-09-24T03:02:38.7923086Z   submodules: false
+deploy	Checkout	2026-09-24T03:02:38.7923488Z   set-safe-directory: true
+deploy	Checkout	2026-09-24T03:02:38.7923922Z   allow-unsafe-pr-checkout: false
+deploy	Checkout	2026-09-24T03:02:38.7924567Z env:
+deploy	Checkout	2026-09-24T03:02:38.7924930Z   AWS_REGION: ap-southeast-1
+deploy	Checkout	2026-09-24T03:02:38.7925370Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Checkout	2026-09-24T03:02:38.7925942Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Checkout	2026-09-24T03:02:38.7926740Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Checkout	2026-09-24T03:02:38.7927261Z   OPERATION: deploy
+deploy	Checkout	2026-09-24T03:02:38.7927636Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:38.8719507Z Syncing repository: giang6996/insighthub
+deploy	Checkout	2026-09-24T03:02:38.8721172Z ##[group]Getting Git version info
+deploy	Checkout	2026-09-24T03:02:38.8722026Z Working directory is '/home/runner/work/insighthub/insighthub'
+deploy	Checkout	2026-09-24T03:02:38.8723100Z [command]/usr/bin/git version
+deploy	Checkout	2026-09-24T03:02:38.8782732Z git version 2.55.0
+deploy	Checkout	2026-09-24T03:02:38.8799355Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:38.8807839Z Temporarily overriding HOME='/home/runner/work/_temp/899fc7ec-103c-4bbe-84b6-272bd85113ac' before making global git config changes
+deploy	Checkout	2026-09-24T03:02:38.8809922Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Checkout	2026-09-24T03:02:38.8812832Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+deploy	Checkout	2026-09-24T03:02:38.8853640Z Deleting the contents of '/home/runner/work/insighthub/insighthub'
+deploy	Checkout	2026-09-24T03:02:38.8856541Z ##[group]Determining repository object format
+deploy	Checkout	2026-09-24T03:02:38.8857836Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:38.8858961Z ##[group]Initializing the repository
+deploy	Checkout	2026-09-24T03:02:38.8860780Z [command]/usr/bin/git init /home/runner/work/insighthub/insighthub
+deploy	Checkout	2026-09-24T03:02:38.8954113Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Checkout	2026-09-24T03:02:38.8955606Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+deploy	Checkout	2026-09-24T03:02:38.8957138Z hint: to use in all of your new repositories, which will suppress this warning,
+deploy	Checkout	2026-09-24T03:02:38.8958167Z hint: call:
+deploy	Checkout	2026-09-24T03:02:38.8958719Z hint:
+deploy	Checkout	2026-09-24T03:02:38.8959428Z hint: 	git config --global init.defaultBranch <name>
+deploy	Checkout	2026-09-24T03:02:38.8960316Z hint:
+deploy	Checkout	2026-09-24T03:02:38.8961108Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Checkout	2026-09-24T03:02:38.8962437Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Checkout	2026-09-24T03:02:38.8963503Z hint:
+deploy	Checkout	2026-09-24T03:02:38.8964091Z hint: 	git branch -m <name>
+deploy	Checkout	2026-09-24T03:02:38.8964784Z hint:
+deploy	Checkout	2026-09-24T03:02:38.8965649Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Checkout	2026-09-24T03:02:38.8967288Z Initialized empty Git repository in /home/runner/work/insighthub/insighthub/.git/
+deploy	Checkout	2026-09-24T03:02:38.8968963Z [command]/usr/bin/git remote add origin https://github.com/giang6996/insighthub
+deploy	Checkout	2026-09-24T03:02:38.9009981Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:38.9010871Z ##[group]Disabling automatic garbage collection
+deploy	Checkout	2026-09-24T03:02:38.9012425Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Checkout	2026-09-24T03:02:38.9040308Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:38.9041323Z ##[group]Setting up auth
+deploy	Checkout	2026-09-24T03:02:38.9042057Z Removing SSH command configuration
+deploy	Checkout	2026-09-24T03:02:38.9067350Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout	2026-09-24T03:02:38.9088121Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout	2026-09-24T03:02:38.9394318Z Removing HTTP extra header
+deploy	Checkout	2026-09-24T03:02:38.9402662Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout	2026-09-24T03:02:38.9433357Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout	2026-09-24T03:02:38.9617763Z Removing includeIf entries pointing to credentials config files
+deploy	Checkout	2026-09-24T03:02:38.9621640Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Checkout	2026-09-24T03:02:38.9656635Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Checkout	2026-09-24T03:02:38.9844960Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Checkout	2026-09-24T03:02:38.9877439Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git.path /home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:38.9906444Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:38.9936819Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:38.9967161Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:39.0131036Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:39.0132215Z ##[group]Fetching the repository
+deploy	Checkout	2026-09-24T03:02:39.0137246Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +120843f337943d6fd8f55a7c3115d76b1bb3d129:refs/remotes/origin/main
+deploy	Checkout	2026-09-24T03:02:39.9293383Z From https://github.com/giang6996/insighthub
+deploy	Checkout	2026-09-24T03:02:39.9295022Z  * [new ref]         120843f337943d6fd8f55a7c3115d76b1bb3d129 -> origin/main
+deploy	Checkout	2026-09-24T03:02:39.9302550Z [command]/usr/bin/git branch --list --remote origin/main
+deploy	Checkout	2026-09-24T03:02:39.9328070Z   origin/main
+deploy	Checkout	2026-09-24T03:02:39.9335383Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+deploy	Checkout	2026-09-24T03:02:39.9358623Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Checkout	2026-09-24T03:02:39.9362636Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:39.9363760Z ##[group]Determining the checkout info
+deploy	Checkout	2026-09-24T03:02:39.9365106Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:39.9367291Z [command]/usr/bin/git sparse-checkout disable
+deploy	Checkout	2026-09-24T03:02:39.9414745Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Checkout	2026-09-24T03:02:39.9443517Z ##[group]Checking out the ref
+deploy	Checkout	2026-09-24T03:02:39.9445730Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Checkout	2026-09-24T03:02:39.9579593Z Switched to a new branch 'main'
+deploy	Checkout	2026-09-24T03:02:39.9584824Z branch 'main' set up to track 'origin/main'.
+deploy	Checkout	2026-09-24T03:02:39.9625285Z ##[endgroup]
+deploy	Checkout	2026-09-24T03:02:39.9628432Z [command]/usr/bin/git log -1 --format=%H
+deploy	Checkout	2026-09-24T03:02:39.9652705Z 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Checkout	2026-09-24T03:02:39.9660235Z ##[group]Removing auth
+deploy	Checkout	2026-09-24T03:02:39.9661281Z Removing SSH command configuration
+deploy	Checkout	2026-09-24T03:02:39.9663290Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout	2026-09-24T03:02:39.9694300Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout	2026-09-24T03:02:39.9883513Z Removing HTTP extra header
+deploy	Checkout	2026-09-24T03:02:39.9886423Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout	2026-09-24T03:02:39.9915546Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout	2026-09-24T03:02:40.0101087Z Removing includeIf entries pointing to credentials config files
+deploy	Checkout	2026-09-24T03:02:40.0108237Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Checkout	2026-09-24T03:02:40.0133135Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+deploy	Checkout	2026-09-24T03:02:40.0135226Z includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+deploy	Checkout	2026-09-24T03:02:40.0137116Z includeif.gitdir:/github/workspace/.git.path
+deploy	Checkout	2026-09-24T03:02:40.0138455Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+deploy	Checkout	2026-09-24T03:02:40.0141797Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path
+deploy	Checkout	2026-09-24T03:02:40.0167099Z /home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:40.0176886Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-f8c82e87\-9ece\-4537\-b888\-ab5bba29b3aa\.config
+deploy	Checkout	2026-09-24T03:02:40.0211357Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path
+deploy	Checkout	2026-09-24T03:02:40.0232694Z /home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:40.0240560Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/insighthub/insighthub/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-f8c82e87\-9ece\-4537\-b888\-ab5bba29b3aa\.config
+deploy	Checkout	2026-09-24T03:02:40.0270062Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+deploy	Checkout	2026-09-24T03:02:40.0323551Z /github/runner_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:40.0341566Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-f8c82e87\-9ece\-4537\-b888\-ab5bba29b3aa\.config
+deploy	Checkout	2026-09-24T03:02:40.0373487Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+deploy	Checkout	2026-09-24T03:02:40.0395150Z /github/runner_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config
+deploy	Checkout	2026-09-24T03:02:40.0401375Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-f8c82e87\-9ece\-4537\-b888\-ab5bba29b3aa\.config
+deploy	Checkout	2026-09-24T03:02:40.0432546Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Checkout	2026-09-24T03:02:40.0618676Z Removing credentials config '/home/runner/work/_temp/git-credentials-f8c82e87-9ece-4537-b888-ab5bba29b3aa.config'
+deploy	Checkout	2026-09-24T03:02:40.0628849Z ##[endgroup]
+deploy	Configure AWS credentials	﻿2026-09-24T03:02:40.0974231Z ##[group]Run aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0975696Z with:
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0976886Z   role-to-assume: arn:aws:iam::596261186564:role/insighthub-day3-github-deploy
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0978173Z   aws-region: ap-southeast-1
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0979006Z   audience: sts.amazonaws.com
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0979859Z   output-env-credentials: true
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0980651Z env:
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0981296Z   AWS_REGION: ap-southeast-1
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0982108Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0983141Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0984389Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0985397Z   OPERATION: deploy
+deploy	Configure AWS credentials	2026-09-24T03:02:40.0986232Z ##[endgroup]
+deploy	Configure AWS credentials	2026-09-24T03:02:40.3951707Z Assuming role with OIDC
+deploy	Configure AWS credentials	2026-09-24T03:02:41.0180415Z Authenticated as assumedRoleId AROAYVU7PVQCLESMNV45S:GitHubActions
+deploy	Authenticate to ECR	﻿2026-09-24T03:02:41.2311671Z ##[group]Run aws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin "$ECR_REGISTRY"
+deploy	Authenticate to ECR	2026-09-24T03:02:41.2312499Z [36;1maws ecr get-login-password --region "$AWS_REGION" | docker login --username AWS --password-stdin "$ECR_REGISTRY"[0m
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3227676Z shell: /usr/bin/bash -e {0}
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3228041Z env:
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3228292Z   AWS_REGION: ap-southeast-1
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3228563Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3228893Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3229268Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3229577Z   OPERATION: deploy
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3229834Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3230632Z   AWS_ACCESS_KEY_ID: ***
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3230988Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3234814Z   AWS_SESSION_TOKEN: ***
+deploy	Authenticate to ECR	2026-09-24T03:02:41.3235066Z ##[endgroup]
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0496412Z 
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0497333Z WARNING! Your credentials are stored unencrypted in '/home/runner/.docker/config.json'.
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0497987Z Configure a credential helper to remove this warning. See
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0498436Z https://docs.docker.com/go/credential-store/
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0498691Z 
+deploy	Authenticate to ECR	2026-09-24T03:02:50.0498816Z Login Succeeded
+deploy	Discover online deployment runner	﻿2026-09-24T03:02:50.1308376Z ##[group]Run set -euo pipefail
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1308712Z [36;1mset -euo pipefail[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1308992Z [36;1mnodes="$(aws ssm describe-instance-information \[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1309286Z [36;1m  --region "$AWS_REGION" \[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1309597Z [36;1m  --filters Key=tag:DeploymentTarget,Values=insighthub-day3 \[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1310030Z [36;1m  --query 'InstanceInformationList[?PingStatus==`Online`].InstanceId' --output json)"[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1310585Z [36;1mtest "$(jq length <<<"$nodes")" -eq 1[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1310922Z [36;1mecho "RUNNER_INSTANCE_ID=$(jq -r '.[0]' <<<"$nodes")" >> "$GITHUB_ENV"[0m
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1368127Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1368442Z env:
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1368628Z   AWS_REGION: ap-southeast-1
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1368890Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1369177Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1369550Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1369799Z   OPERATION: deploy
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1369997Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1370361Z   AWS_ACCESS_KEY_ID: ***
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1370636Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1374370Z   AWS_SESSION_TOKEN: ***
+deploy	Discover online deployment runner	2026-09-24T03:02:50.1374573Z ##[endgroup]
+deploy	Build or reuse immutable release images	﻿2026-09-24T03:02:51.4362336Z ##[group]Run set -euo pipefail
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4362649Z [36;1mset -euo pipefail[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4362871Z [36;1mshort_sha="${DEPLOY_SHA:0:12}"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4363258Z [36;1mrepos=(insighthub-day3-api insighthub-day3-ingestion-worker insighthub-day3-web)[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4363639Z [36;1mexisting=0[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4363848Z [36;1mfor repo in "${repos[@]}"; do[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4364268Z [36;1m  if aws ecr describe-images --repository-name "$repo" --image-ids imageTag="$short_sha" >/dev/null 2>&1; then[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4364693Z [36;1m    existing=$((existing + 1))[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4364923Z [36;1m  fi[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4365093Z [36;1mdone[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4365314Z [36;1mif [ "$existing" -eq 1 ] || [ "$existing" -eq 2 ]; then[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4365657Z [36;1m  echo "partial immutable release exists for $short_sha" >&2[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4365938Z [36;1m  exit 1[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4366314Z [36;1mfi[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4366613Z [36;1mif [ "$existing" -eq 0 ]; then[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4367027Z [36;1m  docker build --platform linux/amd64 -f api/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-api:$short_sha" api[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4367674Z [36;1m  docker build --platform linux/amd64 -f ingestion-worker/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-ingestion-worker:$short_sha" .[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4368298Z [36;1m  docker build --platform linux/amd64 -f web/Dockerfile -t "$ECR_REGISTRY/insighthub-day3-web:$short_sha" web[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4368749Z [36;1m  docker push "$ECR_REGISTRY/insighthub-day3-api:$short_sha"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4369164Z [36;1m  docker push "$ECR_REGISTRY/insighthub-day3-ingestion-worker:$short_sha"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4369535Z [36;1m  docker push "$ECR_REGISTRY/insighthub-day3-web:$short_sha"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4369814Z [36;1mfi[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4369997Z [36;1mfor repo in "${repos[@]}"; do[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4370506Z [36;1m  digest="$(aws ecr describe-images --repository-name "$repo" --image-ids imageTag="$short_sha" --query 'imageDetails[0].imageDigest' --output text)"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4371019Z [36;1m  case "$repo" in[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4371353Z [36;1m    insighthub-day3-api) echo "API_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4371876Z [36;1m    insighthub-day3-ingestion-worker) echo "WORKER_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4372375Z [36;1m    insighthub-day3-web) echo "WEB_IMAGE=$ECR_REGISTRY/$repo@$digest" >> "$GITHUB_ENV" ;;[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4372705Z [36;1m  esac[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4372892Z [36;1m  echo "$repo digest=$digest"[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4373107Z [36;1mdone[0m
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4428664Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4428956Z env:
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4429138Z   AWS_REGION: ap-southeast-1
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4429362Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4429632Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4430099Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4430346Z   OPERATION: deploy
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4430543Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4430896Z   AWS_ACCESS_KEY_ID: ***
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4431172Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4434911Z   AWS_SESSION_TOKEN: ***
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4435118Z   RUNNER_INSTANCE_ID: i-0f0a4752d604254ed
+deploy	Build or reuse immutable release images	2026-09-24T03:02:51.4435350Z ##[endgroup]
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9265132Z #0 building with "default" instance using docker driver
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9265684Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9265887Z #1 [internal] load build definition from Dockerfile
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9266404Z #1 transferring dockerfile: 1.32kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9266712Z #1 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9266851Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:55.9267351Z #2 [internal] load metadata for docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.0959443Z #2 ...
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.0959718Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.0959953Z #3 [auth] library/python:pull token for registry-1.docker.io
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.0960259Z #3 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.2456763Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.2457617Z #2 [internal] load metadata for docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.6059325Z #2 DONE 0.8s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7233765Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7234058Z #4 [internal] load .dockerignore
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7234358Z #4 transferring context: 111B done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7234600Z #4 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7234711Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7234801Z #5 [internal] load build context
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7235045Z #5 transferring context: 170.19kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7235268Z #5 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7235362Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7235724Z #6 [base 1/2] FROM docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7236697Z #6 resolve docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7237586Z #6 sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea 10.37kB / 10.37kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7238395Z #6 sha256:2fe5997d249a808b8eeea52c58a1dbffbba28754dc11699ef5c029f2d818ce79 1.75kB / 1.75kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7239235Z #6 sha256:ec7d6c95cd3692a2e2d228a8b1ca74e4025b54121fcc4c5da6f09cfa473315ad 5.66kB / 5.66kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7240042Z #6 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 0B / 29.79MB 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7240845Z #6 sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 0B / 4.27MB 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.7241644Z #6 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 0B / 12.12MB 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.9232203Z #6 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 29.79MB / 29.79MB 0.3s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.9233250Z #6 sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 4.27MB / 4.27MB 0.3s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:56.9234106Z #6 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 6.29MB / 12.12MB 0.3s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.1012035Z #6 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 12.12MB / 12.12MB 0.4s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.1013196Z #6 extracting sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.2027220Z #6 sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 29.79MB / 29.79MB 0.4s done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.3058144Z #6 sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 4.27MB / 4.27MB 0.4s done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.3059199Z #6 sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 12.12MB / 12.12MB 0.4s done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.3060040Z #6 sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f 0B / 249B 0.5s
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.3060909Z #6 sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f 249B / 249B 0.5s done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:57.9294427Z #6 extracting sha256:6310eb16bf4251731feab01e8f633bf5e2d75a657ccad97f420b1f83cce457be 0.7s done
+deploy	Build or reuse immutable release images	2026-09-24T03:02:58.0144220Z #6 extracting sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a
+deploy	Build or reuse immutable release images	2026-09-24T03:02:58.3770267Z #6 extracting sha256:dbd0b7849e6c06b61e1fa6b7ffe053f246ce0075890620e3db64b47bb662433a 0.2s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:03.6690646Z #6 extracting sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.2165590Z #6 extracting sha256:1560cfed01dc4c72c07f789d860078d74466a1f9a26b33a2e35d887b5f90dd3f 0.4s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.3658002Z #6 extracting sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5783258Z #6 extracting sha256:56235e4245636e401a28cf88944d543b29ee028ae3b6c27e03d6b43e7b4eac5f done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5783985Z #6 DONE 7.8s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5784488Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5784624Z #7 [base 2/2] WORKDIR /app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5784967Z #7 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5785126Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5785275Z #8 [deps 1/3] COPY requirements.txt .
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5785623Z #8 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5785787Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.5786090Z #9 [deps 2/3] RUN pip install --no-cache-dir --require-hashes -r requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.7536590Z #9 ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.7536792Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.7537089Z #10 [runtime 1/5] RUN groupadd --system --gid 1001 appuser     && useradd --system --uid 1001 --gid appuser appuser
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.7537588Z #10 0.162 useradd warning: appuser's uid 1001 is greater than SYS_UID_MAX 999
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.7537889Z #10 DONE 0.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.9039729Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:04.9040454Z #9 [deps 2/3] RUN pip install --no-cache-dir --require-hashes -r requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.5243299Z #9 1.096 Ignoring tzdata: markers 'sys_platform == "win32"' don't match your environment
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6254362Z #9 1.141 Collecting annotated-doc==0.0.5 (from -r requirements.txt (line 3))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6254944Z #9 1.158   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6255379Z #9 1.172 Collecting annotated-types==0.8.0 (from -r requirements.txt (line 7))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6255770Z #9 1.175   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6256260Z #9 1.194 Collecting anyio==4.15.1 (from -r requirements.txt (line 11))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.6256709Z #9 1.197   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7287774Z #9 1.221 Collecting certifi==2026.7.22 (from -r requirements.txt (line 18))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7288429Z #9 1.225   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7288993Z #9 1.245 Collecting click==8.5.0 (from -r requirements.txt (line 24))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7289544Z #9 1.248   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7290086Z #9 1.297 Collecting fastapi==0.141.1 (from -r requirements.txt (line 28))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.7290666Z #9 1.301   Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8372978Z #9 1.317 Collecting h11==0.16.0 (from -r requirements.txt (line 32))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8374173Z #9 1.321   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8374954Z #9 1.338 Collecting httpcore==1.0.9 (from -r requirements.txt (line 38))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8375567Z #9 1.341   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8376031Z #9 1.367 Collecting httptools==0.8.0 (from -r requirements.txt (line 42))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8376777Z #9 1.370   Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (523 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8377283Z #9 1.391 Collecting httpx==0.28.1 (from -r requirements.txt (line 94))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8377632Z #9 1.394   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:05.8377955Z #9 1.409 Collecting idna==3.19 (from -r requirements.txt (line 98))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0241075Z #9 1.412   Downloading idna-3.19-py3-none-any.whl (68 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0242323Z #9 1.426 Collecting pgvector==0.5.0 (from -r requirements.txt (line 104))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0243120Z #9 1.429   Downloading pgvector-0.5.0-py3-none-any.whl (30 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0243563Z #9 1.445 Collecting prometheus-client==0.26.0 (from -r requirements.txt (line 108))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0243971Z #9 1.448   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0244358Z #9 1.465 Collecting psycopg==3.3.5 (from -r requirements.txt (line 112))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0244702Z #9 1.468   Downloading psycopg-3.3.5-py3-none-any.whl (213 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.0245069Z #9 1.596 Collecting psycopg-binary==3.3.5 (from -r requirements.txt (line 116))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.1293472Z #9 1.599   Downloading psycopg_binary-3.3.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.1295195Z #9 1.612      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 473.8 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.1295854Z #9 1.630 Collecting psycopg-pool==3.3.1 (from -r requirements.txt (line 173))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.1296624Z #9 1.632   Downloading psycopg_pool-3.3.1-py3-none-any.whl (40 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.1297174Z #9 1.701 Collecting pydantic==2.13.5 (from -r requirements.txt (line 177))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.2828137Z #9 1.704   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.5805857Z #9 2.152 Collecting pydantic-core==2.46.5 (from -r requirements.txt (line 184))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7037467Z #9 2.156   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7038316Z #9 2.160      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 645.1 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7038751Z #9 2.179 Collecting pydantic-settings==2.15.0 (from -r requirements.txt (line 306))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7039163Z #9 2.182   Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7039593Z #9 2.204 Collecting pypdf==6.18.0 (from -r requirements.txt (line 310))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7039926Z #9 2.207   Downloading pypdf-6.18.0-py3-none-any.whl (393 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7040270Z #9 2.226 Collecting python-dotenv==1.2.3 (from -r requirements.txt (line 314))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7040635Z #9 2.229   Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7041005Z #9 2.246 Collecting python-multipart==0.0.32 (from -r requirements.txt (line 320))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7041387Z #9 2.249   Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.7041745Z #9 2.276 Collecting pyyaml==6.0.3 (from -r requirements.txt (line 324))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8284499Z #9 2.279   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8286386Z #9 2.281      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 929.1 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8287284Z #9 2.306 Collecting starlette==1.6.0 (from -r requirements.txt (line 399))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8288095Z #9 2.309   Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8288578Z #9 2.326 Collecting typing-extensions==4.16.0 (from -r requirements.txt (line 403))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8289028Z #9 2.330   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8289441Z #9 2.342 Collecting typing-inspection==0.4.4 (from -r requirements.txt (line 415))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8289844Z #9 2.345   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8290205Z #9 2.369 Collecting uvicorn==0.52.4 (from -r requirements.txt (line 426))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8290559Z #9 2.372   Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.8290892Z #9 2.400 Collecting uvloop==0.22.1 (from -r requirements.txt (line 430))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.9665798Z #9 2.403   Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.9667561Z #9 2.413      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 549.6 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.9668169Z #9 2.466 Collecting watchfiles==1.2.0 (from -r requirements.txt (line 481))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.9668825Z #9 2.469   Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:06.9669313Z #9 2.538 Collecting websockets==17.1 (from -r requirements.txt (line 590))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:07.0793368Z #9 2.542   Downloading websockets-17.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:07.0795640Z #9 2.651 Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-multipart, python-dotenv, pypdf, psycopg-binary, prometheus-client, pgvector, idna, httptools, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, psycopg-pool, psycopg, httpcore, anyio, watchfiles, starlette, pydantic, httpx, pydantic-settings, fastapi
+deploy	Build or reuse immutable release images	2026-09-24T03:03:08.5574281Z #9 4.129 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.141.1 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.19 pgvector-0.5.0 prometheus-client-0.26.0 psycopg-3.3.5 psycopg-binary-3.3.5 psycopg-pool-3.3.1 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pypdf-6.18.0 python-dotenv-1.2.3 python-multipart-0.0.32 pyyaml-6.0.3 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:08.8007642Z #9 4.129 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+deploy	Build or reuse immutable release images	2026-09-24T03:03:08.8008824Z #9 4.222 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:08.8009075Z #9 4.222 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:08.8009414Z #9 4.222 [notice] To update, run: pip install --upgrade pip
+deploy	Build or reuse immutable release images	2026-09-24T03:03:09.1741346Z #9 DONE 4.7s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:09.3253130Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:09.3253820Z #11 [deps 3/3] RUN pip install --no-cache-dir arq==0.26.3 redis==5.0.8
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.2484466Z #11 1.074 Collecting arq==0.26.3
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.3906273Z #11 1.091   Downloading arq-0.26.3-py3-none-any.whl.metadata (2.7 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.3906866Z #11 1.120 Collecting redis==5.0.8
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.3907328Z #11 1.123   Downloading redis-5.0.8-py3-none-any.whl.metadata (9.2 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.3908110Z #11 1.126 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.12/site-packages (from arq==0.26.3) (8.5.0)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.3908919Z #11 1.216 Collecting hiredis>1.0.0 (from redis[hiredis]<6,>=4.2.0->arq==0.26.3)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.5985198Z #11 1.219   Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.5985844Z #11 1.224 Downloading arq-0.26.3-py3-none-any.whl (25 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.5986288Z #11 1.227 Downloading redis-5.0.8-py3-none-any.whl (255 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.5986762Z #11 1.234 Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (313 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.5987235Z #11 1.273 Installing collected packages: redis, hiredis, arq
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.6190177Z #11 1.444 Successfully installed arq-0.26.3 hiredis-3.4.2 redis-5.0.8
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.7696699Z #11 1.445 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.7698902Z #11 1.514 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.7699612Z #11 1.514 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.7700184Z #11 1.514 [notice] To update, run: pip install --upgrade pip
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.7743145Z #11 DONE 1.6s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.9830621Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:10.9831231Z #12 [runtime 2/5] COPY --from=deps /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.1629696Z #12 DONE 1.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3567680Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3568340Z #13 [runtime 3/5] COPY --from=deps /usr/local/bin /usr/local/bin
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3568838Z #13 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3568989Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3569183Z #14 [runtime 4/5] COPY --chown=appuser:appuser app ./app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3569591Z #14 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3569734Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3569934Z #15 [runtime 5/5] COPY --chown=appuser:appuser tests ./tests
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3570797Z #15 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3570951Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3571084Z #16 exporting to image
+deploy	Build or reuse immutable release images	2026-09-24T03:03:12.3571367Z #16 exporting layers
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.0399222Z #16 exporting layers 0.8s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.0545185Z #16 writing image sha256:f20d900f1355844d4fe3c3a36a0adc6714f560eb68bfc596274740d3991ed5a4 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.0546048Z #16 naming to 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api:120843f33794 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.0547107Z #16 DONE 0.8s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.1393317Z #0 building with "default" instance using docker driver
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.1393895Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.1394338Z #1 [internal] load build definition from Dockerfile
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3620550Z #1 transferring dockerfile: 1.28kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3621053Z #1 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3621234Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3621823Z #2 [internal] load metadata for docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3622683Z #2 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3622857Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3622988Z #3 [internal] load .dockerignore
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3623336Z #3 transferring context: 2B done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3623658Z #3 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3623819Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3624290Z #4 [1/9] FROM docker.io/library/python:3.12.14-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3624990Z #4 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3625134Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3625254Z #5 [2/9] WORKDIR /app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3625535Z #5 CACHED
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3625680Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3625814Z #6 [internal] load build context
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3626418Z #6 transferring context: 122.78kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3626777Z #6 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3626926Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3627138Z #7 [3/9] COPY api/requirements.txt /tmp/api-requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3627556Z #7 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3627711Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:13.3628026Z #8 [4/9] RUN pip install --no-cache-dir --require-hashes -r /tmp/api-requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.2350289Z #8 1.023 Ignoring tzdata: markers 'sys_platform == "win32"' don't match your environment
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3638245Z #8 1.048 Collecting annotated-doc==0.0.5 (from -r /tmp/api-requirements.txt (line 3))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3639046Z #8 1.064   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3639711Z #8 1.071 Collecting annotated-types==0.8.0 (from -r /tmp/api-requirements.txt (line 7))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3640423Z #8 1.074   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3641019Z #8 1.085 Collecting anyio==4.15.1 (from -r /tmp/api-requirements.txt (line 11))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3641598Z #8 1.087   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3642145Z #8 1.102 Collecting certifi==2026.7.22 (from -r /tmp/api-requirements.txt (line 18))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3642749Z #8 1.105   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3643159Z #8 1.117 Collecting click==8.5.0 (from -r /tmp/api-requirements.txt (line 24))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3643744Z #8 1.119   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.3644108Z #8 1.152 Collecting fastapi==0.141.1 (from -r /tmp/api-requirements.txt (line 28))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4744676Z #8 1.155   Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4745265Z #8 1.165 Collecting h11==0.16.0 (from -r /tmp/api-requirements.txt (line 32))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4745631Z #8 1.167   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4745994Z #8 1.177 Collecting httpcore==1.0.9 (from -r /tmp/api-requirements.txt (line 38))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4746497Z #8 1.179   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4746897Z #8 1.198 Collecting httptools==0.8.0 (from -r /tmp/api-requirements.txt (line 42))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4747442Z #8 1.201   Downloading httptools-0.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (523 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4748273Z #8 1.215 Collecting httpx==0.28.1 (from -r /tmp/api-requirements.txt (line 94))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4748632Z #8 1.218   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4748984Z #8 1.227 Collecting idna==3.19 (from -r /tmp/api-requirements.txt (line 98))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4749323Z #8 1.229   Downloading idna-3.19-py3-none-any.whl (68 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4749677Z #8 1.237 Collecting pgvector==0.5.0 (from -r /tmp/api-requirements.txt (line 104))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4750037Z #8 1.240   Downloading pgvector-0.5.0-py3-none-any.whl (30 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4750413Z #8 1.249 Collecting prometheus-client==0.26.0 (from -r /tmp/api-requirements.txt (line 108))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4750827Z #8 1.251   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.4751203Z #8 1.263 Collecting psycopg==3.3.5 (from -r /tmp/api-requirements.txt (line 112))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.5876696Z #8 1.266   Downloading psycopg-3.3.5-py3-none-any.whl (213 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.5877320Z #8 1.376 Collecting psycopg-binary==3.3.5 (from -r /tmp/api-requirements.txt (line 116))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8371037Z #8 1.379   Downloading psycopg_binary-3.3.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8371897Z #8 1.393      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 444.6 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8372329Z #8 1.404 Collecting psycopg-pool==3.3.1 (from -r /tmp/api-requirements.txt (line 173))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8372743Z #8 1.408   Downloading psycopg_pool-3.3.1-py3-none-any.whl (40 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8373127Z #8 1.472 Collecting pydantic==2.13.5 (from -r /tmp/api-requirements.txt (line 177))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:14.8373512Z #8 1.475   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.1069253Z #8 1.895 Collecting pydantic-core==2.46.5 (from -r /tmp/api-requirements.txt (line 184))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2166467Z #8 1.898   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2167430Z #8 1.902      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 783.2 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2167889Z #8 1.913 Collecting pydantic-settings==2.15.0 (from -r /tmp/api-requirements.txt (line 306))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2168324Z #8 1.916   Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2168718Z #8 1.931 Collecting pypdf==6.18.0 (from -r /tmp/api-requirements.txt (line 310))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2169088Z #8 1.937   Downloading pypdf-6.18.0-py3-none-any.whl (393 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2169486Z #8 1.948 Collecting python-dotenv==1.2.3 (from -r /tmp/api-requirements.txt (line 314))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2169871Z #8 1.951   Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2170262Z #8 1.959 Collecting python-multipart==0.0.32 (from -r /tmp/api-requirements.txt (line 320))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2170671Z #8 1.962   Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2171287Z #8 1.981 Collecting pyyaml==6.0.3 (from -r /tmp/api-requirements.txt (line 324))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2171817Z #8 1.984   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2172392Z #8 1.987      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 353.2 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.2172778Z #8 2.005 Collecting starlette==1.6.0 (from -r /tmp/api-requirements.txt (line 399))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3393472Z #8 2.008   Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3394490Z #8 2.018 Collecting typing-extensions==4.16.0 (from -r /tmp/api-requirements.txt (line 403))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3395431Z #8 2.020   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3396417Z #8 2.026 Collecting typing-inspection==0.4.4 (from -r /tmp/api-requirements.txt (line 415))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3397144Z #8 2.029   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3397971Z #8 2.046 Collecting uvicorn==0.52.4 (from -r /tmp/api-requirements.txt (line 426))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3398358Z #8 2.049   Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3398720Z #8 2.071 Collecting uvloop==0.22.1 (from -r /tmp/api-requirements.txt (line 430))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3399245Z #8 2.073   Downloading uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3400023Z #8 2.081      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 661.7 MB/s eta 0:00:00
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.3400435Z #8 2.128 Collecting watchfiles==1.2.0 (from -r /tmp/api-requirements.txt (line 481))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.5160742Z #8 2.131   Downloading watchfiles-1.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.5161640Z #8 2.193 Collecting websockets==17.1 (from -r /tmp/api-requirements.txt (line 590))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.5162491Z #8 2.198   Downloading websockets-17.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (224 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:15.5164768Z #8 2.304 Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-multipart, python-dotenv, pypdf, psycopg-binary, prometheus-client, pgvector, idna, httptools, h11, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, psycopg-pool, psycopg, httpcore, anyio, watchfiles, starlette, pydantic, httpx, pydantic-settings, fastapi
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.2528175Z #8 4.041 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.141.1 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 idna-3.19 pgvector-0.5.0 prometheus-client-0.26.0 psycopg-3.3.5 psycopg-binary-3.3.5 psycopg-pool-3.3.1 pydantic-2.13.5 pydantic-core-2.46.5 pydantic-settings-2.15.0 pypdf-6.18.0 python-dotenv-1.2.3 python-multipart-0.0.32 pyyaml-6.0.3 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4 uvloop-0.22.1 watchfiles-1.2.0 websockets-17.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.4694984Z #8 4.041 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.4696331Z #8 4.107 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.4696587Z #8 4.107 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.4696923Z #8 4.107 [notice] To update, run: pip install --upgrade pip
+deploy	Build or reuse immutable release images	2026-09-24T03:03:17.8498047Z #8 DONE 4.6s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.0174036Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.0174652Z #9 [5/9] COPY ingestion-worker/requirements.txt /tmp/worker-requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.0175236Z #9 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.0175396Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.0175664Z #10 [6/9] RUN pip install --no-cache-dir -r /tmp/worker-requirements.txt
+deploy	Build or reuse immutable release images	2026-09-24T03:03:18.9027311Z #10 1.036 Collecting arq==0.26.3 (from -r /tmp/worker-requirements.txt (line 2))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.0266034Z #10 1.061   Downloading arq-0.26.3-py3-none-any.whl.metadata (2.7 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.0266968Z #10 1.080 Collecting redis==5.0.8 (from -r /tmp/worker-requirements.txt (line 3))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.0267602Z #10 1.085   Downloading redis-5.0.8-py3-none-any.whl.metadata (9.2 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.0268512Z #10 1.088 Requirement already satisfied: click>=8.0 in /usr/local/lib/python3.12/site-packages (from arq==0.26.3->-r /tmp/worker-requirements.txt (line 2)) (8.5.0)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.0269571Z #10 1.160 Collecting hiredis>1.0.0 (from redis[hiredis]<6,>=4.2.0->arq==0.26.3->-r /tmp/worker-requirements.txt (line 2))
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2297877Z #10 1.163   Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (7.5 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2298478Z #10 1.168 Downloading arq-0.26.3-py3-none-any.whl (25 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2299122Z #10 1.171 Downloading redis-5.0.8-py3-none-any.whl (255 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2299590Z #10 1.181 Downloading hiredis-3.4.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (313 kB)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2300066Z #10 1.212 Installing collected packages: redis, hiredis, arq
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.2414000Z #10 1.374 Successfully installed arq-0.26.3 hiredis-3.4.2 redis-5.0.8
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.4024717Z #10 1.375 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.4026373Z #10 1.455 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.4026730Z #10 1.455 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.4027283Z #10 1.455 [notice] To update, run: pip install --upgrade pip
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.4027739Z #10 DONE 1.5s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5385664Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5386702Z #11 [7/9] COPY api/app ./app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5387109Z #11 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5387227Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5387365Z #12 [8/9] COPY ingestion-worker/worker.py ./worker.py
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5387626Z #12 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5387731Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5388155Z #13 [9/9] RUN groupadd --system --gid 1001 appuser     && useradd --system --uid 1001 --gid appuser appuser     && mkdir -p /data/staging     && chown -R appuser:appuser /data/staging /app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.5389196Z #13 0.106 useradd warning: appuser's uid 1001 is greater than SYS_UID_MAX 999
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.7180623Z #13 DONE 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.7180999Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.7181183Z #14 exporting to image
+deploy	Build or reuse immutable release images	2026-09-24T03:03:19.7181601Z #14 exporting layers
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.3014146Z #14 exporting layers 0.7s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.3332872Z #14 writing image sha256:4935e6eb37538eb2d32a8afda2e2413272f4f4ca286f57eef7151c506e3c926b done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.3333628Z #14 naming to 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker:120843f33794 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.3334311Z #14 DONE 0.8s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5960952Z #0 building with "default" instance using docker driver
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5961228Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5961352Z #1 [internal] load build definition from Dockerfile
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5961614Z #1 transferring dockerfile: 1.39kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5961843Z #1 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5961949Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.5962285Z #2 [internal] load metadata for docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.7653108Z #2 ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.7653319Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.7653525Z #3 [auth] library/node:pull token for registry-1.docker.io
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.7653931Z #3 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.9146554Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:20.9147461Z #2 [internal] load metadata for docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.1918812Z #2 DONE 0.7s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3057824Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3058300Z #4 [internal] load .dockerignore
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3058689Z #4 transferring context: 93B done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059033Z #4 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059161Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059249Z #5 [internal] load build context
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059463Z #5 transferring context: 51.19kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059681Z #5 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3059772Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3060082Z #6 [deps 1/5] FROM docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3060730Z #6 resolve docker.io/library/node:24.20.0-alpine@sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3061447Z #6 sha256:e67514e5d0f6c46656005e1b693b2ec9d52e80b641307de684d4a015ba7a4eaf 3.87kB / 3.87kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3062418Z #6 sha256:4caaaf42195bcd6f6f3559a413b20cb8f8ad089e231ee874cf7701643966689f 1.72kB / 1.72kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3062932Z #6 sha256:ee289c69ed1ac50a5a042112ea97f132800e2dd53e832da27784f00e45b3289c 6.49kB / 6.49kB done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3063426Z #6 sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 0B / 53.38MB 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3063903Z #6 sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f 0B / 1.26MB 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.3064372Z #6 sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9 0B / 448B 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.4060281Z #6 sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 9.44MB / 53.38MB 0.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.4061142Z #6 sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f 1.26MB / 1.26MB 0.1s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.6052585Z #6 sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9 448B / 448B 0.2s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.6053261Z #6 sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 53.38MB / 53.38MB 0.4s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.8488910Z #6 sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 53.38MB / 53.38MB 0.5s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:21.8489886Z #6 extracting sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:22.8669234Z #6 extracting sha256:a0f82f71477fc2e453be843cff60ca54b0f44a67df7a3f01fddf121b807826be 1.0s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.6562705Z #6 extracting sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.7895309Z #6 extracting sha256:b38a07ecd3ea0a536a5bb94db11493f70753da22ae004e3fff49cb5d6add507f 0.1s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.7896715Z #6 extracting sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9779774Z #6 extracting sha256:502142e2f20261fd2b9cce9a5883e63c4f830a1f4f3dbf643d6f6dd4e56c16a9 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9780493Z #6 DONE 2.6s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9780679Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9780813Z #7 [builder 2/5] WORKDIR /app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9781115Z #7 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9781214Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9781440Z #8 [runner 3/7] RUN addgroup --system --gid 1001 nodejs     && adduser --system --uid 1001 nextjs
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9781797Z #8 DONE 0.1s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9781900Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:23.9782008Z #9 [deps 2/5] RUN apk add --no-cache libc6-compat
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.1757697Z #9 1.366 (1/3) Installing musl-obstack (1.2.3-r2)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2807678Z #9 1.377 (2/3) Installing libucontext (1.5.1-r0)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808052Z #9 1.387 (3/3) Installing gcompat (1.1.0-r4)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808297Z #9 1.400 OK: 11.0 MiB in 21 packages
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808542Z #9 DONE 1.4s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808640Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808732Z #10 [deps 3/5] WORKDIR /app
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2808938Z #10 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2809036Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2809194Z #11 [deps 4/5] COPY package.json package-lock.json* ./
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.2809693Z #11 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.4315749Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:25.4316398Z #12 [deps 5/5] RUN npm ci
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.5569484Z #12 5.275 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.5569896Z #12 5.275 added 27 packages, and audited 28 packages in 5s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7098162Z #12 5.275 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7098569Z #12 5.275 6 packages are looking for funding
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7098873Z #12 5.276   run `npm fund` for details
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7099105Z #12 5.276 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7099286Z #12 5.276 found 0 vulnerabilities
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7099509Z #12 5.278 npm notice
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7099783Z #12 5.278 npm notice New major version of npm available! 11.19.0 -> 12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7100202Z #12 5.278 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7100580Z #12 5.278 npm notice To update run: npm install -g npm@12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:30.7100853Z #12 5.278 npm notice
+deploy	Build or reuse immutable release images	2026-09-24T03:03:33.3247957Z #12 DONE 8.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:34.0277580Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:34.0278237Z #13 [builder 3/5] COPY --from=deps /app/node_modules ./node_modules
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.1792480Z #13 DONE 3.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.3487073Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.3487613Z #14 [builder 4/5] COPY . .
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.3488012Z #14 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.3488179Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.3488378Z #15 [builder 5/5] RUN npm run typecheck && npm run build
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.6118987Z #15 0.414 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.6119402Z #15 0.414 > insighthub-web@0.2.3 typecheck
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.6120024Z #15 0.414 > tsc --noEmit
+deploy	Build or reuse immutable release images	2026-09-24T03:03:37.6120393Z #15 0.414 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.1121404Z #15 1.914 npm notice
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.1121927Z #15 1.914 npm notice New major version of npm available! 11.19.0 -> 12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.1122358Z #15 1.914 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.1122723Z #15 1.914 npm notice To update run: npm install -g npm@12.1.0
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.1123001Z #15 1.914 npm notice
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.2495218Z #15 2.051 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.2495683Z #15 2.051 > insighthub-web@0.2.3 build
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.2496257Z #15 2.051 > next build
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.2496555Z #15 2.051 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.6232396Z #15 2.425 ▲ Next.js 16.3.4 (Turbopack)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.8383276Z #15 2.441 ✓ Running next.config.js took 15ms
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.8383763Z #15 2.467 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:39.8384096Z #15 2.490   Creating an optimized production build ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:44.0462995Z #15 6.848 ✓ Compiled successfully in 4.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:44.2065207Z #15 6.858   Running TypeScript ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:45.9417577Z #15 8.743   Finished TypeScript in 1888ms ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.0938573Z #15 8.745   Collecting page data using 3 workers ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.6033216Z #15 9.405   Generating static pages using 3 workers (0/5) ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.7787696Z #15 9.458   Generating static pages using 3 workers (1/5) 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.7796990Z #15 9.462   Generating static pages using 3 workers (2/5) 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.7797779Z #15 9.465   Generating static pages using 3 workers (3/5) 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.7798852Z #15 9.579 ✓ Generating static pages using 3 workers (5/5) in 174ms
+deploy	Build or reuse immutable release images	2026-09-24T03:03:46.9315643Z #15 9.583   Finalizing page optimization ...
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.1953184Z #15 9.997 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3847489Z #15 9.999 Route (app)
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3848170Z #15 9.999 ┌ ƒ /
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3848519Z #15 9.999 ├ ○ /_not-found
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3848896Z #15 9.999 ├ ƒ /api/documents
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3849260Z #15 9.999 ├ ƒ /api/health
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3849606Z #15 9.999 └ ƒ /api/proxy
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3849897Z #15 9.999 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3850154Z #15 9.999 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3850534Z #15 9.999 ○  (Static)   prerendered as static content
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3851058Z #15 9.999 ƒ  (Dynamic)  server-rendered on demand
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3851455Z #15 9.999 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.3851711Z #15 DONE 10.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.5573142Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.5574012Z #16 [runner 4/7] COPY --from=builder /app/public ./public
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.7169908Z #16 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.7170551Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.7170960Z #17 [runner 5/7] RUN mkdir .next && chown nextjs:nodejs .next
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.7314291Z #17 DONE 0.2s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.8838607Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:47.8839331Z #18 [runner 6/7] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.1208316Z #18 DONE 0.4s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2869050Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2869916Z #19 [runner 7/7] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2871426Z #19 DONE 0.0s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2871642Z 
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2871820Z #20 exporting to image
+deploy	Build or reuse immutable release images	2026-09-24T03:03:48.2872143Z #20 exporting layers
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.0328038Z #20 exporting layers 0.9s done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.0468495Z #20 writing image sha256:f2a54614cfdc825eeb8b9b13892cf649c8b01ea91b391ec4fbc29797206af605 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.0469411Z #20 naming to 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web:120843f33794 done
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.0470338Z #20 DONE 0.9s
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.1101319Z The push refers to repository [596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api]
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8781546Z f4b9fda66590: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8781950Z bf660d0528a3: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8782236Z 9ab14275d19a: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8782511Z 20f1eff6978a: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8782779Z 30bf1059c33b: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8783005Z 8642d8d16f15: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8783292Z 24257af4ce5b: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8783543Z 3d664d274420: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8783816Z 3070bb8623db: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8784077Z 411a86676185: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8784325Z 8642d8d16f15: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8784602Z 24257af4ce5b: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8784898Z 3d664d274420: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8785148Z 3070bb8623db: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:03:49.8785407Z 411a86676185: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:03:53.3112370Z 9ab14275d19a: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:03:53.3533895Z 30bf1059c33b: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:03:53.4942661Z f4b9fda66590: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:03:53.8974455Z bf660d0528a3: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:03:54.1525311Z 24257af4ce5b: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:03:54.5441780Z 3d664d274420: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:03:54.6816472Z 3070bb8623db: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:03:54.9198743Z 411a86676185: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:03:56.7437045Z 8642d8d16f15: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:03:56.8575926Z 20f1eff6978a: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:02.3219028Z 120843f33794: digest: sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c size: 2410
+deploy	Build or reuse immutable release images	2026-09-24T03:04:02.3581391Z The push refers to repository [596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker]
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1119061Z 199eb118d7c6: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1119476Z ac9f2f86a436: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1119758Z 0ce40877d4ec: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1120032Z c7c5094dcc43: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1120364Z bc7170a79660: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1120648Z eb5004399fa9: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1120927Z b44038e6aaf7: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1121206Z 8642d8d16f15: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1121472Z 24257af4ce5b: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1121658Z 3d664d274420: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1121832Z 3070bb8623db: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1121999Z 411a86676185: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1122178Z eb5004399fa9: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1122354Z b44038e6aaf7: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1122524Z 3070bb8623db: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1122693Z 411a86676185: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1122865Z 8642d8d16f15: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1123029Z 24257af4ce5b: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:03.1123198Z 3d664d274420: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:06.5189275Z ac9f2f86a436: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:06.5424014Z bc7170a79660: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:06.7175316Z 199eb118d7c6: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:07.0490584Z 0ce40877d4ec: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:07.6867212Z c7c5094dcc43: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:07.9753300Z 24257af4ce5b: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:08.7389009Z 3070bb8623db: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:08.8293875Z 3d664d274420: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:09.9001835Z 411a86676185: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:10.1392738Z b44038e6aaf7: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:10.8878630Z 8642d8d16f15: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:13.3278009Z eb5004399fa9: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:18.6431975Z 120843f33794: digest: sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c size: 2830
+deploy	Build or reuse immutable release images	2026-09-24T03:04:18.6654030Z The push refers to repository [596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web]
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4126410Z eaae2e8e17d2: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4126959Z f0ece2ed7b61: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4127249Z 601d9c972000: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4127519Z 1346ad9a73c5: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4127787Z 52059711e0e0: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4128043Z 3bb41f2d42cb: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4128318Z 2ab560d5e531: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4129087Z a48208c8ecf5: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4129371Z f467b00ca3ef: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4129639Z 34884abbe928: Preparing
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4129913Z 3bb41f2d42cb: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4130149Z 2ab560d5e531: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4130336Z a48208c8ecf5: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4130520Z f467b00ca3ef: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:19.4130695Z 34884abbe928: Waiting
+deploy	Build or reuse immutable release images	2026-09-24T03:04:22.8018031Z 601d9c972000: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:22.8229831Z 1346ad9a73c5: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:23.2692055Z 52059711e0e0: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:23.4279183Z eaae2e8e17d2: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:23.6173501Z 2ab560d5e531: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:24.2014356Z f467b00ca3ef: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:24.3892022Z 34884abbe928: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:24.4140025Z a48208c8ecf5: Layer already exists
+deploy	Build or reuse immutable release images	2026-09-24T03:04:25.7719668Z f0ece2ed7b61: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:26.5730348Z 3bb41f2d42cb: Pushed
+deploy	Build or reuse immutable release images	2026-09-24T03:04:31.9398580Z 120843f33794: digest: sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10 size: 2407
+deploy	Build or reuse immutable release images	2026-09-24T03:04:33.0291453Z insighthub-day3-api digest=sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c
+deploy	Build or reuse immutable release images	2026-09-24T03:04:34.1346758Z insighthub-day3-ingestion-worker digest=sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c
+deploy	Build or reuse immutable release images	2026-09-24T03:04:35.2151945Z insighthub-day3-web digest=sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10
+deploy	Deploy through the private runner	﻿2026-09-24T03:04:35.2184200Z ##[group]Run set -euo pipefail
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2184511Z [36;1mset -euo pipefail[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2184748Z [36;1mcommand_id="$(aws ssm send-command \[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2185074Z [36;1m  --document-name AWS-RunShellScript \[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2185403Z [36;1m  --targets Key=tag:DeploymentTarget,Values=insighthub-day3 \[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2187131Z [36;1m  --parameters "commands=[\"set -euo pipefail\",\"export AWS_REGION=$AWS_REGION\",\"tmp=\$(mktemp -d /tmp/insighthub-cd.XXXXXX)\",\"git clone --quiet https://github.com/${GITHUB_REPOSITORY}.git \$tmp/repo\",\"git -C \$tmp/repo checkout --detach $DEPLOY_SHA\",\"test \\\"\$(git -C \$tmp/repo rev-parse HEAD)\\\" = $DEPLOY_SHA\",\"cd \$tmp/repo && DEPLOY_SHA=$DEPLOY_SHA API_IMAGE=$API_IMAGE WORKER_IMAGE=$WORKER_IMAGE WEB_IMAGE=$WEB_IMAGE bash scripts/deploy_eks.sh\"]" \[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2188414Z [36;1m  --timeout-seconds 900 \[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2188677Z [36;1m  --query 'Command.CommandId' --output text)"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2189019Z [36;1mecho "command_id=$command_id" >> "$GITHUB_OUTPUT"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2189299Z [36;1mfor _ in $(seq 1 60); do[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2189869Z [36;1m  status="$(aws ssm get-command-invocation --region "$AWS_REGION" --command-id "$command_id" --instance-id "$RUNNER_INSTANCE_ID" --query 'Status' --output text 2>/dev/null || true)"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2190431Z [36;1m  case "$status" in[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2190680Z [36;1m    Success|Failed|TimedOut|Cancelled) break ;;[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2190927Z [36;1m  esac[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2191291Z [36;1m  sleep 10[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2191481Z [36;1mdone[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2191943Z [36;1maws ssm get-command-invocation --region "$AWS_REGION" --command-id "$command_id" --instance-id "$RUNNER_INSTANCE_ID" --output json | tee /tmp/ssm-result.json[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2192509Z [36;1mtest "$(jq -r .Status /tmp/ssm-result.json)" = Success[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2192848Z [36;1mstdout="$(jq -r .StandardOutputContent /tmp/ssm-result.json)"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2193370Z [36;1mingress_host="$(grep -E '^INGRESS_HOST=[a-z0-9][a-z0-9.-]*\.elb\.amazonaws\.com$' <<<"$stdout" | sed 's/^INGRESS_HOST=//' | sort -u)"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2193816Z [36;1mtest "$(wc -l <<<"$ingress_host")" -eq 1[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2194122Z [36;1m[[ "$ingress_host" =~ ^[a-z0-9][a-z0-9.-]*\.elb\.amazonaws\.com$ ]][0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2194461Z [36;1mecho "INGRESS_HOST=$ingress_host" >> "$GITHUB_ENV"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2194769Z [36;1mecho "ingress_host=$ingress_host" >> "$GITHUB_OUTPUT"[0m
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2249889Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2250177Z env:
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2250358Z   AWS_REGION: ap-southeast-1
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2250578Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2250845Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2251165Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2251418Z   OPERATION: deploy
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2251624Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2251989Z   AWS_ACCESS_KEY_ID: ***
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2252270Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2256040Z   AWS_SESSION_TOKEN: ***
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2256416Z   RUNNER_INSTANCE_ID: i-0f0a4752d604254ed
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2256951Z   API_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api@sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2257797Z   WORKER_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker@sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2258637Z   WEB_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web@sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10
+deploy	Deploy through the private runner	2026-09-24T03:04:35.2259140Z ##[endgroup]
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1905946Z {
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1906583Z     "CommandId": "681f3ea5-23e9-4efc-b3d8-be72ff4f12b8",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1907325Z     "InstanceId": "i-0f0a4752d604254ed",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1907615Z     "Comment": "",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1908001Z     "DocumentName": "AWS-RunShellScript",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1912826Z     "DocumentVersion": "$DEFAULT",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1913170Z     "PluginName": "aws:runShellScript",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1913397Z     "ResponseCode": 0,
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1913726Z     "ExecutionStartDateTime": "2026-09-24T03:04:36.559Z",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1914129Z     "ExecutionElapsedTime": "PT57.023S",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1914596Z     "ExecutionEndDateTime": "2026-09-24T03:05:33.559Z",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1914954Z     "Status": "Success",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1915235Z     "StatusDetails": "Success",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1919455Z     "StandardOutputContent": "deployment \"aws-load-balancer-controller\" successfully rolled out\ndeployment.apps/api configured\nservice/api unchanged\nWaiting for deployment \"api\" rollout to finish: 1 old replicas are pending termination...\nWaiting for deployment \"api\" rollout to finish: 1 old replicas are pending termination...\ndeployment \"api\" successfully rolled out\ndeployment.apps/ingestion-worker configured\nWaiting for deployment \"ingestion-worker\" rollout to finish: 1 old replicas are pending termination...\nWaiting for deployment \"ingestion-worker\" rollout to finish: 1 old replicas are pending termination...\ndeployment \"ingestion-worker\" successfully rolled out\ndeployment.apps/web configured\nservice/web unchanged\nWaiting for deployment \"web\" rollout to finish: 1 old replicas are pending termination...\nWaiting for deployment \"web\" rollout to finish: 1 old replicas are pending termination...\ndeployment \"web\" successfully rolled out\nDEPLOY_SHA=120843f337943d6fd8f55a7c3115d76b1bb3d129\nHEALTHZ={\"status\":\"ok\",\"mode\":\"fixture\"}\nREADYZ={\"status\":\"ready\",\"db\":true,\"mode\":\"fixture\"}\nWEB_INTERNAL_HEALTH={\"status\":\"ok\",\"service\":\"insighthub-web\"}\nWEB_INTERNAL_DOCUMENTS=[]\nINGRESS_HOST=k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com\n",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1923256Z     "StandardOutputUrl": "",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1923609Z     "StandardErrorContent": "HEAD is now at 120843f fix: validate public ALB from GitHub runner\n",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1923968Z     "StandardErrorUrl": "",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1924176Z     "CloudWatchOutputConfig": {
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1924401Z         "CloudWatchLogGroupName": "",
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1924642Z         "CloudWatchOutputEnabled": false
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1924853Z     }
+deploy	Deploy through the private runner	2026-09-24T03:05:35.1925014Z }
+deploy	Public ALB validation	﻿2026-09-24T03:05:35.2873142Z ##[group]Run set -euo pipefail
+deploy	Public ALB validation	2026-09-24T03:05:35.2873430Z [36;1mset -euo pipefail[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2873678Z [36;1m: "${INGRESS_HOST:?INGRESS_HOST is required}"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2873967Z [36;1mbase="http://$INGRESS_HOST"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2874203Z [36;1mrequest_with_retry() {[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2874432Z [36;1m  local url="$1"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2874649Z [36;1m  local body=""[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2874857Z [36;1m  for _ in $(seq 1 4); do[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2875225Z [36;1m    if body="$(curl --fail --silent --show-error --connect-timeout 5 --max-time 10 "$url")"; then[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2875599Z [36;1m      printf '%s' "$body"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2875811Z [36;1m      return 0[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2876011Z [36;1m    fi[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2876425Z [36;1m    sleep 3[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2876632Z [36;1m  done[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2876807Z [36;1m  return 1[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2876995Z [36;1m}[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2877188Z [36;1mroot_body="$(request_with_retry "$base/")"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2878597Z [36;1mhealth_body="$(request_with_retry "$base/api/health")"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2878960Z [36;1mdocuments_body="$(request_with_retry "$base/api/documents")"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2879263Z [36;1mtest -n "$root_body"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2879503Z [36;1mgrep -q '"status":"ok"' <<<"$health_body"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2879776Z [36;1mjq -e . <<<"$documents_body" >/dev/null[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2880188Z [36;1mprintf 'PUBLIC_ROOT=200\nPUBLIC_HEALTH=%s\nPUBLIC_DOCUMENTS=%s\n' "$health_body" "$documents_body"[0m
+deploy	Public ALB validation	2026-09-24T03:05:35.2943864Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Public ALB validation	2026-09-24T03:05:35.2944166Z env:
+deploy	Public ALB validation	2026-09-24T03:05:35.2944354Z   AWS_REGION: ap-southeast-1
+deploy	Public ALB validation	2026-09-24T03:05:35.2944587Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Public ALB validation	2026-09-24T03:05:35.2944867Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Public ALB validation	2026-09-24T03:05:35.2945200Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Public ALB validation	2026-09-24T03:05:35.2945477Z   OPERATION: deploy
+deploy	Public ALB validation	2026-09-24T03:05:35.2945680Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Public ALB validation	2026-09-24T03:05:35.2946380Z   AWS_ACCESS_KEY_ID: ***
+deploy	Public ALB validation	2026-09-24T03:05:35.2946678Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Public ALB validation	2026-09-24T03:05:35.2953546Z   AWS_SESSION_TOKEN: ***
+deploy	Public ALB validation	2026-09-24T03:05:35.2953972Z   RUNNER_INSTANCE_ID: i-0f0a4752d604254ed
+deploy	Public ALB validation	2026-09-24T03:05:35.2955136Z   API_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api@sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c
+deploy	Public ALB validation	2026-09-24T03:05:35.2957014Z   WORKER_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker@sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c
+deploy	Public ALB validation	2026-09-24T03:05:35.2958500Z   WEB_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web@sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10
+deploy	Public ALB validation	2026-09-24T03:05:35.2959136Z   INGRESS_HOST: k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com
+deploy	Public ALB validation	2026-09-24T03:05:35.2959726Z ##[endgroup]
+deploy	Public ALB validation	2026-09-24T03:05:36.5892323Z PUBLIC_ROOT=200
+deploy	Public ALB validation	2026-09-24T03:05:36.5892821Z PUBLIC_HEALTH={"status":"ok","service":"insighthub-web"}
+deploy	Public ALB validation	2026-09-24T03:05:36.5893239Z PUBLIC_DOCUMENTS=[]
+deploy	Deployment summary	﻿2026-09-24T03:05:36.5941374Z ##[group]Run {
+deploy	Deployment summary	2026-09-24T03:05:36.5941602Z [36;1m{[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5941795Z [36;1m  echo "### Day 3 deployment"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5942040Z [36;1m  echo "- Source SHA: $DEPLOY_SHA"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5942292Z [36;1m  echo "- Release: ${DEPLOY_SHA:0:12}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5942585Z [36;1m  echo "- API image: ${API_IMAGE:-unresolved}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5942888Z [36;1m  echo "- Worker image: ${WORKER_IMAGE:-unresolved}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5943199Z [36;1m  echo "- Web image: ${WEB_IMAGE:-unresolved}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5943485Z [36;1m  echo "- Ingress host: ${INGRESS_HOST:-unresolved}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5943878Z [36;1m  echo "- Private validation: API health/readiness, worker rollout, internal web checks"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5944336Z [36;1m  echo "- Public validation: GitHub-hosted runner ALB checks"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5944682Z [36;1m  echo "- SSM command: ${COMMAND_ID:-see deploy step}"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.5944965Z [36;1m} >> "$GITHUB_STEP_SUMMARY"[0m
+deploy	Deployment summary	2026-09-24T03:05:36.6000424Z shell: /usr/bin/bash -e {0}
+deploy	Deployment summary	2026-09-24T03:05:36.6000649Z env:
+deploy	Deployment summary	2026-09-24T03:05:36.6000830Z   AWS_REGION: ap-southeast-1
+deploy	Deployment summary	2026-09-24T03:05:36.6001041Z   AWS_ACCOUNT_ID: 596261186564
+deploy	Deployment summary	2026-09-24T03:05:36.6001313Z   ECR_REGISTRY: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com
+deploy	Deployment summary	2026-09-24T03:05:36.6001647Z   DEPLOY_SHA: 120843f337943d6fd8f55a7c3115d76b1bb3d129
+deploy	Deployment summary	2026-09-24T03:05:36.6001896Z   OPERATION: deploy
+deploy	Deployment summary	2026-09-24T03:05:36.6002089Z   AWS_DEFAULT_REGION: ap-southeast-1
+deploy	Deployment summary	2026-09-24T03:05:36.6002479Z   AWS_ACCESS_KEY_ID: ***
+deploy	Deployment summary	2026-09-24T03:05:36.6002757Z   AWS_SECRET_ACCESS_KEY: ***
+deploy	Deployment summary	2026-09-24T03:05:36.6006661Z   AWS_SESSION_TOKEN: ***
+deploy	Deployment summary	2026-09-24T03:05:36.6006897Z   RUNNER_INSTANCE_ID: i-0f0a4752d604254ed
+deploy	Deployment summary	2026-09-24T03:05:36.6007435Z   API_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-api@sha256:9d39b1c2f760a39aeea331489c6c225596e12b8934684a1836a7c3de233c447c
+deploy	Deployment summary	2026-09-24T03:05:36.6008277Z   WORKER_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-ingestion-worker@sha256:ca1edac2c8f55d820f38707cf8889c87b8e3ed19298bb94c6d349cc7744f182c
+deploy	Deployment summary	2026-09-24T03:05:36.6009116Z   WEB_IMAGE: 596261186564.dkr.ecr.ap-southeast-1.amazonaws.com/insighthub-day3-web@sha256:1456568af8b99635236dfe714a490300715fe71b50b56de196e3f4b561972d10
+deploy	Deployment summary	2026-09-24T03:05:36.6009737Z   INGRESS_HOST: k8s-insighth-web-b8cc1a786d-772834385.ap-southeast-1.elb.amazonaws.com
+deploy	Deployment summary	2026-09-24T03:05:36.6010094Z ##[endgroup]
+deploy	Post Configure AWS credentials	﻿2026-09-24T03:05:36.6187094Z Post job cleanup.
+deploy	Post Checkout	﻿2026-09-24T03:05:36.7160368Z Post job cleanup.
+deploy	Post Checkout	2026-09-24T03:05:36.7896946Z [command]/usr/bin/git version
+deploy	Post Checkout	2026-09-24T03:05:36.7936477Z git version 2.55.0
+deploy	Post Checkout	2026-09-24T03:05:36.7975785Z Temporarily overriding HOME='/home/runner/work/_temp/b78648f1-177d-4c55-8c6c-8520990ea211' before making global git config changes
+deploy	Post Checkout	2026-09-24T03:05:36.7978627Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout	2026-09-24T03:05:36.7980947Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/insighthub/insighthub
+deploy	Post Checkout	2026-09-24T03:05:36.8010962Z Removing SSH command configuration
+deploy	Post Checkout	2026-09-24T03:05:36.8014939Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout	2026-09-24T03:05:36.8043866Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout	2026-09-24T03:05:36.8271283Z Removing HTTP extra header
+deploy	Post Checkout	2026-09-24T03:05:36.8277358Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout	2026-09-24T03:05:36.8316708Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Checkout	2026-09-24T03:05:36.8555133Z Removing includeIf entries pointing to credentials config files
+deploy	Post Checkout	2026-09-24T03:05:36.8564821Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Checkout	2026-09-24T03:05:36.8597657Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-09-24T03:05:36.8972981Z Cleaning up orphan processes
+deploy	Complete job	2026-09-24T03:05:36.9286901Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: aws-actions/configure-aws-credentials@7474bc4690e29a8392af63c5b98e7449536d5c3a. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

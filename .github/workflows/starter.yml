@@ -17,10 +17,23 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Prepare shared staging directory
+        run: |
+          sudo install -d -m 0770 -o 1001 -g 1001 .staging
+          stat -c '%u:%g %a %n' .staging
       - name: Build and run local fixture
         run: docker compose up --build -d --wait
       - name: Verifier regression tests
         run: python3 -m unittest discover -s tests -p 'test_verify*.py' -v
+      - name: Verify shared staging is writable
+        run: |
+          docker compose run --rm --no-deps api sh -ec '
+            id
+            stat -c "%u:%g %a %n" /data/staging
+            test -d /data/staging
+            test -w /data/staging
+            echo INSIGHTHUB_STAGING_WRITABLE
+          '
       - name: API unit and isolated database integration
         run: make test-backend
       - name: MCP actual SDK tests

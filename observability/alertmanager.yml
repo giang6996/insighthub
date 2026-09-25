@@ -1,0 +1,25 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: [alertname, component, signal]
+  group_wait: 5s
+  group_interval: 30s
+  repeat_interval: 4h
+  receiver: insighthub-slack-alerts
+
+receivers:
+  - name: insighthub-slack-alerts
+    slack_configs:
+      - api_url_file: /run/secrets/slack_webhook
+        channel: '#alerts'
+        send_resolved: true
+        title: '{{ .CommonLabels.alertname }}'
+        text: >-
+          {{ .CommonAnnotations.summary }}
+          {{ if .CommonAnnotations.description }} — {{ .CommonAnnotations.description }}{{ end }}
+
+inhibit_rules:
+  - source_matchers: [severity="critical"]
+    target_matchers: [severity="warning"]
+    equal: [alertname, component]

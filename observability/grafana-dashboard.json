@@ -1,0 +1,139 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Request rate",
+      "description": "RED: total API request rate.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 0},
+      "targets": [{"refId": "A", "expr": "insighthub:http_request_rate5m"}],
+      "fieldConfig": {"defaults": {"unit": "reqps"}, "overrides": []}
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "HTTP error rate",
+      "description": "RED: fraction of HTTP 5xx responses.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 0},
+      "targets": [{"refId": "A", "expr": "insighthub:http_error_rate5m"}],
+      "fieldConfig": {"defaults": {"unit": "percentunit"}, "overrides": []}
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "RAG duration p95",
+      "description": "RED: recorded 95th percentile RAG query duration.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 6},
+      "targets": [{"refId": "A", "expr": "insighthub:rag_latency_p95_5m"}],
+      "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []}
+    },
+    {
+      "id": 4,
+      "type": "timeseries",
+      "title": "ARQ queue depth",
+      "description": "Redis ZCARD for the configured ARQ ingestion queue.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 6},
+      "targets": [{"refId": "A", "expr": "insighthub:arq_queue_depth"}],
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "LLM token usage",
+      "description": "Provider-reported token rate; fixture traffic is labeled separately.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 12},
+      "targets": [{"refId": "A", "expr": "insighthub:llm_token_rate5m"}],
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}
+    },
+    {
+      "id": 6,
+      "type": "timeseries",
+      "title": "LLM latency p95",
+      "description": "RED: recorded 95th percentile generation latency.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 12},
+      "targets": [{"refId": "A", "expr": "insighthub:llm_latency_p95_5m"}],
+      "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []}
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "Estimated cost basis (pricing deferred)",
+      "description": "Non-fixture provider token rate only. No authoritative USD pricing is applied.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 18},
+      "targets": [{"refId": "A", "expr": "sum(insighthub:llm_token_rate5m{provider!=\"fixture\"})"}],
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Pod CPU usage",
+      "description": "USE: standard kube-prometheus-stack/cAdvisor container CPU usage.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 18},
+      "targets": [{"refId": "A", "expr": "sum by (namespace, pod, container) (rate(container_cpu_usage_seconds_total{namespace=~\"$namespace\",container!=\"\",container!=\"POD\"}[5m]))"}],
+      "fieldConfig": {"defaults": {"unit": "cores"}, "overrides": []}
+    },
+    {
+      "id": 9,
+      "type": "timeseries",
+      "title": "Pod memory working set",
+      "description": "USE: standard kube-prometheus-stack/cAdvisor container memory usage.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 24},
+      "targets": [{"refId": "A", "expr": "sum by (namespace, pod, container) (container_memory_working_set_bytes{namespace=~\"$namespace\",container!=\"\",container!=\"POD\"})"}],
+      "fieldConfig": {"defaults": {"unit": "bytes"}, "overrides": []}
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "Deployment availability",
+      "description": "Deployment context from kube-state-metrics.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 24},
+      "targets": [{"refId": "A", "expr": "kube_deployment_status_replicas_available{namespace=~\"$namespace\"}"}],
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "Web availability",
+      "description": "Blackbox HTTP probe success for the web health endpoint.",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 30},
+      "targets": [{"refId": "A", "expr": "probe_success{job=\"insighthub-web-blackbox\"}"}],
+      "fieldConfig": {"defaults": {"unit": "bool"}, "overrides": []}
+    },
+    {
+      "id": 12,
+      "type": "timeseries",
+      "title": "Redis and PostgreSQL exporter health",
+      "description": "Infrastructure dependency availability.",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 30},
+      "targets": [
+        {"refId": "A", "expr": "redis_up"},
+        {"refId": "B", "expr": "pg_up"}
+      ],
+      "fieldConfig": {"defaults": {"unit": "bool"}, "overrides": []}
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": ["insighthub", "day4", "red", "use"],
+  "templating": {
+    "list": [
+      {
+        "name": "namespace",
+        "type": "query",
+        "label": "Namespace",
+        "query": "label_values(kube_pod_info, namespace)",
+        "includeAll": true,
+        "multi": true,
+        "current": {"text": "All", "value": ["$__all"]}
+      }
+    ]
+  },
+  "time": {"from": "now-6h", "to": "now"},
+  "timezone": "browser",
+  "title": "InsightHub Day 4 Observability",
+  "uid": "insighthub-day4",
+  "version": 1
+}

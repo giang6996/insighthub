@@ -1,0 +1,167 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blackbox-exporter
+  namespace: insighthub
+  labels:
+    app: blackbox-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blackbox-exporter
+  template:
+    metadata:
+      labels:
+        app: blackbox-exporter
+    spec:
+      containers:
+        - name: blackbox-exporter
+          image: prom/blackbox-exporter:v0.27.0
+          args: ["--config.file=/etc/blackbox_exporter/config.yml"]
+          ports:
+            - name: metrics
+              containerPort: 9115
+          volumeMounts:
+            - name: config
+              mountPath: /etc/blackbox_exporter
+              readOnly: true
+          resources:
+            requests: {cpu: 10m, memory: 32Mi}
+            limits: {cpu: 100m, memory: 64Mi}
+      volumes:
+        - name: config
+          configMap:
+            name: blackbox-exporter
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blackbox-exporter
+  namespace: insighthub
+data:
+  config.yml: |
+    modules:
+      http_2xx:
+        prober: http
+        timeout: 5s
+        http:
+          preferred_ip_protocol: ip4
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blackbox-exporter
+  namespace: insighthub
+spec:
+  selector:
+    app: blackbox-exporter
+  ports:
+    - name: http
+      port: 9115
+      targetPort: 9115
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-exporter
+  namespace: insighthub
+  labels:
+    app: redis-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-exporter
+  template:
+    metadata:
+      labels:
+        app: redis-exporter
+    spec:
+      containers:
+        - name: redis-exporter
+          image: oliver006/redis_exporter:v1.76.0
+          env:
+            - name: REDIS_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  name: insighthub-runtime
+                  key: REDIS_URL
+            - name: REDIS_EXPORTER_CHECK_SINGLE_KEYS
+              value: db0=ingestion
+          ports:
+            - name: metrics
+              containerPort: 9121
+          resources:
+            requests: {cpu: 10m, memory: 32Mi}
+            limits: {cpu: 100m, memory: 64Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-exporter
+  namespace: insighthub
+  labels:
+    app: redis-exporter
+spec:
+  selector:
+    app: redis-exporter
+  ports:
+    - name: metrics
+      port: 9121
+      targetPort: 9121
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-exporter
+  namespace: insighthub
+  labels:
+    app: postgres-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-exporter
+  template:
+    metadata:
+      labels:
+        app: postgres-exporter
+    spec:
+      containers:
+        - name: postgres-exporter
+          image: quay.io/prometheuscommunity/postgres-exporter:v0.17.1
+          env:
+            - name: DATA_SOURCE_URI
+              value: REPLACE_WITH_RDS_ENDPOINT:5432/REPLACE_WITH_RDS_DATABASE_NAME?sslmode=require
+            - name: DATA_SOURCE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_USER
+            - name: DATA_SOURCE_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: insighthub-rds-fields
+                  key: DB_PASSWORD
+          ports:
+            - name: metrics
+              containerPort: 9187
+          resources:
+            requests: {cpu: 10m, memory: 64Mi}
+            limits: {cpu: 100m, memory: 128Mi}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-exporter
+  namespace: insighthub
+  labels:
+    app: postgres-exporter
+spec:
+  selector:
+    app: postgres-exporter
+  ports:
+    - name: metrics
+      port: 9187
+      targetPort: 9187

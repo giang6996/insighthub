@@ -1,0 +1,33 @@
+{
+  "incident_id": "insighthub-day6-arq-queue-backlog-1",
+  "started_at": "2026-09-25T04:31:15Z",
+  "ended_at": "2026-09-25T04:39:31.475Z",
+  "hypotheses": [
+    "Primary cause: the ingestion-worker was temporarily stopped while six normal documents were submitted through POST /documents, leaving their normal ARQ ingestion jobs pending.",
+    "Supporting telemetry: insighthub_arq_queue_depth was 6 at 2026-09-25T04:35:26.208Z and exceeded the one-hour statistical upper band while InsightHubARQQueueBacklog fired.",
+    "Impact: the six submitted documents remained pending until worker recovery; no direct Redis writes or manual ARQ-key changes were used.",
+    "Recovery: the worker was restarted, drained the queue normally, and documents 199 through 204 all reached ready with one chunk and no error code."
+  ],
+  "samples": [
+    {
+      "metric": "insighthub_arq_queue_depth",
+      "labels": {
+        "component": "redis",
+        "db": "db0",
+        "instance": "redis-exporter:9121",
+        "job": "insighthub-redis",
+        "key": "ingestion"
+      },
+      "timestamp": "2026-09-25T04:35:26.208Z",
+      "value": 6
+    }
+  ],
+  "observed_symptom": "The ARQ ingestion queue remained non-empty and the queue-backlog anomaly fired.",
+  "primary_cause": "The ingestion-worker was stopped while normal API ingestion requests continued to enqueue jobs.",
+  "supporting_telemetry": [
+    "insighthub_arq_queue_depth{component=redis,db=db0,instance=redis-exporter:9121,job=insighthub-redis,key=ingestion} = 6 at the cited incident timestamp."
+  ],
+  "impact": "Six normal ingestion jobs waited in ARQ and their documents remained pending until the worker returned.",
+  "recovery_action": "Restarted the existing ingestion-worker and allowed normal ARQ processing to drain the queue; all six documents became ready.",
+  "evidence_limitations": "The start timestamp is the first recorded high-depth Prometheus sample; the worker-stop command itself was not independently timestamped in the report."
+}

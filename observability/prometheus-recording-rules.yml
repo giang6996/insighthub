@@ -1,0 +1,125 @@
+groups:
+  - name: insighthub-day4-recording
+    interval: 30s
+    rules:
+      - record: insighthub:http_request_rate5m
+        expr: sum(rate(insighthub_http_requests_total[5m]))
+
+      - record: insighthub:http_error_rate5m
+        expr: |
+          (
+            sum(rate(insighthub_http_requests_total{status=~"5.."}[5m]))
+            /
+            clamp_min(sum(rate(insighthub_http_requests_total[5m])), 1e-9)
+          ) or vector(0)
+
+      - record: insighthub:llm_latency_p95_5m
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le) (rate(insighthub_llm_call_latency_seconds_bucket[5m]))
+          )
+
+      - record: insighthub:rag_latency_p95_5m
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le) (rate(insighthub_rag_query_latency_seconds_bucket[5m]))
+          )
+
+      - record: insighthub:arq_queue_depth
+        expr: max(insighthub_arq_queue_depth)
+
+      - record: insighthub:llm_token_rate5m
+        expr: sum by (provider, direction) (rate(insighthub_llm_tokens_total[5m]))
+
+      - record: insighthub:embedding_token_rate5m
+        expr: |
+          sum by (provider, input_type) (
+            rate(insighthub_embedding_tokens_total[5m])
+          )
+          +
+          sum by (provider, input_type) (
+            rate(insighthub_embedding_estimated_tokens_total[5m])
+          )
+
+      # Explainable 1h statistical anomaly bands: rolling mean + 3*stddev.
+      - record: insighthub:llm_latency_p95_mean1h
+        expr: avg_over_time((insighthub:llm_latency_p95_5m == insighthub:llm_latency_p95_5m)[1h:])
+
+      - record: insighthub:llm_latency_p95_stddev1h
+        expr: stddev_over_time((insighthub:llm_latency_p95_5m == insighthub:llm_latency_p95_5m)[1h:])
+
+      - record: insighthub:llm_latency_p95_upper1h
+        expr: |
+          insighthub:llm_latency_p95_mean1h
+          + 3 * insighthub:llm_latency_p95_stddev1h
+
+      - record: insighthub:arq_queue_depth_mean1h
+        expr: avg_over_time(insighthub:arq_queue_depth[1h])
+
+      - record: insighthub:arq_queue_depth_stddev1h
+        expr: stddev_over_time(insighthub:arq_queue_depth[1h])
+
+      - record: insighthub:arq_queue_depth_upper1h
+        expr: |
+          insighthub:arq_queue_depth_mean1h
+          + 3 * insighthub:arq_queue_depth_stddev1h
+
+      - record: insighthub:http_error_rate_mean1h
+        expr: avg_over_time(insighthub:http_error_rate5m[1h])
+
+      - record: insighthub:http_error_rate_stddev1h
+        expr: stddev_over_time(insighthub:http_error_rate5m[1h])
+
+      - record: insighthub:http_error_rate_upper1h
+        expr: |
+          insighthub:http_error_rate_mean1h
+          + 3 * insighthub:http_error_rate_stddev1h
+
+  - name: insighthub-day4-anomaly-alerts
+    interval: 30s
+    rules:
+      - alert: InsightHubLLMLatencyAnomaly
+        expr: |
+          insighthub:llm_latency_p95_5m
+          > insighthub:llm_latency_p95_upper1h
+        for: 3m
+        labels:
+          severity: warning
+          component: api
+          signal: llm_latency
+        annotations:
+          summary: InsightHub LLM latency is above its 1h anomaly band
+          description: LLM p95 latency is above rolling mean plus three standard deviations for at least 3 minutes.
+          runbook: docs/runbooks/day4-llm-latency.md
+
+      - alert: InsightHubARQQueueBacklog
+        expr: |
+          insighthub:arq_queue_depth
+          > insighthub:arq_queue_depth_upper1h
+          and insighthub:arq_queue_depth >= 2
+        for: 3m
+        labels:
+          severity: warning
+          component: ingestion-worker
+          signal: queue_depth
+        annotations:
+          summary: InsightHub ARQ ingestion queue is above its 1h anomaly band
+          description: ARQ queue depth is statistically anomalous and has at least two queued jobs for at least 3 minutes.
+          runbook: docs/runbooks/day4-queue-backlog.md
+
+      - alert: InsightHubHTTPErrorRateBurst
+        expr: |
+          insighthub:http_error_rate5m
+          > insighthub:http_error_rate_upper1h
+          and insighthub:http_error_rate5m >= 0.01
+        for: 3m
+        labels:
+          severity: warning
+          component: api
+          signal: http_error_rate
+        annotations:
+          summary: InsightHub HTTP error rate is above its 1h anomaly band
+          description: HTTP 5xx rate is statistically anomalous and at least 1% for at least 3 minutes.
+          runbook: docs/runbooks/day4-http-errors.md

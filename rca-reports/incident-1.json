@@ -1,0 +1,32 @@
+{
+  "incident_id": "insighthub-day6-llm-latency-1",
+  "started_at": "2026-09-25T04:08:32.860655Z",
+  "ended_at": "2026-09-25T04:20:58.983195Z",
+  "hypotheses": [
+    "Primary cause: a temporary fixture-mode delay of approximately 2.5 seconds was enabled inside the LLM generate() operation, which is the operation covered by the latency histogram.",
+    "Supporting telemetry: the API LLM latency bucket for le=5.0 had value 17 at 2026-09-25T04:13:30.786Z, while the recorded p95 was above its one-hour upper band during the alert window.",
+    "Impact: chat generation requests were substantially slower while the explicit test delay was active; retrieval and document ingestion were not part of the injected fault.",
+    "Recovery: the temporary delay was disabled and normal chat traffic was allowed to continue until the alert became inactive. The exact alert-series transition was observed before the final recovery observation, so the report retains that limitation."
+  ],
+  "samples": [
+    {
+      "metric": "insighthub_llm_call_latency_seconds_bucket",
+      "labels": {
+        "component": "api",
+        "instance": "api:8000",
+        "job": "insighthub-api",
+        "le": "5.0"
+      },
+      "timestamp": "2026-09-25T04:13:30.786Z",
+      "value": 17
+    }
+  ],
+  "observed_symptom": "The LLM latency p95 exceeded its one-hour statistical upper band and InsightHubLLMLatencyAnomaly fired.",
+  "primary_cause": "Temporary explicit fixture-mode delay inside generate().",
+  "supporting_telemetry": [
+    "insighthub_llm_call_latency_seconds_bucket{component=api,instance=api:8000,job=insighthub-api,le=5.0} = 17 at the cited incident timestamp."
+  ],
+  "impact": "Elevated latency for API chat generation requests during the controlled incident.",
+  "recovery_action": "Removed the temporary delay and continued normal requests until latency and alert state recovered.",
+  "evidence_limitations": "The Prometheus firing series stopped emitting before the final delay-disable observation; no conclusion is made about an exact resolve transition beyond the recorded inactive checks."
+}

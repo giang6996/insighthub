@@ -109,6 +109,56 @@ services:
     depends_on:
       api: {condition: service_healthy}
     mem_limit: 512m
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=15d
+      - --storage.tsdb.retention.size=2GB
+    depends_on:
+      alertmanager: {condition: service_started}
+    ports: ["127.0.0.1:${PROMETHEUS_PORT:-9090}:9090"]
+    volumes:
+      - ./observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./observability/prometheus-recording-rules.yml:/etc/prometheus/recording-rules.yml:ro
+      - prometheus-data:/prometheus
+    mem_limit: 512m
+  alertmanager:
+    image: prom/alertmanager:v0.28.1
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/alertmanager
+    ports: ["127.0.0.1:${ALERTMANAGER_PORT:-9093}:9093"]
+    volumes:
+      - ./observability/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - alertmanager-data:/alertmanager
+    secrets:
+      - slack_webhook
+    mem_limit: 128m
+  blackbox-exporter:
+    image: prom/blackbox-exporter:v0.27.0
+    command: ["--config.file=/etc/blackbox_exporter/config.yml"]
+    volumes:
+      - ./observability/blackbox.yml:/etc/blackbox_exporter/config.yml:ro
+    mem_limit: 128m
+  redis-exporter:
+    image: oliver006/redis_exporter:v1.76.0
+    environment:
+      REDIS_ADDR: redis://redis:6379
+      REDIS_EXPORTER_CHECK_SINGLE_KEYS: db0=${INGESTION_QUEUE:-ingestion}
+    depends_on:
+      redis: {condition: service_healthy}
+    mem_limit: 128m
+  postgres-exporter:
+    image: quay.io/prometheuscommunity/postgres-exporter:v0.17.1
+    environment:
+      DATA_SOURCE_URI: postgres:5432/insighthub?sslmode=disable
+      DATA_SOURCE_USER: ${POSTGRES_EXPORTER_USER:-insighthub}
+      DATA_SOURCE_PASS: ${POSTGRES_EXPORTER_PASSWORD:?set POSTGRES_EXPORTER_PASSWORD}
+    depends_on:
+      postgres: {condition: service_healthy}
+    mem_limit: 128m
   ollama:
     image: ollama/ollama:0.33.3@sha256:32931b46719f673c05fdbaa81ccb26da18ea4a1c57590a754874ab28ba269eb2
     profiles: ["ollama"]
@@ -121,4 +171,10 @@ services:
     # CPU container is optional. On macOS prefer native Ollama for Metal.
 volumes:
   pgdata:
+  prometheus-data:
+  alertmanager-data:
   ollama-data:
+
+secrets:
+  slack_webhook:
+    file: ${SLACK_WEBHOOK_FILE:-/tmp/insighthub-slack-webhook}

@@ -1,0 +1,70 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: insighthub-api
+  namespace: insighthub
+  labels:
+    release: kube-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app: api
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: insighthub-redis-exporter
+  namespace: insighthub
+  labels:
+    release: kube-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app: redis-exporter
+  endpoints:
+    - port: metrics
+      interval: 15s
+      metricRelabelings:
+        - sourceLabels: [__name__]
+          regex: redis_key_size
+          targetLabel: __name__
+          replacement: insighthub_arq_queue_depth
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: insighthub-postgres-exporter
+  namespace: insighthub
+  labels:
+    release: kube-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app: postgres-exporter
+  endpoints:
+    - port: metrics
+      interval: 30s
+---
+apiVersion: monitoring.coreos.com/v1
+kind: Probe
+metadata:
+  name: insighthub-web
+  namespace: insighthub
+  labels:
+    release: kube-prom-stack
+spec:
+  jobName: insighthub-web-blackbox
+  interval: 15s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.insighthub.svc.cluster.local:9115
+    scheme: http
+    path: /probe
+  targets:
+    staticConfig:
+      static:
+        - http://web.insighthub.svc.cluster.local:3000/api/health

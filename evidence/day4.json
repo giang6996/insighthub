@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "day": 4,
+  "mode": "real",
+  "observed_at": "2026-09-25T08:27:22Z",
+  "source_sha256": "252302808f0e0f7fba1069184a92abcf68292cedecf92d00cc12f2fa35413e9e",
+  "artifacts": {
+    "rules": {
+      "path": "observability/prometheus-recording-rules.yml",
+      "sha256": "0aba08286599da7a29d511e4fa170f5a91f090d7a24eb515c6d91213412aa3c3"
+    },
+    "rule_tests": {
+      "path": "observability/prometheus-rule-tests.yml",
+      "sha256": "c1ab3a4cd7c43df46d7307275d71ef8d39a4b8cdbf6e3591360e8e652af06320"
+    },
+    "dashboard": {
+      "path": "observability/grafana-dashboard.json",
+      "sha256": "92a2399c1f288fc7b50da73e6d7538308771724d0b95034212b5b5bd2f4c32f2"
+    },
+    "mlops_notes": {
+      "path": "mlops-overview-notes.md",
+      "sha256": "d5f92952f681d9a71783fa191e7c76f12a613006fa027d67f0d3d9bf989d39df"
+    },
+    "rca": {
+      "path": "rca-reports/incident-1.json",
+      "sha256": "8592d9d21fc42b57951f97ff7fe7b8dd0902ff77d3279bc9748a26429a67921c"
+    },
+    "rca_2": {
+      "path": "rca-reports/incident-2.json",
+      "sha256": "1fabc2a3d9e58700dd42461bca4fb8ce0d66f4cf696277796572f071015c1c61"
+    },
+    "rca_3": {
+      "path": "rca-reports/incident-3.json",
+      "sha256": "884b5658b88f5f9e5f6c76367eebd05c186fdad97afcd14632b72e8d26952a77"
+    }
+  }
+}

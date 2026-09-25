@@ -1,0 +1,175 @@
+rule_files:
+  - prometheus-recording-rules.yml
+
+evaluation_interval: 1m
+
+tests:
+  # A stable one-hour baseline followed by a sustained LLM spike.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x60 10x5'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x65'
+      - series: 'insighthub:http_error_rate5m'
+        values: '0x65'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubLLMLatencyAnomaly
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              component: api
+              signal: llm_latency
+            exp_annotations:
+              summary: InsightHub LLM latency is above its 1h anomaly band
+              description: LLM p95 latency is above rolling mean plus three standard deviations for at least 3 minutes.
+              runbook: docs/runbooks/day4-llm-latency.md
+
+  # A stable one-hour baseline followed by a sustained queue backlog.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x65'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x60 5x5'
+      - series: 'insighthub:http_error_rate5m'
+        values: '0x65'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubARQQueueBacklog
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              component: ingestion-worker
+              signal: queue_depth
+            exp_annotations:
+              summary: InsightHub ARQ ingestion queue is above its 1h anomaly band
+              description: ARQ queue depth is statistically anomalous and has at least two queued jobs for at least 3 minutes.
+              runbook: docs/runbooks/day4-queue-backlog.md
+
+  # A stable one-hour baseline followed by a sustained error-rate burst.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x65'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x65'
+      - series: 'insighthub_http_requests_total{status="200"}'
+        values: '0x65'
+      - series: 'insighthub_http_requests_total{status="500"}'
+        values: '0x60 0+100x6'
+    alert_rule_test:
+      - eval_time: 1h5m
+        alertname: InsightHubHTTPErrorRateBurst
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              component: api
+              signal: http_error_rate
+            exp_annotations:
+              summary: InsightHub HTTP error rate is above its 1h anomaly band
+              description: HTTP 5xx rate is statistically anomalous and at least 1% for at least 3 minutes.
+              runbook: docs/runbooks/day4-http-errors.md
+    promql_expr_test:
+      - expr: insighthub:http_error_rate5m
+        eval_time: 1h5m
+        exp_samples:
+          - labels: '{__name__="insighthub:http_error_rate5m"}'
+            value: 1
+
+  # A one-minute queue spike must not satisfy the 3-minute hold time.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x65'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x60 5 0x4'
+      - series: 'insighthub_http_requests_total{status="200"}'
+        values: '0+100x65'
+      - series: 'insighthub_http_requests_total{status="500"}'
+        values: '0x65'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubARQQueueBacklog
+        exp_alerts: []
+
+  # A one-minute LLM latency spike must not satisfy the 3-minute hold time.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x60 10 1x4'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x65'
+      - series: 'insighthub_http_requests_total{status="200"}'
+        values: '0+100x65'
+      - series: 'insighthub_http_requests_total{status="500"}'
+        values: '0x65'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubLLMLatencyAnomaly
+        exp_alerts: []
+
+  # A one-minute error burst must not satisfy the 3-minute hold time.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x65'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x65'
+      - series: 'insighthub_http_requests_total{status="200"}'
+        values: '0+100x65'
+      - series: 'insighthub_http_requests_total{status="500"}'
+        values: '0x60 0+100x1 100x4'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubHTTPErrorRateBurst
+        exp_alerts: []
+
+  # A normal baseline must not alert.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: '1x65'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x65'
+      - series: 'insighthub_http_requests_total{status="200"}'
+        values: '0+100x65'
+      - series: 'insighthub_http_requests_total{status="500"}'
+        values: '0x65'
+    alert_rule_test:
+      - eval_time: 1h4m
+        alertname: InsightHubLLMLatencyAnomaly
+        exp_alerts: []
+      - eval_time: 1h4m
+        alertname: InsightHubARQQueueBacklog
+        exp_alerts: []
+      - eval_time: 1h4m
+        alertname: InsightHubHTTPErrorRateBurst
+        exp_alerts: []
+
+  # Warm-up NaN p95 samples are excluded from the LLM baseline statistics.
+  - interval: 1m
+    input_series:
+      - series: 'insighthub:llm_latency_p95_5m'
+        values: 'NaN NaN 1 1 1 1 1 1'
+      - series: 'insighthub:arq_queue_depth'
+        values: '0x8'
+      - series: 'insighthub:http_error_rate5m'
+        values: '0x8'
+    promql_expr_test:
+      - expr: insighthub:llm_latency_p95_mean1h
+        eval_time: 7m
+        exp_samples:
+          - labels: '{__name__="insighthub:llm_latency_p95_mean1h"}'
+            value: 1
+      - expr: insighthub:llm_latency_p95_stddev1h
+        eval_time: 7m
+        exp_samples:
+          - labels: '{__name__="insighthub:llm_latency_p95_stddev1h"}'
+            value: 0
+      - expr: insighthub:llm_latency_p95_upper1h
+        eval_time: 7m
+        exp_samples:
+          - labels: '{__name__="insighthub:llm_latency_p95_upper1h"}'
+            value: 1

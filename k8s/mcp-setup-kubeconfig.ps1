@@ -24,11 +24,9 @@ Write-Host "Current context verified: minikube"
 kubectl apply -f $NamespaceFilePath
 kubectl apply -f $ServiceAccountFilePath
 
-$Namespace = kubectl get -f $NamespaceFilePath`
-    -o jsonpath='{.metadata.name}'
+$Namespace = kubectl get -f $NamespaceFilePath -o jsonpath='{.metadata.name}'
 
-$ServiceAccount = kubectl get -f $ServiceAccountFilePath `
-    -o jsonpath='{.metadata.name}'
+$ServiceAccount = kubectl get -f $ServiceAccountFilePath -o jsonpath='{.metadata.name}'
 
 # 2. Apply MCP RBAC configuration
 
@@ -44,11 +42,16 @@ if (-not $token) {
     throw "Failed to generate ServiceAccount token."
 }
 
-# 4. Read current Minikube API endpoint
-
-$server = kubectl config view `
-    --minify `
-    -o jsonpath='{.clusters[0].cluster.server}'
+# 4. Read a container-reachable Minikube API endpoint. The default Docker
+# driver kubeconfig uses a host-loopback forwarded port, so the worker uses
+# Docker Desktop's host gateway while retaining the original TLS server name.
+$hostServer = kubectl config view --minify -o jsonpath='{.clusters[0].cluster.server}'
+if (-not $hostServer) {
+    throw "Failed to resolve the Minikube API endpoint."
+}
+$hostUri = [Uri]$hostServer
+$server = "https://host.docker.internal:$($hostUri.Port)"
+$tlsServerName = $hostUri.Host
 
 $caPath = Join-Path $HOME ".minikube\ca.crt"
 
@@ -63,7 +66,8 @@ kubectl config `
     set-cluster $ClusterName `
     --server="$server" `
     --certificate-authority="$caPath" `
-    --embed-certs=true
+    --embed-certs=true `
+    --tls-server-name="$tlsServerName"
 
 kubectl config `
     --kubeconfig="$KubeconfigPath" `
@@ -87,12 +91,14 @@ Write-Host ""
 Write-Host "Testing MCP ServiceAccount permissions..."
 
 kubectl `
-    --kubeconfig="$KubeconfigPath" `
-    auth can-i get pods
+    auth can-i get pods `
+    --as="system:serviceaccount:${Namespace}:${ServiceAccount}" `
+    -n $Namespace
 
 kubectl `
-    --kubeconfig="$KubeconfigPath" `
-    auth can-i delete pods
+    auth can-i delete pods `
+    --as="system:serviceaccount:${Namespace}:${ServiceAccount}" `
+    -n $Namespace
 
 Write-Host ""
 Write-Host "MCP kubeconfig created:"

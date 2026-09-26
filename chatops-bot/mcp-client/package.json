@@ -1,0 +1,8 @@
+{
+  "name": "insighthub-chatops-kubernetes-mcp-client",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/client": "2.0.0"
+  }
+}

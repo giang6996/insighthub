@@ -1,44 +1,18 @@
-"""
-InsightHub ChatOps Bot — Audit log (SKELETON)
-
-Mọi tool call của bot PHẢI được ghi audit. Đây là yêu cầu bảo mật cốt lõi:
-khi AI agent có quyền chạm vào hạ tầng, phải có dấu vết kiểm toán.
-
-TODO Day 5: hoàn thiện theo gợi ý dưới.
-"""
-import json
-import logging
+"""Structured JSONL audit output; request bodies and secrets are never recorded."""
+from __future__ import annotations
+import json, logging, os
 from datetime import datetime, timezone
-
-logger = logging.getLogger("chatops-bot.audit")
-
-
-def log_tool_call(
-    user: str,
-    tool: str,
-    args: dict,
-    result_summary: str,
-    approved: bool = True,
-) -> None:
-    """
-    Ghi 1 dòng audit cho mỗi tool call.
-
-    TODO Day 5:
-    - Ghi ra file hoặc stdout dạng structured JSON (mỗi dòng 1 record).
-    - Trong production thật: đẩy sang log aggregator (Loki...).
-    - Trường tối thiểu: timestamp, user, tool, args, kết quả, approved.
-
-    Ví dụ record:
-      {"ts": "...", "user": "U123", "tool": "kubectl_get_pods",
-       "args": {...}, "result": "5 pods Running", "approved": true}
-    """
-    record = {
-        "ts": datetime.now(timezone.utc).isoformat(),
-        "user": user,
-        "tool": tool,
-        "args": args,
-        "result": result_summary,
-        "approved": approved,
-    }
-    # TODO: thay bằng ghi file / gửi log aggregator
-    logger.info("AUDIT %s", json.dumps(record, ensure_ascii=False))
+from pathlib import Path
+from uuid import uuid4
+logger=logging.getLogger("chatops-bot.audit")
+_SENSITIVE_KEYS={"secret","signing_secret","slack_signing_secret","bot_token","slack_bot_token","raw_body","token","kubeconfig"}
+def audit_event(*, action, user, decision, **fields):
+    fields={key:value for key,value in fields.items() if key.lower() not in _SENSITIVE_KEYS}
+    record={"timestamp":datetime.now(timezone.utc).isoformat().replace("+00:00","Z"),"event_id":fields.pop("event_id",uuid4().hex),"action":action,"user":user,"decision":decision,**fields}
+    line=json.dumps(record,separators=(",",":"),sort_keys=True,ensure_ascii=False)
+    logger.info("%s",line)
+    path=os.environ.get("CHATOPS_AUDIT_PATH","").strip()
+    if path:
+        target=Path(path); target.parent.mkdir(parents=True,exist_ok=True)
+        with target.open("a",encoding="utf-8") as handle: handle.write(line+"\n")
+    return record

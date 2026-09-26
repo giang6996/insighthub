@@ -109,6 +109,48 @@ services:
     depends_on:
       api: {condition: service_healthy}
     mem_limit: 512m
+  chatops-bot:
+    build:
+      context: .
+      dockerfile: chatops-bot/Dockerfile
+    environment:
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CHATOPS_QUEUE: ${CHATOPS_QUEUE:-chatops}
+      INSIGHTHUB_API_URL: ${INSIGHTHUB_API_URL:-http://api:8000}
+      INSIGHTHUB_NAMESPACE: ${INSIGHTHUB_NAMESPACE:-insighthub}
+      SLACK_SIGNING_SECRET: ${SLACK_SIGNING_SECRET:-}
+      CHATOPS_AUDIT_PATH: ${CHATOPS_AUDIT_PATH:-}
+    ports: ["127.0.0.1:${CHATOPS_PORT:-8080}:8080"]
+    depends_on:
+      redis: {condition: service_healthy}
+    mem_limit: 256m
+  chatops-worker:
+    build:
+      context: .
+      dockerfile: chatops-bot/Dockerfile
+    command: ["arq", "app.worker.WorkerSettings"]
+    restart: unless-stopped
+    environment:
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      CHATOPS_QUEUE: ${CHATOPS_QUEUE:-chatops}
+      INSIGHTHUB_API_URL: ${INSIGHTHUB_API_URL:-http://api:8000}
+      INSIGHTHUB_NAMESPACE: ${INSIGHTHUB_NAMESPACE:-insighthub}
+      SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN:-}
+      CHATOPS_AUDIT_PATH: ${CHATOPS_AUDIT_PATH:-}
+      CHATOPS_REPLY_PATH: ${CHATOPS_REPLY_PATH:-}
+      CHATOPS_REPLY_FAIL_ONCE_PATH: ${CHATOPS_REPLY_FAIL_ONCE_PATH:-}
+      KUBERNETES_MCP_KUBECONFIG: /run/insighthub-mcp/insighthub-mcp.kubeconfig
+      KUBERNETES_MCP_CLIENT_SCRIPT: /opt/mcp-client/client.mjs
+      KUBERNETES_MCP_SERVER_COMMAND: /usr/local/lib/node_modules/kubernetes-mcp-server/node_modules/kubernetes-mcp-server-linux-amd64/bin/kubernetes-mcp-server-linux-amd64
+      PROMETHEUS_MCP_CLIENT_SCRIPT: ${PROMETHEUS_MCP_CLIENT_SCRIPT:-/opt/mcp-client/prometheus.mjs}
+    volumes:
+      - ${INSIGHTHUB_MCP_KUBECONFIG:?Set INSIGHTHUB_MCP_KUBECONFIG to the dedicated restricted kubeconfig}:/run/insighthub-mcp/insighthub-mcp.kubeconfig:ro
+    depends_on:
+      redis: {condition: service_healthy}
+      api: {condition: service_healthy}
+    healthcheck:
+      disable: true
+    mem_limit: 256m
   prometheus:
     image: prom/prometheus:v3.5.0
     command:

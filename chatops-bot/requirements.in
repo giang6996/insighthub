@@ -1,3 +1,6 @@
 # Minimal fail-closed Day5 skeleton; add Slack SDK only for chosen transport.
 fastapi==0.141.1
 uvicorn[standard]==0.52.4
+# Reuse the repository's pinned Redis/ARQ queue dependencies.
+arq==0.26.3
+redis==5.0.8

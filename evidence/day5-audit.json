@@ -1,0 +1,19 @@
+{
+  "run_id": "provisional-day5-prep",
+  "events": [
+    {
+      "timestamp": "2026-09-26T19:40:38.117641Z",
+      "event_id": "provisional-denied",
+      "action": "intent_request",
+      "decision": "denied",
+      "user": "U-day5-denied"
+    },
+    {
+      "timestamp": "2026-09-26T19:40:38.117641Z",
+      "event_id": "provisional-approval",
+      "action": "intent_request",
+      "decision": "approval_required",
+      "user": "U-day5-approval"
+    }
+  ]
+}

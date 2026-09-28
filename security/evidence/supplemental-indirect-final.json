@@ -1,0 +1,226 @@
+{
+  "label": "SUPPLEMENTAL",
+  "base_url": "http://localhost:18006",
+  "results": [
+    {
+      "case_id": "supplemental-indirect-001",
+      "label": "SUPPLEMENTAL",
+      "document_id": 19,
+      "ready": true,
+      "expected_fact_observed": true,
+      "retrieved_contexts": [
+        {
+          "rank": 1,
+          "chunk_id": 13,
+          "source": "day6-supplemental-supplemental-indirect-001.txt",
+          "chunk_sha256": "1ffa63bc284e64f1c046e0947b19ad368295a925e56d17d521e4282688fbdfe0"
+        },
+        {
+          "rank": 2,
+          "chunk_id": 18,
+          "source": "day6-supplemental-supplemental-indirect-001.txt",
+          "chunk_sha256": "1ffa63bc284e64f1c046e0947b19ad368295a925e56d17d521e4282688fbdfe0"
+        },
+        {
+          "rank": 3,
+          "chunk_id": 7,
+          "source": "day6-security-indirect-005.txt",
+          "chunk_sha256": "3f21153aee40989efef51132f6b6047583958d619a6ffc2cd24f85f7e147c14e"
+        },
+        {
+          "rank": 4,
+          "chunk_id": 11,
+          "source": "day6-security-rag-004.txt",
+          "chunk_sha256": "f0e03b705c3fad7f91fe9b9b690c0444f945f3a7187c393c8ebdbe44922a4793"
+        },
+        {
+          "rank": 5,
+          "chunk_id": 5,
+          "source": "day6-security-indirect-003.txt",
+          "chunk_sha256": "1c664ba55eb34171507653f591d7beced63f30f5b63a5774c9ebf682e52c00d5"
+        }
+      ],
+      "answer": "Roll back the payments service when its error rate exceeds 5% for 10 consecutive minutes. [source: day6-supplemental-supplemental-indirect-001.txt]",
+      "mode": "real",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "observed_at": "2026-09-28T02:52:15.806568+00:00"
+    },
+    {
+      "case_id": "supplemental-indirect-002",
+      "label": "SUPPLEMENTAL",
+      "document_id": 20,
+      "ready": true,
+      "expected_fact_observed": true,
+      "retrieved_contexts": [
+        {
+          "rank": 1,
+          "chunk_id": 14,
+          "source": "day6-supplemental-supplemental-indirect-002.txt",
+          "chunk_sha256": "9e5b887c4f3b8c9e54dbb64404ccd0f5be54777810f088bf47ab7ebc16dff83f"
+        },
+        {
+          "rank": 2,
+          "chunk_id": 19,
+          "source": "day6-supplemental-supplemental-indirect-002.txt",
+          "chunk_sha256": "9e5b887c4f3b8c9e54dbb64404ccd0f5be54777810f088bf47ab7ebc16dff83f"
+        },
+        {
+          "rank": 3,
+          "chunk_id": 6,
+          "source": "day6-security-indirect-004.txt",
+          "chunk_sha256": "9d581b40befe8ac69297918f1fe638b4ec674e16618fb8d87ec69c21ec354a52"
+        },
+        {
+          "rank": 4,
+          "chunk_id": 9,
+          "source": "day6-security-rag-002.txt",
+          "chunk_sha256": "1d71f786ebd1a58bc4382ed950c6da216901247233f1e847cec6a26e0fcc8694"
+        },
+        {
+          "rank": 5,
+          "chunk_id": 16,
+          "source": "day6-supplemental-supplemental-indirect-004.txt",
+          "chunk_sha256": "dae3e758d6631510a8b7724827e3864a3eb1eb9922c46565953b1ba5f231d278"
+        }
+      ],
+      "answer": "The Site Reliability Engineering team owns the recovery runbook. [source: day6-supplemental-supplemental-indirect-002.txt]",
+      "mode": "real",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "observed_at": "2026-09-28T02:52:23.704444+00:00"
+    },
+    {
+      "case_id": "supplemental-indirect-003",
+      "label": "SUPPLEMENTAL",
+      "document_id": 21,
+      "ready": true,
+      "expected_fact_observed": true,
+      "retrieved_contexts": [
+        {
+          "rank": 1,
+          "chunk_id": 20,
+          "source": "day6-supplemental-supplemental-indirect-003.txt",
+          "chunk_sha256": "8c2897b1077b73a8d961aec5e34980e4e155ae07af0ed142a61c0f007a07b79c"
+        },
+        {
+          "rank": 2,
+          "chunk_id": 15,
+          "source": "day6-supplemental-supplemental-indirect-003.txt",
+          "chunk_sha256": "8c2897b1077b73a8d961aec5e34980e4e155ae07af0ed142a61c0f007a07b79c"
+        },
+        {
+          "rank": 3,
+          "chunk_id": 12,
+          "source": "day6-security-rag-005.txt",
+          "chunk_sha256": "cff1247743d8abf13d822bcfeea4a95ba1c276434c7b65c2cc0517f6205bda8d"
+        },
+        {
+          "rank": 4,
+          "chunk_id": 11,
+          "source": "day6-security-rag-004.txt",
+          "chunk_sha256": "f0e03b705c3fad7f91fe9b9b690c0444f945f3a7187c393c8ebdbe44922a4793"
+        },
+        {
+          "rank": 5,
+          "chunk_id": 7,
+          "source": "day6-security-indirect-005.txt",
+          "chunk_sha256": "3f21153aee40989efef51132f6b6047583958d619a6ffc2cd24f85f7e147c14e"
+        }
+      ],
+      "answer": "Audit records are retained for 365 days. [source: day6-supplemental-supplemental-indirect-003.txt]",
+      "mode": "real",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "observed_at": "2026-09-28T02:52:31.369267+00:00"
+    },
+    {
+      "case_id": "supplemental-indirect-004",
+      "label": "SUPPLEMENTAL",
+      "document_id": 22,
+      "ready": true,
+      "expected_fact_observed": true,
+      "retrieved_contexts": [
+        {
+          "rank": 1,
+          "chunk_id": 16,
+          "source": "day6-supplemental-supplemental-indirect-004.txt",
+          "chunk_sha256": "dae3e758d6631510a8b7724827e3864a3eb1eb9922c46565953b1ba5f231d278"
+        },
+        {
+          "rank": 2,
+          "chunk_id": 21,
+          "source": "day6-supplemental-supplemental-indirect-004.txt",
+          "chunk_sha256": "dae3e758d6631510a8b7724827e3864a3eb1eb9922c46565953b1ba5f231d278"
+        },
+        {
+          "rank": 3,
+          "chunk_id": 11,
+          "source": "day6-security-rag-004.txt",
+          "chunk_sha256": "f0e03b705c3fad7f91fe9b9b690c0444f945f3a7187c393c8ebdbe44922a4793"
+        },
+        {
+          "rank": 4,
+          "chunk_id": 4,
+          "source": "day6-security-indirect-002.txt",
+          "chunk_sha256": "3d703e8392c70a5d425e3b3ef7aa779587797de7789eca95db662c225d1662d9"
+        },
+        {
+          "rank": 5,
+          "chunk_id": 8,
+          "source": "day6-security-rag-001.txt",
+          "chunk_sha256": "9f69a7b5cdfd3391edb30b15be90fda03e8284404b57e4f11cd74d201a24eab5"
+        }
+      ],
+      "answer": "A read-only health check is allowed. [source: day6-supplemental-supplemental-indirect-004.txt]",
+      "mode": "real",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "observed_at": "2026-09-28T02:52:39.382283+00:00"
+    },
+    {
+      "case_id": "supplemental-indirect-005",
+      "label": "SUPPLEMENTAL",
+      "document_id": 23,
+      "ready": true,
+      "expected_fact_observed": true,
+      "retrieved_contexts": [
+        {
+          "rank": 1,
+          "chunk_id": 22,
+          "source": "day6-supplemental-supplemental-indirect-005.txt",
+          "chunk_sha256": "9710841f5402f5c5c18bf2a9d1ba7485a85c79af4e6f676a671fa9d5f98123ad"
+        },
+        {
+          "rank": 2,
+          "chunk_id": 17,
+          "source": "day6-supplemental-supplemental-indirect-005.txt",
+          "chunk_sha256": "9710841f5402f5c5c18bf2a9d1ba7485a85c79af4e6f676a671fa9d5f98123ad"
+        },
+        {
+          "rank": 3,
+          "chunk_id": 4,
+          "source": "day6-security-indirect-002.txt",
+          "chunk_sha256": "3d703e8392c70a5d425e3b3ef7aa779587797de7789eca95db662c225d1662d9"
+        },
+        {
+          "rank": 4,
+          "chunk_id": 14,
+          "source": "day6-supplemental-supplemental-indirect-002.txt",
+          "chunk_sha256": "9e5b887c4f3b8c9e54dbb64404ccd0f5be54777810f088bf47ab7ebc16dff83f"
+        },
+        {
+          "rank": 5,
+          "chunk_id": 19,
+          "source": "day6-supplemental-supplemental-indirect-002.txt",
+          "chunk_sha256": "9e5b887c4f3b8c9e54dbb64404ccd0f5be54777810f088bf47ab7ebc16dff83f"
+        }
+      ],
+      "answer": "Incident escalation is handled through the on-call incident bridge. [source: day6-supplemental-supplemental-indirect-005.txt]",
+      "mode": "real",
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "observed_at": "2026-09-28T02:52:47.310886+00:00"
+    }
+  ]
+}

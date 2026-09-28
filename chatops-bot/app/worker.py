@@ -11,6 +11,7 @@ from .audit import audit_event
 from .backends import BackendUnavailable, InsightHubBackend, KubernetesMcpBackend, PrometheusMcpBackend
 from .intents import Intent, classify
 from .permissions import decide
+from .gateway import GatewayUnavailable, summarize
 async def send_slack_reply(channel, text, thread_ts):
     reply_path = os.environ.get("CHATOPS_REPLY_PATH", "").strip()
     if reply_path:
@@ -146,7 +147,13 @@ async def process_chatops_event(ctx,job):
             )
             tool="pods_list_in_namespace"
         audit_fields = prometheus_fields if intent is Intent.HEALTH else {}
-        audit_event(action="intent_request",decision="allowed",outcome="success",backend=tool,duration_ms=int((time.monotonic()-started)*1000),**audit_fields,**common)
+        gateway_fields = {}
+        try:
+            response, gateway = summarize(intent=intent.value, result=response)
+            gateway_fields = {"workload": "chatops", "gateway_outcome": "success", **gateway}
+        except GatewayUnavailable as exc:
+            gateway_fields = {"workload": "chatops", "gateway_outcome": "degraded", "gateway_error_code": str(exc)}
+        audit_event(action="intent_request",decision="allowed",outcome="success",backend=tool,duration_ms=int((time.monotonic()-started)*1000),**audit_fields,**gateway_fields,**common)
         await send_slack_reply(job["channel_id"],response,job["thread_ts"])
         return {"status":"replied","intent":intent.value}
     except BackendUnavailable as exc:

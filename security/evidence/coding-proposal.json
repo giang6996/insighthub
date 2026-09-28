@@ -1,0 +1,36 @@
+{
+  "workload": "coding",
+  "observed_at": "2026-09-28T04:12:01.581373+00:00",
+  "task": "Review the LiteLLM gateway routing changes for configuration mistakes; propose review findings only and do not edit files.",
+  "context_paths": [
+    "litellm/config.yaml",
+    "docker-compose.day6-gateway.yml"
+  ],
+  "proposal": "",
+  "gateway": {
+    "gateway_call_id": "chatcmpl-ESx0T3lsPtyrNxbqneent0IUXJ8q2",
+    "model": "coding-review",
+    "usage": {
+      "completion_tokens": 600,
+      "prompt_tokens": 1251,
+      "total_tokens": 1851,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 600,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 1248
+      }
+    },
+    "cost": null
+  },
+  "validation": {
+    "command": "git diff --check",
+    "returncode": 0,
+    "passed": true
+  }
+}

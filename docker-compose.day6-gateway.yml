@@ -1,0 +1,98 @@
+services:
+  litellm-finops-exporter:
+    image: python:3.12.14-slim
+    command: ["python", "/app/finops_exporter.py"]
+    environment:
+      LITELLM_BASE_URL: http://litellm:4000
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:?set LITELLM_MASTER_KEY}
+      LITELLM_BUDGET_INSIGHTHUB: "0.50"
+      LITELLM_BUDGET_CHATOPS: "0.25"
+      LITELLM_BUDGET_CODING: "0.50"
+      FINOPS_PORT: "9108"
+    volumes:
+      - ./security/finops_exporter.py:/app/finops_exporter.py:ro
+    depends_on:
+      litellm:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9108/metrics')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  litellm-db:
+    image: postgres:16.8-alpine
+    environment:
+      POSTGRES_USER: ${LITELLM_DB_USER:-litellm}
+      POSTGRES_PASSWORD: ${LITELLM_DB_PASSWORD:?set LITELLM_DB_PASSWORD}
+      POSTGRES_DB: ${LITELLM_DB_NAME:-litellm}
+    volumes:
+      - litellm-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 512m
+
+  litellm:
+    image: ghcr.io/berriai/litellm:v1.90.2
+    command: ["--config", "/app/config.yaml", "--port", "4000"]
+    environment:
+      DATABASE_URL: postgresql://${LITELLM_DB_USER:-litellm}:${LITELLM_DB_PASSWORD:?set LITELLM_DB_PASSWORD}@litellm-db:5432/${LITELLM_DB_NAME:-litellm}
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY:?set LITELLM_MASTER_KEY}
+      LITELLM_SALT_KEY: ${LITELLM_SALT_KEY:?set LITELLM_SALT_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?set OPENAI_API_KEY}
+      PROXY_ADMIN_NAME: day6-local
+    volumes:
+      - ./litellm/config.yaml:/app/config.yaml:ro
+    ports:
+      - "127.0.0.1:${LITELLM_PORT:-14000}:4000"
+    depends_on:
+      litellm-db: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:4000/health/liveliness')"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 45s
+    mem_limit: 1g
+
+  api:
+    environment:
+      OPENAI_BASE_URL: http://litellm:4000/v1
+      OPENAI_API_KEY: ${INSIGHTHUB_LITELLM_KEY:?set INSIGHTHUB_LITELLM_KEY}
+      OPENAI_CHAT_MODEL: insighthub-chat
+      OPENAI_EMBEDDING_MODEL: insighthub-embedding
+      LLM_PROVIDER: openai
+      LLM_MODEL: insighthub-chat
+      EMBEDDING_PROVIDER: openai
+      EMBEDDING_MODEL: insighthub-embedding
+      RAG_MODE: real
+    depends_on:
+      litellm: {condition: service_healthy}
+
+  ingestion-worker:
+    environment:
+      OPENAI_BASE_URL: http://litellm:4000/v1
+      OPENAI_API_KEY: ${INSIGHTHUB_LITELLM_KEY:?set INSIGHTHUB_LITELLM_KEY}
+      OPENAI_CHAT_MODEL: insighthub-chat
+      OPENAI_EMBEDDING_MODEL: insighthub-embedding
+      LLM_PROVIDER: openai
+      LLM_MODEL: insighthub-chat
+      EMBEDDING_PROVIDER: openai
+      EMBEDDING_MODEL: insighthub-embedding
+      RAG_MODE: real
+    depends_on:
+      litellm: {condition: service_healthy}
+
+  chatops-worker:
+    environment:
+      LITELLM_BASE_URL: http://litellm:4000/v1
+      LITELLM_API_KEY: ${CHATOPS_LITELLM_KEY:?set CHATOPS_LITELLM_KEY}
+      LITELLM_MODEL: chatops-summary
+    depends_on:
+      litellm: {condition: service_healthy}
+
+volumes:
+  litellm-pgdata:

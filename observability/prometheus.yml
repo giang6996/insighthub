@@ -18,6 +18,13 @@ scrape_configs:
         labels:
           component: api
 
+  - job_name: insighthub-litellm-finops
+    metrics_path: /metrics
+    static_configs:
+      - targets: [litellm-finops-exporter:9108]
+        labels:
+          component: litellm-finops
+
   - job_name: insighthub-redis
     static_configs:
       - targets: [redis-exporter:9121]

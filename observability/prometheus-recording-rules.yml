@@ -1,4 +1,34 @@
 groups:
+  - name: insighthub-day6-finops
+    interval: 30s
+    rules:
+      - record: insighthub:llm_spend_usd
+        expr: sum by (workload) (insighthub_litellm_spend_usd)
+
+      - record: insighthub:llm_spend_usd_by_model
+        expr: sum by (workload, model) (insighthub_litellm_spend_usd)
+
+      - record: insighthub:llm_token_usage
+        expr: sum by (workload, model) (insighthub_litellm_input_tokens + insighthub_litellm_output_tokens)
+
+      - record: insighthub:llm_request_count
+        expr: sum by (workload, outcome) (insighthub_litellm_requests)
+
+      - record: insighthub:llm_budget_denied_count
+        expr: sum by (workload) (insighthub_litellm_requests{outcome="budget_denied"})
+
+      - record: insighthub:llm_cost_per_success
+        expr: |
+          sum by (workload) (insighthub_litellm_spend_usd{outcome="success"})
+          /
+          clamp_min(sum by (workload) (insighthub_litellm_requests{outcome="success"}), 1)
+
+      - record: insighthub:llm_budget_utilization
+        expr: |
+          sum by (workload) (insighthub_litellm_spend_usd)
+          / on (workload) group_left
+          clamp_min(insighthub_litellm_budget_usd, 1e-9)
+
   - name: insighthub-day4-recording
     interval: 30s
     rules:

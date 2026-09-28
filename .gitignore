@@ -3,6 +3,7 @@
 .env.local
 *.pem
 *.key
+security/.env.day6.local
 
 # --- Python ---
 __pycache__/
@@ -47,3 +48,5 @@ temp/
 # Local evidence and release outputs
 reports/
 *.tsbuildinfo
+security/.env.day6.gateway.local
+security/.env.day6.workload.local

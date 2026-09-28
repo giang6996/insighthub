@@ -41,6 +41,11 @@ ingestion_errors_total = Counter(
     "insighthub_ingestion_errors_total",
     "Failed processing attempts",
 )
+guardrail_decisions_total = Counter(
+    "insighthub_guardrail_decisions_total",
+    "Bounded trust-boundary guardrail decisions",
+    ["stage", "outcome", "reason"],
+)
 
 
 def record_embedding_usage(provider, input_type, tokens, texts):

@@ -1,0 +1,23 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "graphTooltip": 1,
+  "panels": [
+    {"id": 1, "type": "stat", "title": "Total LLM spend (USD)", "description": "Authoritative LiteLLM spend-log aggregation; no synthetic pricing.", "gridPos": {"h": 5, "w": 8, "x": 0, "y": 0}, "targets": [{"refId": "A", "expr": "sum(insighthub:llm_spend_usd)"}], "fieldConfig": {"defaults": {"unit": "currencyUSD"}, "overrides": []}},
+    {"id": 2, "type": "timeseries", "title": "Spend by workload", "description": "Allowlisted virtual-key aliases only.", "gridPos": {"h": 7, "w": 16, "x": 8, "y": 0}, "targets": [{"refId": "A", "expr": "insighthub:llm_spend_usd", "legendFormat": "{{workload}}"}], "fieldConfig": {"defaults": {"unit": "currencyUSD"}, "overrides": []}},
+    {"id": 3, "type": "timeseries", "title": "Spend by model", "description": "Provider model attribution from LiteLLM spend logs.", "gridPos": {"h": 7, "w": 12, "x": 0, "y": 7}, "targets": [{"refId": "A", "expr": "insighthub:llm_spend_usd_by_model", "legendFormat": "{{workload}} / {{model}}"}], "fieldConfig": {"defaults": {"unit": "currencyUSD"}, "overrides": []}},
+    {"id": 4, "type": "timeseries", "title": "Token usage by workload", "description": "Input plus output tokens recorded by LiteLLM.", "gridPos": {"h": 7, "w": 12, "x": 12, "y": 7}, "targets": [{"refId": "A", "expr": "insighthub:llm_token_usage", "legendFormat": "{{workload}} / {{model}}"}], "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}},
+    {"id": 5, "type": "timeseries", "title": "Requests by outcome", "description": "Success, error, and budget-denied outcomes from spend logs.", "gridPos": {"h": 7, "w": 12, "x": 0, "y": 14}, "targets": [{"refId": "A", "expr": "insighthub:llm_request_count", "legendFormat": "{{workload}} / {{outcome}}"}], "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}},
+    {"id": 6, "type": "timeseries", "title": "Cost per successful request", "description": "Recorded spend divided by successful requests; success is workload-specific workflow completion.", "gridPos": {"h": 7, "w": 12, "x": 12, "y": 14}, "targets": [{"refId": "A", "expr": "insighthub:llm_cost_per_success", "legendFormat": "{{workload}}"}], "fieldConfig": {"defaults": {"unit": "currencyUSD"}, "overrides": []}},
+    {"id": 7, "type": "timeseries", "title": "Budget utilization", "description": "Current recorded spend divided by configured virtual-key budget.", "gridPos": {"h": 7, "w": 12, "x": 0, "y": 21}, "targets": [{"refId": "A", "expr": "insighthub:llm_budget_utilization", "legendFormat": "{{workload}}"}], "fieldConfig": {"defaults": {"unit": "percentunit"}, "overrides": []}},
+    {"id": 8, "type": "timeseries", "title": "Budget-denied requests", "description": "Budget denial classification from LiteLLM error metadata; absent records are not fabricated.", "gridPos": {"h": 7, "w": 12, "x": 12, "y": 21}, "targets": [{"refId": "A", "expr": "insighthub:llm_budget_denied_count", "legendFormat": "{{workload}}"}], "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []}},
+    {"id": 9, "type": "timeseries", "title": "LiteLLM request latency", "description": "Cumulative duration from LiteLLM spend logs; use for workload comparison, not percentile claims.", "gridPos": {"h": 7, "w": 24, "x": 0, "y": 28}, "targets": [{"refId": "A", "expr": "sum by (workload, model) (insighthub_litellm_latency_seconds)", "legendFormat": "{{workload}} / {{model}}"}], "fieldConfig": {"defaults": {"unit": "s"}, "overrides": []}}
+  ],
+  "schemaVersion": 39,
+  "tags": ["insighthub", "day6", "finops", "litellm"],
+  "time": {"from": "now-6h", "to": "now"},
+  "timezone": "browser",
+  "title": "InsightHub Day 6 FinOps",
+  "uid": "insighthub-day6-finops",
+  "version": 1
+}

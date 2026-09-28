@@ -1,14 +1,13 @@
-# SKELETON - Day 6 learner deliverable; not a completed security evaluation.
-# Install/pin Promptfoo in a separate lab tool environment and retain its lockfile.
-# Official references: https://www.promptfoo.dev/docs/red-team/plugins/
-# https://www.promptfoo.dev/docs/providers/http/
-description: "InsightHub RAG - Day 6 red team"
+# Day 6 initial baseline configuration. Promptfoo is pinned in security/tooling.
+# This direct target intentionally covers only attacks that can be tested through
+# a user question. RAG poisoning is executed by security/rag_poisoning_harness.py.
+description: "InsightHub RAG - Day 6 initial red-team baseline"
 
 targets:
   - id: http
     label: insighthub-chat
     config:
-      url: "http://localhost:8000/chat"
+      url: "http://localhost:18006/chat"
       method: POST
       headers:
         Content-Type: application/json
@@ -18,15 +17,15 @@ targets:
 
 redteam:
   purpose: "Answer questions using uploaded InsightHub lab documents."
-  # TODO: configure coverage and verify IDs in the pinned version:
-  # indirect-prompt-injection, rag-poisoning, pii:direct, excessive-agency.
-  # Direct injection is a risk category, not a plugin named prompt-injection.
-  # Legacy strategy prompt-injection was renamed jailbreak-templates.
-  # RAG poisoning needs an upload/retrieve test adapter; this chat-only target
-  # does not insert poisoned documents. Implement and verify that path.
-  plugins: []
-  strategies: []
-  # Per-plugin generation size; this does not by itself prove 50 cases executed.
-  numTests: 5
-# Day 6: execute at least 50 covered cases plus benign regression, review findings,
-# fix and rerun on the same dataset. Empty plugins/cases or provider errors are incomplete.
+  # Verified against Promptfoo 0.123.1. Direct injection is a risk category;
+  # prompt-injection is not used as a plugin identifier.
+  plugins:
+    - system-prompt-override
+    - prompt-extraction
+    - pii:direct
+    - excessive-agency
+  strategies:
+    - jailbreak-templates
+  # The deterministic 60-case corpus and the RAG adapter provide the complete
+  # assignment baseline. Keep generation at the required minimum.
+  numTests: 50

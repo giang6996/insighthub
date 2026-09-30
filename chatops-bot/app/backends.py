@@ -58,16 +58,78 @@ class KubernetesMcpBackend:
     def __init__(self, call_tool):
         self.call_tool = call_tool
 
+    @staticmethod
+    def _pod_from_object(pod):
+        metadata = pod.get("metadata")
+        status = pod.get("status")
+        if isinstance(metadata, dict) and isinstance(status, dict):
+            statuses = status.get("containerStatuses") or []
+            reasons = []
+            for container in statuses:
+                waiting = (container.get("state") or {}).get("waiting") or {}
+                if waiting.get("reason"):
+                    reasons.append(waiting["reason"])
+                if container.get("ready") is False and not waiting.get("reason"):
+                    reasons.append("NotReady")
+            phase = status.get("phase", "Unknown")
+            if phase == "Failed" or reasons:
+                return {"name": metadata.get("name", "unknown"), "namespace": metadata.get("namespace", "insighthub"), "phase": phase, "reasons": sorted(set(reasons)), "ready": sum(1 for c in statuses if c.get("ready")), "total": len(statuses)}
+            return None
+
+        if isinstance(pod.get("name"), str) and isinstance(pod.get("ready"), str) and isinstance(pod.get("status"), str):
+            try:
+                ready_count, total_count = (int(value) for value in pod["ready"].split("/", 1))
+            except (TypeError, ValueError):
+                raise BackendUnavailable("KUBERNETES_MCP_SCHEMA") from None
+            if pod["status"] not in {"Running", "Completed"} or ready_count != total_count:
+                return {"name": pod["name"], "namespace": pod.get("namespace", "insighthub"), "phase": pod["status"], "reasons": [pod["status"]], "ready": pod["ready"]}
+        return None
+
+    @classmethod
+    def _structured_pods(cls, value):
+        if isinstance(value, str):
+            try:
+                value = json.loads(value)
+            except json.JSONDecodeError:
+                return []
+        found = []
+        if isinstance(value, dict):
+            pod = cls._pod_from_object(value)
+            if pod:
+                found.append(pod)
+            for child in value.values():
+                found.extend(cls._structured_pods(child))
+        elif isinstance(value, list):
+            for child in value:
+                found.extend(cls._structured_pods(child))
+        return found
+
     async def failing_pods(self):
         if self.call_tool is None:
             raise BackendUnavailable("KUBERNETES_MCP_UNAVAILABLE")
         result = await self.call_tool(
             "pods_list_in_namespace", {"namespace": "insighthub"}
         )
+        if not isinstance(result, dict) or result.get("isError") is True:
+            raise BackendUnavailable("KUBERNETES_MCP_UNAVAILABLE")
+        structured = self._structured_pods((result or {}).get("structuredContent"))
+        if structured:
+            return structured
         text = ""
         for block in (result or {}).get("content", []):
             if block.get("type") == "text":
                 text += block.get("text", "")
+        stripped = text.strip()
+        if stripped.startswith("{") or stripped.startswith("["):
+            try:
+                parsed = json.loads(stripped)
+            except json.JSONDecodeError:
+                parsed = None
+            if parsed is not None:
+                return self._structured_pods(parsed)
+        structured_text = self._structured_pods(text)
+        if structured_text:
+            return structured_text
         lines = [line for line in text.splitlines() if line.strip()]
         if len(lines) <= 1:
             return []

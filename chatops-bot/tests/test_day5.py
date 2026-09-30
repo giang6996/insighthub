@@ -38,6 +38,39 @@ def test_kubernetes_mcp_adapter_uses_fixed_tool_and_namespace():
     assert calls == [("pods_list_in_namespace", {"namespace":"insighthub"})]
     assert result[0]["name"] == "bad"
 
+def test_kubernetes_mcp_adapter_reads_structured_pod_results():
+    import asyncio
+    async def call_tool(name, arguments):
+        return {"structuredContent": {"items": [{
+            "metadata": {"name": "crashed", "namespace": "insighthub"},
+            "status": {"phase": "Running", "containerStatuses": [{
+                "ready": False, "state": {"waiting": {"reason": "CrashLoopBackOff"}}
+            }]}
+        }]}}
+    result=asyncio.run(KubernetesMcpBackend(call_tool).failing_pods())
+    assert result == [{"name":"crashed", "namespace":"insighthub", "phase":"Running", "reasons":["CrashLoopBackOff"], "ready":0, "total":1}]
+
+def test_kubernetes_mcp_adapter_reads_json_text_pod_results():
+    import asyncio, json
+    async def call_tool(name, arguments):
+        return {"content": [{"type": "text", "text": json.dumps({"items": [{
+            "metadata": {"name": "crashed", "namespace": "insighthub"},
+            "status": {"phase": "Running", "containerStatuses": [{
+                "ready": False, "state": {"waiting": {"reason": "CrashLoopBackOff"}}
+            }]}
+        }]})}]}
+    result=asyncio.run(KubernetesMcpBackend(call_tool).failing_pods())
+    assert result[0]["reasons"] == ["CrashLoopBackOff"]
+
+def test_kubernetes_mcp_adapter_does_not_hide_mcp_errors_as_empty_pods():
+    import asyncio
+    from app.backends import BackendUnavailable
+    async def call_tool(name, arguments):
+        return {"isError": True, "content": [{"type": "text", "text": "connection refused"}]}
+    with pytest.raises(BackendUnavailable) as exc:
+        asyncio.run(KubernetesMcpBackend(call_tool).failing_pods())
+    assert str(exc.value) == "KUBERNETES_MCP_UNAVAILABLE"
+
 def test_audit_is_structured_and_does_not_include_secret(monkeypatch, tmp_path):
     path=tmp_path / "audit.jsonl"
     monkeypatch.setenv("CHATOPS_AUDIT_PATH", str(path))
